@@ -1,0 +1,65 @@
+algorithm: "SAC"
+seed: 42
+total_timesteps: 1000000
+eval_freq: 25000
+save_freq: 50000
+log_interval: 100
+num_envs: 8
+
+env_config:
+  max_linear_vel: 0.40
+  max_angular_vel: 0.75
+  min_reverse_vel: -0.10
+  goal_tolerance: 0.35
+  max_episode_steps: 300
+
+policy_kwargs:
+  net_arch: [256, 256]
+
+sac:
+  learning_rate: 0.0003
+  buffer_size: 200000
+  learning_starts: 5000
+  batch_size: 256
+  tau: 0.005
+  gamma: 0.99
+  train_freq: 1
+  gradient_steps: 1
+  ent_coef: "auto"
+
+td3:
+  learning_rate: 0.0003
+  buffer_size: 100000
+  learning_starts: 1000
+  batch_size: 256
+  tau: 0.005
+  gamma: 0.99
+  train_freq: 1
+  gradient_steps: 1
+  policy_delay: 2
+
+ppo:
+  learning_rate: 0.0003
+  n_steps: 2048
+  batch_size: 64
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.005
+
+curriculum:
+  stage1:
+    name: "empty_room_doorway"
+    promotion_threshold: 0.85
+  stage2:
+    name: "partition_and_clutter"
+    promotion_threshold: 0.85
+  stage3:
+    name: "corridors_and_pillars"
+    promotion_threshold: 0.85
+
+domain_randomization:
+  lidar_noise_std: 0.02
+  action_delay_prob: 0.10
+  velocity_noise_std: 0.01

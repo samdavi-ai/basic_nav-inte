@@ -1,0 +1,41 @@
+{
+  "scan_forensics": {
+    "num_beams": 360,
+    "angle_min": -3.141590118408203,
+    "angle_max": 3.141590118408203,
+    "angle_inc": 0.017501894384622574,
+    "avg_inf_beams": 86.85405405405406,
+    "avg_nan_beams": 0.0,
+    "min_range": 0.3964395821094513,
+    "max_range": 9.289680480957031
+  },
+  "policy_forensics": {
+    "mean_av": 0.891732915672096,
+    "mean_aw": 0.9591268632863019,
+    "mean_clamped_v": 0.46210652048523354,
+    "mean_clamped_w": 1.4386902949294529
+  },
+  "pipeline_forensics": {
+    "cmd_rl_count": 115,
+    "cmd_mux_count": 278,
+    "cmd_safe_count": 0,
+    "cmd_final_count": 0
+  },
+  "distribution_comparison": {
+    "kin_samples": 255,
+    "live_samples": 185,
+    "kin_scan_mean": 0.554340124130249,
+    "live_scan_mean": 0.41367682814598083,
+    "kin_scan_min": 0.3359065651893616,
+    "live_scan_min": 0.03964395821094513,
+    "dist_dim_gap": 0.19160032272338867,
+    "bearing_dim_gap": 1.4800099423987352,
+    "vel_dim_gap": 0.30899977684020996,
+    "scan_l1_divergence": 0.8666416181775348,
+    "dim_mismatches": {
+      "lidar_min_clip": true,
+      "bearing_norm_valid": true,
+      "distance_tanh_valid": true
+    }
+  }
+}

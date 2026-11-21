@@ -1,0 +1,46 @@
+{
+  "corridor_clear_width": {
+    "world_meters": 1.8,
+    "old_map_meters": 1.85,
+    "error_meters": 0.05
+  },
+  "hallway_north_wall_y": {
+    "world_meters": 0.85,
+    "old_map_meters": 0.9,
+    "error_meters": 0.05
+  },
+  "hallway_south_wall_y": {
+    "world_meters": -0.95,
+    "old_map_meters": -0.95,
+    "error_meters": 0.0
+  },
+  "kitchen_doorway": {
+    "world_opening": [
+      -5.6,
+      -4.45
+    ],
+    "world_width_m": 1.15,
+    "old_map_opening": [
+      -7.0,
+      -3.0
+    ],
+    "old_map_width_m": 4.0,
+    "width_error_m": 2.85
+  },
+  "bedroom_doorway": {
+    "world_opening": [
+      -5.6,
+      -4.45
+    ],
+    "world_width_m": 1.15,
+    "old_map_opening": [
+      -7.0,
+      -3.0
+    ],
+    "old_map_width_m": 4.0,
+    "width_error_m": 2.85
+  },
+  "phantom_occupied_pixels": 80,
+  "missing_occupied_pixels": 7217,
+  "total_discrepancy_pixels": 7297
+}

@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-11-16T01:05:00Z",
+  "stage": "stage1_completion",
+  "unit_tests": {
+    "total": 13,
+    "passed": 13,
+    "failed": 0,
+    "required_pass_rate": 1.0
+  },
+  "rl_train_serve_skew": {
+    "max_obs_abs_diff": 0.0,
+    "tolerance": 1e-6
+  },
+  "acceptance_suite": {
+    "at01_stationary": "PASS",
+    "at02_kitchen": "PASS",
+    "at03_circuit": "PASS",
+    "at04_estop": "PASS",
+    "at05_replan": "PASS",
+    "at07_halt": "PASS"
+  },
+  "performance": {
+    "at02_mean_duration_sec": 29.7,
+    "at02_max_stops": 0,
+    "at02_arrival_tol_m": 0.65
+  },
+  "tolerances": {
+    "max_duration_delta_sec": 8.0,
+    "max_stop_count_delta": 2,
+    "min_passed_tests": 5
+  }
+}

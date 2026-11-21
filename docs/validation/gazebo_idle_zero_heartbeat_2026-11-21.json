@@ -1,0 +1,43 @@
+{
+  "result": "PASS",
+  "probe_duration_sec": 3.0,
+  "samples": {
+    "/cmd_vel_mux": 61,
+    "/cmd_vel_smoothed": 56,
+    "/cmd_vel_safe": 0,
+    "/cmd_vel": 60
+  },
+  "maximum_velocity": {
+    "/cmd_vel_mux": {
+      "linear_mps": 0.0,
+      "angular_rps": 0.0
+    },
+    "/cmd_vel_smoothed": {
+      "linear_mps": 0.0,
+      "angular_rps": 0.0
+    },
+    "/cmd_vel_safe": {
+      "linear_mps": null,
+      "angular_rps": null
+    },
+    "/cmd_vel": {
+      "linear_mps": 0.0,
+      "angular_rps": 0.0
+    }
+  },
+  "mux_status_samples": 15,
+  "mux_status_last": {
+    "active_source": "NONE",
+    "teleop_active": false,
+    "rl_active": false,
+    "nav_active": false,
+    "teleop_age_sec": null,
+    "rl_age_sec": null,
+    "nav_age_sec": 25.272,
+    "zero_command_held": true,
+    "current_linear_x": 0.0,
+    "current_angular_z": 0.0
+  },
+  "odom_drift_m": 0.008355,
+  "normal_navigation_evidence": "gazebo_final_navigation_smoke_2026-11-21.json"
+}

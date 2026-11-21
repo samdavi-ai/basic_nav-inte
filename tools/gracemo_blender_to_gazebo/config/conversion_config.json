@@ -1,0 +1,21 @@
+{
+  "wheel_object_names": [],
+  "wheel_name_tokens": [
+    "wheel",
+    "tyre",
+    "tire",
+    "roller"
+  ],
+  "expected_wheel_count": 4,
+  "base_link_name": "base_link",
+  "robot_name": "gracemo_vira",
+  "blender_to_ros_yaw_degrees": 90.0,
+  "wheel_joint_axis_ros": [
+    0.0,
+    1.0,
+    0.0
+  ],
+  "provisional_total_mass_kg": 38.5,
+  "provisional_wheel_mass_kg_each": 1.5,
+  "generate_urdf_only_if_wheel_count_matches": true
+}

@@ -1,0 +1,70 @@
+{
+  "test_1_localization": {
+    "x": 0.0,
+    "y": 0.0,
+    "yaw": 0.0,
+    "status": "PASS"
+  },
+  "test_2_lidar": {
+    "beams": 360,
+    "min_dist": 1.2282131910324097,
+    "status": "PASS"
+  },
+  "test_3_single_goal": {
+    "destination": "living_room",
+    "target": [
+      4.0,
+      -2.5
+    ],
+    "final_pose": [
+      3.795220282657183,
+      -2.3799229615912547
+    ],
+    "error_m": 0.23738834804602205,
+    "max_v": 0.5,
+    "final_v": 0.0,
+    "path_points": 231,
+    "status": "PASS"
+  },
+  "test_4_multi_waypoint": {
+    "mission": "Hallway -> Kitchen",
+    "state": "MISSION_EXECUTING",
+    "status": "PASS"
+  },
+  "test_5_pause_resume_cancel": {
+    "pause_state": "MISSION_PAUSED",
+    "pause_v": 0.0,
+    "resume_state": "MISSION_EXECUTING",
+    "cancel_state": "MISSION_CANCELLED",
+    "cancel_v": 0.0,
+    "status": "PASS"
+  },
+  "test_6_failure_recovery": {
+    "handled_state": "MISSION_CANCELLED",
+    "speech": "Navigation failure: Unable to compute collision-free trajectory.",
+    "status": "PASS"
+  },
+  "test_7_return_home": {
+    "state": "MISSION_EXECUTING",
+    "status": "PASS"
+  },
+  "test_8_voice_cycle": {
+    "interrupt_state": "MISSION_PAUSED",
+    "interrupt_v": 0.0,
+    "resume_state": "MISSION_EXECUTING",
+    "last_speech": "Goodbye! Resuming my mission now.",
+    "status": "PASS"
+  },
+  "test_9_estop_interlock": {
+    "estop_blocked_state": "EMERGENCY_STOP",
+    "cleared_state": "AUTONOMY_READY",
+    "status": "PASS"
+  },
+  "test_10_velocity_pipeline": {
+    "publishers": [
+      "gracemo_terrain_monitor"
+    ],
+    "sole_exclusive": true,
+    "status": "PASS"
+  }
+}

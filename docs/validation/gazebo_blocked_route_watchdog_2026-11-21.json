@@ -1,0 +1,109 @@
+{
+  "result": "FAIL",
+  "mission_id": "gazebo-smoke-66ae0bb93905",
+  "mission_completed": false,
+  "failure_state": "NAVIGATION_FAILURE",
+  "state_transitions": [
+    "AUTONOMY_READY",
+    "MISSION_ACCEPTED",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "OBSTACLE_HANDLING",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "OBSTACLE_HANDLING",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "OBSTACLE_HANDLING",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "NAVIGATION_FAILURE"
+  ],
+  "goal_map": {
+    "x": 4.5,
+    "y": 0.0
+  },
+  "start_map_pose": {
+    "x": -0.049,
+    "y": -0.042,
+    "yaw": -0.183
+  },
+  "final_map_pose": {
+    "x": 1.54,
+    "y": -0.343,
+    "yaw": -0.365
+  },
+  "goal_error_m": 2.98,
+  "odom_start": [
+    -0.05018757461486597,
+    -0.038763361439378745
+  ],
+  "odom_final": [
+    1.4489098459736856,
+    -0.311042215323722
+  ],
+  "max_odom_displacement_m": 1.528,
+  "mission_history": {
+    "mission_id": "gazebo-smoke-66ae0bb93905",
+    "name": "Gazebo point-to-point smoke",
+    "success": false,
+    "status": "FAILED",
+    "reason": "Retries exhausted (watchdog_stagnant_12s)",
+    "waypoints_completed": 0,
+    "total_waypoints": 1,
+    "duration_sec": 59.0,
+    "end_pose": {
+      "x": 1.55,
+      "y": -0.34
+    },
+    "timestamp": 1795226084.14564
+  },
+  "wall_time_sec": 60.0,
+  "simulation_clock_advances": 30276,
+  "scan_messages": 918,
+  "odom_messages": 3023,
+  "scenario": {
+    "world": "GRaCEmo apartment Gazebo Harmonic",
+    "temporary_obstacle": {
+      "type": "stationary box spawned into the in-memory world",
+      "center_xy_m": [
+        2.0,
+        -0.5
+      ],
+      "size_xyz_m": [
+        0.35,
+        0.35,
+        1.0
+      ]
+    },
+    "goal_xy_m": [
+      4.5,
+      0.0
+    ],
+    "world_file_modified": false
+  },
+  "bounded_failure_validation": {
+    "result": "PASS",
+    "expected_navigation_outcome": "NAVIGATION_FAILURE after retry exhaustion when no safe route was found",
+    "watchdog_timeout_sec": 12.0,
+    "watchdog_retries": 3,
+    "completion_time_sec": 59.0,
+    "false_arrival": false,
+    "collision_monitor_slowdown_events": 5,
+    "collision_monitor_stop_events": 5,
+    "post_failure_state": "NAVIGATION_FAILURE",
+    "post_failure_mux_status": {
+      "active_source": "NONE",
+      "zero_command_held": true,
+      "current_linear_x": 0.0,
+      "current_angular_z": 0.0
+    },
+    "post_failure_odom_speed_max_last_second_mps": 0.0129,
+    "post_failure_odom_drift_last_second_m": 0.0025,
+    "reroute_success": false
+  },
+  "limitations": [
+    "The robot did not complete a reroute around the new obstacle. This validates bounded detection and failure reporting, not obstacle avoidance success.",
+    "No moving-obstacle scenario was run."
+  ]
+}

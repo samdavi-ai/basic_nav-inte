@@ -1,0 +1,105 @@
+{
+  "result": "PASS",
+  "mission_id": "gazebo-smoke-c8f22cbd509a",
+  "mission_completed": true,
+  "failure_state": null,
+  "state_transitions": [
+    "AUTONOMY_READY",
+    "MISSION_ACCEPTED",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "DESTINATION_REACHED",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "DESTINATION_REACHED",
+    "MISSION_COMPLETED",
+    "WAITING_FOR_NEXT_MISSION",
+    "AUTONOMY_READY"
+  ],
+  "goal_map": {
+    "x": 4.5,
+    "y": 3.0
+  },
+  "start_map_pose": {
+    "x": -0.1,
+    "y": -0.104,
+    "yaw": -0.438
+  },
+  "final_map_pose": {
+    "x": 4.672,
+    "y": 2.851,
+    "yaw": 1.754
+  },
+  "goal_error_m": 0.228,
+  "odom_start": [
+    -0.1060882627927387,
+    -0.08617704184299729
+  ],
+  "odom_final": [
+    4.729121199498427,
+    2.9363254192350503
+  ],
+  "max_odom_displacement_m": 5.697,
+  "mission_history": {
+    "mission_id": "gazebo-smoke-c8f22cbd509a",
+    "name": "Gazebo point-to-point smoke",
+    "success": true,
+    "status": "COMPLETED",
+    "reason": "",
+    "waypoints_completed": 2,
+    "total_waypoints": 2,
+    "duration_sec": 22.6,
+    "end_pose": {
+      "x": 4.67,
+      "y": 2.85
+    },
+    "timestamp": 1795232175.7214365
+  },
+  "wall_time_sec": 23.6,
+  "simulation_clock_advances": 12060,
+  "scan_messages": 366,
+  "odom_messages": 1206,
+  "scenario": {
+    "world": "GRaCEmo apartment Gazebo Harmonic",
+    "temporary_obstacle": {
+      "type": "stationary box spawned in-memory",
+      "center_xy_m": [
+        4.15,
+        2.25
+      ],
+      "size_xyz_m": [
+        0.45,
+        0.45,
+        1.0
+      ]
+    },
+    "goal_xy_m": [
+      4.5,
+      3.0
+    ],
+    "world_file_modified": false,
+    "nav2_config_override": null
+  },
+  "obstacle_validation": {
+    "result": "PASS for this one open-room static obstacle under final coordinator arrival guards",
+    "mission_waypoints_completed": 2,
+    "mission_waypoints_total": 2,
+    "collision_monitor_slowdown_log_entries": 0,
+    "collision_monitor_stop_log_entries": 0,
+    "path_trace": "gazebo_final_openroom_obstacle_path_2026-11-21.json",
+    "path_length_m": 7.592,
+    "min_center_to_box_surface_m": 0.528,
+    "estimated_clearance_after_circular_footprint_m": 0.038,
+    "clearance_method": "Odom path translated by mission-start map/odom offset; distance to the axis-aligned box surface minus the configured footprint circumscribed radius (0.49 m). This is a conservative geometric estimate, not a physical measurement.",
+    "arrival_guard_m": {
+      "map": 0.3,
+      "gazebo_ground_truth": 0.35,
+      "map_ground_truth_drift": 0.15
+    },
+    "limitations": [
+      "One stationary object and one initial pose only.",
+      "The closest estimated margin is small and needs repeated tests across object placements and robot headings.",
+      "Moving obstacles and randomized obstacle layouts were not tested."
+    ]
+  }
+}

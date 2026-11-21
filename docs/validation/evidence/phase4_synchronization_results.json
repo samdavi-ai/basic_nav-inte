@@ -1,0 +1,87 @@
+{
+  "test1_stationary": {
+    "test": "TEST 1: Stationary Robot",
+    "status": "PASS",
+    "max_gz_drift_m": 0.003001638036006564,
+    "max_odom_drift_m": 0.0030017015371093456,
+    "max_tf_drift_m": 0.0030017015371093456,
+    "initial_gz_pose": [
+      0.0033307540524549484,
+      0.004064905961631261,
+      0.02499387237505552,
+      0.010981648981653344
+    ],
+    "initial_odom_pose": [
+      0.0033236651270526153,
+      0.0040559601690901585,
+      -1.8029374290844113e-06,
+      0.010958531643012304
+    ],
+    "initial_tf_map_pose": [
+      -0.008005764932440023,
+      -0.01599560113326353,
+      -3.7417933779926306e-06,
+      0.005360876062286578
+    ]
+  },
+  "test2_controlled_navigation": {
+    "test": "TEST 2: Real Controlled Navigation",
+    "status": "PASS",
+    "gazebo_forward_motion_m": 1.1809999999999998,
+    "final_distance_to_goal_m": 0.219,
+    "max_cmd_vel_m_s": 0.5,
+    "max_wheel_rot_rad_s": 4.543478260315686,
+    "max_err_gazebo_vs_odom_m": 0.0085,
+    "max_err_gazebo_vs_map_m": 0.0518,
+    "samples_count": 9,
+    "arrived": true
+  },
+  "test3_return_to_origin": {
+    "test": "TEST 3: Return to Origin Mission",
+    "status": "PASS",
+    "initial_transit_dist_m": 1.2813220173034456,
+    "final_error_m": 0.2275,
+    "target_coords": [
+      0.0,
+      0.0
+    ],
+    "final_gz_pose": [
+      0.22178734491714472,
+      0.050480308352504354,
+      0.024999560898024114,
+      0.03091486943256444
+    ],
+    "arrived": true
+  },
+  "test4_localization_consistency": {
+    "test": "TEST 4: Localization Consistency",
+    "status": "PASS",
+    "cov_xx": 0.3519261095303259,
+    "cov_yy": 0.13024690399301064,
+    "tf_map_odom": [
+      0.028066957917413277,
+      0.002512614171365395,
+      -2.8593285879542626e-06,
+      -0.03579932394644701
+    ],
+    "tf_odom_base": [
+      0.22178734491742866,
+      0.05048030835260397,
+      -4.390781725045756e-07,
+      0.03091486943256916
+    ],
+    "tf_map_base": [
+      0.2175060857244337,
+      0.02309220756785499,
+      5.325467111248761e-06,
+      0.06354681345440036
+    ]
+  },
+  "test5_blocked_robot": {
+    "test": "TEST 5: Blocked Robot Resilience",
+    "status": "PASS",
+    "gazebo_displacement_m": 0.10119897307568489,
+    "odom_displacement_m": 0.10119814239042876,
+    "ghost_odometry_advance_m": 8.306852561229539e-07
+  }
+}

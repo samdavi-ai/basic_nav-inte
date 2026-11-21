@@ -1,0 +1,99 @@
+{
+  "result": "PASS",
+  "mission_id": "gazebo-smoke-d5ffd9761f88",
+  "mission_completed": true,
+  "failure_state": null,
+  "state_transitions": [
+    "AUTONOMY_READY",
+    "MISSION_ACCEPTED",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "DESTINATION_REACHED",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "DESTINATION_REACHED",
+    "MISSION_COMPLETED",
+    "WAITING_FOR_NEXT_MISSION",
+    "AUTONOMY_READY"
+  ],
+  "goal_map": {
+    "x": 4.5,
+    "y": 3.0
+  },
+  "start_map_pose": {
+    "x": 0.247,
+    "y": -0.173,
+    "yaw": -1.183
+  },
+  "final_map_pose": {
+    "x": 4.666,
+    "y": 2.853,
+    "yaw": 1.757
+  },
+  "goal_error_m": 0.222,
+  "odom_start": [
+    0.23624187928590998,
+    -0.14912117170713513
+  ],
+  "odom_final": [
+    4.738327414992896,
+    2.92100097641906
+  ],
+  "max_odom_displacement_m": 5.446,
+  "mission_history": {
+    "mission_id": "gazebo-smoke-d5ffd9761f88",
+    "name": "Gazebo point-to-point smoke",
+    "success": true,
+    "status": "COMPLETED",
+    "reason": "",
+    "waypoints_completed": 2,
+    "total_waypoints": 2,
+    "duration_sec": 25.5,
+    "end_pose": {
+      "x": 4.67,
+      "y": 2.86
+    },
+    "timestamp": 1795227316.2218513
+  },
+  "wall_time_sec": 26.5,
+  "simulation_clock_advances": 13359,
+  "scan_messages": 405,
+  "odom_messages": 1341,
+  "scenario": {
+    "world": "GRaCEmo apartment Gazebo Harmonic",
+    "temporary_obstacle": {
+      "type": "stationary box spawned in-memory",
+      "center_xy_m": [
+        4.15,
+        2.25
+      ],
+      "size_xyz_m": [
+        0.45,
+        0.45,
+        1.0
+      ]
+    },
+    "goal_xy_m": [
+      4.5,
+      3.0
+    ],
+    "world_file_modified": false,
+    "nav2_config_override": null
+  },
+  "obstacle_validation": {
+    "result": "PASS for this one open-room static obstacle",
+    "mission_waypoints_completed": 2,
+    "mission_waypoints_total": 2,
+    "collision_monitor_slowdown_events": 0,
+    "collision_monitor_stop_events": 0,
+    "path_trace": "gazebo_openroom_obstacle_path_2026-11-21.json",
+    "min_center_to_box_surface_m": 0.528,
+    "estimated_clearance_after_circular_footprint_m": 0.038,
+    "clearance_method": "Odometry was translated by the observed start map-to-odom offset; configured footprint corners imply a conservative 0.49 m circumscribed radius. Estimate is a geometric lower bound, not a physical measurement.",
+    "limitations": [
+      "One stationary object and one initial pose only.",
+      "The close estimated clearance needs repeated tests across object placements and robot headings.",
+      "Moving obstacles and randomized obstacle layouts were not tested."
+    ]
+  }
+}

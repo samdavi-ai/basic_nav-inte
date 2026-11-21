@@ -1,0 +1,73 @@
+{
+  "result": "PASS",
+  "mission_id": "gazebo-smoke-9c211a9169d2",
+  "mission_completed": true,
+  "failure_state": null,
+  "state_transitions": [
+    "AUTONOMY_READY",
+    "MISSION_ACCEPTED",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "DESTINATION_REACHED",
+    "MISSION_COMPLETED",
+    "WAITING_FOR_NEXT_MISSION",
+    "AUTONOMY_READY"
+  ],
+  "goal_map": {
+    "x": 4.5,
+    "y": 0.0
+  },
+  "start_map_pose": {
+    "x": 1.004,
+    "y": -0.103,
+    "yaw": -2.084
+  },
+  "final_map_pose": {
+    "x": 4.263,
+    "y": 0.026,
+    "yaw": -0.119
+  },
+  "goal_error_m": 0.238,
+  "odom_start": [
+    0.9720725278898822,
+    -0.08898589293960946
+  ],
+  "odom_final": [
+    4.3059626202895664,
+    0.07454458766010695
+  ],
+  "max_odom_displacement_m": 3.328,
+  "mission_history": {
+    "mission_id": "gazebo-smoke-9c211a9169d2",
+    "name": "Gazebo point-to-point smoke",
+    "success": true,
+    "status": "COMPLETED",
+    "reason": "",
+    "waypoints_completed": 1,
+    "total_waypoints": 1,
+    "duration_sec": 16.8,
+    "end_pose": {
+      "x": 4.25,
+      "y": 0.03
+    },
+    "timestamp": 1795226320.6686647
+  },
+  "wall_time_sec": 17.8,
+  "simulation_clock_advances": 9016,
+  "scan_messages": 273,
+  "odom_messages": 908,
+  "scenario": {
+    "temporary_obstacle_center_xy_m": [
+      2.0,
+      -0.5
+    ],
+    "temporary_obstacle_size_xyz_m": [
+      0.35,
+      0.35,
+      1.0
+    ],
+    "world_file_modified": false,
+    "runtime_controller_override": "FollowPath.BaseObstacle.scale=0.2"
+  },
+  "validation_scope": "Mission completion passed, but this offset obstacle did not establish a forced route-around. Do not count this result as obstacle-avoidance evidence."
+}

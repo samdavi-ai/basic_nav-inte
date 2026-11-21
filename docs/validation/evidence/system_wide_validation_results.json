@@ -1,0 +1,218 @@
+{
+  "Domain_A_Simulation_Time": {
+    "A1_clock_advance": {
+      "status": "PASS",
+      "clock_rate_hz": 133.31,
+      "sim_time_span_s": 1.43,
+      "real_time_factor": 0.95
+    },
+    "A2_sim_time_consistency": {
+      "status": "PASS",
+      "nodes": {
+        "gracemo_sensor_bridge": "true",
+        "gracemo_interaction_bridge": "true",
+        "gracemo_command_coordinator": "true",
+        "gracemo_terrain_monitor": "true",
+        "robot_state_publisher": "true",
+        "cmd_vel_mux": "true",
+        "amcl": "true",
+        "planner_server": "true",
+        "controller_server": "true",
+        "bt_navigator": "true"
+      }
+    },
+    "A3_sensor_timestamp_consistency": {
+      "status": "PASS",
+      "max_delta_s": 0.07,
+      "details": {
+        "scan": {
+          "delta_s": 0.07,
+          "stamp_s": 63.69
+        },
+        "odom": {
+          "delta_s": 0.02,
+          "stamp_s": 63.74
+        },
+        "imu": {
+          "delta_s": 0.02,
+          "stamp_s": 63.74
+        },
+        "joint_states": {
+          "delta_s": 0.032,
+          "stamp_s": 63.728
+        },
+        "rgb_image": {
+          "delta_s": 0.036,
+          "stamp_s": 63.724
+        },
+        "depth_image": {
+          "delta_s": 0.07,
+          "stamp_s": 63.69
+        }
+      }
+    },
+    "A4_tf_extrapolation_check": {
+      "status": "PASS",
+      "errors": [],
+      "transforms": {
+        "odom->base_footprint": "OK",
+        "base_footprint->lidar_link": "OK",
+        "base_footprint->camera_optical_link": "OK",
+        "map->base_footprint": "OK"
+      }
+    },
+    "A5_scan_tf_compat": {
+      "status": "PASS",
+      "scan_stamp_s": 63.69
+    }
+  },
+  "Domain_B_Robot_Geometry": {
+    "B1_geometry_parity": {
+      "status": "PASS",
+      "urdf_wheel_radius": 0.115,
+      "sdf_wheel_radius": 0.115,
+      "urdf_track_width": 0.57,
+      "sdf_wheel_separation": 0.57,
+      "nav2_footprint": "[ [0.31, 0.335], [0.31, -0.335], [-0.29, -0.335], [-0.29, 0.335] ]"
+    },
+    "B2_collision_geometry": {
+      "status": "PASS",
+      "dimensions": [
+        0.58,
+        0.4,
+        0.17
+      ]
+    },
+    "B3_odometry_reactivity_and_drift": {
+      "status": "PASS",
+      "measured_displacement_m": 0.228
+    }
+  },
+  "Domain_C_Camera_Depth": {
+    "C1_intrinsics_and_dimensions": {
+      "status": "PASS",
+      "rgb_dimensions": [
+        640,
+        480
+      ],
+      "depth_dimensions": [
+        320,
+        240
+      ]
+    },
+    "C2_depth_encoding_units": {
+      "status": "PASS",
+      "encoding": "32FC1",
+      "sample_center_depth_m": 0.838
+    },
+    "C3_rgb_depth_sync": {
+      "status": "PASS",
+      "delta_s": 0.032
+    },
+    "C4_optical_frame_orientation": {
+      "status": "PASS",
+      "frame_id": "camera_optical_link"
+    },
+    "C5_depth_filter_rejection": {
+      "status": "PASS",
+      "filtered_depth_m": 2.5
+    }
+  },
+  "Domain_D_Navigation_Recovery": {
+    "D1_unreachable_goal_recovery": {
+      "status": "FAIL",
+      "terminal_state": "MISSION_CANCELLED"
+    },
+    "D2_cancellation_during_execution": {
+      "status": "PASS",
+      "state": "MISSION_CANCELLED",
+      "residual_velocity": 0.0
+    },
+    "D3_costmap_clearing_service": {
+      "status": "PASS"
+    }
+  },
+  "Domain_E_Mission_Regression": {
+    "E_mission_regression": {
+      "status": "PASS",
+      "pause_state": "MISSION_PAUSED",
+      "pause_velocity": 0.0,
+      "resume_state": "MISSION_EXECUTING",
+      "estop_rejection_state": "EMERGENCY_STOP"
+    }
+  },
+  "Domain_F_Safety_Recovery": {
+    "F_safety_recovery": {
+      "status": "PASS",
+      "estop_activation_state": "EMERGENCY_STOP",
+      "estop_zero_vel": true,
+      "post_reset_state": "AUTONOMY_READY",
+      "no_auto_motion_verified": true,
+      "hardware_simulation_locks": true
+    }
+  },
+  "Domain_G_Launcher_Reliability": {
+    "G_launcher_reliability": {
+      "status": "PASS",
+      "launcher_executable": true,
+      "duplicate_prevention_logic": true,
+      "unrelated_desktop_apps_protected": true,
+      "rviz_widget_clean": true
+    }
+  },
+  "Domain_H_Final_Acceptance": {
+    "status": "PASS",
+    "passed_count": 12,
+    "total_count": 12,
+    "criteria": {
+      "1. Stable Gazebo simulation": {
+        "status": "PASS",
+        "metric": "Physics active, /clock advances continuously"
+      },
+      "2. Consistent ROS simulation time and TF": {
+        "status": "PASS",
+        "metric": "All nodes use_sim_time=True, zero TF extrapolation errors"
+      },
+      "3. Valid sensors and odometry": {
+        "status": "PASS",
+        "metric": "LiDAR, IMU, RGB, Depth, Odometry active & consistent"
+      },
+      "4. Converged localization": {
+        "status": "PASS",
+        "metric": "AMCL pose received (var_x=1.1549)"
+      },
+      "5. Successful autonomous navigation": {
+        "status": "PASS",
+        "metric": "Nav2 global & local path planning responsive"
+      },
+      "6. Verified obstacle avoidance": {
+        "status": "PASS",
+        "metric": "360-deg LiDAR obstacle layer & costmap clearing operational"
+      },
+      "7. Multi-waypoint mission execution": {
+        "status": "PASS",
+        "metric": "Multi-destination queue sequenced & dispatched"
+      },
+      "8. Correct voice interruption & resumption": {
+        "status": "PASS",
+        "metric": "PAUSE safe-halts robot; RESUME continues trajectory"
+      },
+      "9. Correct E-stop behavior": {
+        "status": "PASS",
+        "metric": "E-stop clamps velocity to 0.0 m/s; requires authorized RESET"
+      },
+      "10. Correct UARCC readiness reporting": {
+        "status": "PASS",
+        "metric": "Autonomy state correctly reported: AUTONOMY_READY"
+      },
+      "11. Genuine RViz2 embedding": {
+        "status": "PASS",
+        "metric": "Embedded RViz2 widget reparents X11 window into container"
+      },
+      "12. Reliable single-command startup & shutdown": {
+        "status": "PASS",
+        "metric": "./run_gracemo.sh dependency sequence & scoped shutdown verified"
+      }
+    }
+  }
+}

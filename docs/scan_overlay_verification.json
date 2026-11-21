@@ -1,0 +1,87 @@
+[
+  {
+    "pose_name": "Pose 1: Hallway Center (0.0, 0.0)",
+    "coords": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "old_map": {
+      "mean_residual_m": 0.2327,
+      "max_residual_m": 0.9823
+    },
+    "new_map": {
+      "mean_residual_m": 0.0252,
+      "max_residual_m": 0.0707
+    },
+    "residual_reduction_m": 0.2075
+  },
+  {
+    "pose_name": "Pose 2: Hallway West (-2.0, 0.0)",
+    "coords": [
+      -2.0,
+      0.0,
+      0.0
+    ],
+    "old_map": {
+      "mean_residual_m": 0.246,
+      "max_residual_m": 0.85
+    },
+    "new_map": {
+      "mean_residual_m": 0.026,
+      "max_residual_m": 0.0707
+    },
+    "residual_reduction_m": 0.22
+  },
+  {
+    "pose_name": "Pose 3: Kitchen Target (-5.0, -2.5)",
+    "coords": [
+      -5.0,
+      -2.5,
+      -1.57
+    ],
+    "old_map": {
+      "mean_residual_m": 0.3398,
+      "max_residual_m": 1.5
+    },
+    "new_map": {
+      "mean_residual_m": 0.0126,
+      "max_residual_m": 0.05
+    },
+    "residual_reduction_m": 0.3272
+  },
+  {
+    "pose_name": "Pose 4: Bedroom Target (-5.0, 2.2)",
+    "coords": [
+      -5.0,
+      2.2,
+      1.57
+    ],
+    "old_map": {
+      "mean_residual_m": 0.2949,
+      "max_residual_m": 1.15
+    },
+    "new_map": {
+      "mean_residual_m": 0.0265,
+      "max_residual_m": 0.0707
+    },
+    "residual_reduction_m": 0.2683
+  },
+  {
+    "pose_name": "Pose 5: Study Target (4.5, 3.0)",
+    "coords": [
+      4.5,
+      3.0,
+      1.57
+    ],
+    "old_map": {
+      "mean_residual_m": 0.2622,
+      "max_residual_m": 0.95
+    },
+    "new_map": {
+      "mean_residual_m": 0.0271,
+      "max_residual_m": 0.0707
+    },
+    "residual_reduction_m": 0.235
+  }
+]

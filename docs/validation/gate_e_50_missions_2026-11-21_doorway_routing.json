@@ -1,0 +1,1971 @@
+{
+  "campaign": "Gate E: 50 Consecutive Random Multi-Room Missions",
+  "run_id": "a1590638",
+  "seed": 42,
+  "scenario": "fixed apartment map with static obstacles; obstacle placement was not randomized",
+  "amcl_enabled": true,
+  "static_localization": false,
+  "manual_resets_performed": 0,
+  "target_missions": 50,
+  "attempted_missions": 50,
+  "completed": 50,
+  "all_missions_successful": true,
+  "campaign_status": "COMPLETED",
+  "completion_rate_pct": 100.0,
+  "false_reached_count": 0,
+  "false_blocked_count": 0,
+  "failures_by_reason": {},
+  "campaign_abort_reason": null,
+  "mission_records": [
+    {
+      "mission_id": 1,
+      "coordinator_mission_id": "gate-e-a1590638-001",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -0.05591050749958961,
+        "y": 0.11038249216273217,
+        "yaw": -0.48612050143565994
+      },
+      "start_map_pose": {
+        "x": -0.028,
+        "y": 0.086,
+        "yaw": -0.432
+      },
+      "end_ground_truth": {
+        "x": -4.961,
+        "y": -2.239,
+        "yaw": -1.441
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 26.5,
+      "odom_path_length_m": 6.654,
+      "gz_dist_to_goal_m": 0.264,
+      "tf_dist_to_goal_m": 0.26,
+      "map_vs_gz_drift_m": 0.079,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 2,
+      "coordinator_mission_id": "gate-e-a1590638-002",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": -4.966346424499113,
+        "y": -2.2340578389654726,
+        "yaw": -1.4635054805437442
+      },
+      "start_map_pose": {
+        "x": -5.046,
+        "y": -2.239,
+        "yaw": -1.458
+      },
+      "end_ground_truth": {
+        "x": -4.941,
+        "y": 2.031,
+        "yaw": 1.534
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 23.04,
+      "odom_path_length_m": 4.761,
+      "gz_dist_to_goal_m": 0.179,
+      "tf_dist_to_goal_m": 0.24,
+      "map_vs_gz_drift_m": 0.089,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 3,
+      "coordinator_mission_id": "gate-e-a1590638-003",
+      "target_room": "study",
+      "target_coords": [
+        4.5,
+        3.0
+      ],
+      "start_ground_truth": {
+        "x": -4.935581206301841,
+        "y": 2.024864554936196,
+        "yaw": 1.5101669798978825
+      },
+      "start_map_pose": {
+        "x": -4.99,
+        "y": 1.954,
+        "yaw": 1.506
+      },
+      "end_ground_truth": {
+        "x": 4.734,
+        "y": 2.946,
+        "yaw": 1.758
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 48.03,
+      "odom_path_length_m": 14.729,
+      "gz_dist_to_goal_m": 0.24,
+      "tf_dist_to_goal_m": 0.217,
+      "map_vs_gz_drift_m": 0.106,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 4,
+      "coordinator_mission_id": "gate-e-a1590638-004",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": 4.7392306831644015,
+        "y": 2.9415319989799658,
+        "yaw": 1.7358535755465458
+      },
+      "start_map_pose": {
+        "x": 4.667,
+        "y": 2.86,
+        "yaw": 1.746
+      },
+      "end_ground_truth": {
+        "x": -5.036,
+        "y": 2.009,
+        "yaw": 1.345
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 41.03,
+      "odom_path_length_m": 13.736,
+      "gz_dist_to_goal_m": 0.194,
+      "tf_dist_to_goal_m": 0.244,
+      "map_vs_gz_drift_m": 0.056,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 5,
+      "coordinator_mission_id": "gate-e-a1590638-005",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": -5.032922732698276,
+        "y": 2.003119578286098,
+        "yaw": 1.3227728354649873
+      },
+      "start_map_pose": {
+        "x": -5.071,
+        "y": 1.962,
+        "yaw": 1.318
+      },
+      "end_ground_truth": {
+        "x": -0.161,
+        "y": -0.036,
+        "yaw": 0.123
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 25.02,
+      "odom_path_length_m": 6.244,
+      "gz_dist_to_goal_m": 0.165,
+      "tf_dist_to_goal_m": 0.232,
+      "map_vs_gz_drift_m": 0.073,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 6,
+      "coordinator_mission_id": "gate-e-a1590638-006",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": -0.16594157435000745,
+        "y": -0.04168270348634886,
+        "yaw": 0.09941085379378514
+      },
+      "start_map_pose": {
+        "x": -0.221,
+        "y": -0.09,
+        "yaw": 0.097
+      },
+      "end_ground_truth": {
+        "x": -5.042,
+        "y": 2.066,
+        "yaw": 1.332
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 27.5,
+      "odom_path_length_m": 6.708,
+      "gz_dist_to_goal_m": 0.14,
+      "tf_dist_to_goal_m": 0.231,
+      "map_vs_gz_drift_m": 0.091,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 7,
+      "coordinator_mission_id": "gate-e-a1590638-007",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -5.038062051517588,
+        "y": 2.0597267350033994,
+        "yaw": 1.3103204090413876
+      },
+      "start_map_pose": {
+        "x": -5.072,
+        "y": 1.975,
+        "yaw": 1.306
+      },
+      "end_ground_truth": {
+        "x": -4.933,
+        "y": -2.24,
+        "yaw": -1.608
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 20.5,
+      "odom_path_length_m": 4.376,
+      "gz_dist_to_goal_m": 0.268,
+      "tf_dist_to_goal_m": 0.24,
+      "map_vs_gz_drift_m": 0.071,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 8,
+      "coordinator_mission_id": "gate-e-a1590638-008",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": -4.937556781230116,
+        "y": -2.234539316139258,
+        "yaw": -1.6309538313474712
+      },
+      "start_map_pose": {
+        "x": -5.005,
+        "y": -2.254,
+        "yaw": -1.627
+      },
+      "end_ground_truth": {
+        "x": -4.894,
+        "y": 2.024,
+        "yaw": 1.568
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 22.5,
+      "odom_path_length_m": 4.386,
+      "gz_dist_to_goal_m": 0.206,
+      "tf_dist_to_goal_m": 0.239,
+      "map_vs_gz_drift_m": 0.08,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 9,
+      "coordinator_mission_id": "gate-e-a1590638-009",
+      "target_room": "living_room",
+      "target_coords": [
+        4.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -4.8886145600269355,
+        "y": 2.0178980656743186,
+        "yaw": 1.543009064266692
+      },
+      "start_map_pose": {
+        "x": -4.944,
+        "y": 1.96,
+        "yaw": 1.536
+      },
+      "end_ground_truth": {
+        "x": 4.22,
+        "y": -2.366,
+        "yaw": -1.782
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 49.04,
+      "odom_path_length_m": 14.315,
+      "gz_dist_to_goal_m": 0.258,
+      "tf_dist_to_goal_m": 0.193,
+      "map_vs_gz_drift_m": 0.065,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 10,
+      "coordinator_mission_id": "gate-e-a1590638-010",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": 4.216213223654496,
+        "y": -2.359350814002431,
+        "yaw": -1.8043872066780653
+      },
+      "start_map_pose": {
+        "x": 4.162,
+        "y": -2.396,
+        "yaw": -1.812
+      },
+      "end_ground_truth": {
+        "x": -5.019,
+        "y": -2.244,
+        "yaw": -1.394
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 47.04,
+      "odom_path_length_m": 14.654,
+      "gz_dist_to_goal_m": 0.257,
+      "tf_dist_to_goal_m": 0.247,
+      "map_vs_gz_drift_m": 0.049,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 11,
+      "coordinator_mission_id": "gate-e-a1590638-011",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": -5.024768250546766,
+        "y": -2.2397061620891354,
+        "yaw": -1.4160042051946666
+      },
+      "start_map_pose": {
+        "x": -5.071,
+        "y": -2.258,
+        "yaw": -1.425
+      },
+      "end_ground_truth": {
+        "x": -4.884,
+        "y": 2.034,
+        "yaw": 1.609
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 22.02,
+      "odom_path_length_m": 4.745,
+      "gz_dist_to_goal_m": 0.203,
+      "tf_dist_to_goal_m": 0.232,
+      "map_vs_gz_drift_m": 0.081,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 12,
+      "coordinator_mission_id": "gate-e-a1590638-012",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -4.878545469552351,
+        "y": 2.027953194780874,
+        "yaw": 1.584715141574461
+      },
+      "start_map_pose": {
+        "x": -4.936,
+        "y": 1.97,
+        "yaw": 1.577
+      },
+      "end_ground_truth": {
+        "x": -4.984,
+        "y": -2.255,
+        "yaw": -1.577
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 22.51,
+      "odom_path_length_m": 4.809,
+      "gz_dist_to_goal_m": 0.246,
+      "tf_dist_to_goal_m": 0.237,
+      "map_vs_gz_drift_m": 0.035,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 13,
+      "coordinator_mission_id": "gate-e-a1590638-013",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": -4.98910212075973,
+        "y": -2.2489858775373452,
+        "yaw": -1.6005183526670808
+      },
+      "start_map_pose": {
+        "x": -5.023,
+        "y": -2.258,
+        "yaw": -1.601
+      },
+      "end_ground_truth": {
+        "x": -0.147,
+        "y": 0.004,
+        "yaw": 0.147
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 29.53,
+      "odom_path_length_m": 6.877,
+      "gz_dist_to_goal_m": 0.147,
+      "tf_dist_to_goal_m": 0.235,
+      "map_vs_gz_drift_m": 0.098,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 14,
+      "coordinator_mission_id": "gate-e-a1590638-014",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": -0.1514457985477327,
+        "y": -0.0013619384943459188,
+        "yaw": 0.12491847731664467
+      },
+      "start_map_pose": {
+        "x": -0.234,
+        "y": -0.054,
+        "yaw": 0.125
+      },
+      "end_ground_truth": {
+        "x": -5.053,
+        "y": 2.044,
+        "yaw": 1.346
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 26.01,
+      "odom_path_length_m": 6.735,
+      "gz_dist_to_goal_m": 0.165,
+      "tf_dist_to_goal_m": 0.238,
+      "map_vs_gz_drift_m": 0.076,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 15,
+      "coordinator_mission_id": "gate-e-a1590638-015",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -5.049395878182673,
+        "y": 2.0382017450048413,
+        "yaw": 1.325292799807368
+      },
+      "start_map_pose": {
+        "x": -5.094,
+        "y": 1.976,
+        "yaw": 1.32
+      },
+      "end_ground_truth": {
+        "x": -4.935,
+        "y": -2.237,
+        "yaw": -1.538
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 21.01,
+      "odom_path_length_m": 4.368,
+      "gz_dist_to_goal_m": 0.271,
+      "tf_dist_to_goal_m": 0.234,
+      "map_vs_gz_drift_m": 0.069,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 16,
+      "coordinator_mission_id": "gate-e-a1590638-016",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": -4.940763022260574,
+        "y": -2.23163058976433,
+        "yaw": -1.561543329382709
+      },
+      "start_map_pose": {
+        "x": -5.004,
+        "y": -2.26,
+        "yaw": -1.551
+      },
+      "end_ground_truth": {
+        "x": -0.154,
+        "y": 0.011,
+        "yaw": 0.105
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 39.03,
+      "odom_path_length_m": 6.92,
+      "gz_dist_to_goal_m": 0.155,
+      "tf_dist_to_goal_m": 0.238,
+      "map_vs_gz_drift_m": 0.1,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 17,
+      "coordinator_mission_id": "gate-e-a1590638-017",
+      "target_room": "living_room",
+      "target_coords": [
+        4.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -0.15941036150254503,
+        "y": 0.005683642117956707,
+        "yaw": 0.08186274952535316
+      },
+      "start_map_pose": {
+        "x": -0.237,
+        "y": -0.059,
+        "yaw": 0.074
+      },
+      "end_ground_truth": {
+        "x": 4.171,
+        "y": -2.306,
+        "yaw": -1.77
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 24.5,
+      "odom_path_length_m": 7.162,
+      "gz_dist_to_goal_m": 0.259,
+      "tf_dist_to_goal_m": 0.19,
+      "map_vs_gz_drift_m": 0.069,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 18,
+      "coordinator_mission_id": "gate-e-a1590638-018",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": 4.167544062669004,
+        "y": -2.300074128827434,
+        "yaw": -1.790636421264118
+      },
+      "start_map_pose": {
+        "x": 4.115,
+        "y": -2.351,
+        "yaw": -1.791
+      },
+      "end_ground_truth": {
+        "x": -5.051,
+        "y": 2.054,
+        "yaw": 1.358
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 43.02,
+      "odom_path_length_m": 14.156,
+      "gz_dist_to_goal_m": 0.155,
+      "tf_dist_to_goal_m": 0.23,
+      "map_vs_gz_drift_m": 0.077,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 19,
+      "coordinator_mission_id": "gate-e-a1590638-019",
+      "target_room": "living_room",
+      "target_coords": [
+        4.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -5.047194727020436,
+        "y": 2.048156952339258,
+        "yaw": 1.3371367343201344
+      },
+      "start_map_pose": {
+        "x": -5.087,
+        "y": 1.982,
+        "yaw": 1.33
+      },
+      "end_ground_truth": {
+        "x": 4.154,
+        "y": -2.319,
+        "yaw": -1.778
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 47.5,
+      "odom_path_length_m": 13.431,
+      "gz_dist_to_goal_m": 0.238,
+      "tf_dist_to_goal_m": 0.176,
+      "map_vs_gz_drift_m": 0.063,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 20,
+      "coordinator_mission_id": "gate-e-a1590638-020",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": 4.150121733261354,
+        "y": -2.3128094753190127,
+        "yaw": -1.800271184115723
+      },
+      "start_map_pose": {
+        "x": 4.107,
+        "y": -2.362,
+        "yaw": -1.806
+      },
+      "end_ground_truth": {
+        "x": 0.068,
+        "y": 0.145,
+        "yaw": -0.252
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 39.04,
+      "odom_path_length_m": 7.822,
+      "gz_dist_to_goal_m": 0.16,
+      "tf_dist_to_goal_m": 0.122,
+      "map_vs_gz_drift_m": 0.038,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 21,
+      "coordinator_mission_id": "gate-e-a1590638-021",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": 0.06239179281225246,
+        "y": 0.14174860812797024,
+        "yaw": -0.27298333398345265
+      },
+      "start_map_pose": {
+        "x": 0.045,
+        "y": 0.107,
+        "yaw": -0.229
+      },
+      "end_ground_truth": {
+        "x": -5.021,
+        "y": -2.266,
+        "yaw": -1.375
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 38.03,
+      "odom_path_length_m": 6.993,
+      "gz_dist_to_goal_m": 0.235,
+      "tf_dist_to_goal_m": 0.241,
+      "map_vs_gz_drift_m": 0.061,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 22,
+      "coordinator_mission_id": "gate-e-a1590638-022",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": -5.027092503577151,
+        "y": -2.261492231952578,
+        "yaw": -1.3977766287183102
+      },
+      "start_map_pose": {
+        "x": -5.087,
+        "y": -2.269,
+        "yaw": -1.393
+      },
+      "end_ground_truth": {
+        "x": -0.162,
+        "y": 0.029,
+        "yaw": 0.044
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 32.02,
+      "odom_path_length_m": 6.843,
+      "gz_dist_to_goal_m": 0.165,
+      "tf_dist_to_goal_m": 0.238,
+      "map_vs_gz_drift_m": 0.097,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 23,
+      "coordinator_mission_id": "gate-e-a1590638-023",
+      "target_room": "living_room",
+      "target_coords": [
+        4.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -0.16779067951259657,
+        "y": 0.023350167762996782,
+        "yaw": 0.019507810721977232
+      },
+      "start_map_pose": {
+        "x": -0.241,
+        "y": -0.04,
+        "yaw": 0.016
+      },
+      "end_ground_truth": {
+        "x": 4.202,
+        "y": -2.367,
+        "yaw": -1.8
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 23.03,
+      "odom_path_length_m": 7.268,
+      "gz_dist_to_goal_m": 0.242,
+      "tf_dist_to_goal_m": 0.16,
+      "map_vs_gz_drift_m": 0.083,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 24,
+      "coordinator_mission_id": "gate-e-a1590638-024",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": 4.19805489933738,
+        "y": -2.360791568406582,
+        "yaw": -1.8219022645455478
+      },
+      "start_map_pose": {
+        "x": 4.135,
+        "y": -2.414,
+        "yaw": -1.834
+      },
+      "end_ground_truth": {
+        "x": 0.055,
+        "y": 0.15,
+        "yaw": -0.247
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 40.52,
+      "odom_path_length_m": 7.894,
+      "gz_dist_to_goal_m": 0.16,
+      "tf_dist_to_goal_m": 0.164,
+      "map_vs_gz_drift_m": 0.028,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 25,
+      "coordinator_mission_id": "gate-e-a1590638-025",
+      "target_room": "study",
+      "target_coords": [
+        4.5,
+        3.0
+      ],
+      "start_ground_truth": {
+        "x": 0.049146019375884566,
+        "y": 0.14645331136354173,
+        "yaw": -0.26869382714433443
+      },
+      "start_map_pose": {
+        "x": 0.076,
+        "y": 0.139,
+        "yaw": -0.22
+      },
+      "end_ground_truth": {
+        "x": 4.712,
+        "y": 2.913,
+        "yaw": 1.769
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 22.03,
+      "odom_path_length_m": 7.358,
+      "gz_dist_to_goal_m": 0.23,
+      "tf_dist_to_goal_m": 0.233,
+      "map_vs_gz_drift_m": 0.1,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 26,
+      "coordinator_mission_id": "gate-e-a1590638-026",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": 4.718164808455817,
+        "y": 2.908473923988478,
+        "yaw": 1.7462746343162423
+      },
+      "start_map_pose": {
+        "x": 4.664,
+        "y": 2.824,
+        "yaw": 1.752
+      },
+      "end_ground_truth": {
+        "x": -5.062,
+        "y": 2.036,
+        "yaw": 1.303
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 39.01,
+      "odom_path_length_m": 13.786,
+      "gz_dist_to_goal_m": 0.175,
+      "tf_dist_to_goal_m": 0.251,
+      "map_vs_gz_drift_m": 0.076,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 27,
+      "coordinator_mission_id": "gate-e-a1590638-027",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": -5.0585014058457975,
+        "y": 2.0304091355280836,
+        "yaw": 1.2823479274787744
+      },
+      "start_map_pose": {
+        "x": -5.091,
+        "y": 1.962,
+        "yaw": 1.277
+      },
+      "end_ground_truth": {
+        "x": -0.154,
+        "y": -0.044,
+        "yaw": 0.156
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 25.52,
+      "odom_path_length_m": 6.258,
+      "gz_dist_to_goal_m": 0.161,
+      "tf_dist_to_goal_m": 0.229,
+      "map_vs_gz_drift_m": 0.073,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 28,
+      "coordinator_mission_id": "gate-e-a1590638-028",
+      "target_room": "study",
+      "target_coords": [
+        4.5,
+        3.0
+      ],
+      "start_ground_truth": {
+        "x": -0.15894099417200913,
+        "y": -0.04965958310967375,
+        "yaw": 0.1338798761387366
+      },
+      "start_map_pose": {
+        "x": -0.216,
+        "y": -0.095,
+        "yaw": 0.137
+      },
+      "end_ground_truth": {
+        "x": 4.758,
+        "y": 2.905,
+        "yaw": 1.739
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 22.0,
+      "odom_path_length_m": 7.526,
+      "gz_dist_to_goal_m": 0.275,
+      "tf_dist_to_goal_m": 0.236,
+      "map_vs_gz_drift_m": 0.104,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 29,
+      "coordinator_mission_id": "gate-e-a1590638-029",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": 4.764081602125263,
+        "y": 2.9006064847871404,
+        "yaw": 1.7158948496357898
+      },
+      "start_map_pose": {
+        "x": 4.681,
+        "y": 2.838,
+        "yaw": 1.718
+      },
+      "end_ground_truth": {
+        "x": -4.987,
+        "y": -2.255,
+        "yaw": -1.412
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 47.03,
+      "odom_path_length_m": 14.159,
+      "gz_dist_to_goal_m": 0.246,
+      "tf_dist_to_goal_m": 0.259,
+      "map_vs_gz_drift_m": 0.056,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 30,
+      "coordinator_mission_id": "gate-e-a1590638-030",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": -4.992987291632857,
+        "y": -2.250101093249638,
+        "yaw": -1.4349574044049138
+      },
+      "start_map_pose": {
+        "x": -5.048,
+        "y": -2.24,
+        "yaw": -1.431
+      },
+      "end_ground_truth": {
+        "x": -4.934,
+        "y": 2.031,
+        "yaw": 1.557
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 24.03,
+      "odom_path_length_m": 4.751,
+      "gz_dist_to_goal_m": 0.181,
+      "tf_dist_to_goal_m": 0.23,
+      "map_vs_gz_drift_m": 0.091,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 31,
+      "coordinator_mission_id": "gate-e-a1590638-031",
+      "target_room": "living_room",
+      "target_coords": [
+        4.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -4.929140414789497,
+        "y": 2.0249220723546966,
+        "yaw": 1.5321540975850498
+      },
+      "start_map_pose": {
+        "x": -4.997,
+        "y": 1.964,
+        "yaw": 1.526
+      },
+      "end_ground_truth": {
+        "x": 4.241,
+        "y": -2.374,
+        "yaw": -1.8
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 49.0,
+      "odom_path_length_m": 14.137,
+      "gz_dist_to_goal_m": 0.272,
+      "tf_dist_to_goal_m": 0.216,
+      "map_vs_gz_drift_m": 0.058,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 32,
+      "coordinator_mission_id": "gate-e-a1590638-032",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": 4.237240656305795,
+        "y": -2.367409133204644,
+        "yaw": -1.8218722667281062
+      },
+      "start_map_pose": {
+        "x": 4.192,
+        "y": -2.404,
+        "yaw": -1.82
+      },
+      "end_ground_truth": {
+        "x": -5.081,
+        "y": -2.272,
+        "yaw": -1.373
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 50.04,
+      "odom_path_length_m": 14.543,
+      "gz_dist_to_goal_m": 0.242,
+      "tf_dist_to_goal_m": 0.251,
+      "map_vs_gz_drift_m": 0.022,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 33,
+      "coordinator_mission_id": "gate-e-a1590638-033",
+      "target_room": "study",
+      "target_coords": [
+        4.5,
+        3.0
+      ],
+      "start_ground_truth": {
+        "x": -5.086717283859655,
+        "y": -2.267546290570424,
+        "yaw": -1.3948600691256539
+      },
+      "start_map_pose": {
+        "x": -5.109,
+        "y": -2.267,
+        "yaw": -1.396
+      },
+      "end_ground_truth": {
+        "x": 4.75,
+        "y": 2.922,
+        "yaw": 1.755
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 49.03,
+      "odom_path_length_m": 14.46,
+      "gz_dist_to_goal_m": 0.262,
+      "tf_dist_to_goal_m": 0.23,
+      "map_vs_gz_drift_m": 0.115,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 34,
+      "coordinator_mission_id": "gate-e-a1590638-034",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": 4.755877336949106,
+        "y": 2.917586616653908,
+        "yaw": 1.7324125423098795
+      },
+      "start_map_pose": {
+        "x": 4.66,
+        "y": 2.846,
+        "yaw": 1.735
+      },
+      "end_ground_truth": {
+        "x": 0.064,
+        "y": 0.114,
+        "yaw": -0.251
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 39.51,
+      "odom_path_length_m": 7.533,
+      "gz_dist_to_goal_m": 0.131,
+      "tf_dist_to_goal_m": 0.094,
+      "map_vs_gz_drift_m": 0.051,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 35,
+      "coordinator_mission_id": "gate-e-a1590638-035",
+      "target_room": "study",
+      "target_coords": [
+        4.5,
+        3.0
+      ],
+      "start_ground_truth": {
+        "x": 0.05811725063827699,
+        "y": 0.11042723104852814,
+        "yaw": -0.2721166946781054
+      },
+      "start_map_pose": {
+        "x": 0.064,
+        "y": 0.06,
+        "yaw": -0.246
+      },
+      "end_ground_truth": {
+        "x": 4.747,
+        "y": 2.941,
+        "yaw": 1.768
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 22.01,
+      "odom_path_length_m": 7.633,
+      "gz_dist_to_goal_m": 0.254,
+      "tf_dist_to_goal_m": 0.225,
+      "map_vs_gz_drift_m": 0.119,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 36,
+      "coordinator_mission_id": "gate-e-a1590638-036",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": 4.7529966738565355,
+        "y": 2.9364486422428184,
+        "yaw": 1.7451254299067507
+      },
+      "start_map_pose": {
+        "x": 4.674,
+        "y": 2.847,
+        "yaw": 1.752
+      },
+      "end_ground_truth": {
+        "x": -4.998,
+        "y": -2.259,
+        "yaw": -1.477
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 50.5,
+      "odom_path_length_m": 14.277,
+      "gz_dist_to_goal_m": 0.241,
+      "tf_dist_to_goal_m": 0.237,
+      "map_vs_gz_drift_m": 0.039,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 37,
+      "coordinator_mission_id": "gate-e-a1590638-037",
+      "target_room": "living_room",
+      "target_coords": [
+        4.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -5.003347250303487,
+        "y": -2.2544494655047735,
+        "yaw": -1.4999232328417296
+      },
+      "start_map_pose": {
+        "x": -5.042,
+        "y": -2.261,
+        "yaw": -1.503
+      },
+      "end_ground_truth": {
+        "x": 4.256,
+        "y": -2.39,
+        "yaw": -1.784
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 51.04,
+      "odom_path_length_m": 14.173,
+      "gz_dist_to_goal_m": 0.278,
+      "tf_dist_to_goal_m": 0.2,
+      "map_vs_gz_drift_m": 0.086,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 38,
+      "coordinator_mission_id": "gate-e-a1590638-038",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": 4.252066101685893,
+        "y": -2.3841261456853196,
+        "yaw": -1.8049041039981844
+      },
+      "start_map_pose": {
+        "x": 4.189,
+        "y": -2.442,
+        "yaw": -1.815
+      },
+      "end_ground_truth": {
+        "x": -5.011,
+        "y": -2.261,
+        "yaw": -1.339
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 47.51,
+      "odom_path_length_m": 14.46,
+      "gz_dist_to_goal_m": 0.24,
+      "tf_dist_to_goal_m": 0.245,
+      "map_vs_gz_drift_m": 0.069,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 39,
+      "coordinator_mission_id": "gate-e-a1590638-039",
+      "target_room": "living_room",
+      "target_coords": [
+        4.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -5.0167753969978195,
+        "y": -2.256660606066026,
+        "yaw": -1.3604686862249424
+      },
+      "start_map_pose": {
+        "x": -5.085,
+        "y": -2.265,
+        "yaw": -1.362
+      },
+      "end_ground_truth": {
+        "x": 4.23,
+        "y": -2.363,
+        "yaw": -1.771
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 52.02,
+      "odom_path_length_m": 14.032,
+      "gz_dist_to_goal_m": 0.268,
+      "tf_dist_to_goal_m": 0.188,
+      "map_vs_gz_drift_m": 0.081,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 40,
+      "coordinator_mission_id": "gate-e-a1590638-040",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": 4.226881785130376,
+        "y": -2.35732003642887,
+        "yaw": -1.7919966278034885
+      },
+      "start_map_pose": {
+        "x": 4.173,
+        "y": -2.409,
+        "yaw": -1.802
+      },
+      "end_ground_truth": {
+        "x": -5.001,
+        "y": -2.23,
+        "yaw": -1.532
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 45.04,
+      "odom_path_length_m": 14.389,
+      "gz_dist_to_goal_m": 0.27,
+      "tf_dist_to_goal_m": 0.246,
+      "map_vs_gz_drift_m": 0.054,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 41,
+      "coordinator_mission_id": "gate-e-a1590638-041",
+      "target_room": "study",
+      "target_coords": [
+        4.5,
+        3.0
+      ],
+      "start_ground_truth": {
+        "x": -5.006595104529914,
+        "y": -2.2245433065615097,
+        "yaw": -1.5568235293433887
+      },
+      "start_map_pose": {
+        "x": -5.053,
+        "y": -2.253,
+        "yaw": -1.559
+      },
+      "end_ground_truth": {
+        "x": 4.755,
+        "y": 2.925,
+        "yaw": 1.752
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 48.04,
+      "odom_path_length_m": 14.555,
+      "gz_dist_to_goal_m": 0.266,
+      "tf_dist_to_goal_m": 0.234,
+      "map_vs_gz_drift_m": 0.119,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 42,
+      "coordinator_mission_id": "gate-e-a1590638-042",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": 4.760936995567991,
+        "y": 2.9206452612570692,
+        "yaw": 1.7303928568097107
+      },
+      "start_map_pose": {
+        "x": 4.671,
+        "y": 2.837,
+        "yaw": 1.736
+      },
+      "end_ground_truth": {
+        "x": -0.038,
+        "y": 0.198,
+        "yaw": -0.245
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 53.5,
+      "odom_path_length_m": 8.185,
+      "gz_dist_to_goal_m": 0.202,
+      "tf_dist_to_goal_m": 0.176,
+      "map_vs_gz_drift_m": 0.028,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 43,
+      "coordinator_mission_id": "gate-e-a1590638-043",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": -0.04339682386452857,
+        "y": 0.19511534493598903,
+        "yaw": -0.265652896537769
+      },
+      "start_map_pose": {
+        "x": -0.031,
+        "y": 0.17,
+        "yaw": -0.228
+      },
+      "end_ground_truth": {
+        "x": -5.067,
+        "y": 2.038,
+        "yaw": 1.339
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 25.03,
+      "odom_path_length_m": 6.431,
+      "gz_dist_to_goal_m": 0.175,
+      "tf_dist_to_goal_m": 0.241,
+      "map_vs_gz_drift_m": 0.067,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 44,
+      "coordinator_mission_id": "gate-e-a1590638-044",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -5.063279881475397,
+        "y": 2.0325158146573665,
+        "yaw": 1.317795046650695
+      },
+      "start_map_pose": {
+        "x": -5.076,
+        "y": 1.967,
+        "yaw": 1.319
+      },
+      "end_ground_truth": {
+        "x": -4.933,
+        "y": -2.259,
+        "yaw": -1.552
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 21.5,
+      "odom_path_length_m": 4.391,
+      "gz_dist_to_goal_m": 0.25,
+      "tf_dist_to_goal_m": 0.238,
+      "map_vs_gz_drift_m": 0.068,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 45,
+      "coordinator_mission_id": "gate-e-a1590638-045",
+      "target_room": "bedroom",
+      "target_coords": [
+        -5.0,
+        2.2
+      ],
+      "start_ground_truth": {
+        "x": -4.938437903012341,
+        "y": -2.253368066401137,
+        "yaw": -1.5771076601685563
+      },
+      "start_map_pose": {
+        "x": -5.007,
+        "y": -2.256,
+        "yaw": -1.577
+      },
+      "end_ground_truth": {
+        "x": -4.917,
+        "y": 2.028,
+        "yaw": 1.525
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 31.51,
+      "odom_path_length_m": 4.866,
+      "gz_dist_to_goal_m": 0.191,
+      "tf_dist_to_goal_m": 0.231,
+      "map_vs_gz_drift_m": 0.098,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 46,
+      "coordinator_mission_id": "gate-e-a1590638-046",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": -4.912014879671401,
+        "y": 2.0221964324938755,
+        "yaw": 1.5020252749808445
+      },
+      "start_map_pose": {
+        "x": -4.991,
+        "y": 1.963,
+        "yaw": 1.497
+      },
+      "end_ground_truth": {
+        "x": -0.137,
+        "y": -0.055,
+        "yaw": 0.207
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 26.51,
+      "odom_path_length_m": 7.022,
+      "gz_dist_to_goal_m": 0.147,
+      "tf_dist_to_goal_m": 0.236,
+      "map_vs_gz_drift_m": 0.089,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 47,
+      "coordinator_mission_id": "gate-e-a1590638-047",
+      "target_room": "study",
+      "target_coords": [
+        4.5,
+        3.0
+      ],
+      "start_ground_truth": {
+        "x": -0.14066708845052875,
+        "y": -0.060106197697446725,
+        "yaw": 0.1856964793689019
+      },
+      "start_map_pose": {
+        "x": -0.223,
+        "y": -0.102,
+        "yaw": 0.185
+      },
+      "end_ground_truth": {
+        "x": 4.732,
+        "y": 2.916,
+        "yaw": 1.769
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 22.01,
+      "odom_path_length_m": 7.668,
+      "gz_dist_to_goal_m": 0.247,
+      "tf_dist_to_goal_m": 0.227,
+      "map_vs_gz_drift_m": 0.096,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 48,
+      "coordinator_mission_id": "gate-e-a1590638-048",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": 4.738106070939433,
+        "y": 2.911811510199063,
+        "yaw": 1.7465567473488937
+      },
+      "start_map_pose": {
+        "x": 4.673,
+        "y": 2.841,
+        "yaw": 1.752
+      },
+      "end_ground_truth": {
+        "x": -5.024,
+        "y": -2.262,
+        "yaw": -1.36
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 51.02,
+      "odom_path_length_m": 14.27,
+      "gz_dist_to_goal_m": 0.239,
+      "tf_dist_to_goal_m": 0.251,
+      "map_vs_gz_drift_m": 0.064,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 49,
+      "coordinator_mission_id": "gate-e-a1590638-049",
+      "target_room": "home",
+      "target_coords": [
+        0.0,
+        0.0
+      ],
+      "start_ground_truth": {
+        "x": -5.030261254184615,
+        "y": -2.258309196947855,
+        "yaw": -1.3825278698247365
+      },
+      "start_map_pose": {
+        "x": -5.094,
+        "y": -2.261,
+        "yaw": -1.376
+      },
+      "end_ground_truth": {
+        "x": -0.159,
+        "y": 0.01,
+        "yaw": 0.12
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 33.01,
+      "odom_path_length_m": 6.761,
+      "gz_dist_to_goal_m": 0.159,
+      "tf_dist_to_goal_m": 0.228,
+      "map_vs_gz_drift_m": 0.088,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    },
+    {
+      "mission_id": 50,
+      "coordinator_mission_id": "gate-e-a1590638-050",
+      "target_room": "kitchen",
+      "target_coords": [
+        -5.0,
+        -2.5
+      ],
+      "start_ground_truth": {
+        "x": -0.16394725628897563,
+        "y": 0.003799536705883317,
+        "yaw": 0.09673665986617579
+      },
+      "start_map_pose": {
+        "x": -0.227,
+        "y": -0.057,
+        "yaw": 0.091
+      },
+      "end_ground_truth": {
+        "x": -4.984,
+        "y": -2.254,
+        "yaw": -1.391
+      },
+      "status": "COMPLETED",
+      "success": true,
+      "duration_sec": 31.51,
+      "odom_path_length_m": 7.01,
+      "gz_dist_to_goal_m": 0.246,
+      "tf_dist_to_goal_m": 0.249,
+      "map_vs_gz_drift_m": 0.063,
+      "collision_slowdown_events": 0,
+      "collision_stop_events": 0,
+      "cancel_confirmed": null,
+      "safe_to_continue_after_failure": null,
+      "false_reached": false,
+      "false_blocked": false,
+      "loc_state": "HEALTHY",
+      "fail_reason": null
+    }
+  ]
+}
