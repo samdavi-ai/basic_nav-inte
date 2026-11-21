@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "mission_id": "standalone-e436ecd3-280e-437c-99d5-78067a48afde",
+  "trace_id": "9ce88d21-1bdd-4cfd-962e-e95e9899d274",
+  "rooms": [
+    "Kitchen & Dining"
+  ],
+  "coordinator_result": {
+    "mission_id": "standalone-e436ecd3-280e-437c-99d5-78067a48afde",
+    "name": "Standalone apartment patrol",
+    "success": true,
+    "status": "COMPLETED",
+    "reason": "",
+    "waypoints_completed": 2,
+    "total_waypoints": 2,
+    "duration_sec": 28.8,
+    "end_pose": {
+      "x": -5.06,
+      "y": -2.26
+    },
+    "timestamp": 1795246082.8039443
+  },
+  "kernel_result": {
+    "state": "MISSION_COMPLETED",
+    "previous_state": "DESTINATION_REACHED",
+    "reason": "All 2 destinations reached",
+    "mission_id": null,
+    "mission_name": "Standalone apartment patrol",
+    "x": -5.056247992076768,
+    "y": -2.2070164153458163
+  },
+  "timestamp": 1795246083.0164304
+}
