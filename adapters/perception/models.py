@@ -89,9 +89,16 @@ class Detection:
     id: str = field(default_factory=lambda: str(uuid.uuid4())[:8])
     timestamp: float = field(default_factory=time.time)
 
+    depth_patch_mad_m: Optional[float] = None
+    track_id: Optional[str] = None
+    camera_id: Optional[str] = None
+    image_stamp_ns: Optional[int] = None
+
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "id": self.id,
+            "id": self.id, "track_id": self.track_id, "camera_id": self.camera_id,
+            "image_stamp_ns": self.image_stamp_ns, "world_frame": self.position_world.frame_id,
+            "position_uncertainty_m": None, "depth_patch_mad_m": self.depth_patch_mad_m,
             "class_name": self.class_name,
             "confidence": round(float(self.confidence), 3),
             "bbox": self.bbox.to_dict(),
@@ -127,7 +134,11 @@ class Detection:
                         round(float(self.bbox.ymax), 1),
                     ],
                     "depth_m": round(float(self.depth_m), 3),
-                    "frame_id": "world",
+                    "frame_id": self.position_world.frame_id,
+                    "detection_id": self.id,
+                    "track_id": self.track_id,
+                    "camera_id": self.camera_id,
+                    "image_stamp_ns": self.image_stamp_ns,
                 },
             },
             "parent_event_id": None,

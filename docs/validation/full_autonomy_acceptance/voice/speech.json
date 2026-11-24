@@ -1,0 +1,24 @@
+{
+  "detected": 3150.385562614,
+  "dispatch_started": 3150.386307805,
+  "dispatch_returned": 3150.400503479,
+  "receipt": {
+    "action_id": "c2743c88-d82a-4bde-b843-d9716d7de981",
+    "active_mission_trace_id": "5cb46396-3279-4f0d-9392-98f5401ea247",
+    "adapter_id": "graceemo_interaction",
+    "adapter_session": "9a320465-ca8e-40ae-86dc-30c02e164b2d",
+    "authorization_id": "7743cc60-364a-4c30-b666-55603be0748d",
+    "canonical_action": {
+      "action": "Stop"
+    },
+    "capability": "Stop",
+    "expires_at": 1795423633,
+    "issued_at": 1795423628,
+    "issuer": "94546ff5-027c-44c6-b4f3-6ba3cfe23b7c",
+    "mission_id": "standalone-670c4679-4b3c-46f9-98bd-8268a3a72a2e",
+    "parameter_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "policy_version": 1,
+    "scope": "single_dispatch",
+    "trace_id": "a8595d5a-c1f6-49a3-bccc-138b13496451"
+  }
+}

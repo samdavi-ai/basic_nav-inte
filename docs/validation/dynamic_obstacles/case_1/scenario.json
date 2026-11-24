@@ -1,0 +1,24 @@
+{
+  "index": 1,
+  "seed": 42,
+  "kind": "beside",
+  "box": [
+    2.0,
+    0.69,
+    0.338,
+    0.35
+  ],
+  "goal": [
+    4.5,
+    0.0
+  ],
+  "min_robot_x": 0.24865696534493253,
+  "min_plan_count": 1,
+  "crossing_speed": 0.0,
+  "initial_pose": [
+    0,
+    0,
+    0
+  ],
+  "world": "apartment_floor.world"
+}

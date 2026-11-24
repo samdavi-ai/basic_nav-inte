@@ -1,0 +1,811 @@
+{
+  "created": [
+    "walking_0_10c57041",
+    "walking_1_d009cf9d"
+  ],
+  "removed": [
+    "walking_0_10c57041",
+    "walking_1_d009cf9d"
+  ],
+  "samples": [
+    {
+      "stamp_ns": 12600000000,
+      "people": [],
+      "tracking_ms": 0.01940900006047741,
+      "cpu": 88.9,
+      "rss": 563830784
+    },
+    {
+      "stamp_ns": 13600000000,
+      "people": [],
+      "tracking_ms": 0.03251600014664291,
+      "cpu": 88.2,
+      "rss": 564072448
+    },
+    {
+      "stamp_ns": 14600000000,
+      "people": [],
+      "tracking_ms": 0.01865799981715099,
+      "cpu": 104.6,
+      "rss": 564072448
+    },
+    {
+      "stamp_ns": 15600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            11.0,
+            54.0,
+            71.0,
+            235.0
+          ],
+          "confidence": 0.921114444732666,
+          "detection_id": "7d290bbbd95e4beebcea8a8bd4956c96",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 15.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.815721210533211,
+          "reid_identity_id": "420eb0959344462ea83328583b774884",
+          "reid_state": "unknown",
+          "stamp_s": 15.6,
+          "track_id": "8c21f8892d2d42f789b52b0b99047192",
+          "track_observations": 4
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            144.0,
+            70.0,
+            197.0,
+            206.0
+          ],
+          "confidence": 0.9113823175430298,
+          "detection_id": "a79529ce30d44bd99d61af8f39b02472",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 15.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.922492547360324,
+          "reid_identity_id": "5058fab7686e4943b9bcb79ece865575",
+          "reid_state": "unknown",
+          "stamp_s": 15.6,
+          "track_id": "69b29d1ef0a945d28fc388ca9f665434",
+          "track_observations": 4
+        }
+      ],
+      "tracking_ms": 0.1669299999775831,
+      "cpu": 117.0,
+      "rss": 606511104
+    },
+    {
+      "stamp_ns": 16600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            48.0,
+            54.0,
+            135.0,
+            231.0
+          ],
+          "confidence": 0.8736851215362549,
+          "detection_id": "fe10b12cb4d049bd994f6307d44d1ff2",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 16.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.8561545852384955,
+          "reid_identity_id": "420eb0959344462ea83328583b774884",
+          "reid_state": "unknown",
+          "stamp_s": 16.6,
+          "track_id": "8c21f8892d2d42f789b52b0b99047192",
+          "track_observations": 9
+        },
+        {
+          "alternative_iou": 0.2837262890989786,
+          "bbox": [
+            111.0,
+            69.0,
+            153.0,
+            210.0
+          ],
+          "confidence": 0.6858178377151489,
+          "detection_id": "679d0ace8ebc48f5a4d6ade49e4ff1a5",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 16.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.791373225175244,
+          "reid_identity_id": "5058fab7686e4943b9bcb79ece865575",
+          "reid_state": "unknown",
+          "stamp_s": 16.6,
+          "track_id": "69b29d1ef0a945d28fc388ca9f665434",
+          "track_observations": 9
+        }
+      ],
+      "tracking_ms": 0.15411399999720743,
+      "cpu": 107.5,
+      "rss": 606519296
+    },
+    {
+      "stamp_ns": 17600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            125.0,
+            56.0,
+            208.0,
+            230.0
+          ],
+          "confidence": 0.9167048931121826,
+          "detection_id": "c8413b96fec54cedb9c0f54aebd75e91",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 17.4,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.6523776744497171,
+          "reid_identity_id": "420eb0959344462ea83328583b774884",
+          "reid_state": "unknown",
+          "stamp_s": 17.6,
+          "track_id": "8c21f8892d2d42f789b52b0b99047192",
+          "track_observations": 14
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            49.0,
+            68.0,
+            97.0,
+            211.0
+          ],
+          "confidence": 0.819568932056427,
+          "detection_id": "411990ada39340599bf82467fafe1d5a",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 17.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.8466308097458511,
+          "reid_identity_id": "5058fab7686e4943b9bcb79ece865575",
+          "reid_state": "unknown",
+          "stamp_s": 17.6,
+          "track_id": "69b29d1ef0a945d28fc388ca9f665434",
+          "track_observations": 12
+        }
+      ],
+      "tracking_ms": 0.15698999982305395,
+      "cpu": 109.0,
+      "rss": 606527488
+    },
+    {
+      "stamp_ns": 18600000000,
+      "people": [],
+      "tracking_ms": 0.021983999886288075,
+      "cpu": 107.3,
+      "rss": 606527488
+    },
+    {
+      "stamp_ns": 19600000000,
+      "people": [],
+      "tracking_ms": 0.027597000098467103,
+      "cpu": 97.6,
+      "rss": 606531584
+    },
+    {
+      "stamp_ns": 20600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            153.0,
+            59.0,
+            203.0,
+            225.0
+          ],
+          "confidence": 0.9063973426818848,
+          "detection_id": "4c02cddd1dca47a386d579c1b90ac801",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 20.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.6042679990788481,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 20.6,
+          "track_id": "777d7ea9aa1d46719a362c202c5ec697",
+          "track_observations": 4
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            22.0,
+            66.0,
+            67.0,
+            212.0
+          ],
+          "confidence": 0.9035707712173462,
+          "detection_id": "25ef4a0ac02340d0b6db33eaf50180ca",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 20.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.8354925368389241,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 20.6,
+          "track_id": "c23c7974c5a24f568632a1e1686f3bfa",
+          "track_observations": 4
+        }
+      ],
+      "tracking_ms": 0.16567800003031152,
+      "cpu": 114.9,
+      "rss": 606531584
+    },
+    {
+      "stamp_ns": 21600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            98.0,
+            56.0,
+            170.0,
+            230.0
+          ],
+          "confidence": 0.7072069644927979,
+          "detection_id": "03491a46667d43f88f6c7fcf2b2ed782",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 21.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.7492256713072831,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 21.6,
+          "track_id": "777d7ea9aa1d46719a362c202c5ec697",
+          "track_observations": 9
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            70.0,
+            67.0,
+            114.0,
+            218.0
+          ],
+          "confidence": 0.6953930854797363,
+          "detection_id": "3a81280ddba94cd0933070aa191a4321",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 21.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.7681133401973649,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 21.6,
+          "track_id": "c23c7974c5a24f568632a1e1686f3bfa",
+          "track_observations": 9
+        }
+      ],
+      "tracking_ms": 0.17377400013174338,
+      "cpu": 106.2,
+      "rss": 606535680
+    },
+    {
+      "stamp_ns": 22600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            110.0,
+            69.0,
+            177.0,
+            207.0
+          ],
+          "confidence": 0.9268021583557128,
+          "detection_id": "e68039a057094d7c95cd2316ce5ff707",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 22.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.9078202542103584,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 22.6,
+          "track_id": "c23c7974c5a24f568632a1e1686f3bfa",
+          "track_observations": 12
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            13.0,
+            54.0,
+            98.0,
+            233.0
+          ],
+          "confidence": 0.8676711320877075,
+          "detection_id": "5695d024cdb1460e9530891130fcd8cc",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 22.4,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.8309357675603763,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 22.6,
+          "track_id": "777d7ea9aa1d46719a362c202c5ec697",
+          "track_observations": 14
+        }
+      ],
+      "tracking_ms": 0.1641340002151992,
+      "cpu": 108.6,
+      "rss": 606543872
+    },
+    {
+      "stamp_ns": 23600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            0.0,
+            54.0,
+            17.0,
+            237.0
+          ],
+          "confidence": 0.4547602832317352,
+          "detection_id": "caaf9e8420c74989a7646043a877b0d4",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 23.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": null,
+          "reid_identity_id": null,
+          "reid_state": "ambiguous",
+          "stamp_s": 23.6,
+          "track_id": "456c3490528c4b338034661c9e0e6d42",
+          "track_observations": 1
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            143.0,
+            71.0,
+            179.0,
+            200.0
+          ],
+          "confidence": 0.39714449644088745,
+          "detection_id": "3dea207ba3c645a78acad2ed9d457ba7",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 23.4,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.950000894179775,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 23.6,
+          "track_id": "c23c7974c5a24f568632a1e1686f3bfa",
+          "track_observations": 17
+        },
+        {
+          "alternative_iou": 0.276314869080606,
+          "bbox": [
+            164.0,
+            71.0,
+            179.0,
+            161.0
+          ],
+          "confidence": 0.3906421363353729,
+          "detection_id": "7de37dc2b5f94fe1acf2e8c9dec06f5f",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 23.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": null,
+          "reid_identity_id": "28143adf0d104901bb3908eb7a78e93e",
+          "reid_state": "unknown",
+          "stamp_s": 23.6,
+          "track_id": "b9a0363283a142c087186410ffa32867",
+          "track_observations": 1
+        }
+      ],
+      "tracking_ms": 0.3179479999744217,
+      "cpu": 113.8,
+      "rss": 606552064
+    },
+    {
+      "stamp_ns": 24600000000,
+      "people": [],
+      "tracking_ms": 0.031123999860938056,
+      "cpu": 102.4,
+      "rss": 606560256
+    },
+    {
+      "stamp_ns": 25600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            0.0,
+            50.0,
+            44.0,
+            235.0
+          ],
+          "confidence": 0.9154945611953736,
+          "detection_id": "853ef56105cd466ea02d79d1f8e33d16",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 25.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.8793254821228536,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 25.6,
+          "track_id": "726575895f7646b7a84daf877ed71587",
+          "track_observations": 4
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            120.0,
+            71.0,
+            172.0,
+            206.0
+          ],
+          "confidence": 0.880872905254364,
+          "detection_id": "5ce3d8df22354d6db18aa56616a16744",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 25.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.9108171817705584,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 25.6,
+          "track_id": "d2bd618720c74e7c8a20bd2686d8fc7d",
+          "track_observations": 4
+        }
+      ],
+      "tracking_ms": 0.23517900012848256,
+      "cpu": 105.8,
+      "rss": 606560256
+    },
+    {
+      "stamp_ns": 26600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            20.0,
+            53.0,
+            110.0,
+            233.0
+          ],
+          "confidence": 0.7724515199661255,
+          "detection_id": "218210dbd92a4089a28cd9aa4b250649",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 26.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.8427946729658741,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 26.6,
+          "track_id": "726575895f7646b7a84daf877ed71587",
+          "track_observations": 9
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            91.0,
+            68.0,
+            132.0,
+            208.0
+          ],
+          "confidence": 0.7479893565177917,
+          "detection_id": "d96f6fcb30bb4e2f9928edafcc2f3c02",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 26.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.7904643795994625,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 26.6,
+          "track_id": "d2bd618720c74e7c8a20bd2686d8fc7d",
+          "track_observations": 9
+        }
+      ],
+      "tracking_ms": 0.11885200001415797,
+      "cpu": 101.8,
+      "rss": 606560256
+    },
+    {
+      "stamp_ns": 27600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            101.0,
+            57.0,
+            184.0,
+            229.0
+          ],
+          "confidence": 0.9272413849830629,
+          "detection_id": "97ee8599419b49caa25453115674f9f9",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 27.4,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.6587717890425029,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 27.6,
+          "track_id": "726575895f7646b7a84daf877ed71587",
+          "track_observations": 14
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            21.0,
+            66.0,
+            73.0,
+            214.0
+          ],
+          "confidence": 0.8663965463638306,
+          "detection_id": "f24e10b0b31b45f08737f9b00e8883de",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 27.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.7979647177112248,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 27.6,
+          "track_id": "2ef571d4517e4e42afe1ebdb108ddd4d",
+          "track_observations": 3
+        }
+      ],
+      "tracking_ms": 0.2157100000204082,
+      "cpu": 113.1,
+      "rss": 606564352
+    },
+    {
+      "stamp_ns": 28600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            0.0,
+            67.0,
+            45.0,
+            214.0
+          ],
+          "confidence": 0.48745039105415344,
+          "detection_id": "5b908d498bc14ed9b6c1db9b370ffd7d",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 28.4,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.8804310378793119,
+          "reid_identity_id": null,
+          "reid_state": "unknown",
+          "stamp_s": 28.6,
+          "track_id": "2ef571d4517e4e42afe1ebdb108ddd4d",
+          "track_observations": 8
+        }
+      ],
+      "tracking_ms": 0.1523609998912434,
+      "cpu": 110.6,
+      "rss": 606572544
+    },
+    {
+      "stamp_ns": 29600000000,
+      "people": [],
+      "tracking_ms": 0.02835800000866584,
+      "cpu": 105.2,
+      "rss": 606572544
+    },
+    {
+      "stamp_ns": 30600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            0.0,
+            64.0,
+            43.0,
+            215.0
+          ],
+          "confidence": 0.9131938219070436,
+          "detection_id": "2cd55763c3e945f48d1488ee28deb9e6",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 30.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.9315889057273754,
+          "reid_identity_id": "7eb37f1ecef047a4bdd0d836b0871b36",
+          "reid_state": "unknown",
+          "stamp_s": 30.6,
+          "track_id": "1d6d5f1d9eed43a5b5e145bae0bcc466",
+          "track_observations": 4
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            129.0,
+            60.0,
+            179.0,
+            225.0
+          ],
+          "confidence": 0.8936758041381836,
+          "detection_id": "3afbef6f00b44bd297c7cdc4e6e55686",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 30.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.6206490006737021,
+          "reid_identity_id": "6fcfafd2124c481fbb8336b2547668f3",
+          "reid_state": "unknown",
+          "stamp_s": 30.6,
+          "track_id": "f7018fac7b3348c48688af5fa8ea9557",
+          "track_observations": 4
+        }
+      ],
+      "tracking_ms": 0.12079599991920986,
+      "cpu": 110.1,
+      "rss": 606572544
+    },
+    {
+      "stamp_ns": 31600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            45.0,
+            66.0,
+            83.0,
+            213.0
+          ],
+          "confidence": 0.7959291934967041,
+          "detection_id": "6f2e9c0256784f47bc2e08f1b35f85f4",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 31.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.9360864865724208,
+          "reid_identity_id": "7eb37f1ecef047a4bdd0d836b0871b36",
+          "reid_state": "unknown",
+          "stamp_s": 31.6,
+          "track_id": "1d6d5f1d9eed43a5b5e145bae0bcc466",
+          "track_observations": 9
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            76.0,
+            56.0,
+            146.0,
+            234.0
+          ],
+          "confidence": 0.7370116710662842,
+          "detection_id": "0a9bb34429ea4dc1af77b852a1c7deab",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 31.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.7401644666225957,
+          "reid_identity_id": "6fcfafd2124c481fbb8336b2547668f3",
+          "reid_state": "unknown",
+          "stamp_s": 31.6,
+          "track_id": "f7018fac7b3348c48688af5fa8ea9557",
+          "track_observations": 9
+        }
+      ],
+      "tracking_ms": 0.11684900005093368,
+      "cpu": 106.4,
+      "rss": 606576640
+    },
+    {
+      "stamp_ns": 32600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            0.0,
+            51.0,
+            71.0,
+            233.0
+          ],
+          "confidence": 0.922171711921692,
+          "detection_id": "5fca8d1fba1d41f0b72d0ffb1bd321cd",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 32.4,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.7339147856961638,
+          "reid_identity_id": "6fcfafd2124c481fbb8336b2547668f3",
+          "reid_state": "unknown",
+          "stamp_s": 32.6,
+          "track_id": "f7018fac7b3348c48688af5fa8ea9557",
+          "track_observations": 14
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            86.0,
+            69.0,
+            154.0,
+            207.0
+          ],
+          "confidence": 0.9101359844207764,
+          "detection_id": "f6b37944b6a54141a7eff555f37015c9",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 32.2,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": 0.8972156139958137,
+          "reid_identity_id": "7eb37f1ecef047a4bdd0d836b0871b36",
+          "reid_state": "unknown",
+          "stamp_s": 32.6,
+          "track_id": "1d6d5f1d9eed43a5b5e145bae0bcc466",
+          "track_observations": 12
+        }
+      ],
+      "tracking_ms": 0.10730899998634412,
+      "cpu": 106.3,
+      "rss": 611491840
+    },
+    {
+      "stamp_ns": 33600000000,
+      "people": [
+        {
+          "alternative_iou": null,
+          "bbox": [
+            142.0,
+            71.0,
+            157.0,
+            161.0
+          ],
+          "confidence": 0.6118778586387634,
+          "detection_id": "e60825bc811b45b7912962c955c75793",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 33.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": null,
+          "reid_identity_id": "28143adf0d104901bb3908eb7a78e93e",
+          "reid_state": "appearance_candidate",
+          "stamp_s": 33.6,
+          "track_id": "9f0ab242b914459ba4510a386926cdee",
+          "track_observations": 1
+        },
+        {
+          "alternative_iou": null,
+          "bbox": [
+            121.0,
+            154.0,
+            153.0,
+            201.0
+          ],
+          "confidence": 0.4882819652557373,
+          "detection_id": "c651fef718f74741879a24601d7d5154",
+          "enrolled_face_identity_id": null,
+          "face_count": 0,
+          "face_stamp_s": 33.6,
+          "face_state": "FACE_NOT_FOUND",
+          "predicted_box_iou": null,
+          "reid_identity_id": "7b4c4c3b30494ed28794176233c69ffd",
+          "reid_state": "unknown",
+          "stamp_s": 33.6,
+          "track_id": "9df5e8a3725a4d099ff9e20d9b4bdbe6",
+          "track_observations": 1
+        }
+      ],
+      "tracking_ms": 1.5112730000055308,
+      "cpu": 112.2,
+      "rss": 611491840
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "source": "docs/validation/visual_all_06/original-patrol01/map.db",
+  "sha256": "008d198126d60732230909af197fe5e18c5a80b7d2efcd8e8aa4bb03a6f6f282",
+  "cases": {
+    "valid": {
+      "accepted": true,
+      "expected": true,
+      "reason": null
+    },
+    "incomplete": {
+      "accepted": false,
+      "expected": false,
+      "reason": "Missing optimized keyframe graph"
+    },
+    "version": {
+      "accepted": false,
+      "expected": false,
+      "reason": "Unverified RTAB-Map database version"
+    },
+    "calibration": {
+      "accepted": false,
+      "expected": false,
+      "reason": "Incompatible saved RGB-D camera format or resolution"
+    },
+    "dictionary": {
+      "accepted": false,
+      "expected": false,
+      "reason": "Saved graph references missing visual dictionary words"
+    },
+    "corrupt": {
+      "accepted": false,
+      "expected": false,
+      "reason": "file is not a database"
+    }
+  },
+  "passed": true
+}

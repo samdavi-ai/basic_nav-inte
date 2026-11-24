@@ -1,0 +1,89 @@
+{
+  "wall_seconds": 148.0051855290003,
+  "observer_messages_per_wall_second": {
+    "rgb": 8.736180393805514,
+    "info": 8.209171831766202,
+    "odom": 8.209171831766202,
+    "graph": 4.128233735974609
+  },
+  "matched_nonlost_poses_per_wall_second": 4.141746776026899,
+  "complete_wall_windows": [
+    {
+      "wall_seconds": 10.001052035000612,
+      "valid_pose_hz": 6.899274172209202,
+      "graph_hz": 6.899274172209202
+    },
+    {
+      "wall_seconds": 10.00360479200026,
+      "valid_pose_hz": 8.596900996006257,
+      "graph_hz": 8.596900996006257
+    },
+    {
+      "wall_seconds": 10.001360618000035,
+      "valid_pose_hz": 8.798802819050564,
+      "graph_hz": 8.698816423379535
+    },
+    {
+      "wall_seconds": 10.007621027998539,
+      "valid_pose_hz": 8.793298602515073,
+      "graph_hz": 8.793298602515073
+    },
+    {
+      "wall_seconds": 10.002794192998408,
+      "valid_pose_hz": 8.897513862906102,
+      "graph_hz": 8.997485928781453
+    },
+    {
+      "wall_seconds": 11.994313986000634,
+      "valid_pose_hz": 8.754148017348264,
+      "graph_hz": 8.670775179087803
+    },
+    {
+      "wall_seconds": 12.00225061799938,
+      "valid_pose_hz": 7.331958213572819,
+      "graph_hz": 7.248640506600401
+    },
+    {
+      "wall_seconds": 11.994269582002744,
+      "valid_pose_hz": 0.0,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 10.045321345998673,
+      "valid_pose_hz": 0.0,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 11.952969559999474,
+      "valid_pose_hz": 0.0,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 10.004923489999783,
+      "valid_pose_hz": 0.0,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 11.99383790399952,
+      "valid_pose_hz": 0.0,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 10.00086483600171,
+      "valid_pose_hz": 0.0,
+      "graph_hz": 0.0
+    }
+  ],
+  "processes": {
+    "rtabmap": {
+      "samples": 74,
+      "median_cpu_percent_one_core": 13.0,
+      "peak_rss_mib": 470.8671875
+    },
+    "rgbd_odometry": {
+      "samples": 74,
+      "median_cpu_percent_one_core": 49.0,
+      "peak_rss_mib": 240.37109375
+    }
+  }
+}

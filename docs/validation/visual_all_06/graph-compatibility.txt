@@ -1,0 +1,4 @@
+baseline rejected: Saved graph references missing visual dictionary words
+texture-roundtrip02 rejected: Saved graph references missing visual dictionary words
+subtle-roundtrip01 accepted
+floor-roundtrip01 accepted

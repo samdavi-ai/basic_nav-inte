@@ -1,0 +1,95 @@
+{
+  "graph_messages": 60,
+  "pose_messages": 60,
+  "first_truth_xyz": [
+    0.24999999999886333,
+    -3.9438608265404337e-13,
+    0.024999999884656076
+  ],
+  "all_matches_within_target": true,
+  "measured_matches": [
+    {
+      "t": 1.4,
+      "ref": 136,
+      "loop": 29,
+      "proximity": 118,
+      "saved_node_ids": [
+        29,
+        118
+      ],
+      "inliers": 117.0,
+      "translation_m": 0.005966024868143957,
+      "rotation_deg": 0.16297337800466308
+    },
+    {
+      "t": 13.0,
+      "ref": 147,
+      "loop": 23,
+      "proximity": 23,
+      "saved_node_ids": [
+        23
+      ],
+      "inliers": 149.0,
+      "translation_m": 0.01271555432577465,
+      "rotation_deg": 0.15456768042731853
+    },
+    {
+      "t": 25.5,
+      "ref": 159,
+      "loop": 12,
+      "proximity": 12,
+      "saved_node_ids": [
+        12
+      ],
+      "inliers": 220.0,
+      "translation_m": 0.0067470936851737415,
+      "rotation_deg": 0.21254095813981622
+    },
+    {
+      "t": 38.2,
+      "ref": 171,
+      "loop": 0,
+      "proximity": 118,
+      "saved_node_ids": [
+        118
+      ],
+      "inliers": 204.0,
+      "translation_m": 0.013604706398168487,
+      "rotation_deg": 0.2863905941317718
+    },
+    {
+      "t": 51.8,
+      "ref": 184,
+      "loop": 23,
+      "proximity": 118,
+      "saved_node_ids": [
+        23,
+        118
+      ],
+      "inliers": 203.0,
+      "translation_m": 0.01544046684615558,
+      "rotation_deg": 0.4011491740491013
+    }
+  ],
+  "translation_m": {
+    "median": 0.01271555432577465,
+    "p95": 0.01507331475655816,
+    "max": 0.01544046684615558
+  },
+  "rotation_deg": {
+    "median": 0.21254095813981622,
+    "p95": 0.3781974580656354,
+    "max": 0.4011491740491013
+  },
+  "occlusion": {
+    "inserted_rgb_stamp": 17.3,
+    "removed_rgb_stamp": 22.9,
+    "covered_updates": 49,
+    "covered_lost": 49,
+    "after_updates": 408,
+    "after_nonlost": 408,
+    "first_loss_after_insert_s": 0.09999999999999787,
+    "first_nonlost_after_removal_s": 0.10000000000000142,
+    "first_verified_match_after_removal_s": 2.6000000000000014
+  }
+}

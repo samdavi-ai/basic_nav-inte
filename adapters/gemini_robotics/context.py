@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import json
 import logging
+import os
+import time
 import math
 import sys
 from dataclasses import dataclass, field
@@ -379,27 +381,13 @@ class MNSEContextProvider:
         now = self.get_robot_context()
         room = now.get("current_room", "Unknown")
         pos = now.get("robot_position") or {}
-        x = pos.get("x", 0.0)
-        y = pos.get("y", 0.0)
-        theta = pos.get("theta", 0.0)
-        return f"@NOW:Room[{room}]|Pose[x:{x:.2f},y:{y:.2f},yaw:{math.degrees(theta):.0f}°]"
+        if not all(isinstance(pos.get(k),(float,int)) and math.isfinite(pos[k]) for k in ('x','y','theta')):
+            return f"@NOW:Room[{room or 'Unknown'}]|Pose[unknown]"
+        return f"@NOW:Room[{room or 'Unknown'}]|Pose[x:{pos['x']:.2f},y:{pos['y']:.2f},yaw:{math.degrees(pos['theta']):.0f}°]"
 
     def get_current_room(self) -> str:
-        """Resolves the current room from authoritative MNSE live state."""
-        ctx = self.get_robot_context()
-        room = ctx.get("current_room")
-        if room and room != "Unknown":
-            return room
-        # Fallback from position coordinates
-        pos = ctx.get("robot_position") or {}
-        x = pos.get("x", 0.0)
-        y = pos.get("y", 0.0)
-        if y > 1.0:
-            return "Master Bedroom" if x < 0.0 else "Home Study"
-        elif y < -1.0:
-            return "Kitchen & Dining" if x < 0.0 else "Living Room"
-        else:
-            return "Central Hallway"
+        """Use the room estimate supplied by MNSE when available."""
+        return self.get_robot_context().get("current_room") or "Unknown"
 
     def get_all_rooms(self) -> List[Dict[str, Any]]:
         """Queries all apartment rooms from MNSE."""
@@ -455,14 +443,16 @@ class MNSEContextProvider:
             f"Select the appropriate high-level robot tool to address the user's command."
         )
 
-    def get_latest_camera_frame(self, frame_path: str = "/tmp/gracemo_camera_latest.jpg") -> Optional[bytes]:
+    def get_latest_camera_frame(self, frame_path: Optional[str] = None) -> Optional[bytes]:
         """
         Retrieves the latest live camera observation frame captured by the robot bridge.
         """
-        p = Path(frame_path)
+        p = Path(frame_path or os.getenv("VIRA_CAMERA_CACHE", "/tmp/gracemo_camera_latest.jpg"))
         if p.exists():
             try:
-                return p.read_bytes()
+                with p.open("rb") as frame:
+                    if 0 <= time.time()-os.fstat(frame.fileno()).st_mtime <= 3:
+                        return frame.read() or None
             except Exception as e:
                 log.debug(f"Could not read latest camera frame from {frame_path}: {e}")
         return None

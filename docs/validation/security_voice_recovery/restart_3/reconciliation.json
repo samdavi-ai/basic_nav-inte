@@ -1,0 +1,18 @@
+{
+  "at_kernel_start": [
+    {
+      "action_id": "cb5b9678-0c71-4e95-b4fd-d88c7cb6d91c",
+      "automatic_resume": false,
+      "last_recorded_observation": {
+        "id": "e72dbc97-0768-436c-9206-1b0de286e32c",
+        "state": "MISSION_EXECUTING",
+        "timestamp": 1795380814
+      },
+      "mission_id": "standalone-e1261fa4-26bb-489b-b9d4-d1264f3284f4",
+      "requested_at": 1795380814,
+      "requires_operator_review": true,
+      "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+    }
+  ],
+  "automatic_resume": false
+}

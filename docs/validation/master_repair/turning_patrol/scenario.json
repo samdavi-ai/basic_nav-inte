@@ -1,0 +1,20 @@
+{
+  "index": 0,
+  "seed": 42,
+  "kind": "patrol",
+  "box": null,
+  "goal": null,
+  "min_robot_x": 0.23494998392273192,
+  "min_plan_count": 1,
+  "crossing_speed": 0.0,
+  "initial_pose": [
+    0,
+    0,
+    0
+  ],
+  "world": "apartment_floor.world",
+  "level": 1,
+  "turning_corridor": true,
+  "dense_truth": true,
+  "doorway_trial": true
+}

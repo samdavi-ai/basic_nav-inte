@@ -1,0 +1,11 @@
+{
+  "armed": 20146.905160853,
+  "publishers_gone": 20146.966885569,
+  "observed_until": 20149.98891129,
+  "peak": {
+    "cmd_vel": 0.0,
+    "cmd_vel_mux": 0.0,
+    "cmd_vel_smoothed": 0.0
+  },
+  "passed": true
+}

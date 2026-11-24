@@ -1,0 +1,38 @@
+{
+  "result": "PASS",
+  "scope": "Gazebo only",
+  "goal": {
+    "x": 4.5,
+    "y": 3.0
+  },
+  "checks": {
+    "mission_started_and_moving": true,
+    "estop_latched": true,
+    "zero_command_observed": true,
+    "base_stopped": true,
+    "mission_rejected_while_latched": true,
+    "no_motion_while_latched": true,
+    "explicit_reset_returned_ready": true,
+    "zero_held_after_reset": true
+  },
+  "state": "AUTONOMY_READY",
+  "error": null,
+  "max_command_magnitude_after_stop": 0.0,
+  "peak_odom_speed_after_stop": 0.4245,
+  "max_odom_speed_last_second": 0.019,
+  "max_drift_after_stop_m": 0.0252,
+  "estop_active": false,
+  "state_history": [
+    "WAITING_FOR_LOCALIZATION",
+    "AUTONOMY_READY",
+    "MISSION_ACCEPTED",
+    "MISSION_PLANNING",
+    "PLANNING_FAILURE",
+    "OBSTACLE_HANDLING",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "EMERGENCY_STOP",
+    "EMERGENCY_STOP",
+    "AUTONOMY_READY"
+  ]
+}

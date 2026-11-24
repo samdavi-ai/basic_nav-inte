@@ -1,0 +1,117 @@
+[
+  {
+    "samples": 78336,
+    "peak_pcm": 32768,
+    "decoded_utterances": 1
+  },
+  {
+    "samples": 160256,
+    "peak_pcm": 32767,
+    "decoded_utterances": 2
+  },
+  {
+    "samples": 241152,
+    "peak_pcm": 32768,
+    "decoded_utterances": 3
+  },
+  {
+    "samples": 322048,
+    "peak_pcm": 32768,
+    "decoded_utterances": 4
+  },
+  {
+    "samples": 404480,
+    "peak_pcm": 32768,
+    "decoded_utterances": 5
+  },
+  {
+    "samples": 486400,
+    "peak_pcm": 32768,
+    "decoded_utterances": 7
+  },
+  {
+    "samples": 567808,
+    "peak_pcm": 32443,
+    "decoded_utterances": 8
+  },
+  {
+    "samples": 648192,
+    "peak_pcm": 32768,
+    "decoded_utterances": 10
+  },
+  {
+    "samples": 729088,
+    "peak_pcm": 32768,
+    "decoded_utterances": 13
+  },
+  {
+    "samples": 810496,
+    "peak_pcm": 32768,
+    "decoded_utterances": 15
+  },
+  {
+    "samples": 892416,
+    "peak_pcm": 32768,
+    "decoded_utterances": 17
+  },
+  {
+    "samples": 974336,
+    "peak_pcm": 29206,
+    "decoded_utterances": 18
+  },
+  {
+    "samples": 1055232,
+    "peak_pcm": 32768,
+    "decoded_utterances": 19
+  },
+  {
+    "samples": 1136128,
+    "peak_pcm": 32768,
+    "decoded_utterances": 20
+  },
+  {
+    "samples": 1218048,
+    "peak_pcm": 25894,
+    "decoded_utterances": 21
+  },
+  {
+    "samples": 1300480,
+    "peak_pcm": 32768,
+    "decoded_utterances": 24
+  },
+  {
+    "samples": 1381888,
+    "peak_pcm": 32767,
+    "decoded_utterances": 25
+  },
+  {
+    "samples": 1462272,
+    "peak_pcm": 32768,
+    "decoded_utterances": 26
+  },
+  {
+    "samples": 1543168,
+    "peak_pcm": 32768,
+    "decoded_utterances": 27
+  },
+  {
+    "samples": 1624064,
+    "peak_pcm": 32768,
+    "decoded_utterances": 29
+  },
+  {
+    "samples": 1704448,
+    "peak_pcm": 32768,
+    "decoded_utterances": 30
+  },
+  {
+    "samples": 1784832,
+    "peak_pcm": 32768,
+    "decoded_utterances": 31
+  },
+  {
+    "samples": 1865728,
+    "peak_pcm": 32768,
+    "decoded_utterances": 33
+  }
+]

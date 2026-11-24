@@ -1,0 +1,8 @@
+<root BTCPP_format="4" main_tree_to_execute="Navigate">
+  <BehaviorTree ID="Navigate">
+    <Sequence>
+      <ComputePathToPose goal="{goal}" path="{path}" planner_id="RecoveryPlanner"/>
+      <FollowPath path="{path}" controller_id="FollowPath" goal_checker_id="general_goal_checker" progress_checker_id="progress_checker"/>
+    </Sequence>
+  </BehaviorTree>
+</root>

@@ -1,0 +1,113 @@
+[
+  {
+    "scenario_id": "E2E-01",
+    "implementation_status": "PARTIALLY IMPLEMENTED",
+    "test_status": "PARTIAL",
+    "execution_timestamp": "2026-11-22T20:28:46.076643+00:00",
+    "timestamp_source": "mission result",
+    "mission_id": "standalone-33c76ff2-a8c2-420d-af8c-07084f395589",
+    "trace_id": "8db8c5ab-e9db-4029-9164-8372a5ed13ef",
+    "evidence_paths": [
+      "artifacts/e2e/verified_memory/mission.json",
+      "artifacts/e2e/verified_memory/geometry.json"
+    ],
+    "verified": "Static corridor navigation completed from the standalone adapter. Recorded Nav2, coordinator and kernel results agree.",
+    "missing_capabilities": "A real spoken request and audible terminal confirmation were unavailable. No authenticated adapter authorization receipt was demonstrated.",
+    "failure_details": "A real spoken request and audible terminal confirmation were unavailable. No authenticated adapter authorization receipt was demonstrated."
+  },
+  {
+    "scenario_id": "E2E-02",
+    "implementation_status": "PARTIALLY IMPLEMENTED",
+    "test_status": "PARTIAL",
+    "execution_timestamp": "2026-11-22T20:29:37.761280+00:00",
+    "timestamp_source": "test artifact modification time",
+    "mission_id": null,
+    "trace_id": null,
+    "evidence_paths": [
+      "artifacts/e2e/memory_tests.xml"
+    ],
+    "verified": "The live adapter and MNSE now return unknown pose and room on fresh state. The adapter no longer invents a quadrant-derived room when context is missing.",
+    "missing_capabilities": "Tracking and locating the human who spoke, fresh spatial answers with source and spoken output remain unverified.",
+    "failure_details": "Tracking and locating the human who spoke, fresh spatial answers with source and spoken output remain unverified."
+  },
+  {
+    "scenario_id": "E2E-03",
+    "implementation_status": "PARTIALLY IMPLEMENTED",
+    "test_status": "PARTIAL",
+    "execution_timestamp": "2026-11-22T20:28:46.076643+00:00",
+    "timestamp_source": "mission result",
+    "mission_id": "standalone-33c76ff2-a8c2-420d-af8c-07084f395589",
+    "trace_id": "8db8c5ab-e9db-4029-9164-8372a5ed13ef",
+    "evidence_paths": [
+      "artifacts/e2e/verified_memory/trace.jsonl.gz",
+      "artifacts/e2e/verified_memory/geometry.json",
+      "artifacts/e2e/../../docs/validation/autonomy_mapping/front_padding/metrics.json"
+    ],
+    "verified": "The recorded 0.35 m static fixture was avoided. The interpolated padded footprint margin was +0.13712 m.",
+    "missing_capabilities": "Dynamic insertion and full stop-reassess-resume remain unqualified. Previous front insertion exhausted retries.",
+    "failure_details": "Dynamic insertion and full stop-reassess-resume remain unqualified. Previous front insertion exhausted retries."
+  },
+  {
+    "scenario_id": "E2E-04",
+    "implementation_status": "PARTIALLY IMPLEMENTED",
+    "test_status": "PARTIAL",
+    "execution_timestamp": "2026-11-22T20:29:20.105302+00:00",
+    "timestamp_source": "test artifact modification time",
+    "mission_id": null,
+    "trace_id": null,
+    "evidence_paths": [
+      "artifacts/e2e/component.xml",
+      "artifacts/e2e/../../docs/validation/master_repair/ESTOP_INTERRUPTION_MATRIX.md"
+    ],
+    "verified": "Text intent and safety tests passed. Previous isolated E-stop probes established latched rejection and explicit reset in measured windows.",
+    "missing_capabilities": "No microphone-to-stop trial on a moving Gazebo mission was demonstrated.",
+    "failure_details": "No microphone-to-stop trial on a moving Gazebo mission was demonstrated."
+  },
+  {
+    "scenario_id": "E2E-05",
+    "implementation_status": "PARTIALLY IMPLEMENTED",
+    "test_status": "PARTIAL",
+    "execution_timestamp": "2026-11-22T20:29:20.105302+00:00",
+    "timestamp_source": "test artifact modification time",
+    "mission_id": null,
+    "trace_id": null,
+    "evidence_paths": [
+      "artifacts/e2e/component.xml"
+    ],
+    "verified": "The reasoning loop now stops on a failed tool result before issuing dependent actions. The existing registry supports navigation, observation and speech.",
+    "missing_capabilities": "A complete navigate-observe-report chain with actual scene verification has no passing integrated run.",
+    "failure_details": "A complete navigate-observe-report chain with actual scene verification has no passing integrated run."
+  },
+  {
+    "scenario_id": "E2E-06",
+    "implementation_status": "PARTIALLY IMPLEMENTED",
+    "test_status": "PARTIAL",
+    "execution_timestamp": "2026-11-22T20:29:37.761280+00:00",
+    "timestamp_source": "test artifact modification time",
+    "mission_id": null,
+    "trace_id": null,
+    "evidence_paths": [
+      "artifacts/e2e/memory_tests.xml"
+    ],
+    "verified": "A real unconfigured provider, local adapter and live private kernel produced an explicit failure with zero dispatched actions. Initialization errors cannot silently enable simulated reasoning.",
+    "missing_capabilities": "Active mission preservation and selection of a second live provider during an outage remain unverified.",
+    "failure_details": "Active mission preservation and selection of a second live provider during an outage remain unverified."
+  },
+  {
+    "scenario_id": "E2E-07",
+    "implementation_status": "PARTIALLY IMPLEMENTED",
+    "test_status": "PARTIAL",
+    "execution_timestamp": "2026-11-22T20:28:46.076643+00:00",
+    "timestamp_source": "mission result",
+    "mission_id": "standalone-33c76ff2-a8c2-420d-af8c-07084f395589",
+    "trace_id": "8db8c5ab-e9db-4029-9164-8372a5ed13ef",
+    "evidence_paths": [
+      "artifacts/e2e/verified_memory/restart.json",
+      "artifacts/e2e/verified_memory/mission.json",
+      "artifacts/e2e/memory_tests.xml"
+    ],
+    "verified": "A new SDK client recovered all 62 trace events, including the actual Gazebo terminal result, from a new Rust kernel process after shutdown of the isolated mission stack. An unrelated trace returned no rows.",
+    "missing_capabilities": "This mission completed before shutdown and originated from the programmatic adapter. Voice input, reconciliation of interrupted actions and complete supported-launcher restart remain open.",
+    "failure_details": "This mission completed before shutdown and originated from the programmatic adapter. Voice input, reconciliation of interrupted actions and complete supported-launcher restart remain open."
+  }
+]

@@ -93,6 +93,12 @@ SILENCE_COUNT = 0
 MAX_SILENCE_GAP = 8
 END_OF_RECORD = False
 CONV_HISTORY = []           # Conversation history to know past
+# The legacy GUI path invokes TTS from daemon threads.  Without a single
+# playback owner, two near-simultaneous responses can run independent
+# Edge-TTS/player processes and speak over one another.
+TTS_PLAYBACK_LOCK = threading.Lock()
+EMERGENCY_MIC_ENABLED = threading.Event()
+EMERGENCY_MIC_SHUTDOWN = threading.Event()
 SCREEN_WIDTH, SCREEN_HEIGHT = pygame.display.get_surface().get_size()
 
 VID_DIR = os.path.join(BASE_DIR, "vid") + "/"
@@ -584,10 +590,12 @@ def on_press(key):
         if hasattr(key, 'char') and key.char:
             c = key.char
             if c == 's':
+                EMERGENCY_MIC_ENABLED.set()
                 if not LISTENING_ENABLED:
                     print("⤍ [KEYBOARD] Listening STARTED - Press 'e' to stop")
                     start_listening_safely()
             elif c == 'e':
+                EMERGENCY_MIC_ENABLED.clear()
                 if LISTENING_ENABLED:
                     LISTENING_ENABLED = False
                     STOP_RECORDING = True
@@ -843,6 +851,21 @@ def validate_audio_for_stt(
 
 # -------------------------------------------------------------------------------------------------
 
+def request_microphone_stop():
+    global CAPTION_TEXT
+    from core.offline_stop import dispatch_stop
+    detected = time.monotonic()
+    try:
+        if gateway is None:
+            raise RuntimeError("Interaction gateway unavailable")
+        decision = dispatch_stop(gateway.event_bus)
+        print("Microphone emergency stop " + json.dumps(dict(detected=detected, **decision)), flush=True)
+        CAPTION_TEXT = "Emergency stop requested."
+    except Exception as exc:
+        CAPTION_TEXT = "Stop recognized. Emergency stop delivery unconfirmed."
+        print(f"Emergency stop delivery unconfirmed ({type(exc).__name__})")
+
+
 def record_audio(output_file="input.wav"):
     global VOICE_FLAG, END_OF_RECORD, VOICE_FRAMES_COUNT, SILENCE_FRAMES_COUNT, SESSION_VOICE_FRAMES
     global STOP_RECORDING, LISTENING_ENABLED, CAPTION_TEXT, IS_RECORDING, END_OF_SPEECH_FRAMES
@@ -1028,7 +1051,7 @@ def record_audio(output_file="input.wav"):
     normalized_bytes = audio_arr.astype(np.int16).tobytes()
 
     # Save the recorded audio to a .wav file
-    output_path = os.path.join(BASE_DIR, output_file)
+    output_path = os.path.join(os.environ.get("VIRA_AUDIO_WORK_DIR", BASE_DIR), output_file)
     with wave.open(output_path, "wb") as wf:
         wf.setnchannels(channels)
         wf.setsampwidth(audio.get_sample_size(format_type))
@@ -1223,7 +1246,8 @@ def is_hallucination_or_noise(text: str, segments=None, audio_evidence: Optional
 def speach2text(file_loc="input.wav", audio_evidence=None):
     global CURRENT_QUESTION, voice_client, LISTENING_ENABLED, CAPTION_TEXT
     if voice_client is None:
-        print("⚠ voice_client is not configured (missing API key). Set GROQ_API_KEY in .env.")
+        print("Conversational transcription unavailable. Offline stop listening continues.")
+        start_listening_safely()
         return
 
     try:
@@ -1299,11 +1323,17 @@ def chat_model(user_input):
 
         # Route through Production Interaction Gateway (EventBus, SafetyGate, FSM, and Tracing)
         if gateway is not None:
-            gw_res = gateway.process_text(user_input)
-            response = gw_res.response
-            if gw_res.expression:
-                NEXT_EXP = gw_res.expression.value
-            print(f"🤖 [Gateway Response ({gw_res.latency_ms:.1f}ms)]: {response}")
+            from core.context_mission import handle
+            try:
+                response = handle(user_input, gateway)
+            except (OSError, ValueError, RuntimeError, subprocess.SubprocessError):
+                response = "I could not verify the current simulation observations."
+            if response is None:
+                gw_res = gateway.process_text(user_input)
+                response = gw_res.response
+                if gw_res.expression:
+                    NEXT_EXP = gw_res.expression.value
+            print(f"🤖 [Gateway Response]: {response}")
             CONV_HISTORY.append({"role": "user", "content": user_input})
             CONV_HISTORY.append({"role": "assistant", "content": response})
             print("<<<<<<<<<<<<<<<<")
@@ -1711,24 +1741,33 @@ def extract_and_apply_exp(text):
     return clean_text.strip()
 
 def asynt_tss(response):
-    if response:
-        remain = extract_and_apply_exp(response)
-        loop = asyncio.new_event_loop()
-        try:
-            asyncio.set_event_loop(loop)
-            loop.run_until_complete(text2speech(remain))
-        except Exception as e:
-            print(f"TTS error: {e}")
-            start_listening_safely()
-        finally:
-            try:
-                loop.run_until_complete(loop.shutdown_asyncgens())
-            except Exception:
-                pass
-            loop.close()
-            asyncio.set_event_loop(None)
-    else:
+    if not response:
         start_listening_safely()
+        return
+
+    # Do not start a second audio player while the prior utterance owns the
+    # speaker.  Dropping a duplicate response is safer and clearer than
+    # overlapping speech; the next user turn can produce a fresh response.
+    if not TTS_PLAYBACK_LOCK.acquire(blocking=False):
+        print("⤍ TTS busy; suppressed overlapping response.")
+        return
+
+    remain = extract_and_apply_exp(response)
+    loop = asyncio.new_event_loop()
+    try:
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(text2speech(remain))
+    except Exception as e:
+        print(f"TTS error: {e}")
+        start_listening_safely()
+    finally:
+        try:
+            loop.run_until_complete(loop.shutdown_asyncgens())
+        except Exception:
+            pass
+        loop.close()
+        asyncio.set_event_loop(None)
+        TTS_PLAYBACK_LOCK.release()
 
 def create_exp(token):
     global NEXT_EXP
@@ -1857,6 +1896,13 @@ def GUI():
     print("    Terminal  : Type text, '+' / '-', or questions and press Enter")
     print("=======================================================\n")
 
+    # The priority listener shares the desktop input through the sound server.
+    # It has no speaker output and uses the same authenticated kernel Stop.
+    if sys.platform.startswith("linux"):
+        from core.offline_stop import listen_for_stop
+        EMERGENCY_MIC_ENABLED.set()
+        threading.Thread(target=listen_for_stop, args=(EMERGENCY_MIC_ENABLED, EMERGENCY_MIC_SHUTDOWN,
+                         request_microphone_stop), daemon=True, name="offline-emergency-stop").start()
     # Auto-start hands-free voice listening immediately!
     print("⤍ [Auto-Voice] Hands-free automatic voice interaction active!")
     LISTENING_ENABLED = True
@@ -1917,6 +1963,8 @@ def GUI():
         pygame.display.update()
         pygame.time.wait(16)
 
+    EMERGENCY_MIC_SHUTDOWN.set()
+    EMERGENCY_MIC_ENABLED.clear()
     STOP_RECORDING = True
     LISTENING_ENABLED = False
     try:

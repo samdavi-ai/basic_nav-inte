@@ -1,0 +1,90 @@
+{
+  "case": {
+    "index": 3,
+    "seed": 42,
+    "kind": "doorway",
+    "box": [
+      4.98,
+      1.05,
+      0.275,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      3.0
+    ],
+    "min_robot_x": 3.3,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world"
+  },
+  "mission_id": "standalone-7031f859-3fc5-4933-9f7f-837335fe014f",
+  "trace_id": "f0ba4f41-44e6-484c-a693-60a63a814c0c",
+  "matched_terminal": true,
+  "runner_timed_out": false,
+  "goal_within_035m": false,
+  "final_zero_command_window_s": 0.772,
+  "planner_actions": [],
+  "insertion_within_proven_planner_interval": false,
+  "state": "FAILED",
+  "kernel_terminal": "NAVIGATION_FAILURE",
+  "retries": 3,
+  "insert_requested": 10.122,
+  "first_scene_confirmation": 10.744,
+  "last_scene_confirmation": [
+    10.744,
+    4.98,
+    1.05
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": null,
+  "risk_to_zero_s": null,
+  "risk_to_chassis_stop_s": null,
+  "selected_rollouts_after_insertion": 73,
+  "worst_frozen_rollout_fixture_m": -0.0245,
+  "minimum_scene_interpolated_m": 0.146964,
+  "minimum_fixture_interpolated_m": 0.70611,
+  "sensor_transform_drops": 307,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "depth": 11.2
+  },
+  "first_lethal_marks": {
+    "global_costmap": 10.458,
+    "local_costmap": 10.74
+  },
+  "preexisting_matches": {},
+  "first_monitor_action": null,
+  "first_risk_action": null,
+  "monitor_stop": null,
+  "guard_stop": null,
+  "first_final_zero_after_stop_action": null,
+  "sensor_to_local_mark_s": -0.46,
+  "local_mark_to_stop_s": null,
+  "sensor_to_stop_s": null,
+  "peak_linear_speed_until_stop_mps": null,
+  "max_displacement_until_stop_m": null,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": 0.71109,
+  "goal_error_m": 3.56803,
+  "old_and_new_plans": [
+    {
+      "t": 3.136,
+      "points": 244,
+      "frozen_fixture_clearance_m": -0.51719
+    },
+    {
+      "t": 60.82,
+      "points": 141,
+      "frozen_fixture_clearance_m": -0.26194
+    }
+  ],
+  "after_insertion_plan_count": 1,
+  "confirmed_motion_m": 0.0
+}

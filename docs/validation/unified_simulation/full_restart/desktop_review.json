@@ -1,0 +1,33 @@
+{
+  "at_kernel_start": [
+    {
+      "action_id": "c7a0dcf8-0c8d-47ba-8235-eea3defc1f2e",
+      "automatic_resume": false,
+      "last_recorded_observation": {
+        "id": "fd0bfe28-4f76-44d9-ad8f-f81b8188d3e1",
+        "state": "MISSION_EXECUTING",
+        "timestamp": 1795421415
+      },
+      "mission_id": "standalone-b9d526f8-fc39-43c9-9b48-f146d9d16072",
+      "requested_at": 1795421415,
+      "requires_operator_review": true,
+      "trace_id": "9c54f842-13b4-4cf3-b7af-6b3578219d81"
+    }
+  ],
+  "automatic_resume": false,
+  "pending_review": [
+    {
+      "action_id": "c7a0dcf8-0c8d-47ba-8235-eea3defc1f2e",
+      "automatic_resume": false,
+      "last_recorded_observation": {
+        "id": "fd0bfe28-4f76-44d9-ad8f-f81b8188d3e1",
+        "state": "MISSION_EXECUTING",
+        "timestamp": 1795421415
+      },
+      "mission_id": "standalone-b9d526f8-fc39-43c9-9b48-f146d9d16072",
+      "requested_at": 1795421415,
+      "requires_operator_review": true,
+      "trace_id": "9c54f842-13b4-4cf3-b7af-6b3578219d81"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "index": 2,
+  "seed": 42,
+  "kind": "crossing",
+  "box": [
+    1.9,
+    -0.67,
+    0.317,
+    0.35
+  ],
+  "goal": [
+    4.5,
+    0.0
+  ],
+  "min_robot_x": 0.21078855370023739,
+  "min_plan_count": 1,
+  "crossing_speed": 0.424,
+  "initial_pose": [
+    0,
+    0,
+    0
+  ],
+  "world": "apartment_floor.world"
+}

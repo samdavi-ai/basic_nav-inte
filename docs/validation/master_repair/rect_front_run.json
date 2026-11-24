@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/rect_front",
+    "--rectangular-guard"
+  ],
+  "exit": 0
+}

@@ -34,9 +34,9 @@ face_recognition:
   enabled: true
   engine: "yunet"                # Options: yunet | arcface | insightface
   model_path: "models/face_detection_yunet_2023mar.onnx"
-  database_path: "models/enrolled_faces.json"
-  default_user_name: "Sam"
-  match_threshold: 0.55          # Cosine distance / confidence threshold
+  embedding_path: "models/face_recognition_sface_2021dec.onnx"
+  similarity_threshold: 0.55
+  ambiguity_margin: 0.08
 
 spatial:
   estimate_3d: true              # Estimate real-world (X, Y, Z) distance in meters

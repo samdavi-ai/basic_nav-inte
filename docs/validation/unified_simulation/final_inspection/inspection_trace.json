@@ -1,0 +1,233 @@
+[
+  {
+    "event_type": "RobotPosition",
+    "id": "500d20c0-4a0e-44a6-a13c-59555744efe6",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":4.153,\"y\":-2.314,\"theta\":-1.764,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795422929,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "Custom",
+    "id": "161d72c3-2935-4652-8598-a9d53bf4fc39",
+    "observed_by": "graceemo_interaction",
+    "parent_event_id": "b231764e-f5fa-4259-9366-e402a62352de",
+    "payload": "{\"type\":\"Custom\",\"data\":{\"name\":\"mission_inspection\",\"payload\":{\"arrival_barrier_sim_ns\":44008000000,\"feedback\":\"I could not localize any recognized objects in the latest camera view.\",\"inspection_status\":\"no_localized_objects\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"scene\":{\"captured_at\":1795422928.82761,\"frame\":110,\"image_stamp_ns\":44600000000,\"observations\":[]}}}}",
+    "session_id": "adapter:graceemo_interaction",
+    "source": "RobotBridge",
+    "timestamp": 1795422929,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "22379019-dcbe-4dac-a2aa-5dd201ac726d",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":4.155,\"y\":-2.317,\"theta\":-1.752,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795422928,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "2bcc5747-5401-495a-bf1c-75959f0a279f",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":4.161,\"y\":-2.318,\"theta\":-1.786,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795422927,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "cb540393-ee35-4728-a326-942dfeb510ec",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"AUTONOMY_READY\",\"previous_state\":\"WAITING_FOR_NEXT_MISSION\",\"reason\":\"System standing by in Autonomous Ready mode\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":4.136038747005101,\"y\":-2.3818914248813035}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422927,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "cfa4aed5-bbb0-441d-8567-049fa834a9c5",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"WAITING_FOR_NEXT_MISSION\",\"previous_state\":\"MISSION_COMPLETED\",\"reason\":\"Mission completed. Ready for next assignment\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":4.136038747005101,\"y\":-2.3818914248813035}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422927,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "1e557da1-20df-4958-85a0-505efd395168",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"MISSION_COMPLETED\",\"previous_state\":\"DESTINATION_REACHED\",\"reason\":\"All 2 destinations reached\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":4.136038747005101,\"y\":-2.3818914248813035}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422927,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "4f03dc71-b2c1-47df-bd5f-525afc9e1aa8",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"DESTINATION_REACHED\",\"previous_state\":\"MISSION_EXECUTING\",\"reason\":\"Arrival confirmed at Living Room (map_err=0.19m, gz_err=0.19m)\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":4.136038747005101,\"y\":-2.3818914248813035}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422927,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "adc2ecfa-9de3-4c1a-975f-7a1a881b47bd",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":5.026,\"y\":-1.324,\"theta\":-1.388,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795422920,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "d6c6e70a-4e6d-4454-8dfb-04716c3bbd70",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"MISSION_EXECUTING\",\"previous_state\":\"MISSION_PLANNING\",\"reason\":\"Path confirmed. Tracking trajectory to Living Room\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":5.010622062929892,\"y\":-1.3668134666854015}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422919,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "3d883761-5d40-43e3-9c6b-3449929d7b9b",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"DESTINATION_REACHED\",\"previous_state\":\"MISSION_EXECUTING\",\"reason\":\"Arrival confirmed at Living Room doorway staging (map_err=0.23m, gz_err=0.23m)\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":5.010622062929892,\"y\":-1.3668134666854015}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422919,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "d6108a77-e02f-4de0-802d-58c6169fc4ac",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"MISSION_PLANNING\",\"previous_state\":\"DESTINATION_REACHED\",\"reason\":\"Planning path to waypoint 2/2: Living Room\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":5.010622062929892,\"y\":-1.3668134666854015}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422919,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "28ecb22f-9b5e-4634-81aa-61aa5bc51418",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":0.067,\"y\":-0.058,\"theta\":-0.165,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795422905,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "ae11a1f5-f689-4f05-8bba-716fca6ef1f3",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":-0.025,\"y\":-0.042,\"theta\":-0.181,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795422905,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "3bdc9328-ea88-4675-a942-338fd97c5b69",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":-0.049,\"y\":-0.038,\"theta\":-0.191,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795422905,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "179d261b-308c-436a-b77f-893b8cc91203",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"MISSION_EXECUTING\",\"previous_state\":\"MISSION_PLANNING\",\"reason\":\"Path confirmed. Tracking trajectory to Living Room doorway staging\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":-0.013358006685017222,\"y\":-0.022051360193753807}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422904,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "212b2918-a06b-4946-b4be-639816cffaf5",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"MISSION_PLANNING\",\"previous_state\":\"MISSION_ACCEPTED\",\"reason\":\"Planning path to waypoint 1/2: Living Room doorway staging\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":-0.013358006685017222,\"y\":-0.022051360193753807}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422904,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "7e114b94-124f-4262-91e7-42d9f30b51e1",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"MISSION_ACCEPTED\",\"previous_state\":\"AUTONOMY_READY\",\"reason\":\"Mission 'Navigation and inspection' with 2 waypoints accepted\",\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"x\":-0.013358006685017222,\"y\":-0.022051360193753807}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795422904,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "ActionRequested(StartMission",
+    "id": "b231764e-f5fa-4259-9366-e402a62352de",
+    "observed_by": "graceemo_interaction",
+    "parent_event_id": "3a0a00c0-fb6b-4ffd-a5e2-a28e6ad645c8",
+    "payload": "{\"type\":\"ActionRequested\",\"data\":{\"action\":\"StartMission\",\"params\":{\"mission_id\":\"standalone-d1b146a7-ba67-47b8-9558-0ec1497def9e\",\"mission_name\":\"Navigation and inspection\",\"waypoints\":[{\"coords\":{\"frame_id\":\"map\",\"x\":4.0,\"y\":-2.5,\"yaw\":-1.57},\"dwell_sec\":0.0,\"name\":\"Living Room\"}]}}}",
+    "session_id": "standalone_autonomous_mission",
+    "source": "Brain",
+    "timestamp": 1795422904,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "851a02d8-2c54-4d73-9dbd-0e84311eda31",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":-0.036,\"y\":-0.029,\"theta\":-0.142,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795422899,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  },
+  {
+    "event_type": "Custom",
+    "id": "3a0a00c0-fb6b-4ffd-a5e2-a28e6ad645c8",
+    "observed_by": "graceemo_interaction",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"Custom\",\"data\":{\"name\":\"navigation_inspection_request\",\"payload\":{\"destination\":\"Living Room\"}}}",
+    "session_id": "session_default",
+    "source": "Voice",
+    "timestamp": 1795422899,
+    "trace_id": "2344eb6f-582b-4d6b-83eb-659c240e18b4"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "launch": 1,
+    "launcher_pid": 111688,
+    "started": 1795426530.3837342,
+    "kernel_pid": 111714,
+    "ended": 1795426596.8574817,
+    "exit_code": 143,
+    "kernel_exited": true
+  }
+]

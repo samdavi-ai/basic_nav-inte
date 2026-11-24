@@ -1,55 +1,77 @@
-# GRaCEmo ViRa — Autonomous AI Robot System
+# GRaCEmo ViRa
 
-> **Event-Driven Nervous System for Autonomous Robotics & Multimodal AI**
+**ROS 2 Jazzy and Gazebo Harmonic robotics platform**
 
----
+Rust event kernel · Python perception and adapters · Nav2 simulation
 
-## 🧭 System Overview
+![ROS 2 Jazzy](https://img.shields.io/badge/ROS%202-Jazzy-22314E?logo=ros)
+![Gazebo Harmonic](https://img.shields.io/badge/Gazebo-Harmonic-FF6F00)
+![Release status](https://img.shields.io/badge/release-validation%20hold-orange)
+[![Rust checks](https://github.com/muzamil-ashiq/gracemo-vira/actions/workflows/rust.yml/badge.svg?branch=SAM_NEW)](https://github.com/muzamil-ashiq/gracemo-vira/actions/workflows/rust.yml?query=branch%3ASAM_NEW)
 
-GRaCEmo ViRa decouples high-level reasoning and physical body control using an **event-driven nervous system** pattern:
+GRaCEmo ViRa connects mission reasoning, persistent memory, authorized adapters, and ROS 2 navigation. The supported development target is desktop Gazebo simulation. **The current release is on validation hold**: the autonomous patrol baseline works, while visual SLAM, reliable dynamic recovery, and other acceptance gates remain in progress. This repository does not claim physical-robot or Jetson acceptance.
 
+## Verified capabilities
+
+Each result links to its report or saved run evidence. Status reflects measured evidence, not planned capability.
+
+| Feature | Measured on | Result | Evidence |
+|---|---|---|---|
+| Five-room autonomous patrol | Gazebo Harmonic | 11/11 waypoints; 185.6 s | [Patrol result](docs/validation/visual_all_03/patrol_after_fixes/patrol.json) · [visual acceptance report](docs/validation/VIR-VISUAL-ALL-03-FINAL-REPORT.md) |
+| Idle-zero safety | Gazebo Harmonic | Command peaks 0; displacement 0.007915 m | [Idle-zero evidence](docs/validation/visual_all_03/patrol_after_fixes/idle_zero.json) |
+| Visual object to navigation | Gazebo RGB-D + ROS 2/Nav2 | Monitor detected and authorized goal completed | [Latest live run](docs/validation/VIR-VISUAL-ALL-04-FINAL-REPORT.md) |
+| Visual odometry | Gazebo trajectory vs independent ground truth | **Does not meet target:** 1.6555 m translation RMSE, 26.68° rotation RMSE, 35.68% availability | [Measured limitations](docs/validation/VIR-VISUAL-ALL-03-FINAL-REPORT.md) |
+| Saved-map relocalization and route | Independent Gazebo restarts | **1/10 routes**; acceptance not met | [Restart evidence and blockers](docs/validation/VIR-VISUAL-ALL-03-FINAL-REPORT.md) |
+| RGB-D visual SLAM / loop closure | ROS 2 Jazzy desktop | Not integrated or accepted | [Visual intelligence programme report](docs/validation/VIR-VISUAL-ALL-04-FINAL-REPORT.md) |
+
+The Rust workflow runs the kernel workspace tests. It does not stand in for ROS 2, Gazebo, GUI, physical-robot, or hardware acceptance.
+
+## System architecture
+
+```mermaid
+flowchart LR
+    User[Voice or application request] --> K[Rust kernel and authorization]
+    K <--> M[MNSE ledger and world graph]
+    K <--> A[Registered adapters]
+    A --> R[ROS 2 bridges and coordinator]
+    R --> N[Nav2 and safety chain]
+    N --> G[Gazebo Harmonic]
+    G --> S[RGB-D, LiDAR, odometry]
+    S --> P[Perception and tracking]
+    P --> K
+    M --> Q[K grounded queries]
+    Q --> UI[PySide6 control center]
+    R --> UI
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                       AI REASONING                          │
-│               (LLMs / Task Planners / Memory)               │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                 GRaCEmo KERNEL (Rust)                       │
-│     • Tokio EventBus (Broadcast & Priority Queues)          │
-│     • Append-Only SQLite Ledger (Causal Event Store)        │
-│     • Relational Knowledge Graph (Entity/State Tracking)    │
-│     • High-Speed HTTP/SSE & Unix Socket API                 │
-└───────▲──────────────────────▲───────────────────────┬──────┘
-        │                      │                       │
-        │ Event Stream         │ Event Stream          │ Action Dispatch
-        │                      │                       │ (navigate, speak, look)
-┌───────┴──────────────┐ ┌─────┴────────────────┐ ┌────▼──────────────┐
-│   VISION ADAPTER     │ │   VOICE ADAPTER      │ │   ROBOT BRIDGE    │
-│   (YOLO / YuNet)     │ │ (Whisper / Kokoro)   │ │  (ROS2 / Hardware)│
-└──────────────────────┘ └──────────────────────┘ └───────────────────┘
-```
 
----
+The active simulation pipeline is Gazebo sensors → ROS 2 → perception → kernel/MNSE → K and authorized adapters → ROS 2/Nav2 → Gazebo. AMCL remains the primary Nav2 localization source until visual localization meets its independent acceptance thresholds. Safety monitoring, command arbitration, collision monitoring, and E-stop remain in the motion path.
 
-## 📁 Repository Layout
+## Repository map
 
-- `kernel/` — Core Rust workspace: EventBus, types, ledger, graph, and MCP interfaces.
-- `ros2_ws/src/gracemo_description/` — Robot URDF/Xacro, links, joints, and Gazebo plugins.
-- `ros2_ws/src/gracemo_gazebo/` — Gazebo Harmonic worlds and ROS launch files.
-- `ros2_ws/src/gracemo_nav2/` — Nav2, localization, costmaps, velocity arbitration, and mission coordinator.
-- `ros2_ws/src/gracemo_bridge/` — Gazebo sensor and higher-level ROS bridges.
-- `gracemo_control_center/` — Desktop control and monitoring application.
-- `vira_interaction/` — Voice and interaction services.
-- `config/` — Declarative TOML/YAML runtime configurations.
-- `docs/` — Architecture documentation, hardware interfaces, and API references.
+| Path | Responsibility |
+|---|---|
+| `kernel/` | Rust kernel, K execution, event types, SQLite ledger and world graph |
+| `adapters/` | Perception, vision, SDK, and reasoning adapters |
+| `ros2_ws/src/gracemo_bridge/` | ROS 2 sensor, kernel, and interaction bridges |
+| `ros2_ws/src/gracemo_gazebo/` | Gazebo Harmonic robot simulation and worlds |
+| `ros2_ws/src/gracemo_nav2/` | Nav2 configuration, coordinator, safety and navigation behavior |
+| `gracemo_control_center/` | PySide6 simulation control and monitoring interface |
+| `vira_interaction/` | Voice and interaction runtime |
+| `scripts/` | Launch, mission, readiness, and validation entry points |
+| `docs/` | Architecture, operating guides, acceptance reports, and evidence index |
+| `tests/` | Rust, Python, ROS 2, and end-to-end regression tests |
 
-## 🤖 ROS 2 + Gazebo Navigation
+See [Documentation index](docs/INDEX.md) for setup, architecture, operating and validation guides.
 
-Prerequisites: ROS 2 Jazzy, Gazebo Harmonic, and the ROS/Gazebo packages declared by the workspace.
+## Run the Gazebo simulation
 
-Build the navigation stack from the repository root:
+### Prerequisites
+
+- Ubuntu with ROS 2 Jazzy
+- Gazebo Harmonic and the ROS/Gazebo integration packages declared by the workspace
+- Rust toolchain and Python dependencies for the selected components
+
+Build from the repository root:
 
 ```bash
 source /opt/ros/jazzy/setup.bash
@@ -59,74 +81,61 @@ cd ..
 python3 scripts/check_simulation_model_consistency.py
 ```
 
-Start the simulator and Nav2 in terminal 1:
+Launch the full simulation with the supported launcher:
 
 ```bash
-export ROS_DOMAIN_ID=68
-export GZ_PARTITION=vira-navigation
-source /opt/ros/jazzy/setup.bash
-source ros2_ws/install/setup.bash
-ros2 launch gracemo_gazebo vira_complete.launch.py mode:=localization headless:=true use_rviz:=false launch_interaction:=false use_rl:=false
+./scripts/launch_full_simulation.sh --no-gui
 ```
 
-Run a bounded navigation check from terminal 2 with the same `ROS_DOMAIN_ID` and `GZ_PARTITION`:
+To run the five-room simulation patrol:
 
 ```bash
-export ROS_DOMAIN_ID=68
-export GZ_PARTITION=vira-navigation
-source /opt/ros/jazzy/setup.bash
-source ros2_ws/install/setup.bash
-python3 scripts/run_gazebo_navigation_smoke.py --goal-x 0.9 --goal-y 0.0
+./scripts/launch_full_simulation.sh --patrol --no-gui
 ```
 
-The smoke check requires advancing `/clock`, fresh scan/odometry/IMU data, a ready Nav2 stack, and no active stop before it sends a goal. Stop the simulator with Ctrl+C in terminal 1. Gazebo's command configuration path is set by the launch file when the shell has not set one.
-
-For a repeatable multi-room navigation run, replace the smoke command in terminal 2 with:
-
-```bash
-python3 scripts/run_gate_e_50_missions.py --missions 50 --seed 42 \
-  --out docs/validation/gate_e_50_missions_2026-11-21_final_arrival_guard.json
-```
-
-This campaign checks readiness before moving and records each mission against Gazebo ground truth. It uses the apartment's fixed map and static obstacles; it does not test randomized or moving obstacles.
-
-To validate the simulated emergency stop, mission rejection while stopped, and explicit reset:
-
-```bash
-python3 scripts/run_gazebo_estop_smoke.py \
-  --out docs/validation/gazebo_estop_smoke_2026-11-21.json
-```
-
-Run this only with the Gazebo stack active. It keeps E-stop latched if any safety check fails.
-
-For the full desktop launcher, use `./scripts/launch_full_simulation.sh`; it opens the Gazebo GUI and stops only process groups started by that launcher.
-
-### Full adapter-to-Gazebo patrol
-
-Build the kernel daemon if it is not already available:
+For the adapter → kernel → ROS 2 → Nav2 → Gazebo path, start the simulation in one terminal and run the mission runner in another:
 
 ```bash
 cargo build --manifest-path kernel/Cargo.toml --bin gracemo-kernel
-```
-
-Start the standalone Kernel, Gazebo, Nav2, and ROS bridge stack in terminal 1:
-
-```bash
 ./scripts/launch_full_simulation.sh
 ```
 
-In terminal 2, source the same ROS domain and dispatch the real five-room mission through the Kernel EventBus:
-
 ```bash
-export ROS_DOMAIN_ID=68
 source /opt/ros/jazzy/setup.bash
 source ros2_ws/install/setup.bash
 python3 scripts/run_autonomous_mission.py --timeout 300 \
   --out docs/validation/adapter_kernel_gazebo_patrol.json
 ```
 
-The mission runner waits for the coordinator's matching mission-history result. It exits nonzero on kernel rejection, coordinator failure, or timeout. Its success report reflects completed Gazebo navigation; it does not synthesize travel time or vision detections.
+The launcher and mission runner perform readiness checks and record results. Use only the private Gazebo simulation configuration for motion tests. Do not connect this workflow to a physical robot.
 
-The DWB controller is the default. Keep `use_rl:=false` until the RL policy passes the same repeatable full-mission acceptance gate. Current measured status and remaining work are in [`docs/PROJECT_GAPS_AND_SIMULATION_STATUS.md`](docs/PROJECT_GAPS_AND_SIMULATION_STATUS.md).
+## Run checks
 
+Rust kernel workspace:
 
+```bash
+cargo test --locked --manifest-path kernel/Cargo.toml
+```
+
+Perception and ROS depth tests:
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source ros2_ws/install/setup.bash
+export PYTHONPATH="$PWD:$PWD/adapters/sdk:$PWD/vira_interaction:$PWD/ros2_ws/src/gracemo_bridge:$PYTHONPATH"
+python3 -m pytest -q tests/test_edge_vision.py tests/test_perception_pipeline.py \
+  tests/ros2/test_gazebo_depth_frame.py
+```
+
+Kernel API integration tests use a private local listener:
+
+```bash
+PYTHONPATH="$PWD/adapters/sdk:$PYTHONPATH" \
+  python3 -m pytest -q tests/e2e/test_visual_memory.py
+```
+
+## Contributing and project status
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before changing navigation, perception, authorization, or safety behavior. Keep simulation results reproducible, preserve existing user changes, and report failed thresholds plainly. No measurement in this repository should be described as physical-robot validation unless a separate authorized hardware programme produces that evidence.
+
+Current release gates and measured limitations are tracked in the [project gap report](docs/PROJECT_GAPS_AND_SIMULATION_STATUS.md) and the [VIR-VISUAL-ALL-04 report](docs/validation/VIR-VISUAL-ALL-04-FINAL-REPORT.md).

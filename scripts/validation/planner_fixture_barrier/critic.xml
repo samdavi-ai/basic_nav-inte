@@ -1,0 +1,5 @@
+<library path="vira_swept_critic">
+  <class type="vira_validation::SweptFootprintCritic" base_class_type="dwb_core::TrajectoryCritic"/>
+  <class type="vira_validation::RectangularSweepCritic" base_class_type="dwb_core::TrajectoryCritic"/>
+  <class type="vira_validation::PolicyPreferenceCritic" base_class_type="dwb_core::TrajectoryCritic"/>
+</library>

@@ -1,0 +1,16 @@
+{
+  "common_keyframes": [
+    1
+  ],
+  "optimized_nodes": 1,
+  "total_nodes": 1,
+  "raw": {
+    "translation_rmse_m": 3.469552829456483e-18,
+    "rotation_rmse_deg": 1.7772734312759915e-22
+  },
+  "optimized": {
+    "translation_rmse_m": 3.469552829456483e-18,
+    "rotation_rmse_deg": 1.7772734312759915e-22
+  },
+  "type1_constraints": []
+}

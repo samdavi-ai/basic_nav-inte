@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/near",
+    "--master-recovery",
+    "--index",
+    "9",
+    "--synchronize-replan"
+  ],
+  "exit": 0,
+  "wall_s": 37.67286186199999,
+  "analysis_exit": 0
+}

@@ -1,0 +1,24 @@
+{
+  "before": {
+    "state": "MISSION_EXECUTING",
+    "mission": {
+      "id": "standalone-653da034-c145-469a-b3bf-8dbcd598fb5e",
+      "name": "Standalone apartment patrol",
+      "trace_id": "0a35ebda-930e-46d7-918a-1e07db669665"
+    },
+    "action_ids": []
+  },
+  "after": {
+    "state": "MISSION_EXECUTING",
+    "mission": {
+      "id": "standalone-653da034-c145-469a-b3bf-8dbcd598fb5e",
+      "name": "Standalone apartment patrol",
+      "trace_id": "0a35ebda-930e-46d7-918a-1e07db669665"
+    },
+    "action_ids": []
+  },
+  "verified": false,
+  "success": false,
+  "actions": [],
+  "feedback": "Reasoning provider unavailable. No further actions were submitted."
+}

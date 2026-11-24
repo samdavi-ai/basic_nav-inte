@@ -1,0 +1,74 @@
+{
+  "hallway": {
+    "camera_stamps": 1086,
+    "scored": 57,
+    "coverage": 0.052486187845303865,
+    "rmse_m_deg": [
+      0.036498145047470266,
+      0.2793336051637484
+    ],
+    "medians": {
+      "features": 21.0,
+      "orb": 36.0,
+      "inliers": 0.0
+    }
+  },
+  "kitchen": {
+    "camera_stamps": 222,
+    "scored": 0,
+    "coverage": 0.0,
+    "rmse_m_deg": null,
+    "medians": {
+      "features": 48.0,
+      "orb": 153.0,
+      "inliers": 0.0
+    }
+  },
+  "bedroom": {
+    "camera_stamps": 152,
+    "scored": 0,
+    "coverage": 0.0,
+    "rmse_m_deg": null,
+    "medians": {
+      "features": 33.5,
+      "orb": 37.0,
+      "inliers": 0.0
+    }
+  },
+  "study": {
+    "camera_stamps": 282,
+    "scored": 0,
+    "coverage": 0.0,
+    "rmse_m_deg": null,
+    "medians": {
+      "features": 26.0,
+      "orb": 85.5,
+      "inliers": 0.0
+    }
+  },
+  "living": {
+    "camera_stamps": 233,
+    "scored": 0,
+    "coverage": 0.0,
+    "rmse_m_deg": null,
+    "medians": {
+      "features": 35.0,
+      "orb": 40.0,
+      "inliers": 0.0
+    }
+  },
+  "whole_route": {
+    "camera_stamps": 1975,
+    "scored": 57,
+    "coverage": 0.028860759493670885,
+    "rmse_m_deg": [
+      0.036498145047470266,
+      0.2793336051637484
+    ],
+    "medians": {
+      "features": 24.0,
+      "orb": 46.0,
+      "inliers": 0.0
+    }
+  }
+}

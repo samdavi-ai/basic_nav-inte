@@ -1,0 +1,22 @@
+[
+  {
+    "samples": 78336,
+    "peak_pcm": 17967,
+    "decoded_utterances": 1
+  },
+  {
+    "samples": 160256,
+    "peak_pcm": 16261,
+    "decoded_utterances": 2
+  },
+  {
+    "samples": 241152,
+    "peak_pcm": 6796,
+    "decoded_utterances": 3
+  },
+  {
+    "samples": 324096,
+    "peak_pcm": 15553,
+    "decoded_utterances": 4
+  }
+]

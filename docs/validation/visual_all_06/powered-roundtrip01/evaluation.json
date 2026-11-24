@@ -1,0 +1,142 @@
+{
+  "rgb_sim_hz": 9.992759962593139,
+  "depth_median_m": {
+    "median": 2.409011721611023,
+    "p95": 4.521255195140839,
+    "max": 5.479554653167725
+  },
+  "nearest_depth_skew_ms": {
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 0.0
+  },
+  "image_mean_abs_change": {
+    "median": 6.460052083333333,
+    "p95": 17.688296875,
+    "max": 20.471783854166667
+  },
+  "exactly_repeated_images": 1,
+  "rejection_log_counts": {
+    "Not enough inliers": 941,
+    "Not enough features": 2,
+    "Missing correspondences": 591
+  },
+  "graph_events": 54,
+  "keyframe_decisions": 164,
+  "graph_matches": [
+    {
+      "t": 45.9,
+      "ref": 45,
+      "loop": 30,
+      "proximity": 0,
+      "inliers": 42.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 46.9,
+      "ref": 46,
+      "loop": 30,
+      "proximity": 0,
+      "inliers": 32.0,
+      "iterations": 2.0
+    }
+  ],
+  "interval": [
+    0.004,
+    132.6
+  ],
+  "counts": {
+    "resources": 74,
+    "truth": 8042,
+    "rgb": 1326,
+    "/camera/camera_info": 1326,
+    "neck": 4214,
+    "depth": 1326,
+    "/camera/depth/camera_info": 1326,
+    "odom": 1295,
+    "info": 1295,
+    "localization": 54,
+    "graph": 54
+  },
+  "rgb_duplicates": 0,
+  "out_of_order": 0,
+  "missing_same_stamp_depth": 0,
+  "valid_depth_fraction": {
+    "median": 0.9003125,
+    "p95": 1.0,
+    "max": 1.0
+  },
+  "rgb_calibration": {
+    "kind": "/camera/camera_info",
+    "t": 0.004,
+    "frame": "camera_optical_link",
+    "k": [
+      246.89624622675555,
+      0.0,
+      160.0,
+      0.0,
+      246.89624622675555,
+      120.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 320,
+    "height": 240,
+    "model": "plumb_bob"
+  },
+  "depth_calibration": {
+    "kind": "/camera/depth/camera_info",
+    "t": 0.004,
+    "frame": "camera_optical_link",
+    "k": [
+      123.44812311337778,
+      0.0,
+      80.0,
+      0.0,
+      123.44812311337778,
+      60.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 160,
+    "height": 120,
+    "model": "plumb_bob"
+  },
+  "availability": 0.41402714932126694,
+  "observed_camera_stamps": 1326,
+  "missing_rgb_at_camera_stamp": 0,
+  "observed_camera_coverage": 0.41402714932126694,
+  "matched": 549,
+  "valid_without_truth": 0,
+  "loss_transitions": 2,
+  "recovery_transitions": 2,
+  "translation_rmse_m": 0.07344352652027726,
+  "rotation_rmse_deg": 0.9272703712491615,
+  "translation_m": {
+    "median": 0.02638649128454713,
+    "p95": 0.14227339773846123,
+    "max": 0.3721445167176441
+  },
+  "rotation_deg": {
+    "median": 0.3227496377001385,
+    "p95": 1.605431590079276,
+    "max": 8.444468669958782
+  },
+  "latency_s": {
+    "median": 0.040940046310424805,
+    "p95": 0.064538836479187,
+    "max": 0.12303495407104492
+  },
+  "matches": {
+    "median": 39.0,
+    "p95": 315.29999999999995,
+    "max": 397.0
+  },
+  "features": {
+    "median": 469.0,
+    "p95": 581.0,
+    "max": 665.0
+  }
+}

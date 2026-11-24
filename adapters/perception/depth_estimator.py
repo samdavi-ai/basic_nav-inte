@@ -26,6 +26,7 @@ class DepthEstimator:
 
     def __init__(self, neighborhood_size: int = 7):
         self.neighborhood_size = neighborhood_size
+        self.last_depth_mad_m = None
         self.camera_info: Optional[Any] = None
         self.fx: Optional[float] = None
         self.fy: Optional[float] = None
@@ -38,6 +39,7 @@ class DepthEstimator:
         Updates camera intrinsics directly from sensor_msgs/msg/CameraInfo.
         Does NOT hardcode any focal lengths or optical centers.
         """
+        self.fx = self.fy = self.cx = self.cy = None
         self.camera_info = camera_info_msg
         if hasattr(camera_info_msg, "header") and camera_info_msg.header.frame_id:
             self.camera_frame_id = camera_info_msg.header.frame_id
@@ -65,6 +67,7 @@ class DepthEstimator:
         Samples metric depth in a window around (u_depth, v_depth) on the depth image.
         Uses robust median filter over valid pixels (rejecting NaN, Inf, <=0.05m, >15m).
         """
+        self.last_depth_mad_m = None
         if depth_img is None:
             return None
 
@@ -92,7 +95,9 @@ class DepthEstimator:
         if len(valid_depths) == 0:
             return None
 
-        return float(np.median(valid_depths))
+        median = float(np.median(valid_depths))
+        self.last_depth_mad_m = float(np.median(np.abs(valid_depths-median)))
+        return median
 
     def estimate_3d_position(
         self,
@@ -118,7 +123,10 @@ class DepthEstimator:
         Returns:
             (depth_m, Point3D(X, Y, Z, frame_id)) or (None, None) if depth invalid.
         """
-        if depth_img is None or self.fx is None or self.fy is None:
+        if (depth_img is None or depth_img.ndim != 2 or rgb_width <= 0 or rgb_height <= 0
+                or not all(v is not None and math.isfinite(v) for v in
+                           (self.fx, self.fy, self.cx, self.cy, bbox.cx, bbox.cy))
+                or self.fx <= 0 or self.fy <= 0):
             return None, None
 
         depth_h, depth_w = depth_img.shape[:2]

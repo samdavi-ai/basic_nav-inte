@@ -1,6 +1,5 @@
 # Rust
 target/
-Cargo.lock
 **/*.rs.bk
 
 # Python & Virtual Environments
@@ -60,6 +59,20 @@ scratch/
 !docs/UI_UX_IMPLEMENTATION_REPORT.md
 *IMPLEMENTATION_PLAN*.md
 
+# Private invention and prior-art working notes; keep outside the public source branch.
+/COGNITIVE_MISSION_ARBITRATION_ANALYSIS.md
+/EXPERIMENTAL_PROOF_PLAN.md
+/GRACEMO_ORIGINAL_ALGORITHMS.md
+/MISSION_RECOVERY_ALGORITHM_ANALYSIS.md
+/PATENT_NOVELTY_DISCOVERY_REPORT.md
+/PRELIMINARY_INVENTION_DISCLOSURE.md
+/PRIOR_ART_DEEP_COMPARISON.md
+
+# Local identity/context data and wake-word templates are not source code.
+/vira_interaction/data/
+/vira_interaction/wake-word/
+/docs/GRaCEmo_ViRa_Master_Database.xlsx
+
 
 # IDE & OS
 .vscode/
@@ -112,6 +125,9 @@ staging_blender_integration/
 tensorboard_logs/
 **/*_steps.zip
 
+# Rust application lockfile is committed for reproducible workspace builds.
+# Kernel is an executable workspace; do not ignore kernel/Cargo.lock.
+
 # Local experiment backups
 *.bak
 *.bak_*
@@ -123,4 +139,31 @@ tensorboard_logs/
 *.arrival_bak
 *.pre_repair_bak
 *.goalalign_bak
+
+# Local Agent Bridge queue payloads and results are runtime state, not source.
+agent_bridge/tasks/*.json
+agent_bridge/results/*.json
+
+# Large, regenerable simulation telemetry is summarized in Markdown/JSON reports.
+docs/validation/**/*.jsonl
+docs/validation/**/*.jsonl.gz
+docs/validation/**/*.npz
+docs/validation/**/*.png
+docs/validation/**/*.jpg
+docs/validation/**/actor_frames/
+docs/validation/**/*.entered
+docs/validation/**/*.ready
+docs/validation/**/*.confirmed
+docs/validation/**/*.exited
+docs/validation/**/*.cue
+docs/validation/**/*.armed
+docs/validation/**/*.now
+artifacts/e2e/**/*.log
+artifacts/e2e/**/*.jsonl.gz
+artifacts/e2e/**/kernel.lock
+
+# Local test and editor state
+.pytest_cache/
+.coverage
+htmlcov/
 

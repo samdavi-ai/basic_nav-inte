@@ -51,6 +51,7 @@ class GeminiRoboticsClient:
         self.mock_mode = mock_mode
         self._mock_responses: List[GeminiResponse] = []
         self._client = None
+        self._startup_error = "Gemini provider is not configured"
 
         if not self.mock_mode and self.config.is_configured():
             try:
@@ -58,8 +59,8 @@ class GeminiRoboticsClient:
                 self._client = genai.Client(api_key=self.config.api_key)
                 log.info(f"Initialized Gemini Robotics Client with model: {self.config.model_name}")
             except Exception as e:
-                log.warning(f"Could not initialize live Google GenAI Client ({e}). Falling back to mock mode.")
-                self.mock_mode = True
+                self._startup_error = f"Gemini provider initialization failed ({type(e).__name__})"
+                log.warning(self._startup_error)
         elif not self.mock_mode and not self.config.is_configured():
             # If live mode requested but not configured, keep mock_mode=False so callers know key is missing
             log.warning("GEMINI_API_KEY is not configured; live client unavailable.")
@@ -142,11 +143,13 @@ class GeminiRoboticsClient:
             resp.is_mock = True
             return resp
 
+        if image_bytes is not None:
+            return GeminiResponse(text="Camera frames are local-only.", error="LOCAL_IMAGE_POLICY")
         if not self._client:
             return GeminiResponse(
-                text="Gemini client not configured. Set GEMINI_API_KEY or enable mock_mode.",
+                text=self._startup_error,
                 is_mock=False,
-                error="GEMINI_API_KEY not configured",
+                error=self._startup_error,
             )
 
         try:
@@ -211,11 +214,11 @@ class GeminiRoboticsClient:
                 is_mock=False,
             )
         except Exception as e:
-            log.error(f"Gemini ER 2 inference error: {e}")
+            log.error("Gemini inference failed (%s)", type(e).__name__)
             return GeminiResponse(
-                text=f"Reasoning error: {e}",
+                text="Gemini inference was unavailable.",
                 is_mock=False,
-                error=str(e),
+                error=type(e).__name__,
             )
 
     def plan(

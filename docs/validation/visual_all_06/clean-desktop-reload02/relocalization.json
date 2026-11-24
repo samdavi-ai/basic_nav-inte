@@ -1,0 +1,74 @@
+{
+  "graph_messages": 375,
+  "pose_messages": 375,
+  "first_truth_xyz": [
+    0.24999999999886333,
+    -3.9438608265404337e-13,
+    0.024999999884656076
+  ],
+  "all_matches_within_target": true,
+  "measured_matches": [
+    {
+      "t": 0.30000000000000004,
+      "ref": 1236,
+      "loop": 151,
+      "proximity": 1114,
+      "saved_node_ids": [
+        151,
+        1114
+      ],
+      "inliers": 177.0,
+      "translation_m": 0.010941400508235267,
+      "rotation_deg": 0.23902533884233762
+    },
+    {
+      "t": 11.5,
+      "ref": 1347,
+      "loop": 145,
+      "proximity": 1114,
+      "saved_node_ids": [
+        145,
+        1114
+      ],
+      "inliers": 235.0,
+      "translation_m": 0.005095226993366619,
+      "rotation_deg": 0.49510854486258554
+    },
+    {
+      "t": 23.2,
+      "ref": 1463,
+      "loop": 145,
+      "proximity": 1114,
+      "saved_node_ids": [
+        145,
+        1114
+      ],
+      "inliers": 243.0,
+      "translation_m": 0.006505007967053045,
+      "rotation_deg": 0.33054499214666094
+    },
+    {
+      "t": 35.8,
+      "ref": 1589,
+      "loop": 142,
+      "proximity": 1114,
+      "saved_node_ids": [
+        142,
+        1114
+      ],
+      "inliers": 214.0,
+      "translation_m": 0.0020535907688106277,
+      "rotation_deg": 0.25739826364586876
+    }
+  ],
+  "translation_m": {
+    "median": 0.0058001174802098324,
+    "p95": 0.010275941627057932,
+    "max": 0.010941400508235267
+  },
+  "rotation_deg": {
+    "median": 0.29397162789626485,
+    "p95": 0.4704240119551968,
+    "max": 0.49510854486258554
+  }
+}

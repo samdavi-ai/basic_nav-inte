@@ -29,25 +29,15 @@ impl CompiledContext {
         let room = self.now.get("current_room")
             .or_else(|| self.now.get("room"))
             .and_then(|v| v.as_str())
-            .unwrap_or("Central Hallway");
-
-        let pos = self.now.get("robot_position");
-        let x = pos.and_then(|p| p.get("x"))
-            .or_else(|| self.now.get("x"))
-            .and_then(|v| v.as_f64())
-            .unwrap_or(0.0);
-
-        let y = pos.and_then(|p| p.get("y"))
-            .or_else(|| self.now.get("y"))
-            .and_then(|v| v.as_f64())
-            .unwrap_or(0.0);
-
-        let yaw = pos.and_then(|p| p.get("theta"))
-            .or_else(|| self.now.get("yaw"))
-            .and_then(|v| v.as_f64())
-            .unwrap_or(0.0);
-
-        lines.push(format!("@NOW:Room[{}]|Pose[x:{:.2},y:{:.2},yaw:{:.0}°]", room, x, y, yaw.to_degrees()));
+            .unwrap_or("Unknown");
+        let pose = self.now.get("robot_position").filter(|p| p.is_object()).unwrap_or(&self.now);
+        let xyz = (pose["x"].as_f64(), pose["y"].as_f64(),
+                   pose["theta"].as_f64().or_else(|| pose["yaw"].as_f64()));
+        match xyz {
+            (Some(x), Some(y), Some(yaw)) => lines.push(format!(
+                "@NOW:Room[{}]|Pose[x:{:.2},y:{:.2},yaw:{:.0}°]", room,x,y,yaw.to_degrees())),
+            _ => lines.push(format!("@NOW:Room[{}]|Pose[unknown]",room)),
+        }
 
         // 2. Tracked World Objects (#OBJECTS)
         if !self.world_objects.is_empty() {
@@ -175,7 +165,7 @@ impl CompiledContext {
         let room = self.now.get("current_room")
             .or_else(|| self.now.get("room"))
             .and_then(|v| v.as_str())
-            .unwrap_or("Central Hallway");
+            .unwrap_or("Unknown");
         format!("state::grounded[room:{}] | reflex::active | ledger::synced", room)
     }
 }
@@ -347,7 +337,15 @@ pub async fn compile_context(
         (*read_guard).clone()
     };
 
-    let history = ledger.query_recent(history_limit);
+    let mut history = ledger.query_recent(history_limit);
+    history.retain(|event| {
+        if event["event_type"] == "ObjectDetected" {
+            event["id"].as_str().is_some_and(|id|
+                graph_db.visual_observation_hidden(id).map(|hidden| !hidden).unwrap_or(false))
+        } else {
+            true
+        }
+    });
     let real_graph = graph_db.query_full_graph().unwrap_or_else(|_| json!({"nodes": [], "edges": []}));
     let world_objects = graph_db.query_world_objects(None, false).unwrap_or_default();
     let rooms = graph_db.query_all_rooms().unwrap_or_default();

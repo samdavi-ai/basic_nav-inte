@@ -1,0 +1,70 @@
+{
+  "graph_messages": 36,
+  "pose_messages": 36,
+  "first_truth_xyz": [
+    0.24999999999886333,
+    -3.9438608265404337e-13,
+    0.024999999884656076
+  ],
+  "all_matches_within_target": true,
+  "measured_matches": [
+    {
+      "t": 1.2,
+      "ref": 121,
+      "loop": 1,
+      "proximity": 1,
+      "saved_node_ids": [
+        1
+      ],
+      "inliers": 239.0,
+      "translation_m": 0.004867239896359659,
+      "rotation_deg": 0.2337414732217911
+    },
+    {
+      "t": 12.5,
+      "ref": 131,
+      "loop": 0,
+      "proximity": 24,
+      "saved_node_ids": [
+        24
+      ],
+      "inliers": 104.0,
+      "translation_m": 0.004374507268048115,
+      "rotation_deg": 0.3504098488532404
+    },
+    {
+      "t": 24.2,
+      "ref": 142,
+      "loop": 0,
+      "proximity": 24,
+      "saved_node_ids": [
+        24
+      ],
+      "inliers": 85.0,
+      "translation_m": 0.005283960731887713,
+      "rotation_deg": 0.12140983583751178
+    },
+    {
+      "t": 36.8,
+      "ref": 154,
+      "loop": 0,
+      "proximity": 24,
+      "saved_node_ids": [
+        24
+      ],
+      "inliers": 67.0,
+      "translation_m": 0.005622721038316745,
+      "rotation_deg": 0.20122945394977498
+    }
+  ],
+  "translation_m": {
+    "median": 0.005075600314123686,
+    "p95": 0.00557190699235239,
+    "max": 0.005622721038316745
+  },
+  "rotation_deg": {
+    "median": 0.21748546358578302,
+    "p95": 0.332909592508523,
+    "max": 0.3504098488532404
+  }
+}

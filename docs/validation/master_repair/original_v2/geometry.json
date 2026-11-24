@@ -1,0 +1,205 @@
+{
+  "box": [
+    2.0,
+    -0.5,
+    0.35,
+    0.35
+  ],
+  "map_truth_error_m": null,
+  "plan_stream": "plan",
+  "footprint_edges_m": [
+    0.72,
+    0.7,
+    0.72,
+    0.7
+  ],
+  "executed": {
+    "sample_min_m": 0.461687,
+    "swept_lower_bound_m": 0.460386,
+    "obstacle": "hall_south_middle",
+    "pose": [
+      -0.042372,
+      -0.033612,
+      -0.166087
+    ],
+    "raw_pose_min_m": 0.461687,
+    "speed_bound_min_m": 0.279046
+  },
+  "truth_final": [
+    -0.04237207063647463,
+    -0.03361242118092489,
+    -0.1660873293136455
+  ],
+  "truth_goal_error_m": 4.5425,
+  "max_truth_sample_gap_s": 0.3439999999999994,
+  "global_paths": 2,
+  "first_path": {
+    "t": 6.124,
+    "points": 271,
+    "published_yaw": {
+      "sample_min_m": 0.163697,
+      "swept_lower_bound_m": 0.158697,
+      "obstacle": "fixture",
+      "pose": [
+        1.454684,
+        0.188371,
+        0.0
+      ]
+    },
+    "tangent": {
+      "sample_min_m": 0.030442,
+      "swept_lower_bound_m": 0.025442,
+      "obstacle": "fixture",
+      "pose": [
+        1.93929,
+        0.206976,
+        0.752181
+      ]
+    },
+    "tangent_in_odom": {
+      "sample_min_m": 0.026287,
+      "swept_lower_bound_m": 0.021287,
+      "obstacle": "fixture",
+      "pose": [
+        1.928697,
+        0.202821,
+        0.752159
+      ]
+    }
+  },
+  "worst_tangent_path": {
+    "t": 6.124,
+    "points": 271,
+    "published_yaw": {
+      "sample_min_m": 0.163697,
+      "swept_lower_bound_m": 0.158697,
+      "obstacle": "fixture",
+      "pose": [
+        1.454684,
+        0.188371,
+        0.0
+      ]
+    },
+    "tangent": {
+      "sample_min_m": 0.030442,
+      "swept_lower_bound_m": 0.025442,
+      "obstacle": "fixture",
+      "pose": [
+        1.93929,
+        0.206976,
+        0.752181
+      ]
+    },
+    "tangent_in_odom": {
+      "sample_min_m": 0.026287,
+      "swept_lower_bound_m": 0.021287,
+      "obstacle": "fixture",
+      "pose": [
+        1.928697,
+        0.202821,
+        0.752159
+      ]
+    }
+  },
+  "worst_tangent_in_odom": 0.021287,
+  "plans": [
+    {
+      "t": 6.124,
+      "points": 271,
+      "published_yaw": {
+        "sample_min_m": 0.163697,
+        "swept_lower_bound_m": 0.158697,
+        "obstacle": "fixture",
+        "pose": [
+          1.454684,
+          0.188371,
+          0.0
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.030442,
+        "swept_lower_bound_m": 0.025442,
+        "obstacle": "fixture",
+        "pose": [
+          1.93929,
+          0.206976,
+          0.752181
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.026287,
+        "swept_lower_bound_m": 0.021287,
+        "obstacle": "fixture",
+        "pose": [
+          1.928697,
+          0.202821,
+          0.752159
+        ]
+      }
+    },
+    {
+      "t": 8.514,
+      "points": 183,
+      "published_yaw": {
+        "sample_min_m": 0.163685,
+        "swept_lower_bound_m": 0.159265,
+        "obstacle": "fixture",
+        "pose": [
+          1.460589,
+          0.188625,
+          0.0
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.050549,
+        "swept_lower_bound_m": 0.045552,
+        "obstacle": "fixture",
+        "pose": [
+          1.862383,
+          0.226093,
+          0.721566
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.047971,
+        "swept_lower_bound_m": 0.042974,
+        "obstacle": "fixture",
+        "pose": [
+          1.85179,
+          0.221938,
+          0.721544
+        ]
+      }
+    }
+  ],
+  "lethal_cells_near_box": {
+    "global": {
+      "snapshots": 7,
+      "first": 12,
+      "max": 12,
+      "median": 11.0
+    },
+    "local": {
+      "snapshots": 16,
+      "first": 12,
+      "max": 13,
+      "median": 11.0
+    }
+  },
+  "local_plans": 101,
+  "worst_local_plan": {
+    "sample_min_m": 0.201214,
+    "swept_lower_bound_m": 0.196647,
+    "obstacle": "hall_north_middle",
+    "pose": [
+      0.977742,
+      0.21341,
+      0.540688
+    ]
+  },
+  "max_dwb_forward_mps": 0.65,
+  "dwb_all_rejected_cycles": 0,
+  "observed_dwb_rejections": 14180,
+  "evaluation_messages": 102,
+  "critic_reasons": {}
+}

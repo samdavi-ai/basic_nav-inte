@@ -1,0 +1,322 @@
+{
+  "case": {
+    "index": 4,
+    "seed": 42,
+    "kind": "replan",
+    "box": [
+      4.37,
+      -0.4,
+      0.336,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      0.0
+    ],
+    "min_robot_x": 0.1912112669270855,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world",
+    "level": 1,
+    "planner_fence": true,
+    "clearance_recovery": true,
+    "master_recovery": true,
+    "doorway_trial": true,
+    "govern_speed": true,
+    "swept_critic": true,
+    "synchronize_replan": true
+  },
+  "mission_id": "standalone-8cba64b0-9526-4b03-abdd-314977ac7666",
+  "trace_id": "d0e12427-944b-467f-9ae6-3a086319c695",
+  "matched_terminal": true,
+  "dwb_evaluation_messages_after_request": 97,
+  "observed_dwb_rejections_after_request": 43495,
+  "route_resumptions": [],
+  "runner_timed_out": false,
+  "goal_within_035m": false,
+  "final_zero_command_window_s": 19.29,
+  "planner_actions": [
+    {
+      "t": 3.382,
+      "kind": "planning_result",
+      "uuid": "6b5307279673a02f121694e970141df3",
+      "accepted": 3.378,
+      "path_stamp": 3.378,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 13.064,
+      "kind": "planning_result",
+      "uuid": "ba85507b183b4ce371eb10b5a7029737",
+      "accepted": 12.416,
+      "path_stamp": 12.798,
+      "duration": 0.382,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 14.38,
+      "kind": "planning_result",
+      "uuid": "e1b52478fc2d7a41a0287cc9fb1f57e5",
+      "accepted": 14.376,
+      "path_stamp": 14.376,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 15.748,
+      "kind": "planning_result",
+      "uuid": "a40d10a05421979ed6e00aa9fa3e648d",
+      "accepted": 15.742,
+      "path_stamp": 15.744,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 17.11,
+      "kind": "planning_result",
+      "uuid": "8c1702e512a34f26aa800f562f97f7a4",
+      "accepted": 17.106,
+      "path_stamp": 17.106,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 18.566,
+      "kind": "planning_result",
+      "uuid": "87917df0cc7004432b88d56726565822",
+      "accepted": 18.56,
+      "path_stamp": 18.56,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 20.016,
+      "kind": "planning_result",
+      "uuid": "30c204a42b5bca9033023a0152ae73b8",
+      "accepted": 20.012,
+      "path_stamp": 20.012,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 21.374,
+      "kind": "planning_result",
+      "uuid": "c5ba76c1c7151596a2fa281a9d6761b4",
+      "accepted": 21.37,
+      "path_stamp": 21.37,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 23.226,
+      "kind": "planning_result",
+      "uuid": "8b92c66e7149e1f57a50de90221cfea5",
+      "accepted": 23.222,
+      "path_stamp": 23.222,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 24.586,
+      "kind": "planning_result",
+      "uuid": "78ab2dc43b658df74e2442ff175e70f8",
+      "accepted": 24.582,
+      "path_stamp": 24.582,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 25.946,
+      "kind": "planning_result",
+      "uuid": "af28b9c134a83f9613ea831b9e1c30b2",
+      "accepted": 25.942,
+      "path_stamp": 25.942,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 27.202,
+      "kind": "planning_result",
+      "uuid": "e2c225e5293eac2099c796b4de34743d",
+      "accepted": 26.956,
+      "path_stamp": 26.956,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 27.982,
+      "kind": "planning_result",
+      "uuid": "d2144d89d77a7173221932a61b9547b1",
+      "accepted": 27.976,
+      "path_stamp": 27.976,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 29.972,
+      "kind": "planning_result",
+      "uuid": "a97c081dd3e0501ac230e547de275db5",
+      "accepted": 29.906,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 31.562,
+      "kind": "planning_result",
+      "uuid": "1e383928ef2fc69ce7e0664021759b9a",
+      "accepted": 31.498,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    }
+  ],
+  "insertion_within_proven_planner_interval": true,
+  "state": "FAILED",
+  "kernel_terminal": "NAVIGATION_FAILURE",
+  "retries": 2,
+  "insert_requested": 12.418,
+  "first_scene_confirmation": 12.796,
+  "last_scene_confirmation": [
+    12.796,
+    4.37,
+    -0.4
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": 15.66,
+  "risk_to_zero_s": 0.044,
+  "risk_to_chassis_stop_s": 0.054,
+  "selected_rollouts_after_insertion": 24,
+  "worst_frozen_rollout_fixture_m": -0.17817,
+  "minimum_scene_interpolated_m": -0.029833,
+  "whole_mission_interpolated_m": -0.029833,
+  "minimum_fixture_interpolated_m": -0.029833,
+  "sensor_transform_drops": 41,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "scan": 12.674,
+    "depth": 13.8
+  },
+  "first_lethal_marks": {
+    "local_costmap": 13.108,
+    "global_costmap": 14.32
+  },
+  "preexisting_matches": {},
+  "first_monitor_action": 15.606,
+  "first_risk_action": 15.606,
+  "monitor_stop": 15.606,
+  "guard_stop": 26.47,
+  "first_final_zero_after_stop_action": 15.65,
+  "sensor_to_local_mark_s": 0.434,
+  "local_mark_to_stop_s": 2.542,
+  "sensor_to_stop_s": 2.976,
+  "peak_linear_speed_until_stop_mps": 0.024109196508674526,
+  "max_displacement_until_stop_m": 0.008192706430073098,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": -0.02556,
+  "goal_error_m": 0.68728,
+  "old_and_new_plans": [
+    {
+      "t": 3.378,
+      "points": 178,
+      "frozen_fixture_clearance_m": -0.13202,
+      "frozen_scene_clearance_m": -0.13202
+    },
+    {
+      "t": 12.798,
+      "points": 27,
+      "frozen_fixture_clearance_m": -0.29592,
+      "frozen_scene_clearance_m": -0.29592
+    },
+    {
+      "t": 14.376,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.15332,
+      "frozen_scene_clearance_m": -0.15332
+    },
+    {
+      "t": 15.744,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.15332,
+      "frozen_scene_clearance_m": -0.15332
+    },
+    {
+      "t": 17.106,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.15165,
+      "frozen_scene_clearance_m": -0.15165
+    },
+    {
+      "t": 18.56,
+      "points": 43,
+      "frozen_fixture_clearance_m": -0.15502,
+      "frozen_scene_clearance_m": -0.15502
+    },
+    {
+      "t": 20.012,
+      "points": 43,
+      "frozen_fixture_clearance_m": -0.15707,
+      "frozen_scene_clearance_m": -0.15707
+    },
+    {
+      "t": 21.37,
+      "points": 43,
+      "frozen_fixture_clearance_m": -0.16057,
+      "frozen_scene_clearance_m": -0.16057
+    },
+    {
+      "t": 23.222,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.1329,
+      "frozen_scene_clearance_m": -0.1329
+    },
+    {
+      "t": 24.582,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.1329,
+      "frozen_scene_clearance_m": -0.1329
+    },
+    {
+      "t": 25.942,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.1329,
+      "frozen_scene_clearance_m": -0.1329
+    },
+    {
+      "t": 26.956,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.12874,
+      "frozen_scene_clearance_m": -0.12874
+    },
+    {
+      "t": 27.976,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.13111,
+      "frozen_scene_clearance_m": -0.13111
+    }
+  ],
+  "after_insertion_plan_count": 12,
+  "confirmed_motion_m": 0.0
+}

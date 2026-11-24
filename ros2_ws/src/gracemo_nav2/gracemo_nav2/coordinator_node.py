@@ -307,6 +307,7 @@ class AutonomousSupervisorNode(Node):
                     "previous_state": prev_state,
                     "state": new_state,
                     "reason": reason,
+                    "mission_id": self.active_mission_id,
                     "mission_name": self.active_mission_name,
                     "x": self.current_map_x,
                     "y": self.current_map_y,
@@ -1000,6 +1001,10 @@ class AutonomousSupervisorNode(Node):
             self.transition_to(self.STATE_MISSION_COMPLETED, f"All {len(self.mission_waypoints)} destinations reached")
             self.transition_to(self.STATE_WAITING_FOR_NEXT_MISSION, "Mission completed. Ready for next assignment")
             self.transition_to(self.STATE_AUTONOMY_READY, "System standing by in Autonomous Ready mode")
+        elif cancelled and (self.terrain_emergency_active or self.terrain_safety_active):
+            # Cancellation ends the mission but only explicit reset releases a safety halt.
+            self.emit_feedback(state=self.state, speech="Mission cancelled. Safety stop remains active.",
+                               details={"mission_id": self.active_mission_id, "status": "CANCELLED"})
         elif cancelled:
             self.transition_to(self.STATE_MISSION_CANCELLED, reason)
             self.transition_to(self.STATE_AUTONOMY_READY, "System standing by in Autonomous Ready mode")
@@ -1193,6 +1198,8 @@ class AutonomousSupervisorNode(Node):
 
     def handle_cancel_mission(self):
         """Cancels active mission, clears queue, and returns to Autonomy Ready."""
+        if not self.active_mission_id:
+            return
         self.get_logger().info("⏹️ Operator requested CANCEL mission.")
         self._abort_active_navigation_goal()
         self._finalize_mission(success=False, reason="Cancelled by operator", cancelled=True)
@@ -1584,6 +1591,7 @@ class AutonomousSupervisorNode(Node):
             "state": self.state,
             "mission": {
                 "id": self.active_mission_id,
+                "trace_id": self.active_trace_id,
                 "name": self.active_mission_name,
                 "waypoint_index": self.current_waypoint_index,
                 "total_waypoints": len(self.mission_waypoints),

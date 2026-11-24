@@ -1,0 +1,8 @@
+{
+  "mission_id": "standalone-d5904dbb-5fe7-4333-a8fb-396f53d01a7f",
+  "trace_id": "e3d9fa99-5704-4e2d-8ece-0424be70a9da",
+  "new_mission_before_review": 409,
+  "runner_review": 403,
+  "authorized_abandon": 204,
+  "pending_review": []
+}

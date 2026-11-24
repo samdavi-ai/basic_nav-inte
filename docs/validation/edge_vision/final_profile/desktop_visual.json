@@ -1,0 +1,75 @@
+{
+  "current": true,
+  "received_at": 1795426821,
+  "sample": {
+    "acquired_pair_hz": 3.388129290151874,
+    "age_s": 6.99419997545192e-05,
+    "available_ram_bytes": 6160347136,
+    "camera_frame": "camera_optical_link",
+    "captured_at": 1795426821.2616577,
+    "cpu_percent": 103.6,
+    "degraded": false,
+    "detector_ms": 76.68440300039947,
+    "detector_target_hz": 5.0,
+    "dropped_pending": 1,
+    "face_status": "disabled",
+    "frames_processed": 200,
+    "gpu_percent": null,
+    "image_stamp_ns": 42600000000,
+    "last_ingest_ack_ms": 3.051279999453982,
+    "localized_detections_last_frame": 0,
+    "mission_id": null,
+    "model_loaded": true,
+    "observations": [],
+    "person_tracks": [],
+    "power_w": null,
+    "process_rss_bytes": 548806656,
+    "processed_hz": 3.354583455595914,
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "ready": true,
+    "reid_enabled": false,
+    "rejected_inputs": 0,
+    "requested_provider": "CPUExecutionProvider",
+    "sync_skew_ms": 0.0,
+    "synchronized_pairs": 202,
+    "temperature_c": null,
+    "trace_id": null,
+    "tracking_ms": 0.015268999959516805,
+    "visual_odometry": {
+      "features": 152,
+      "frame_id": "visual_origin_optical",
+      "inliers": 113,
+      "keyframes": 12,
+      "latency_ms": 3.3205179997821688,
+      "optical_pose": [
+        [
+          -0.057327240453699795,
+          -0.03271606683661308,
+          0.9978192453910232,
+          2.6108749108862974
+        ],
+        [
+          -0.08747789538812827,
+          0.9957833904204249,
+          0.027623489664887754,
+          0.060289868031205
+        ],
+        [
+          -0.9945155631363568,
+          -0.08570354913038741,
+          -0.05994744653467676,
+          5.1325371872530114
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "state": "tracking"
+    }
+  }
+}

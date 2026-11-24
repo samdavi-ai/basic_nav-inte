@@ -111,6 +111,12 @@ class GeminiRoboticsOrchestrator:
                 image_bytes=current_image_bytes,
             )
 
+            if response.error:
+                message = "Reasoning provider unavailable. No further actions were submitted."
+                turns.append(ReasoningTurn(turn_idx,current_prompt,message))
+                return OrchestratorResult(False,user_command,turn_idx,turns,message,
+                                          actions_dispatched,max_base_displacement,False)
+
             # 3. ACT: Check if a high-level tool was called
             if response.has_function_calls:
                 call = response.primary_tool_call
@@ -124,6 +130,11 @@ class GeminiRoboticsOrchestrator:
                 tool_result = self.registry.execute(tool_name, tool_args)
                 print(f"    • [Turn {turn_idx}] Tool Execution: {tool_result.message}")
                 log.info(f"✓ [TURN {turn_idx}] Tool Execution Result: {tool_result.message}")
+
+                if not tool_result.success:
+                    turns.append(ReasoningTurn(turn_idx,current_prompt,response.text,call,tool_result))
+                    return OrchestratorResult(False,user_command,turn_idx,turns,tool_result.message,
+                                              actions_dispatched,max_base_displacement,False)
 
                 # Verification logic:
                 if tool_name in ["look_at", "look_at_object"]:

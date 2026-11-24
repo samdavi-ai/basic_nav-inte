@@ -38,6 +38,7 @@ class RLLocalPlannerNode(Node):
 
         # Declare parameters with authoritative defaults from nav2_params.yaml
         self.declare_parameter("model_path", "")
+        self.declare_parameter("inference_threads", 0)
         self.declare_parameter("lookahead_dist", 0.80)        # meters (0.6 - 1.0 m)
         self.declare_parameter("max_linear_vel", nav_limits.max_linear_vel)        # m/s
         self.declare_parameter("max_angular_vel", nav_limits.max_angular_vel)       # rad/s
@@ -154,9 +155,11 @@ class RLLocalPlannerNode(Node):
 
         if self.model_path and os.path.exists(self.model_path) and ort is not None:
             try:
+                options = ort.SessionOptions()
+                options.intra_op_num_threads = self.get_parameter("inference_threads").value
                 self.ort_session = ort.InferenceSession(
                     self.model_path,
-                    providers=["CPUExecutionProvider"]
+                    sess_options=options, providers=["CPUExecutionProvider"]
                 )
                 self.input_name = self.ort_session.get_inputs()[0].name
                 self.get_logger().info(f"✓ Loaded ONNX model from: {self.model_path}")

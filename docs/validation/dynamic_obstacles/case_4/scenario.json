@@ -1,0 +1,24 @@
+{
+  "index": 4,
+  "seed": 42,
+  "kind": "replan",
+  "box": [
+    4.37,
+    -0.4,
+    0.336,
+    0.35
+  ],
+  "goal": [
+    4.5,
+    0.0
+  ],
+  "min_robot_x": 0.1912112669270855,
+  "min_plan_count": 2,
+  "crossing_speed": 0.0,
+  "initial_pose": [
+    0,
+    0,
+    0
+  ],
+  "world": "apartment_floor.world"
+}

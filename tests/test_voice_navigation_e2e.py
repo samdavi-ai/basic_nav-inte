@@ -32,6 +32,7 @@ import sys
 import threading
 import time
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -52,6 +53,9 @@ class TestVoiceNavigationPipeline(unittest.TestCase):
     """Part 1: In-silico validation of Intent Routing, Destination Resolution, and Safety Logic."""
 
     def setUp(self):
+        mock_dispatch = patch("gracemo_sdk.authorization.dispatch_action", return_value={"status":"dispatched"})
+        mock_dispatch.start()
+        self.addCleanup(mock_dispatch.stop)
         self.resolver = PlaceResolver()
         self.matcher = FastPathMatcher()
         self.fsm = InteractionFSM()

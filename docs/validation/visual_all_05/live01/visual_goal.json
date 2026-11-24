@@ -1,0 +1,83 @@
+{
+  "target": "monitor",
+  "observed_at": 1795445885.058655,
+  "k": {
+    "result": {
+      "completed_stages": 1,
+      "stage_results": [
+        {
+          "execution_time_ms": 0,
+          "noun": "graph",
+          "output": {
+            "Coordinates": {
+              "x": 8.482289228000806,
+              "y": -4.089798882797167,
+              "z": 0.9299433069163048
+            }
+          },
+          "stage_index": 0,
+          "success": true,
+          "verb": "locate"
+        }
+      ],
+      "success": true,
+      "total_stages": 1
+    },
+    "success": true
+  },
+  "result": {
+    "object_id": "monitor_003",
+    "nav_x": 7.364,
+    "nav_y": -3.654,
+    "nav_yaw": -0.3714,
+    "standoff_dist_m": 1.2,
+    "robot_action": {
+      "action": "NavigateTo",
+      "params": {
+        "x": 7.364106614951864,
+        "y": -3.6542903939303697,
+        "yaw": -0.37140365444481854,
+        "target_name": "monitor_003 observation pose"
+      }
+    },
+    "trace_id": "c3e0703d-4158-48c6-9800-c8bf332d7819",
+    "navigation_outcome": {
+      "completed": true,
+      "state": "MISSION_COMPLETED",
+      "event": {
+        "state": "MISSION_COMPLETED",
+        "previous_state": "DESTINATION_REACHED",
+        "reason": "All 1 destinations reached",
+        "mission_id": "mid-1795445886086-44f023",
+        "mission_name": "Autonomous Mission",
+        "x": 7.081825537279092,
+        "y": -3.498674778350012
+      }
+    },
+    "action_requested_envelope": {
+      "id": "2949ae7f-9acc-4b18-829d-89ec0db131d5",
+      "trace_id": "c3e0703d-4158-48c6-9800-c8bf332d7819",
+      "session_id": "gemini_robotics",
+      "timestamp": 1795445886,
+      "source": "Brain",
+      "observed_by": "gemini_robotics_er",
+      "event_type": {
+        "type": "ActionRequested",
+        "data": {
+          "action": "NavigateTo",
+          "params": {
+            "x": 7.364106614951864,
+            "y": -3.6542903939303697,
+            "yaw": -0.37140365444481854,
+            "target_name": "monitor_003 observation pose"
+          }
+        }
+      },
+      "parent_event_id": null
+    },
+    "action_dispatched": true
+  },
+  "success": true,
+  "message": "Arrived at the observation pose for monitor_003.",
+  "dispatched": true
+}

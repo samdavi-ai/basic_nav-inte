@@ -18,8 +18,8 @@ if PROJECT_ROOT not in sys.path:
 
 # Enforce deterministic DDS and Gazebo Harmonic environment
 os.environ["ROS_AUTOMATIC_DISCOVERY_RANGE"] = "LOCALHOST"
-os.environ["ROS_DOMAIN_ID"] = "0"
-os.environ["GZ_PARTITION"] = "gracemo"
+os.environ.setdefault("ROS_DOMAIN_ID", "0")
+os.environ.setdefault("GZ_PARTITION", "gracemo")
 os.environ["GZ_IP"] = "127.0.0.1"
 
 from gracemo_control_center.config.settings import Settings

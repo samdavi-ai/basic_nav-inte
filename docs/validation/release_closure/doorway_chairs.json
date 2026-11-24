@@ -1,0 +1,41 @@
+{
+  "native_samples": 38146,
+  "mesh_sha256": "c15bd054d3a54a82ebfd00a3dcf89a37046f6157c453040e834c0e06e749a763",
+  "footprint_m": [
+    0.72,
+    0.7
+  ],
+  "chairs": {
+    "chair_1": {
+      "min_distance_m": 0.0,
+      "closest": [
+        44.124,
+        -4.779592785391579,
+        -2.2603938617397077,
+        0.8741609836454924
+      ],
+      "overlapping_samples": 23,
+      "max_overlap_m2": 0.00021191327703323488,
+      "max_overlap_pose": [
+        44.204,
+        -4.755070144351274,
+        -2.2302584275861426,
+        0.919186781942687
+      ],
+      "exact_queries": 1836
+    },
+    "chair_2": {
+      "min_distance_m": 1.8410310798695941,
+      "closest": [
+        43.616,
+        -4.93514146592795,
+        -2.4000135236926856,
+        0.5778761343065929
+      ],
+      "overlapping_samples": 0,
+      "max_overlap_m2": 0.0,
+      "max_overlap_pose": null,
+      "exact_queries": 803
+    }
+  }
+}

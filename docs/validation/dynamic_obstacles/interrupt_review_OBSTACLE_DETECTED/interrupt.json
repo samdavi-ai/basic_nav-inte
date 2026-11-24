@@ -1,0 +1,22 @@
+{
+  "target": "OBSTACLE_DETECTED",
+  "status": "PASS",
+  "mission_id": "standalone-dcf91b3a-2e26-4279-a717-1e99d05f2da2",
+  "trigger": {
+    "state": "OBSTACLE_DETECTED",
+    "sim_time": 4.800000000000001
+  },
+  "pose": {
+    "x": 0.7857599524851103,
+    "y": -0.034917567626915474,
+    "linear_x": 0.15293620402271954,
+    "angular_z": 0.057790791212310025
+  },
+  "request_wall": 16874.195459156,
+  "request_sim": 4.8,
+  "zero_latency_s": 0.023573534002935048,
+  "max_displacement_m": 0.009813048233903741,
+  "final_second_speed": 0.014368861566716214,
+  "rejected": true,
+  "reset": true
+}

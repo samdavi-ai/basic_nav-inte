@@ -1,0 +1,40 @@
+{
+  "common_keyframes": [
+    1,
+    7,
+    10
+  ],
+  "optimized_nodes": 3,
+  "total_nodes": 10,
+  "raw": {
+    "translation_rmse_m": 0.02030053884652085,
+    "rotation_rmse_deg": 0.11100110995110372
+  },
+  "optimized": {
+    "translation_rmse_m": 0.02030053884652085,
+    "rotation_rmse_deg": 0.11100094539855392
+  },
+  "type1_constraints": [
+    {
+      "source": 6,
+      "target": 1,
+      "dt": 9.100000000000001,
+      "max_excursion_from_target_m": 0.02663888856515058,
+      "truth_separation_m": 0.026692507741338623
+    },
+    {
+      "source": 8,
+      "target": 7,
+      "dt": 6.0,
+      "max_excursion_from_target_m": 0.017311158329844922,
+      "truth_separation_m": 0.017342486317433268
+    },
+    {
+      "source": 9,
+      "target": 7,
+      "dt": 7.0,
+      "max_excursion_from_target_m": 0.020108046926668986,
+      "truth_separation_m": 0.020157723422884636
+    }
+  ]
+}

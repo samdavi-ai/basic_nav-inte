@@ -1,0 +1,14 @@
+{
+  "integrity": "ok",
+  "sha256": "5c36a8501e781a2d09afcc6b05450fab1dba6a34adae6b26775a40423258d57d",
+  "keyframes": 53,
+  "nonzero_truth_blobs": 0,
+  "directed_links_by_type": {
+    "0": 30,
+    "1": 6
+  },
+  "odometry_updates": 560,
+  "positive_quality": 559,
+  "zero_quality": 1,
+  "visual_goal": false
+}

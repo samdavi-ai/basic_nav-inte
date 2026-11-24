@@ -1,0 +1,48 @@
+{
+  "target": "NAVIGATING",
+  "status": "PASS",
+  "mission_id": "standalone-7d474fd7-e315-4728-acec-ef795d122ceb",
+  "trigger": {
+    "state": "NAVIGATING",
+    "sim_time": 3.5500000000000003,
+    "reason": null,
+    "generation": {
+      "grid": 5,
+      "global": 1
+    },
+    "hold_since": null,
+    "global_plan_stamp": 3.488,
+    "local_rollout_stamp": 3.5,
+    "ages": {
+      "odom": 0.010000000000000231,
+      "scan": 0.050000000000000266,
+      "depth": 0.15000000000000036,
+      "grid": 0.5160000000000005,
+      "global": 0.8900000000000001,
+      "plan": 0.06200000000000028,
+      "rollout": 0.050000000000000266,
+      "command": 0.0040000000000000036
+    }
+  },
+  "pose": {
+    "x": -0.006975030556269505,
+    "y": -0.00631224697102044,
+    "linear_x": -0.0019674631377845394,
+    "angular_z": -0.008374061699023543
+  },
+  "request_wall": 18916.917845761,
+  "request_sim": 3.56,
+  "latch_wall": 18916.920143872,
+  "latch_sim": 3.5620000000000003,
+  "zero_wall": 18916.920483937,
+  "rest_wall": 18916.918495665,
+  "zero_latency_s": 0.0026381759998912457,
+  "max_displacement_m": 0.008840348943913754,
+  "final_second_speed": 0.019118477307445276,
+  "rejected": true,
+  "reset": true,
+  "reset_wall": 18919.922684452,
+  "reset_sim": 6.494,
+  "post_reset_peak_command": 0.0,
+  "post_reset_peak_speed": 0.01831327576087322
+}

@@ -1,0 +1,104 @@
+{
+  "case": {
+    "index": 1,
+    "seed": 42,
+    "kind": "beside",
+    "box": [
+      2.0,
+      0.69,
+      0.338,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      0.0
+    ],
+    "min_robot_x": 0.24865696534493253,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world"
+  },
+  "mission_id": "standalone-41306fed-fb36-4065-8e9a-c391076e4238",
+  "trace_id": "8c91df62-8232-48a1-a26f-3788532c07e1",
+  "matched_terminal": true,
+  "runner_timed_out": false,
+  "goal_within_035m": true,
+  "final_zero_command_window_s": 0.47,
+  "planner_actions": [],
+  "insertion_within_proven_planner_interval": false,
+  "state": "COMPLETED",
+  "kernel_terminal": "MISSION_COMPLETED",
+  "retries": 0,
+  "insert_requested": 4.36,
+  "first_scene_confirmation": 4.7,
+  "last_scene_confirmation": [
+    4.7,
+    2.0,
+    0.69
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": null,
+  "risk_to_zero_s": null,
+  "risk_to_chassis_stop_s": null,
+  "selected_rollouts_after_insertion": 218,
+  "worst_frozen_rollout_fixture_m": 0.1146,
+  "minimum_scene_interpolated_m": 0.242628,
+  "minimum_fixture_interpolated_m": 0.242628,
+  "sensor_transform_drops": 45,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "depth": 4.4,
+    "scan": 5.214
+  },
+  "first_lethal_marks": {
+    "local_costmap": 5.108,
+    "global_costmap": 5.574
+  },
+  "preexisting_matches": {
+    "depth": 3.8,
+    "global_costmap": 4.138
+  },
+  "first_monitor_action": null,
+  "first_risk_action": null,
+  "monitor_stop": null,
+  "guard_stop": null,
+  "first_final_zero_after_stop_action": null,
+  "sensor_to_local_mark_s": 0.708,
+  "local_mark_to_stop_s": null,
+  "sensor_to_stop_s": null,
+  "peak_linear_speed_until_stop_mps": null,
+  "max_displacement_until_stop_m": null,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": 0.24751,
+  "goal_error_m": 0.21181,
+  "old_and_new_plans": [
+    {
+      "t": 3.576,
+      "points": 178,
+      "frozen_fixture_clearance_m": 0.16378
+    },
+    {
+      "t": 10.764,
+      "points": 42,
+      "frozen_fixture_clearance_m": 0.9568
+    },
+    {
+      "t": 11.63,
+      "points": 25,
+      "frozen_fixture_clearance_m": 1.33522
+    },
+    {
+      "t": 12.494,
+      "points": 16,
+      "frozen_fixture_clearance_m": 1.59363
+    }
+  ],
+  "after_insertion_plan_count": 3,
+  "confirmed_motion_m": 0.0
+}

@@ -224,3 +224,20 @@ class TestPerceptionPipeline(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_invalid_calibration_cannot_reuse_previous_intrinsics():
+    from types import SimpleNamespace
+    from adapters.perception.depth_estimator import DepthEstimator
+    from adapters.perception.models import BoundingBox
+    import numpy as np
+
+    estimator = DepthEstimator()
+    depth = np.ones((8, 8), np.float32)
+    box = BoundingBox(1, 1, 5, 5)
+    for matrix, valid in (([4,0,4,0,4,4,0,0,1], True),
+                          ([], False), ([4,0,np.nan,0,4,4,0,0,1], False),
+                          ([0,0,4,0,4,4,0,0,1], False)):
+        estimator.update_camera_info(SimpleNamespace(k=matrix))
+        _, point = estimator.estimate_3d_position(box, depth, 8, 8)
+        assert (point is not None) == valid

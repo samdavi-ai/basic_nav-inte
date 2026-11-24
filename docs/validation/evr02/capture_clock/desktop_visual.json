@@ -1,0 +1,48 @@
+{
+  "current": true,
+  "previous_classes": [],
+  "received_at": 1795428172,
+  "room": "Living Room",
+  "sample": {
+    "acquired_pair_hz": 4.4530512064706675,
+    "age_s": 4.207899996799824e-05,
+    "available_ram_bytes": 8600072192,
+    "camera_frame": "camera_optical_link",
+    "captured_at": 1795428172.3526833,
+    "cpu_percent": 109.1,
+    "degraded": false,
+    "detector_ms": 61.70281400000022,
+    "detector_target_hz": 5.0,
+    "dropped_pending": 1,
+    "face_status": "awaiting_person",
+    "frames_processed": 283,
+    "gpu_percent": null,
+    "image_stamp_ns": 57600000000,
+    "last_ingest_ack_ms": 4.121069999996507,
+    "localized_detections_last_frame": 0,
+    "mission_id": null,
+    "model_loaded": true,
+    "observations": [],
+    "person_tracks": [],
+    "power_w": null,
+    "process_rss_bytes": 605786112,
+    "processed_hz": 4.421801724319996,
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "ready": true,
+    "reid_enabled": false,
+    "rejected_inputs": 0,
+    "requested_provider": "CPUExecutionProvider",
+    "sync_skew_ms": 0.0,
+    "synchronized_pairs": 285,
+    "temperature_c": null,
+    "trace_id": null,
+    "tracking_ms": 0.023745000021335727,
+    "visual_odometry": {
+      "features": 143,
+      "latency_ms": 3.9701609999838183,
+      "state": "lost"
+    }
+  }
+}

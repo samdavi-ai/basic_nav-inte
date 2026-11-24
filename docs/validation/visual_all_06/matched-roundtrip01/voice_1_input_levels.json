@@ -1,0 +1,177 @@
+[
+  {
+    "samples": 78336,
+    "peak_pcm": 19576,
+    "decoded_utterances": 0
+  },
+  {
+    "samples": 160256,
+    "peak_pcm": 23720,
+    "decoded_utterances": 1
+  },
+  {
+    "samples": 241152,
+    "peak_pcm": 20699,
+    "decoded_utterances": 3
+  },
+  {
+    "samples": 322048,
+    "peak_pcm": 22350,
+    "decoded_utterances": 4
+  },
+  {
+    "samples": 404480,
+    "peak_pcm": 25065,
+    "decoded_utterances": 6
+  },
+  {
+    "samples": 486400,
+    "peak_pcm": 30563,
+    "decoded_utterances": 7
+  },
+  {
+    "samples": 567808,
+    "peak_pcm": 32768,
+    "decoded_utterances": 7
+  },
+  {
+    "samples": 648192,
+    "peak_pcm": 30744,
+    "decoded_utterances": 8
+  },
+  {
+    "samples": 729088,
+    "peak_pcm": 32768,
+    "decoded_utterances": 9
+  },
+  {
+    "samples": 809472,
+    "peak_pcm": 26432,
+    "decoded_utterances": 10
+  },
+  {
+    "samples": 890880,
+    "peak_pcm": 32768,
+    "decoded_utterances": 10
+  },
+  {
+    "samples": 970752,
+    "peak_pcm": 28418,
+    "decoded_utterances": 10
+  },
+  {
+    "samples": 1052160,
+    "peak_pcm": 32768,
+    "decoded_utterances": 12
+  },
+  {
+    "samples": 1134080,
+    "peak_pcm": 24714,
+    "decoded_utterances": 12
+  },
+  {
+    "samples": 1216512,
+    "peak_pcm": 32767,
+    "decoded_utterances": 13
+  },
+  {
+    "samples": 1297408,
+    "peak_pcm": 32768,
+    "decoded_utterances": 14
+  },
+  {
+    "samples": 1378304,
+    "peak_pcm": 32768,
+    "decoded_utterances": 16
+  },
+  {
+    "samples": 1458688,
+    "peak_pcm": 24031,
+    "decoded_utterances": 17
+  },
+  {
+    "samples": 1542144,
+    "peak_pcm": 32767,
+    "decoded_utterances": 17
+  },
+  {
+    "samples": 1623552,
+    "peak_pcm": 24244,
+    "decoded_utterances": 18
+  },
+  {
+    "samples": 1704448,
+    "peak_pcm": 29811,
+    "decoded_utterances": 19
+  },
+  {
+    "samples": 1784832,
+    "peak_pcm": 20374,
+    "decoded_utterances": 21
+  },
+  {
+    "samples": 1866240,
+    "peak_pcm": 30694,
+    "decoded_utterances": 21
+  },
+  {
+    "samples": 1948160,
+    "peak_pcm": 18902,
+    "decoded_utterances": 22
+  },
+  {
+    "samples": 2030080,
+    "peak_pcm": 17293,
+    "decoded_utterances": 22
+  },
+  {
+    "samples": 2111488,
+    "peak_pcm": 18022,
+    "decoded_utterances": 25
+  },
+  {
+    "samples": 2191872,
+    "peak_pcm": 20914,
+    "decoded_utterances": 25
+  },
+  {
+    "samples": 2272256,
+    "peak_pcm": 16579,
+    "decoded_utterances": 26
+  },
+  {
+    "samples": 2353152,
+    "peak_pcm": 19900,
+    "decoded_utterances": 27
+  },
+  {
+    "samples": 2434048,
+    "peak_pcm": 15805,
+    "decoded_utterances": 28
+  },
+  {
+    "samples": 2516480,
+    "peak_pcm": 18392,
+    "decoded_utterances": 30
+  },
+  {
+    "samples": 2595328,
+    "peak_pcm": 22924,
+    "decoded_utterances": 30
+  },
+  {
+    "samples": 2678272,
+    "peak_pcm": 25738,
+    "decoded_utterances": 32
+  },
+  {
+    "samples": 2760192,
+    "peak_pcm": 32768,
+    "decoded_utterances": 33
+  },
+  {
+    "samples": 2841088,
+    "peak_pcm": 26862,
+    "decoded_utterances": 36
+  }
+]

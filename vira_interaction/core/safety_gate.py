@@ -163,7 +163,9 @@ class CommandValidator:
             return self._validate_express(params)
         elif action in ("StartMission", "PatrolRooms", "NavigateWaypoints"):
             return self._validate_start_mission(action, params)
-        elif action in ("Stop", "Pause", "Resume", "Cancel", "ReturnHome", "StatusQuery", "VoiceInterrupt", "VoiceResume"):
+        elif action in ("Stop", "Pause", "Resume", "Cancel", "ReturnHome"):
+            return ValidationResult(valid=True, action=action, params=params, sanitized_action={"action": action})
+        elif action in ("StatusQuery", "VoiceInterrupt", "VoiceResume"):
             return ValidationResult(
                 valid=True, action=action, params=params,
                 sanitized_action={"action": action, "params": params}

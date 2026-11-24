@@ -69,6 +69,14 @@ class TestMasterSystemReliability(unittest.TestCase):
         self.coordinator = AutonomousSupervisorNode()
         # Mock action client and service calls
         self.coordinator.nav_client.wait_for_server = MagicMock(return_value=True)
+        self.coordinator.nav_client.server_is_ready = MagicMock(return_value=True)
+        self.coordinator.localization_transform_freshness = MagicMock(return_value=(True, "fixture transform"))
+        now = time.time()
+        self.coordinator.last_scan_time = now
+        self.coordinator.last_odom_time = now
+        self.coordinator.last_mux_status_time = now
+        self.coordinator.last_terrain_status_time = now
+        self.coordinator.terrain_imu_fresh = True
         self.coordinator.nav_client.send_goal_async = MagicMock()
         self.coordinator.clear_global_costmap_cli.call_async = MagicMock()
         self.coordinator.clear_local_costmap_cli.call_async = MagicMock()
@@ -113,7 +121,12 @@ class TestMasterSystemReliability(unittest.TestCase):
         bridge.pub_coord_cmd.publish = lambda m: published_coord_cmds.append(json.loads(m.data))
 
         # Process single command
-        bridge.process_text_command("GraceEMO, navigate to the Master Bedroom.")
+        def accepted(_, envelope):
+            bridge._on_eventbus_action_requested(envelope)
+            return {"status": "dispatched"}
+        with patch("gracemo_sdk.authorization.dispatch_action", side_effect=accepted) as transport:
+            bridge.process_text_command("GraceEMO, navigate to the Master Bedroom.")
+        transport.assert_called_once()
 
         # Assert exactly one command was published to coordinator
         nav_cmds = [c for c in published_coord_cmds if c.get("intent") == "NAVIGATE_TO"]
@@ -301,6 +314,16 @@ class TestMasterSystemReliability(unittest.TestCase):
     # -------------------------------------------------------------------------
     # Scenario 10: Emergency Stop Safety Gate Lockout
     # -------------------------------------------------------------------------
+    def test_cancel_during_estop_keeps_latch_and_state(self):
+        self.coordinator.active_mission_id = "interrupted"
+        self.coordinator.handle_emergency_stop()
+        self.coordinator.handle_cancel_mission()
+        self.assertTrue(self.coordinator.terrain_emergency_active)
+        self.assertEqual(self.coordinator.state, AutonomousSupervisorNode.STATE_EMERGENCY_STOP)
+        self.assertEqual(self.coordinator.mission_history[0]["status"], "CANCELLED")
+        self.coordinator.handle_cancel_mission()
+        self.assertEqual(len(self.coordinator.mission_history), 1)
+
     def test_scenario_10_estop_lockout(self):
         """Verify that emergency stop rejects new missions immediately."""
         self.coordinator.handle_emergency_stop()

@@ -1,0 +1,29 @@
+{
+  "mission_id": "standalone-c81d9459-936b-481f-a41b-0962ec26370f",
+  "trace_id": "b1531888-eb83-4f29-8470-173b2cff8bd8",
+  "recognized": "stop",
+  "detected": 17966.303403643,
+  "samples": 106496,
+  "dispatch_started": 17966.314437028,
+  "dispatch_returned": 17966.321678049,
+  "receipt": {
+    "action_id": "634e2986-41a6-41ca-8caf-d434be260f9a",
+    "adapter_id": "graceemo_interaction",
+    "adapter_session": "4d373873-0e86-4b55-a421-19ab8a87ed04",
+    "authorization_id": "2995daa5-cf6c-4bae-a33f-179f15ed43c1",
+    "canonical_action": {
+      "action": "Stop"
+    },
+    "capability": "Stop",
+    "expires_at": 1795380970,
+    "issued_at": 1795380965,
+    "issuer": "1b517a86-8c91-43a2-a82b-64404dd087af",
+    "mission_id": "standalone-c81d9459-936b-481f-a41b-0962ec26370f",
+    "parameter_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "policy_version": 1,
+    "scope": "single_dispatch",
+    "trace_id": "b1531888-eb83-4f29-8470-173b2cff8bd8"
+  },
+  "captured_samples_after_cue": 106496,
+  "completed_utterances": 1
+}

@@ -1,0 +1,48 @@
+{
+  "target": "COSTMAP_UPDATE",
+  "status": "PASS",
+  "mission_id": "standalone-a383848b-a59e-46ea-8afd-019ae4d252e1",
+  "trigger": {
+    "state": "COSTMAP_UPDATE",
+    "sim_time": 6.1000000000000005,
+    "reason": null,
+    "generation": {
+      "grid": 10,
+      "global": 2
+    },
+    "hold_since": 5.75,
+    "global_plan_stamp": 3.7560000000000002,
+    "local_rollout_stamp": 6.06,
+    "ages": {
+      "depth": 0.10000000000000053,
+      "scan": 0.02600000000000069,
+      "odom": 0.020000000000000462,
+      "grid": 0.05000000000000071,
+      "global": 1.2940000000000005,
+      "plan": 2.3440000000000003,
+      "rollout": 0.040000000000000924,
+      "command": 0.008000000000000007
+    }
+  },
+  "pose": {
+    "x": 0.8395836504475033,
+    "y": -0.04853140690536365,
+    "linear_x": -0.001867817032645854,
+    "angular_z": -0.007939424893210926
+  },
+  "request_wall": 18984.055176064,
+  "request_sim": 6.1,
+  "latch_wall": 18984.057154729,
+  "latch_sim": 6.102,
+  "zero_wall": 18984.057701292,
+  "rest_wall": 18984.075930432,
+  "zero_latency_s": 0.002525227999285562,
+  "max_displacement_m": 0.0089290749805643,
+  "final_second_speed": 0.01721314949894063,
+  "rejected": true,
+  "reset": true,
+  "reset_wall": 18987.059390977,
+  "reset_sim": 9.1,
+  "post_reset_peak_command": 0.0,
+  "post_reset_peak_speed": 0.019172093099762276
+}

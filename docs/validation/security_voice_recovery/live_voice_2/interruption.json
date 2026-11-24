@@ -1,0 +1,10 @@
+{
+  "mission_id": "standalone-1ddc7d60-ed26-43c8-adf0-6fb4cc88f1fe",
+  "trace_id": "ea9b334f-811a-4ec6-a576-43bb0d70d0e7",
+  "motion_pose": {
+    "x": -0.007175024580911165,
+    "y": -0.006588645389521923,
+    "linear_x": -0.0014047432250065615,
+    "angular_z": -0.08161513541848901
+  }
+}

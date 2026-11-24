@@ -1,0 +1,59 @@
+{
+  "result": "PASS",
+  "mission_id": "gazebo-smoke-0da9c07bc152",
+  "mission_completed": true,
+  "failure_state": null,
+  "state_transitions": [
+    "AUTONOMY_READY",
+    "MISSION_ACCEPTED",
+    "MISSION_PLANNING",
+    "MISSION_EXECUTING",
+    "DESTINATION_REACHED",
+    "MISSION_COMPLETED",
+    "WAITING_FOR_NEXT_MISSION",
+    "AUTONOMY_READY"
+  ],
+  "goal_map": {
+    "x": 4.5,
+    "y": 0.0
+  },
+  "start_map_pose": {
+    "x": -0.01,
+    "y": -0.012,
+    "yaw": -0.07
+  },
+  "final_map_pose": {
+    "x": 4.266,
+    "y": -0.02,
+    "yaw": -0.036
+  },
+  "goal_error_m": 0.235,
+  "odom_start": [
+    -0.01719232957368489,
+    -0.014976262762935746
+  ],
+  "odom_final": [
+    4.260787619117403,
+    0.006868854531978357
+  ],
+  "max_odom_displacement_m": 4.27,
+  "mission_history": {
+    "mission_id": "gazebo-smoke-0da9c07bc152",
+    "name": "Gazebo point-to-point smoke",
+    "success": true,
+    "status": "COMPLETED",
+    "reason": "",
+    "waypoints_completed": 1,
+    "total_waypoints": 1,
+    "duration_sec": 13.5,
+    "end_pose": {
+      "x": 4.25,
+      "y": -0.02
+    },
+    "timestamp": 1795254179.7621443
+  },
+  "wall_time_sec": 14.5,
+  "simulation_clock_advances": 5567,
+  "scan_messages": 170,
+  "odom_messages": 559
+}

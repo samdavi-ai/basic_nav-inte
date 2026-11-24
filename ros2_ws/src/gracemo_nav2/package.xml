@@ -16,6 +16,7 @@
   <exec_depend>nav2_collision_monitor</exec_depend>
   <exec_depend>nav2_rotation_shim_controller</exec_depend>
   <exec_depend>gracemo_rl</exec_depend>
+  <exec_depend>rtabmap_slam</exec_depend>
   <exec_depend>slam_toolbox</exec_depend>
   <exec_depend>rviz2</exec_depend>
   <exec_depend>gracemo_description</exec_depend>

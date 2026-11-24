@@ -201,7 +201,8 @@ global_costmap:
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
-        observation_sources: scan
+        # The depth camera covers forward returns occluded at the chassis-mounted lidar.
+        observation_sources: scan pointcloud
         scan:
           topic: /scan
           max_obstacle_height: 2.0
@@ -211,6 +212,17 @@ global_costmap:
           raytrace_max_range: 12.0
           raytrace_min_range: 0.0
           obstacle_max_range: 10.0
+          obstacle_min_range: 0.15
+        pointcloud:
+          topic: /camera/depth/points
+          max_obstacle_height: 1.8
+          min_obstacle_height: 0.15
+          clearing: True
+          marking: True
+          data_type: "PointCloud2"
+          raytrace_max_range: 4.5
+          raytrace_min_range: 0.1
+          obstacle_max_range: 4.0
           obstacle_min_range: 0.15
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"

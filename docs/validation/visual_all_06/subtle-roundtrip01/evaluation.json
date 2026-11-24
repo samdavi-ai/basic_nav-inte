@@ -1,0 +1,282 @@
+{
+  "rgb_sim_hz": 9.98576512455516,
+  "depth_median_m": {
+    "median": 2.4102285504341125,
+    "p95": 4.548673987388611,
+    "max": 5.5264599323272705
+  },
+  "nearest_depth_skew_ms": {
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 100.00000000002274
+  },
+  "image_mean_abs_change": {
+    "median": 3.1906510416666665,
+    "p95": 7.529131510416667,
+    "max": 10.105169270833333
+  },
+  "exactly_repeated_images": 0,
+  "rejection_log_counts": {},
+  "graph_events": 132,
+  "keyframe_decisions": 68,
+  "graph_matches": [
+    {
+      "t": 53.7,
+      "ref": 51,
+      "loop": 41,
+      "proximity": 0,
+      "inliers": 168.0,
+      "iterations": 8.0
+    },
+    {
+      "t": 54.7,
+      "ref": 52,
+      "loop": 40,
+      "proximity": 0,
+      "inliers": 153.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 55.7,
+      "ref": 53,
+      "loop": 39,
+      "proximity": 0,
+      "inliers": 121.0,
+      "iterations": 4.0
+    },
+    {
+      "t": 56.7,
+      "ref": 54,
+      "loop": 38,
+      "proximity": 0,
+      "inliers": 151.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 57.8,
+      "ref": 55,
+      "loop": 38,
+      "proximity": 0,
+      "inliers": 75.0,
+      "iterations": 4.0
+    },
+    {
+      "t": 104.9,
+      "ref": 100,
+      "loop": 0,
+      "proximity": 89,
+      "inliers": 79.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 105.9,
+      "ref": 101,
+      "loop": 88,
+      "proximity": 88,
+      "inliers": 149.0,
+      "iterations": 9.0
+    },
+    {
+      "t": 106.9,
+      "ref": 102,
+      "loop": 88,
+      "proximity": 88,
+      "inliers": 170.0,
+      "iterations": 2.0
+    },
+    {
+      "t": 108.1,
+      "ref": 103,
+      "loop": 90,
+      "proximity": 90,
+      "inliers": 236.0,
+      "iterations": 2.0
+    },
+    {
+      "t": 109.2,
+      "ref": 104,
+      "loop": 91,
+      "proximity": 91,
+      "inliers": 236.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 110.2,
+      "ref": 105,
+      "loop": 92,
+      "proximity": 92,
+      "inliers": 265.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 111.4,
+      "ref": 106,
+      "loop": 92,
+      "proximity": 92,
+      "inliers": 180.0,
+      "iterations": 2.0
+    },
+    {
+      "t": 112.6,
+      "ref": 107,
+      "loop": 91,
+      "proximity": 91,
+      "inliers": 165.0,
+      "iterations": 2.0
+    },
+    {
+      "t": 113.8,
+      "ref": 108,
+      "loop": 0,
+      "proximity": 89,
+      "inliers": 120.0,
+      "iterations": 2.0
+    },
+    {
+      "t": 114.9,
+      "ref": 109,
+      "loop": 0,
+      "proximity": 89,
+      "inliers": 60.0,
+      "iterations": 4.0
+    },
+    {
+      "t": 120.2,
+      "ref": 114,
+      "loop": 23,
+      "proximity": 23,
+      "inliers": 78.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 121.2,
+      "ref": 115,
+      "loop": 23,
+      "proximity": 23,
+      "inliers": 105.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 122.3,
+      "ref": 116,
+      "loop": 23,
+      "proximity": 23,
+      "inliers": 145.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 123.3,
+      "ref": 117,
+      "loop": 23,
+      "proximity": 23,
+      "inliers": 181.0,
+      "iterations": 5.0
+    },
+    {
+      "t": 124.3,
+      "ref": 118,
+      "loop": 23,
+      "proximity": 23,
+      "inliers": 226.0,
+      "iterations": 3.0
+    }
+  ],
+  "interval": [
+    0.30000000000000004,
+    140.8
+  ],
+  "counts": {
+    "resources": 79,
+    "truth": 8545,
+    "odom": 1390,
+    "info": 1390,
+    "neck": 4461,
+    "rgb": 1404,
+    "/camera/camera_info": 1406,
+    "depth": 1404,
+    "localization": 132,
+    "graph": 132,
+    "/camera/depth/camera_info": 1405
+  },
+  "rgb_duplicates": 0,
+  "out_of_order": 0,
+  "missing_same_stamp_depth": 2,
+  "valid_depth_fraction": {
+    "median": 0.8981770833333333,
+    "p95": 1.0,
+    "max": 1.0
+  },
+  "rgb_calibration": {
+    "kind": "/camera/camera_info",
+    "t": 0.30000000000000004,
+    "frame": "camera_optical_link",
+    "k": [
+      246.89624622675555,
+      0.0,
+      160.0,
+      0.0,
+      246.89624622675555,
+      120.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 320,
+    "height": 240,
+    "model": "plumb_bob"
+  },
+  "depth_calibration": {
+    "kind": "/camera/depth/camera_info",
+    "t": 0.30000000000000004,
+    "frame": "camera_optical_link",
+    "k": [
+      123.44812311337778,
+      0.0,
+      80.0,
+      0.0,
+      123.44812311337778,
+      60.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 160,
+    "height": 120,
+    "model": "plumb_bob"
+  },
+  "availability": 0.9893162393162394,
+  "observed_camera_stamps": 1406,
+  "missing_rgb_at_camera_stamp": 2,
+  "observed_camera_coverage": 0.9879089615931721,
+  "matched": 1389,
+  "valid_without_truth": 0,
+  "loss_transitions": 10,
+  "recovery_transitions": 9,
+  "translation_rmse_m": 0.12876350422921548,
+  "rotation_rmse_deg": 1.70481177466854,
+  "translation_m": {
+    "median": 0.11674096794185222,
+    "p95": 0.20813829838774014,
+    "max": 0.27116555179830226
+  },
+  "rotation_deg": {
+    "median": 0.5103908450866954,
+    "p95": 4.062310769264831,
+    "max": 4.887664843373086
+  },
+  "latency_s": {
+    "median": 0.019481420516967773,
+    "p95": 0.03156272172927856,
+    "max": 0.05382680892944336
+  },
+  "matches": {
+    "median": 263.0,
+    "p95": 351.0,
+    "max": 471.0
+  },
+  "features": {
+    "median": 447.0,
+    "p95": 634.0,
+    "max": 667.0
+  }
+}

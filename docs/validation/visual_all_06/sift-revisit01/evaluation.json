@@ -1,0 +1,121 @@
+{
+  "rgb_sim_hz": 9.979238754325259,
+  "depth_median_m": {
+    "median": 2.409652352333069,
+    "p95": 4.552112102508545,
+    "max": 5.536159515380859
+  },
+  "nearest_depth_skew_ms": {
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 100.00000000000142
+  },
+  "image_mean_abs_change": {
+    "median": 0.2661848958333333,
+    "p95": 3.641629557291667,
+    "max": 7.120208333333333
+  },
+  "exactly_repeated_images": 39,
+  "rejection_log_counts": {
+    "Not enough features": 1141,
+    "Not enough inliers": 125,
+    "Missing correspondences": 189
+  },
+  "graph_events": 1,
+  "keyframe_decisions": 1,
+  "graph_matches": [],
+  "interval": [
+    0.2,
+    144.7
+  ],
+  "counts": {
+    "resources": 80,
+    "truth": 8705,
+    "rgb": 1443,
+    "/camera/camera_info": 1445,
+    "depth": 1441,
+    "info": 1437,
+    "odom": 1437,
+    "/camera/depth/camera_info": 1446,
+    "localization": 1,
+    "graph": 1
+  },
+  "rgb_duplicates": 0,
+  "out_of_order": 0,
+  "missing_same_stamp_depth": 3,
+  "valid_depth_fraction": {
+    "median": 0.9000520833333333,
+    "p95": 1.0,
+    "max": 1.0
+  },
+  "rgb_calibration": {
+    "kind": "/camera/camera_info",
+    "t": 0.2,
+    "frame": "camera_optical_link",
+    "k": [
+      246.89624622675555,
+      0.0,
+      160.0,
+      0.0,
+      246.89624622675555,
+      120.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 320,
+    "height": 240,
+    "model": "plumb_bob"
+  },
+  "depth_calibration": {
+    "kind": "/camera/depth/camera_info",
+    "t": 0.2,
+    "frame": "camera_optical_link",
+    "k": [
+      123.44812311337778,
+      0.0,
+      80.0,
+      0.0,
+      123.44812311337778,
+      60.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 160,
+    "height": 120,
+    "model": "plumb_bob"
+  },
+  "availability": 0.000693000693000693,
+  "matched": 1,
+  "valid_without_truth": 0,
+  "loss_transitions": 1,
+  "recovery_transitions": 1,
+  "translation_rmse_m": 3.469552829456483e-18,
+  "rotation_rmse_deg": 1.7772734312759915e-22,
+  "translation_m": {
+    "median": 3.469552829456483e-18,
+    "p95": 3.469552829456483e-18,
+    "max": 3.469552829456483e-18
+  },
+  "rotation_deg": {
+    "median": 1.7772734312759915e-22,
+    "p95": 1.7772734312759915e-22,
+    "max": 1.7772734312759915e-22
+  },
+  "latency_s": {
+    "median": 0.015135049819946289,
+    "p95": 0.020955514907836915,
+    "max": 0.03374195098876953
+  },
+  "matches": {
+    "median": 0.0,
+    "p95": 6.0,
+    "max": 15.0
+  },
+  "features": {
+    "median": 12.0,
+    "p95": 21.0,
+    "max": 32.0
+  }
+}

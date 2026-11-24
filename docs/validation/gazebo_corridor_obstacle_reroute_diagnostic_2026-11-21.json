@@ -1,0 +1,132 @@
+{
+  "scope": "Gazebo-only corridor obstacle reroute diagnosis",
+  "world": "apartment_floor.world / gracemo_home",
+  "scenario": {
+    "start_map_pose": [-0.088, -0.067],
+    "goal_map_pose": [4.5, 0.0],
+    "obstacle_center_xy_m": [2.0, -0.5],
+    "obstacle_size_xyz_m": [0.35, 0.35, 1.0],
+    "world_file_modified": false
+  },
+  "baseline_result": {
+    "result": "FAIL",
+    "mission_id": "gazebo-smoke-0d0ee78d88e5",
+    "failure_state": "NAVIGATION_FAILURE",
+    "final_map_pose": [1.519, -0.376],
+    "goal_error_m": 3.005,
+    "wall_time_sec": 59.4,
+    "retries": 3,
+    "false_arrival": false,
+    "mission_outcome": "Retries exhausted (watchdog_stagnant_12s)"
+  },
+  "controller_diagnostics": {
+    "dwb_error": "No valid trajectories out of 499; BaseObstacle/Trajectory Hits Obstacle",
+    "collision_monitor": "Obstacle stop path remained active",
+    "coordinator_behavior": "Cleared both costmaps and retried three times, then reported NAVIGATION_FAILURE",
+    "stopped_pose": "Approximately 0.3 m before the obstacle's west face"
+  },
+  "global_plan_observation": {
+    "path_point_count": 106,
+    "path_y_range_m": [-0.45, 0.0000001],
+    "sample_x_y_points_m": [[1.65, -0.45], [1.75, -0.3], [1.83, -0.29], [2.05, -0.3], [2.73, -0.3]],
+    "finding": "NavFn routed the center path within about 0.025 m of the obstacle's upper edge; the configured 0.34 m half-width footprint overlaps that obstacle at this path offset. DWB rejected its trajectories once close."
+  },
+  "geometry_check": {
+    "hallway_y_bounds_approx_m": [-1.0, 1.0],
+    "configured_robot_half_width_m": 0.34,
+    "obstacle_top_edge_y_m": -0.325,
+    "minimum_center_y_for_axis_aligned_clearance_m": 0.015,
+    "maximum_center_y_before_upper_wall_m": 0.66,
+    "finding": "The map/world geometry has a possible upper-side lane for the configured axis-aligned footprint. The observed global path did not use it. This is a geometric estimate, not a measured clearance or safety certification."
+  },
+  "candidate_tuning_result": {
+    "changes_tested": [
+      "DWB min_vel_x=-0.10 m/s",
+      "DWB BaseObstacle.scale=0.20",
+      "Coordinator stagnant timeout=30 s"
+    ],
+    "result": "FAIL",
+    "failure_state": "GOAL_TIMEOUT",
+    "wall_time_sec": 183.0,
+    "final_map_pose": [1.668, -0.451],
+    "nav2_backup_behavior": "backup failed",
+    "decision": "Reverted these candidate values; they did not demonstrate safe rerouting."
+  },
+  "global_inflation_trials": [
+    {
+      "global_costmap_inflation_radius_m": 0.85,
+      "cost_scaling_factor": 3.5,
+      "result": "FAIL",
+      "final_map_pose": [1.51, -0.321],
+      "wall_time_sec": 68.2,
+      "finding": "The stopping pose shifted about 0.055 m toward the obstacle's upper side, but the robot still stopped before the box and exhausted retries."
+    },
+    {
+      "global_costmap_inflation_radius_m": 1.2,
+      "cost_scaling_factor": 1.0,
+      "result": "FAIL",
+      "final_map_pose": [1.503, -0.309],
+      "wall_time_sec": 67.7,
+      "finding": "The stopping pose shifted slightly farther toward the upper side, but the robot still stopped before the box and exhausted retries. This candidate was reverted."
+    }
+  ],
+  "smac_planner_trial": {
+    "planner": "nav2_smac_planner::SmacPlanner2D",
+    "cost_travel_multiplier": 4.0,
+    "result": "FAIL",
+    "mission_id": "gazebo-smoke-947a09a48262",
+    "failure_state": "NAVIGATION_FAILURE",
+    "final_map_pose": [1.484, -0.406],
+    "goal_error_m": 3.043,
+    "wall_time_sec": 69.9,
+    "retries": 3,
+    "finding": "A later plan from near the obstacle went around its upper side, but the robot could not execute the route and the coordinator exhausted retries. Planner replacement alone did not fix the failure; NavFn was restored."
+  },
+  "directional_collision_stop_trial": {
+    "configuration": "VelocityPolygon stop zones selected for rotation, forward motion, reverse motion, and stopped fallback; sensors and stop action remained enabled",
+    "result": "FAIL",
+    "mission_id": "gazebo-smoke-17adb43c198c",
+    "failure_state": "NAVIGATION_FAILURE",
+    "final_map_pose": [1.458, -0.309],
+    "goal_error_m": 3.058,
+    "wall_time_sec": 59.2,
+    "retries": 3,
+    "controller_diagnostic": "DWB reported BaseObstacle/Trajectory Hits Obstacle; Nav2 backup behavior reported backup failed",
+    "decision": "Reverted the unverified collision-zone configuration; the baseline stop polygon remains active."
+  },
+  "corrected_reverse_stop_zone_trial": {
+    "configuration": "VelocityPolygon stop with a 0.20 m forward edge while reversing, a protected rear zone, and the rotation/forward/stopped zones enabled",
+    "result": "FAIL",
+    "mission_id": "gazebo-smoke-6d6e74c96269",
+    "failure_state": "NAVIGATION_FAILURE",
+    "final_map_pose": [1.439, -0.322],
+    "goal_error_m": 3.078,
+    "wall_time_sec": 60.2,
+    "retries": 3,
+    "decision": "The corrected direction-aware stop geometry still did not allow the Nav2 backup recovery to complete; reverted."
+  },
+  "smac_increased_clearance_trial": {
+    "planner": "nav2_smac_planner::SmacPlanner2D",
+    "cost_travel_multiplier": 4.0,
+    "global_costmap_inflation_radius_m": 0.85,
+    "cost_scaling_factor": 3.5,
+    "result": "FAIL",
+    "mission_id": "gazebo-smoke-686372025615",
+    "failure_state": "NAVIGATION_FAILURE",
+    "final_map_pose": [1.513, -0.308],
+    "goal_error_m": 3.003,
+    "wall_time_sec": 59.2,
+    "retries": 3,
+    "decision": "Larger global inflation with the cost-aware planner did not complete the corridor goal; NavFn and the baseline 0.55 m global inflation were restored."
+  },
+  "costmap_diagnostic": {
+    "global_costmap_frame": "map",
+    "obstacle_cell_cost_at_center": 253,
+    "observed_smac_path_y_near_x_2m": 0.194,
+    "finding": "The global costmap did mark the inserted box and the sampled Smac route passed above it. DWB and recovery still failed during the bounded mission, so the remaining defect is in local trajectory execution/recovery or footprint/pose consistency, not simply a missing obstacle observation. The point sample is not a swept-footprint clearance certification."
+  },
+  "limitations": [
+    "This does not validate moving-obstacle avoidance or randomized layouts.",
+    "A successful corridor reroute with recorded footprint clearance remains an open autonomy gate."
+  ]
+}

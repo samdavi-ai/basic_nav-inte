@@ -18,6 +18,7 @@ from typing import Optional
 import numpy as np
 
 import rclpy
+from rclpy.impl.implementation_singleton import rclpy_implementation
 from rclpy.node import Node
 from rclpy.time import Time
 
@@ -123,8 +124,14 @@ class SensorBridgeNode(Node):
         self._last_js_time = 0.0
         self._last_imu_time = 0.0
         self._last_pc_time = 0.0
-        self._last_depth_time = 0.0
-        self._last_rgb_time = 0.0
+        rgb_hz = float(self.declare_parameter("rgb_publish_hz",10.).value)
+        depth_hz = float(self.declare_parameter("depth_image_publish_hz",5.).value)
+        if not all(.1 <= rate <= 60 for rate in (rgb_hz,depth_hz)):
+            raise ValueError("Camera publication rates must be between 0.1 and 60 Hz")
+        self.rgb_period_ns = round(1_000_000_000/rgb_hz)
+        self.depth_image_period_ns = round(1_000_000_000/depth_hz)
+        self._last_depth_ns = None
+        self._last_rgb_ns = None
 
         # ── 5. Setup Gazebo Harmonic Transport Subscriptions ──
         self.gz_node = gz_transport.Node()
@@ -456,12 +463,11 @@ class SensorBridgeNode(Node):
     def _on_gz_rgb_image(self, msg: GzImage):
         if self.pub_rgb_image.get_subscription_count() == 0 and self.pub_rgb_info.get_subscription_count() == 0:
             return
-        now = time.time()
-        if now - self._last_rgb_time < 0.10:  # 10 Hz throttled for simulation performance
-            return
-        self._last_rgb_time = now
-
         stamp = self._to_ros_time(msg.header)
+        capture_ns = stamp.sec * 1_000_000_000 + stamp.nanosec
+        if self._last_rgb_ns is not None and 0 <= capture_ns - self._last_rgb_ns < self.rgb_period_ns:
+            return
+        self._last_rgb_ns = capture_ns
 
         if int(msg.width) != self.rgb_info_msg.width or int(msg.height) != self.rgb_info_msg.height:
             self.rgb_info_msg = self._build_camera_info(
@@ -487,12 +493,11 @@ class SensorBridgeNode(Node):
     def _on_gz_depth_image(self, msg: GzImage):
         if self.pub_depth_image.get_subscription_count() == 0 and self.pub_depth_info.get_subscription_count() == 0:
             return
-        now = time.time()
-        if now - self._last_depth_time < 0.20:  # 5 Hz, matching the simulated depth camera
-            return
-        self._last_depth_time = now
-
         stamp = self._to_ros_time(msg.header)
+        capture_ns = stamp.sec * 1_000_000_000 + stamp.nanosec
+        if self._last_depth_ns is not None and 0 <= capture_ns - self._last_depth_ns < self.depth_image_period_ns:
+            return
+        self._last_depth_ns = capture_ns
 
         if int(msg.width) != self.depth_info_msg.width or int(msg.height) != self.depth_info_msg.height:
             self.depth_info_msg = self._build_camera_info(
@@ -542,6 +547,12 @@ class SensorBridgeNode(Node):
             x_opt = arr["x"]
             y_opt = arr["y"]
             z_opt = arr["z"]
+
+            # Gazebo packs forward/left/up. The ROS camera optical frame is right/down/forward.
+            forward = x_opt.copy()
+            x_opt[:] = -y_opt
+            y_opt[:] = -z_opt
+            z_opt[:] = forward
 
             x_bf = 0.112 + z_opt
             y_bf = -x_opt
@@ -603,6 +614,10 @@ def main(args=None):
         rclpy.spin(node)
     except (KeyboardInterrupt, rclpy.executors.ExternalShutdownException):
         pass
+    except rclpy_implementation.RCLError:
+        # SIGINT can invalidate the context while the executor allocates its wait set.
+        if node.context.ok():
+            raise
     finally:
         try:
             node.shutdown_gazebo_transport()

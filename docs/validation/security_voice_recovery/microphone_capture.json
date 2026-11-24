@@ -1,0 +1,10 @@
+{
+  "returncode": 0,
+  "seconds": 2.071238518001337,
+  "samples": 32000,
+  "rate": 16000,
+  "device": "plughw:CARD=Generic_1,DEV=0",
+  "stderr": "",
+  "peak": 17877,
+  "rms": 4376.869837027513
+}

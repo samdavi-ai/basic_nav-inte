@@ -17,12 +17,14 @@ Coordinates the end-to-end interactive nervous system pipeline:
   TTS & Avatar Synchronization
 """
 from __future__ import annotations
+import os
 import logging
 import time
 import uuid
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Union
 import numpy as np
+import requests
 
 from .state_machine import CognitiveState, Expression, InteractionFSM
 from .safety_gate import CommandValidator, SafetyGate, ValidationResult
@@ -69,7 +71,7 @@ class InteractionGateway:
         memory: Optional[MemoryAdapter] = None,
     ):
         self.fsm = fsm or InteractionFSM()
-        self.event_bus = event_bus or EventBusClient()
+        self.event_bus = event_bus or EventBusClient(base_url=os.environ.get("VIRA_KERNEL_URL", "http://127.0.0.1:7780"))
         self.safety_gate = safety_gate or SafetyGate()
         self.fast_path = fast_path or FastPathMatcher()
         self.brain = brain or BrainAdapter()
@@ -105,6 +107,16 @@ class InteractionGateway:
         tid = trace_id or str(uuid.uuid4())
         sid = session_id or "session_default"
 
+        try:
+            return self._route_text(text, tid, sid, start_t)
+        except (PermissionError, requests.RequestException) as exc:
+            log.warning("Kernel dispatch unconfirmed (%s)", type(exc).__name__)
+            return GatewayResult(response="Command delivery could not be confirmed.",
+                                 intent="DISPATCH_UNCONFIRMED", confidence=0.0,
+                                 expression=self.fsm.expression, trace_id=tid, session_id=sid,
+                                 state=self.fsm.state.value, error="kernel_dispatch_unconfirmed")
+
+    def _route_text(self, text, tid, sid, start_t):
         clean_text = (text or "").strip()
         if not clean_text:
             return GatewayResult(

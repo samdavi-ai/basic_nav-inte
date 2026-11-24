@@ -1,0 +1,80 @@
+{
+  "command_graph": {
+    "cmd_vel_nav": {
+      "publishers": [
+        "controller_server",
+        "behavior_server",
+        "behavior_server",
+        "behavior_server"
+      ],
+      "subscribers": [
+        "cmd_vel_mux"
+      ]
+    },
+    "cmd_vel_guarded_nav": {
+      "publishers": [],
+      "subscribers": []
+    },
+    "cmd_vel_mux": {
+      "publishers": [
+        "cmd_vel_mux"
+      ],
+      "subscribers": [
+        "idle_zero_observer",
+        "velocity_smoother"
+      ]
+    },
+    "cmd_vel_smoothed": {
+      "publishers": [
+        "velocity_smoother"
+      ],
+      "subscribers": [
+        "idle_zero_observer",
+        "collision_monitor"
+      ]
+    },
+    "cmd_vel_safe": {
+      "publishers": [
+        "collision_monitor"
+      ],
+      "subscribers": [
+        "gracemo_terrain_monitor"
+      ]
+    },
+    "cmd_vel": {
+      "publishers": [
+        "gracemo_terrain_monitor"
+      ],
+      "subscribers": [
+        "idle_zero_observer",
+        "gracemo_sensor_bridge"
+      ]
+    }
+  },
+  "passed": true,
+  "discovery_complete": true,
+  "duration_s": 3,
+  "samples": {
+    "cmd_vel": 58,
+    "cmd_vel_mux": 50,
+    "cmd_vel_smoothed": 55
+  },
+  "peak": {
+    "cmd_vel": 0.0,
+    "cmd_vel_mux": 0.0,
+    "cmd_vel_smoothed": 0.0
+  },
+  "mux_state": {
+    "active_source": "NONE",
+    "teleop_active": false,
+    "rl_active": false,
+    "nav_active": false,
+    "teleop_age_sec": null,
+    "rl_age_sec": null,
+    "nav_age_sec": 5.412,
+    "zero_command_held": true,
+    "current_linear_x": 0.0,
+    "current_angular_z": 0.0
+  },
+  "odom_displacement_m": 0.006669677372221129
+}

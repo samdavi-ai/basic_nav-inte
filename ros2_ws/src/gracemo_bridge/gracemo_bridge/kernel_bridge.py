@@ -7,6 +7,7 @@ Provides deterministic closed-loop autonomous waypoint navigation for high-level
 """
 
 import sys
+import os
 import time
 import json
 import math
@@ -159,7 +160,7 @@ class KernelBridgeNode(Node):
         self.neck_active = False
 
         # Camera frame caching
-        self.latest_frame_path = "/tmp/gracemo_camera_latest.jpg"
+        self.latest_frame_path = os.getenv("VIRA_CAMERA_CACHE", "/tmp/gracemo_camera_latest.jpg")
         self.last_frame_save_time = 0.0
         self.frame_lock = threading.Lock()
 
@@ -268,7 +269,9 @@ class KernelBridgeNode(Node):
                     rgb = arr.reshape((msg.height, msg.width, 3))
                     bgr = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
                     with self.frame_lock:
-                        cv2.imwrite(self.latest_frame_path, bgr)
+                        temp = self.latest_frame_path + f".{os.getpid()}.jpg"
+                        if cv2.imwrite(temp, bgr):
+                            os.replace(temp,self.latest_frame_path)
             except Exception:
                 pass
 

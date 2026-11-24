@@ -1,0 +1,1069 @@
+{
+  "common_keyframes": [
+    1,
+    48,
+    76,
+    77,
+    79,
+    81,
+    82,
+    84,
+    85,
+    86,
+    88,
+    89,
+    90,
+    92,
+    93,
+    95,
+    97,
+    98,
+    100,
+    101,
+    103
+  ],
+  "optimized_nodes": 21,
+  "total_nodes": 103,
+  "observations_with_positive_depth": 86087,
+  "truth_coverage": {
+    "truth_bbox_min_m": [
+      -0.02493508622930219,
+      -0.28858220619664726,
+      0.024981082028735647
+    ],
+    "truth_bbox_max_m": [
+      3.427076584658729,
+      -2.1766510838457995e-05,
+      0.02499760992260208
+    ],
+    "matched_keyframe_path_length_m": 3.5002726391124943,
+    "keyframes_per_meter": 5.999532655069012
+  },
+  "optimized_component_sizes": [
+    21
+  ],
+  "raw": {
+    "translation_rmse_m": 0.005345144556029756,
+    "rotation_rmse_deg": 0.11678377906910142
+  },
+  "optimized": {
+    "translation_rmse_m": 0.005345144556029756,
+    "rotation_rmse_deg": 0.11678388045673681
+  },
+  "type1_constraints": [
+    {
+      "source": 2,
+      "target": 1,
+      "dt": 0.29999999999999993,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0008783327405219157,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.00081816858183268,
+      "truth_separation_m": 0.0008783327405219155
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "dt": 0.4,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0011376481560768416,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0011376481560768416,
+      "truth_separation_m": 0.0011376481560768416
+    },
+    {
+      "source": 4,
+      "target": 1,
+      "dt": 0.5,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0014941366953583335,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0014401196400468659,
+      "truth_separation_m": 0.0014941366953583337
+    },
+    {
+      "source": 5,
+      "target": 1,
+      "dt": 0.6,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0018026308418148786,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.00174769403780622,
+      "truth_separation_m": 0.0018026308418148788
+    },
+    {
+      "source": 6,
+      "target": 1,
+      "dt": 0.9999999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0029609485006295935,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0029609485006295943,
+      "truth_separation_m": 0.0029609485006295943
+    },
+    {
+      "source": 7,
+      "target": 1,
+      "dt": 1.1,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0032948234145437284,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.003241007447281498,
+      "truth_separation_m": 0.0032948234145437293
+    },
+    {
+      "source": 8,
+      "target": 1,
+      "dt": 1.2999999999999998,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.003902167766686058,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.003846777881835282,
+      "truth_separation_m": 0.0039021677666860595
+    },
+    {
+      "source": 9,
+      "target": 1,
+      "dt": 1.6,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.004793759233576571,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.00475357057201013,
+      "truth_separation_m": 0.004793759233576572
+    },
+    {
+      "source": 10,
+      "target": 1,
+      "dt": 1.9,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.005643817260801522,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0056438172608015225,
+      "truth_separation_m": 0.0056438172608015225
+    },
+    {
+      "source": 11,
+      "target": 1,
+      "dt": 2.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.005975887161195464,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.005975887161195464,
+      "truth_separation_m": 0.005975887161195464
+    },
+    {
+      "source": 12,
+      "target": 1,
+      "dt": 2.2,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.006582643514161371,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.006582643514161371,
+      "truth_separation_m": 0.006582643514161371
+    },
+    {
+      "source": 13,
+      "target": 1,
+      "dt": 2.3000000000000003,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0069010360891133245,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.006860553031645099,
+      "truth_separation_m": 0.006901036089113327
+    },
+    {
+      "source": 14,
+      "target": 1,
+      "dt": 2.4,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.007183935350529845,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.007145848398948696,
+      "truth_separation_m": 0.007183935350529846
+    },
+    {
+      "source": 15,
+      "target": 1,
+      "dt": 2.7,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.008094924626395541,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.008052728084441022,
+      "truth_separation_m": 0.008094924626395541
+    },
+    {
+      "source": 16,
+      "target": 1,
+      "dt": 3.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.009003435521870311,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.008948544125289854,
+      "truth_separation_m": 0.009003435521870313
+    },
+    {
+      "source": 17,
+      "target": 1,
+      "dt": 3.1,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.009268037268558398,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0092680372685584,
+      "truth_separation_m": 0.0092680372685584
+    },
+    {
+      "source": 18,
+      "target": 1,
+      "dt": 3.3000000000000003,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.00986839596323776,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.009868395963237762,
+      "truth_separation_m": 0.009868395963237762
+    },
+    {
+      "source": 19,
+      "target": 1,
+      "dt": 3.6,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.01080435702705092,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.010762275935375999,
+      "truth_separation_m": 0.010804357027050921
+    },
+    {
+      "source": 20,
+      "target": 1,
+      "dt": 3.6999999999999997,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.011081737436557642,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.011081737436557644,
+      "truth_separation_m": 0.011081737436557644
+    },
+    {
+      "source": 21,
+      "target": 1,
+      "dt": 3.9,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.011686221832622258,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.011686221832622261,
+      "truth_separation_m": 0.011686221832622261
+    },
+    {
+      "source": 22,
+      "target": 1,
+      "dt": 4.3999999999999995,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.013188639817017157,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.013188639817017163,
+      "truth_separation_m": 0.013188639817017163
+    },
+    {
+      "source": 23,
+      "target": 1,
+      "dt": 5.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.014990320491663909,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.014990320491663912,
+      "truth_separation_m": 0.014990320491663912
+    },
+    {
+      "source": 24,
+      "target": 1,
+      "dt": 5.199999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.015611167378283471,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.015556777937983142,
+      "truth_separation_m": 0.015611167378283471
+    },
+    {
+      "source": 25,
+      "target": 1,
+      "dt": 5.3,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.015886942286281,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.015886942286281,
+      "truth_separation_m": 0.015886942286281
+    },
+    {
+      "source": 26,
+      "target": 1,
+      "dt": 5.699999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.017078508376419162,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.017078508376419166,
+      "truth_separation_m": 0.017078508376419166
+    },
+    {
+      "source": 27,
+      "target": 1,
+      "dt": 6.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.017996428558716988,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.017969328543197424,
+      "truth_separation_m": 0.017996428558716984
+    },
+    {
+      "source": 28,
+      "target": 1,
+      "dt": 6.1,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.01827061603383672,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.01827061603383672,
+      "truth_separation_m": 0.01827061603383672
+    },
+    {
+      "source": 29,
+      "target": 1,
+      "dt": 6.199999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.018572442988513883,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.018572442988513883,
+      "truth_separation_m": 0.018572442988513883
+    },
+    {
+      "source": 30,
+      "target": 1,
+      "dt": 6.3,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.018874122527712766,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.01887412252771277,
+      "truth_separation_m": 0.01887412252771277
+    },
+    {
+      "source": 31,
+      "target": 1,
+      "dt": 6.699999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.020085293464443862,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.02003128802986354,
+      "truth_separation_m": 0.020085293464443866
+    },
+    {
+      "source": 32,
+      "target": 1,
+      "dt": 6.8,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.020359156394965893,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.020359156394965897,
+      "truth_separation_m": 0.020359156394965897
+    },
+    {
+      "source": 33,
+      "target": 1,
+      "dt": 7.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.02099198010634345,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.020925395222398065,
+      "truth_separation_m": 0.020991980106343455
+    },
+    {
+      "source": 34,
+      "target": 1,
+      "dt": 7.6,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.022788413268328284,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.022734869402350328,
+      "truth_separation_m": 0.022788413268328284
+    },
+    {
+      "source": 35,
+      "target": 1,
+      "dt": 7.799999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.023342184819812213,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.02334218481981222,
+      "truth_separation_m": 0.02334218481981222
+    },
+    {
+      "source": 36,
+      "target": 1,
+      "dt": 7.9,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.023667341324159347,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.023614858838290096,
+      "truth_separation_m": 0.023667341324159347
+    },
+    {
+      "source": 37,
+      "target": 1,
+      "dt": 8.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0239524841950861,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0239524841950861,
+      "truth_separation_m": 0.0239524841950861
+    },
+    {
+      "source": 38,
+      "target": 1,
+      "dt": 8.4,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.025161020151980084,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.02509643910292578,
+      "truth_separation_m": 0.025161020151980087
+    },
+    {
+      "source": 39,
+      "target": 1,
+      "dt": 8.5,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.025474403022119688,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.02542222584443718,
+      "truth_separation_m": 0.025474403022119684
+    },
+    {
+      "source": 40,
+      "target": 1,
+      "dt": 8.799999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.02635490913144497,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.026302864352508903,
+      "truth_separation_m": 0.026354909131444972
+    },
+    {
+      "source": 41,
+      "target": 1,
+      "dt": 9.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.026944685650199415,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.026944685650199415,
+      "truth_separation_m": 0.026944685650199415
+    },
+    {
+      "source": 42,
+      "target": 1,
+      "dt": 9.299999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.027843043503045083,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0277893400690727,
+      "truth_separation_m": 0.027843043503045086
+    },
+    {
+      "source": 43,
+      "target": 1,
+      "dt": 9.9,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.029639194920067866,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.02959833128159271,
+      "truth_separation_m": 0.029639194920067866
+    },
+    {
+      "source": 44,
+      "target": 1,
+      "dt": 10.299999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.03080811395227862,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.030808113952278615,
+      "truth_separation_m": 0.030808113952278615
+    },
+    {
+      "source": 45,
+      "target": 1,
+      "dt": 10.4,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.031108061441567064,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.03107096409748475,
+      "truth_separation_m": 0.03110806144156707
+    },
+    {
+      "source": 46,
+      "target": 1,
+      "dt": 10.6,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.03168300636216483,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.03168300636216484,
+      "truth_separation_m": 0.03168300636216484
+    },
+    {
+      "source": 47,
+      "target": 1,
+      "dt": 10.7,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.031997120289195054,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.031997120289195054,
+      "truth_separation_m": 0.031997120289195054
+    },
+    {
+      "source": 49,
+      "target": 48,
+      "dt": 0.5,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.001482676297919041,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0014296601949091827,
+      "truth_separation_m": 0.00148267629791904
+    },
+    {
+      "source": 50,
+      "target": 48,
+      "dt": 0.5999999999999996,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0017710638135512223,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0017303897043861223,
+      "truth_separation_m": 0.0017710638135512227
+    },
+    {
+      "source": 51,
+      "target": 48,
+      "dt": 1.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.002958644342409839,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.002921795990017006,
+      "truth_separation_m": 0.0029586443424098417
+    },
+    {
+      "source": 52,
+      "target": 48,
+      "dt": 1.299999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.003860860497983423,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0038080274524371154,
+      "truth_separation_m": 0.0038608604979834247
+    },
+    {
+      "source": 53,
+      "target": 48,
+      "dt": 1.3999999999999986,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.00415876038128563,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.004121807020390665,
+      "truth_separation_m": 0.004158760381285629
+    },
+    {
+      "source": 54,
+      "target": 48,
+      "dt": 1.5999999999999996,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.004746932013965592,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.004679883788546381,
+      "truth_separation_m": 0.00474693201396559
+    },
+    {
+      "source": 55,
+      "target": 48,
+      "dt": 1.799999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.005304748449358805,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.005304748449358808,
+      "truth_separation_m": 0.005304748449358808
+    },
+    {
+      "source": 56,
+      "target": 48,
+      "dt": 2.0999999999999996,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.006205109934341495,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.006205109934341494,
+      "truth_separation_m": 0.006205109934341494
+    },
+    {
+      "source": 57,
+      "target": 48,
+      "dt": 2.1999999999999993,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0065161918935671016,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.006465155044650955,
+      "truth_separation_m": 0.006516191893567106
+    },
+    {
+      "source": 58,
+      "target": 48,
+      "dt": 2.3999999999999986,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.007114826830448637,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.007062253630353972,
+      "truth_separation_m": 0.007114826830448632
+    },
+    {
+      "source": 59,
+      "target": 48,
+      "dt": 2.5999999999999996,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.00766742443722285,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.007667424437222851,
+      "truth_separation_m": 0.007667424437222851
+    },
+    {
+      "source": 60,
+      "target": 48,
+      "dt": 3.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.00887472465771293,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.00882218024548407,
+      "truth_separation_m": 0.008874724657712935
+    },
+    {
+      "source": 61,
+      "target": 48,
+      "dt": 3.1999999999999993,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.009445030249396991,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.009445030249396996,
+      "truth_separation_m": 0.009445030249396996
+    },
+    {
+      "source": 62,
+      "target": 48,
+      "dt": 4.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.01181432545090587,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.011761729315973739,
+      "truth_separation_m": 0.011814325450905869
+    },
+    {
+      "source": 63,
+      "target": 48,
+      "dt": 4.399999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.01293968151119754,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.012939681511197537,
+      "truth_separation_m": 0.012939681511197537
+    },
+    {
+      "source": 64,
+      "target": 48,
+      "dt": 4.899999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.014394724363594668,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.014394724363594668,
+      "truth_separation_m": 0.014394724363594668
+    },
+    {
+      "source": 65,
+      "target": 48,
+      "dt": 5.0,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.014687918320914397,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0146879183209144,
+      "truth_separation_m": 0.0146879183209144
+    },
+    {
+      "source": 66,
+      "target": 48,
+      "dt": 5.099999999999998,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.014996371437531053,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.014958291988064264,
+      "truth_separation_m": 0.014996371437531051
+    },
+    {
+      "source": 67,
+      "target": 48,
+      "dt": 5.699999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.01669597730531924,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.016695977305319246,
+      "truth_separation_m": 0.016695977305319246
+    },
+    {
+      "source": 68,
+      "target": 48,
+      "dt": 6.300000000000001,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.018437387517155533,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.018387699863262885,
+      "truth_separation_m": 0.01843738751715554
+    },
+    {
+      "source": 69,
+      "target": 48,
+      "dt": 6.399999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.018729995564302056,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.018692128644856976,
+      "truth_separation_m": 0.01872999556430206
+    },
+    {
+      "source": 70,
+      "target": 48,
+      "dt": 6.599999999999998,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.019311239506309964,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.019259438510343885,
+      "truth_separation_m": 0.019311239506309957
+    },
+    {
+      "source": 71,
+      "target": 48,
+      "dt": 7.099999999999998,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.020713224114830276,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.02067936764517963,
+      "truth_separation_m": 0.020713224114830286
+    },
+    {
+      "source": 72,
+      "target": 48,
+      "dt": 7.300000000000001,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.021290003197559283,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0212384265125451,
+      "truth_separation_m": 0.021290003197559283
+    },
+    {
+      "source": 73,
+      "target": 48,
+      "dt": 7.5,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.0218618750578569,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.021801393535500643,
+      "truth_separation_m": 0.021861875057856896
+    },
+    {
+      "source": 74,
+      "target": 48,
+      "dt": 7.699999999999999,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.022426596462773195,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.0223909731682122,
+      "truth_separation_m": 0.022426596462773195
+    },
+    {
+      "source": 75,
+      "target": 48,
+      "dt": 8.2,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.08152147996544488,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.08152147996544488,
+      "truth_separation_m": 0.08152147996544488
+    },
+    {
+      "source": 78,
+      "target": 77,
+      "dt": 0.20000000000000284,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.10636777193786126,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.09743011713592087,
+      "truth_separation_m": 0.1063677719378613
+    },
+    {
+      "source": 83,
+      "target": 82,
+      "dt": 0.20000000000000284,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.09933715075741267,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.09040680381579393,
+      "truth_separation_m": 0.09933715075741276
+    },
+    {
+      "source": 87,
+      "target": 86,
+      "dt": 0.10000000000000142,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.05060621128989958,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.050606211289899325,
+      "truth_separation_m": 0.050606211289899325
+    },
+    {
+      "source": 94,
+      "target": 93,
+      "dt": 0.09999999999999787,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.05075272734857394,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.050752727348574556,
+      "truth_separation_m": 0.050752727348574556
+    },
+    {
+      "source": 102,
+      "target": 101,
+      "dt": 0.09999999999999787,
+      "visual_inliers": null,
+      "optimization_iterations": null,
+      "relative_constraint_error": {
+        "translation_m": 0.05276056192718556,
+        "rotation_deg": 180.0
+      },
+      "max_excursion_from_target_m": 0.04380165791700045,
+      "truth_separation_m": 0.05276056192718561
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 use crate::ast::KValue;
-use crate::manifest::TargetLayer;
 use crate::planner::KPlan;
+use crate::planner::PlannedStage;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use thiserror::Error;
@@ -62,6 +62,22 @@ impl KRuntime {
 
     /// Executes a planned pipeline deterministically
     pub fn execute(&self, plan: &KPlan) -> Result<ExecutionSummary, RuntimeError> {
+        self.execute_with(plan, |stage, _| {
+            Err(RuntimeError::DispatcherError(format!(
+                "No executor bound for {}::{}",
+                stage.stage.noun, stage.stage.verb
+            )))
+        })
+    }
+
+    pub fn execute_with<F>(
+        &self,
+        plan: &KPlan,
+        mut dispatch: F,
+    ) -> Result<ExecutionSummary, RuntimeError>
+    where
+        F: FnMut(&PlannedStage, Option<&KValue>) -> Result<Option<KValue>, RuntimeError>,
+    {
         let mut ctx = ExecutionContext::new();
         let mut results = Vec::new();
 
@@ -69,30 +85,7 @@ impl KRuntime {
             let stage = &planned_stage.stage;
             let start = std::time::Instant::now();
 
-            // Mock/Local deterministic execution of recognized primitives
-            let stage_output = match planned_stage.target_layer {
-                TargetLayer::Level3MNSE => {
-                    // Query MNSE Graph or Memory
-                    if stage.noun == "graph" && stage.verb == "locate" {
-                        let _entity = stage.args.get("entity").and_then(|v| match v {
-                            KValue::String(s) => Some(s.clone()),
-                            _ => None,
-                        }).unwrap_or_else(|| "unknown".into());
-
-                        // Returns simulated spatial entity coordinate
-                        Some(KValue::Coordinates { x: -5.0, y: 1.4, z: None })
-                    } else {
-                        Some(KValue::String("ok".into()))
-                    }
-                }
-                TargetLayer::Level2Skill => {
-                    // Skill dispatch
-                    Some(KValue::String("completed".into()))
-                }
-                TargetLayer::Level1Spine => {
-                    Some(KValue::String("applied".into()))
-                }
-            };
+            let stage_output = dispatch(planned_stage, ctx.pipe_context.as_ref())?;
 
             let duration = start.elapsed().as_millis() as u64;
             ctx.pipe_context = stage_output.clone();

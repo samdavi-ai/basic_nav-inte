@@ -1,0 +1,75 @@
+{
+  "wall_seconds": 82.00102451499697,
+  "observer_messages_per_wall_second": {
+    "rgb": 18.572938679826642,
+    "info": 14.036409993749485,
+    "odom": 14.036409993749485,
+    "graph": 13.97543514581834
+  },
+  "matched_nonlost_poses_per_wall_second": 13.987630115404569,
+  "complete_wall_windows": [
+    {
+      "wall_seconds": 10.006155628998386,
+      "valid_pose_hz": 10.49354056573978,
+      "graph_hz": 10.49354056573978
+    },
+    {
+      "wall_seconds": 11.999264162001055,
+      "valid_pose_hz": 14.75090452300557,
+      "graph_hz": 14.584227635739971
+    },
+    {
+      "wall_seconds": 11.999405041999125,
+      "valid_pose_hz": 14.667393873611424,
+      "graph_hz": 14.667393873611424
+    },
+    {
+      "wall_seconds": 11.99275385999863,
+      "valid_pose_hz": 14.592144726967655,
+      "graph_hz": 14.592144726967655
+    },
+    {
+      "wall_seconds": 10.009248729002138,
+      "valid_pose_hz": 14.586509332809369,
+      "graph_hz": 14.486601734639441
+    },
+    {
+      "wall_seconds": 11.991919222000433,
+      "valid_pose_hz": 14.593160340752142,
+      "graph_hz": 14.5097708530907
+    },
+    {
+      "wall_seconds": 10.000500401998579,
+      "valid_pose_hz": 13.499324491104518,
+      "graph_hz": 13.79930947979573
+    }
+  ],
+  "backend_reported_stamp_delay_s": {
+    "odometry": {
+      "median": 0.058,
+      "p95": 0.082,
+      "max": 0.096
+    },
+    "mapping": {
+      "median": 0.088,
+      "p95": 0.11,
+      "max": 0.132
+    }
+  },
+  "processes": {
+    "rtabmap": {
+      "samples": 41,
+      "median_cpu_percent_one_core": 53.2,
+      "peak_rss_mib": 398.21875,
+      "first_rss_mib": 224.05078125,
+      "last_rss_mib": 398.21875
+    },
+    "rgbd_odometry": {
+      "samples": 41,
+      "median_cpu_percent_one_core": 31.9,
+      "peak_rss_mib": 223.87109375,
+      "first_rss_mib": 200.53125,
+      "last_rss_mib": 223.87109375
+    }
+  }
+}

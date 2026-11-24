@@ -1,0 +1,33 @@
+{
+  "samples": 25,
+  "max_tree_pss_bytes": 2452076544,
+  "max_perception_rss_bytes": 568635392,
+  "detector_ms": {
+    "p50": 60.51032599953032,
+    "p95": 65.60262739967584
+  },
+  "tracking_ms": {
+    "p50": 0.018665000425244216,
+    "p95": 0.026423199415148688
+  },
+  "pair_wall_hz": 3.53792954594694,
+  "processed_wall_hz": 3.5144995489539137,
+  "sampled_localized_classes": {
+    "monitor": 2,
+    "chair": 1
+  },
+  "max_sync_skew_ms": 0.0,
+  "k_http_ms": {
+    "p50": 2.2416729998440132,
+    "p95": 4.164427799878466
+  },
+  "active_trace_samples": 21,
+  "visual_states": {
+    "tracking": 6,
+    "relocalized": 2,
+    "lost": 17
+  },
+  "matched_pose_count": 5,
+  "translation_rmse_m": 0.2297948681045742,
+  "max_error_m": 0.4768622375441791
+}

@@ -1,0 +1,571 @@
+{
+  "case": {
+    "index": 4,
+    "seed": 42,
+    "kind": "replan",
+    "box": [
+      4.37,
+      -0.4,
+      0.336,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      0.0
+    ],
+    "min_robot_x": 0.1912112669270855,
+    "min_plan_count": 2,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world"
+  },
+  "mission_id": "standalone-330a0897-26e0-45e0-8973-7e781f82444a",
+  "trace_id": "1c388c59-c16e-4304-8440-8ad12393e6a1",
+  "matched_terminal": false,
+  "runner_timed_out": true,
+  "goal_within_035m": false,
+  "final_zero_command_window_s": 1.076,
+  "planner_actions": [],
+  "insertion_within_proven_planner_interval": false,
+  "state": null,
+  "kernel_terminal": null,
+  "retries": 2,
+  "insert_requested": 10.588000000000001,
+  "first_scene_confirmation": 11.298,
+  "last_scene_confirmation": [
+    11.298,
+    4.37,
+    -0.4
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": 13.72,
+  "risk_to_zero_s": 2.7,
+  "risk_to_chassis_stop_s": 2.832,
+  "selected_rollouts_after_insertion": 1917,
+  "worst_frozen_rollout_fixture_m": -0.197,
+  "minimum_scene_interpolated_m": -0.033196,
+  "minimum_fixture_interpolated_m": -0.033196,
+  "sensor_transform_drops": 312,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "scan": 10.892,
+    "depth": 11.2
+  },
+  "first_lethal_marks": {
+    "local_costmap": 11.226,
+    "global_costmap": 11.406
+  },
+  "preexisting_matches": {},
+  "first_monitor_action": 10.888,
+  "first_risk_action": 10.888,
+  "monitor_stop": 13.586,
+  "guard_stop": null,
+  "first_final_zero_after_stop_action": 13.588000000000001,
+  "sensor_to_local_mark_s": 0.334,
+  "local_mark_to_stop_s": 2.362,
+  "sensor_to_stop_s": 2.696,
+  "peak_linear_speed_until_stop_mps": 0.48933165030636516,
+  "max_displacement_until_stop_m": 0.2072094191636609,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": -0.02834,
+  "goal_error_m": 0.80474,
+  "old_and_new_plans": [
+    {
+      "t": 3.414,
+      "points": 178,
+      "frozen_fixture_clearance_m": -0.13216
+    },
+    {
+      "t": 10.58,
+      "points": 44,
+      "frozen_fixture_clearance_m": -0.30207
+    },
+    {
+      "t": 11.04,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.12966
+    },
+    {
+      "t": 11.7,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.13061
+    },
+    {
+      "t": 12.45,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.15935
+    },
+    {
+      "t": 13.002,
+      "points": 53,
+      "frozen_fixture_clearance_m": -0.10777
+    },
+    {
+      "t": 13.64,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.10242
+    },
+    {
+      "t": 14.398,
+      "points": 51,
+      "frozen_fixture_clearance_m": -0.10241
+    },
+    {
+      "t": 15.148,
+      "points": 49,
+      "frozen_fixture_clearance_m": -0.15149
+    },
+    {
+      "t": 15.82,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.15149
+    },
+    {
+      "t": 16.524,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.15149
+    },
+    {
+      "t": 17.204,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.15433
+    },
+    {
+      "t": 17.954,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.15434
+    },
+    {
+      "t": 18.616,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.15688
+    },
+    {
+      "t": 19.31,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.15639
+    },
+    {
+      "t": 19.94,
+      "points": 48,
+      "frozen_fixture_clearance_m": -0.15639
+    },
+    {
+      "t": 20.664,
+      "points": 48,
+      "frozen_fixture_clearance_m": -0.16009
+    },
+    {
+      "t": 21.392,
+      "points": 48,
+      "frozen_fixture_clearance_m": -0.15769
+    },
+    {
+      "t": 22.026,
+      "points": 48,
+      "frozen_fixture_clearance_m": -0.1577
+    },
+    {
+      "t": 22.704,
+      "points": 46,
+      "frozen_fixture_clearance_m": -0.11247
+    },
+    {
+      "t": 23.372,
+      "points": 48,
+      "frozen_fixture_clearance_m": -0.1614
+    },
+    {
+      "t": 24.04,
+      "points": 45,
+      "frozen_fixture_clearance_m": -0.1614
+    },
+    {
+      "t": 24.706,
+      "points": 50,
+      "frozen_fixture_clearance_m": -0.1123
+    },
+    {
+      "t": 25.41,
+      "points": 46,
+      "frozen_fixture_clearance_m": -0.11274
+    },
+    {
+      "t": 26.11,
+      "points": 50,
+      "frozen_fixture_clearance_m": -0.11332
+    },
+    {
+      "t": 26.834,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.13573
+    },
+    {
+      "t": 28.512,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.13671
+    },
+    {
+      "t": 29.21,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.13671
+    },
+    {
+      "t": 29.882,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.13671
+    },
+    {
+      "t": 30.6,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.13671
+    },
+    {
+      "t": 31.296,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.14999
+    },
+    {
+      "t": 31.946,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.14999
+    },
+    {
+      "t": 32.554,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.1491
+    },
+    {
+      "t": 33.252,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.14766
+    },
+    {
+      "t": 33.916,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.14766
+    },
+    {
+      "t": 34.69,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.14813
+    },
+    {
+      "t": 35.382,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.15209
+    },
+    {
+      "t": 36.102,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.15282
+    },
+    {
+      "t": 36.882,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.15282
+    },
+    {
+      "t": 37.602,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.15897
+    },
+    {
+      "t": 38.314,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.16056
+    },
+    {
+      "t": 38.98,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.16056
+    },
+    {
+      "t": 39.646,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.16184
+    },
+    {
+      "t": 40.33,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.16283
+    },
+    {
+      "t": 40.938,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.16283
+    },
+    {
+      "t": 42.504,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.1599
+    },
+    {
+      "t": 43.186,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.1599
+    },
+    {
+      "t": 43.912,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.1599
+    },
+    {
+      "t": 44.62,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.1599
+    },
+    {
+      "t": 45.342,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.16655
+    },
+    {
+      "t": 46.036,
+      "points": 57,
+      "frozen_fixture_clearance_m": -0.16602
+    },
+    {
+      "t": 46.778,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.1436
+    },
+    {
+      "t": 47.496,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.14569
+    },
+    {
+      "t": 48.19,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.14794
+    },
+    {
+      "t": 48.906,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.14794
+    },
+    {
+      "t": 49.66,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.15145
+    },
+    {
+      "t": 50.3,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.15145
+    },
+    {
+      "t": 50.892,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.15145
+    },
+    {
+      "t": 51.536,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.15701
+    },
+    {
+      "t": 52.202,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.15701
+    },
+    {
+      "t": 52.922,
+      "points": 58,
+      "frozen_fixture_clearance_m": -0.15701
+    },
+    {
+      "t": 53.632,
+      "points": 58,
+      "frozen_fixture_clearance_m": -0.15283
+    },
+    {
+      "t": 54.334,
+      "points": 58,
+      "frozen_fixture_clearance_m": -0.13754
+    },
+    {
+      "t": 55.04,
+      "points": 58,
+      "frozen_fixture_clearance_m": -0.13754
+    },
+    {
+      "t": 55.806,
+      "points": 58,
+      "frozen_fixture_clearance_m": -0.138
+    },
+    {
+      "t": 56.548,
+      "points": 58,
+      "frozen_fixture_clearance_m": -0.14106
+    },
+    {
+      "t": 57.296,
+      "points": 59,
+      "frozen_fixture_clearance_m": -0.13999
+    },
+    {
+      "t": 58.024,
+      "points": 59,
+      "frozen_fixture_clearance_m": -0.13999
+    },
+    {
+      "t": 58.764,
+      "points": 59,
+      "frozen_fixture_clearance_m": -0.14271
+    },
+    {
+      "t": 59.512,
+      "points": 59,
+      "frozen_fixture_clearance_m": -0.14178
+    },
+    {
+      "t": 60.24,
+      "points": 59,
+      "frozen_fixture_clearance_m": -0.14516
+    },
+    {
+      "t": 61.002,
+      "points": 58,
+      "frozen_fixture_clearance_m": -0.12448
+    },
+    {
+      "t": 61.754,
+      "points": 59,
+      "frozen_fixture_clearance_m": -0.12447
+    },
+    {
+      "t": 62.492,
+      "points": 59,
+      "frozen_fixture_clearance_m": -0.10295
+    },
+    {
+      "t": 63.2,
+      "points": 61,
+      "frozen_fixture_clearance_m": -0.10296
+    },
+    {
+      "t": 63.9,
+      "points": 64,
+      "frozen_fixture_clearance_m": -0.12534
+    },
+    {
+      "t": 64.614,
+      "points": 66,
+      "frozen_fixture_clearance_m": -0.13139
+    },
+    {
+      "t": 65.322,
+      "points": 66,
+      "frozen_fixture_clearance_m": -0.12867
+    },
+    {
+      "t": 65.924,
+      "points": 64,
+      "frozen_fixture_clearance_m": -0.13288
+    },
+    {
+      "t": 66.624,
+      "points": 64,
+      "frozen_fixture_clearance_m": -0.13288
+    },
+    {
+      "t": 67.284,
+      "points": 63,
+      "frozen_fixture_clearance_m": -0.13288
+    },
+    {
+      "t": 68.008,
+      "points": 64,
+      "frozen_fixture_clearance_m": -0.13287
+    },
+    {
+      "t": 68.808,
+      "points": 71,
+      "frozen_fixture_clearance_m": -0.13287
+    },
+    {
+      "t": 69.596,
+      "points": 64,
+      "frozen_fixture_clearance_m": -0.11638
+    },
+    {
+      "t": 70.264,
+      "points": 71,
+      "frozen_fixture_clearance_m": -0.11639
+    },
+    {
+      "t": 70.94,
+      "points": 69,
+      "frozen_fixture_clearance_m": -0.10914
+    },
+    {
+      "t": 71.638,
+      "points": 69,
+      "frozen_fixture_clearance_m": -0.10914
+    },
+    {
+      "t": 72.288,
+      "points": 63,
+      "frozen_fixture_clearance_m": -0.11417
+    },
+    {
+      "t": 73.008,
+      "points": 62,
+      "frozen_fixture_clearance_m": -0.16417
+    },
+    {
+      "t": 73.752,
+      "points": 63,
+      "frozen_fixture_clearance_m": -0.11115
+    },
+    {
+      "t": 74.418,
+      "points": 63,
+      "frozen_fixture_clearance_m": -0.12159
+    },
+    {
+      "t": 75.16,
+      "points": 63,
+      "frozen_fixture_clearance_m": -0.127
+    },
+    {
+      "t": 75.938,
+      "points": 69,
+      "frozen_fixture_clearance_m": -0.127
+    },
+    {
+      "t": 76.692,
+      "points": 63,
+      "frozen_fixture_clearance_m": -0.12721
+    },
+    {
+      "t": 77.4,
+      "points": 65,
+      "frozen_fixture_clearance_m": -0.12961
+    },
+    {
+      "t": 78.134,
+      "points": 65,
+      "frozen_fixture_clearance_m": -0.13804
+    },
+    {
+      "t": 78.82,
+      "points": 65,
+      "frozen_fixture_clearance_m": -0.13804
+    },
+    {
+      "t": 79.56,
+      "points": 65,
+      "frozen_fixture_clearance_m": -0.14066
+    }
+  ],
+  "after_insertion_plan_count": 96,
+  "confirmed_motion_m": 0.0
+}

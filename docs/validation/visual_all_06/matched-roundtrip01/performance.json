@@ -1,0 +1,114 @@
+{
+  "wall_seconds": 202.0113582169979,
+  "observer_messages_per_wall_second": {
+    "rgb": 8.573775332669705,
+    "info": 8.459920348459887,
+    "odom": 8.459920348459887,
+    "graph": 5.415537075023473
+  },
+  "matched_nonlost_poses_per_wall_second": 8.459920348459887,
+  "complete_wall_windows": [
+    {
+      "wall_seconds": 12.003064099997573,
+      "valid_pose_hz": 6.914901004320787,
+      "graph_hz": 6.914901004320787
+    },
+    {
+      "wall_seconds": 11.99639224800194,
+      "valid_pose_hz": 8.58591465422908,
+      "graph_hz": 8.502556259527829
+    },
+    {
+      "wall_seconds": 10.000824800998089,
+      "valid_pose_hz": 8.899265987653113,
+      "graph_hz": 8.999257740323372
+    },
+    {
+      "wall_seconds": 10.008192379998945,
+      "valid_pose_hz": 8.89271475015445,
+      "graph_hz": 8.89271475015445
+    },
+    {
+      "wall_seconds": 10.002521788002923,
+      "valid_pose_hz": 8.897756174522616,
+      "graph_hz": 8.697806597567052
+    },
+    {
+      "wall_seconds": 11.997851592997904,
+      "valid_pose_hz": 8.918263338283541,
+      "graph_hz": 8.834915082785566
+    },
+    {
+      "wall_seconds": 11.99464716500006,
+      "valid_pose_hz": 8.753904850689242,
+      "graph_hz": 8.837275373076759
+    },
+    {
+      "wall_seconds": 10.00318199799949,
+      "valid_pose_hz": 8.797200732486811,
+      "graph_hz": 8.59726435220302
+    },
+    {
+      "wall_seconds": 11.999206341002719,
+      "valid_pose_hz": 8.667239902744202,
+      "graph_hz": 8.167206831432035
+    },
+    {
+      "wall_seconds": 12.000074536998,
+      "valid_pose_hz": 8.749945650443212,
+      "graph_hz": 8.416614387569187
+    },
+    {
+      "wall_seconds": 10.001368774999719,
+      "valid_pose_hz": 8.698809328726352,
+      "graph_hz": 8.59882301460306
+    },
+    {
+      "wall_seconds": 11.993007267999928,
+      "valid_pose_hz": 6.503789938335295,
+      "graph_hz": 5.002915337180996
+    },
+    {
+      "wall_seconds": 10.003557333999197,
+      "valid_pose_hz": 6.097830797918122,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 12.001110951001465,
+      "valid_pose_hz": 8.999166863880019,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 10.000094221999461,
+      "valid_pose_hz": 9.099914258788361,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 12.003726089002157,
+      "valid_pose_hz": 8.997206300712731,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 11.994072325000161,
+      "valid_pose_hz": 9.004447953418403,
+      "graph_hz": 0.0
+    },
+    {
+      "wall_seconds": 10.003075545999309,
+      "valid_pose_hz": 8.897263605651284,
+      "graph_hz": 0.0
+    }
+  ],
+  "processes": {
+    "rtabmap": {
+      "samples": 65,
+      "median_cpu_percent_one_core": 62.3,
+      "peak_rss_mib": 552.7890625
+    },
+    "rgbd_odometry": {
+      "samples": 101,
+      "median_cpu_percent_one_core": 28.0,
+      "peak_rss_mib": 240.0546875
+    }
+  }
+}

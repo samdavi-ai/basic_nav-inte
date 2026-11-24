@@ -1,0 +1,15 @@
+{
+  "image": "bus.jpg",
+  "detected_people": 4,
+  "unique_tracks": 4,
+  "reversed_order_consistent": true,
+  "short_occlusion_consistent": true,
+  "tp": 10,
+  "fp": 0,
+  "fn": 2,
+  "tn": 36,
+  "precision": 1.0,
+  "recall": 0.8333333333333334,
+  "false_match_rate": 0.0,
+  "elapsed_ms": 2.8323820006335154
+}

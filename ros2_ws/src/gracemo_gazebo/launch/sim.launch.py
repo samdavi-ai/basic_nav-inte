@@ -18,6 +18,12 @@ def generate_launch_description():
     pkg_gracemo_gazebo      = get_package_share_directory("gracemo_gazebo")
 
     world_file  = os.path.join(pkg_gracemo_gazebo, "worlds", "apartment_floor.world")
+    camera_trial = (os.environ.get("VIRA_TEST_DEPTH_10HZ") == "1"
+                    and os.environ.get("GZ_PARTITION", "").startswith("vira-restart-"))
+    rgb_rate, depth_rate = 10., 5.
+    if camera_trial:
+        rgb_rate = depth_rate = 20. if os.getenv("VIRA_TEST_RGBD_20HZ") == "1" else 10.
+        world_file = os.path.join(os.environ["GRACEMO_STATE_DIR"], "camera_rate.world")
     xacro_file  = os.path.join(pkg_gracemo_description, "urdf", "gracemo_vira_integrated.urdf.xacro")
     models_path    = os.path.join(pkg_gracemo_gazebo, "models")
     fuel_cache_gz  = os.path.expanduser("~/.gz/fuel/fuel.gazebosim.org/openrobotics/models")
@@ -83,6 +89,8 @@ def generate_launch_description():
             name="gracemo_sensor_bridge",
             output="screen",
             parameters=[{
+                "rgb_publish_hz": rgb_rate,
+                "depth_image_publish_hz": depth_rate,
                 "use_sim_time": use_sim_time
             }]
         ),

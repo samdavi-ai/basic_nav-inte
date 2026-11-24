@@ -1,0 +1,20 @@
+{
+  "result": {
+    "completed_stages": 1,
+    "stage_results": [
+      {
+        "execution_time_ms": 0,
+        "noun": "memory",
+        "output": {
+          "String": "MISSION_EXECUTING"
+        },
+        "stage_index": 0,
+        "success": true,
+        "verb": "recall"
+      }
+    ],
+    "success": true,
+    "total_stages": 1
+  },
+  "success": true
+}

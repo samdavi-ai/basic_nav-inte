@@ -1,0 +1,127 @@
+[
+  {
+    "samples": 76288,
+    "peak_pcm": 17527,
+    "decoded_utterances": 0
+  },
+  {
+    "samples": 156672,
+    "peak_pcm": 9878,
+    "decoded_utterances": 2
+  },
+  {
+    "samples": 238080,
+    "peak_pcm": 13358,
+    "decoded_utterances": 4
+  },
+  {
+    "samples": 320512,
+    "peak_pcm": 19439,
+    "decoded_utterances": 5
+  },
+  {
+    "samples": 402432,
+    "peak_pcm": 32289,
+    "decoded_utterances": 6
+  },
+  {
+    "samples": 483328,
+    "peak_pcm": 17325,
+    "decoded_utterances": 8
+  },
+  {
+    "samples": 563712,
+    "peak_pcm": 32151,
+    "decoded_utterances": 9
+  },
+  {
+    "samples": 644608,
+    "peak_pcm": 32768,
+    "decoded_utterances": 11
+  },
+  {
+    "samples": 726016,
+    "peak_pcm": 32768,
+    "decoded_utterances": 12
+  },
+  {
+    "samples": 808448,
+    "peak_pcm": 20405,
+    "decoded_utterances": 14
+  },
+  {
+    "samples": 890368,
+    "peak_pcm": 20266,
+    "decoded_utterances": 14
+  },
+  {
+    "samples": 970752,
+    "peak_pcm": 16517,
+    "decoded_utterances": 15
+  },
+  {
+    "samples": 1051648,
+    "peak_pcm": 14956,
+    "decoded_utterances": 16
+  },
+  {
+    "samples": 1132032,
+    "peak_pcm": 13678,
+    "decoded_utterances": 17
+  },
+  {
+    "samples": 1212928,
+    "peak_pcm": 18069,
+    "decoded_utterances": 19
+  },
+  {
+    "samples": 1294336,
+    "peak_pcm": 17135,
+    "decoded_utterances": 20
+  },
+  {
+    "samples": 1376256,
+    "peak_pcm": 32768,
+    "decoded_utterances": 21
+  },
+  {
+    "samples": 1458176,
+    "peak_pcm": 25922,
+    "decoded_utterances": 22
+  },
+  {
+    "samples": 1539072,
+    "peak_pcm": 32768,
+    "decoded_utterances": 22
+  },
+  {
+    "samples": 1618432,
+    "peak_pcm": 32768,
+    "decoded_utterances": 24
+  },
+  {
+    "samples": 1697792,
+    "peak_pcm": 32768,
+    "decoded_utterances": 26
+  },
+  {
+    "samples": 1780224,
+    "peak_pcm": 13382,
+    "decoded_utterances": 27
+  },
+  {
+    "samples": 1861632,
+    "peak_pcm": 19803,
+    "decoded_utterances": 28
+  },
+  {
+    "samples": 1942016,
+    "peak_pcm": 26168,
+    "decoded_utterances": 29
+  },
+  {
+    "samples": 2022912,
+    "peak_pcm": 22310,
+    "decoded_utterances": 29
+  }
+]

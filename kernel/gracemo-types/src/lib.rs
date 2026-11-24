@@ -286,6 +286,14 @@ pub enum EventType {
         depth_m: Option<f32>,
         #[serde(default)]
         frame_id: Option<String>,
+        #[serde(default)]
+        detection_id: Option<String>,
+        #[serde(default)]
+        track_id: Option<String>,
+        #[serde(default)]
+        camera_id: Option<String>,
+        #[serde(default)]
+        image_stamp_ns: Option<i64>,
     },
     VisionDetection {
         #[serde(default)]
@@ -482,7 +490,7 @@ impl WorldObject {
 
     /// Evaluate visibility lifecycle dynamically against a reference timestamp
     pub fn is_visible_at(&self, current_time: f64, timeout_sec: f64) -> bool {
-        (current_time - self.last_seen) <= timeout_sec
+        (0.0..=timeout_sec).contains(&(current_time - self.last_seen))
     }
 }
 

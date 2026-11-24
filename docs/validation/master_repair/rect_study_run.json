@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/rect_study",
+    "--rectangular-guard",
+    "--regression",
+    "study"
+  ],
+  "exit": 0
+}

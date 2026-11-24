@@ -1,0 +1,28 @@
+{
+  "topic": "/coordinator/command",
+  "commands": [
+    {
+      "intent": "START_MISSION",
+      "mission_name": "Standalone apartment patrol",
+      "waypoints": [
+        {
+          "coords": {
+            "frame_id": "map",
+            "x": 4.5,
+            "y": 0.0,
+            "yaw": 0.0
+          },
+          "dwell_sec": 0.0,
+          "name": "Simulation destination"
+        }
+      ],
+      "mission_id": "standalone-89303168-a578-4a32-8e3f-d28a8e7811d8",
+      "trace_id": "27bac76c-b625-4100-b8dc-615b1b7dd402"
+    }
+  ],
+  "denied_mission_id": "2abf9bb1-71d5-4840-9f59-649a69c26c15",
+  "denied_trace_id": "3086e5b5-ecb8-4569-9607-c91d2d63d49a",
+  "denial_http_status": 401,
+  "positive_control": true,
+  "denied_command_count": 0
+}

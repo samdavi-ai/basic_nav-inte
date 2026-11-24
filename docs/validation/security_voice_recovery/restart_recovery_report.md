@@ -1,0 +1,9 @@
+# Supported-launcher interrupted mission
+
+The private simulation option in run_gracemo.sh runs the same readiness, ROS, Gazebo, voice and desktop startup stages. It uses a dedicated ROS domain, Gazebo partition, ephemeral kernel port, persistent trial state and per-launch logs. The readiness probe now queries that partition and kernel. The desktop respects the inherited ROS domain and partition.
+
+The first attempt found a hard-coded Gazebo partition in the readiness probe. The second reached mission execution but timed out stopping the test client. Its identified launcher group was terminated and the launcher's cleanup completed. Both failures were retained. The third and fourth attempts terminated the owned mission client before its timeout cancellation, then shut down the active system and launched a new instance with the same SQLite state. Process IDs, mission-scoped history and idle measurements are recorded in their respective directories.
+
+In restart_4 the kernel changed from PID 106050 to 107120. The original kernel exited before the successor started. The recovered mission was marked for review, a fresh mission authorization returned HTTP 409 and the mission runner's review attempt returned HTTP 403. An independently authenticated reviewer abandoned the uncertain mission with HTTP 204. Review appends a decision to SQLite. The original history remains intact, and abandonment sends no robot action. The desktop's Restart review tab reads the startup snapshot and outstanding reviews. Operator-authorized in-place resume with fresh localization, environmental validation and waypoint reconciliation is still missing.
+
+The desktop_recovery repeat recorded kernel PIDs 122704 and 124275 and displayed the recovered mission through the actual PySide CognitiveView widget using its network manager. The output is in desktop_recovery/desktop_review.json. The authorized reviewer then abandoned the mission. Both kernels exited.

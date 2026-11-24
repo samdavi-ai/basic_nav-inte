@@ -1,0 +1,187 @@
+{
+  "box": null,
+  "map_truth_error_m": null,
+  "plan_stream": "plan",
+  "footprint_edges_m": [
+    0.72,
+    0.7,
+    0.72,
+    0.7
+  ],
+  "executed": {
+    "sample_min_m": 0.176016,
+    "swept_lower_bound_m": 0.173956,
+    "obstacle": "hall_south_middle",
+    "pose": [
+      -0.631607,
+      -0.31262,
+      -2.952729
+    ],
+    "raw_pose_min_m": 0.176016,
+    "speed_bound_min_m": 0.171808
+  },
+  "truth_final": [
+    -4.59568360800069,
+    -0.30177837054528256,
+    -2.6720802282724594
+  ],
+  "truth_goal_error_m": null,
+  "max_truth_sample_gap_s": 0.008000000000000007,
+  "global_paths": 2,
+  "first_path": {
+    "t": 3.73,
+    "points": 134,
+    "published_yaw": {
+      "sample_min_m": 0.177489,
+      "swept_lower_bound_m": 0.172513,
+      "obstacle": "hall_south_west",
+      "pose": [
+        -4.967079,
+        -0.683744,
+        -1.936071
+      ]
+    },
+    "tangent": {
+      "sample_min_m": 0.186926,
+      "swept_lower_bound_m": 0.182021,
+      "obstacle": "hall_south_west",
+      "pose": [
+        -4.961973,
+        -0.669998,
+        -1.916916
+      ]
+    },
+    "tangent_in_odom": {
+      "sample_min_m": 0.177135,
+      "swept_lower_bound_m": 0.172231,
+      "obstacle": "hall_south_west",
+      "pose": [
+        -4.971605,
+        -0.673628,
+        -1.916937
+      ]
+    }
+  },
+  "worst_tangent_path": {
+    "t": 25.13,
+    "points": 28,
+    "published_yaw": {
+      "sample_min_m": 0.022589,
+      "swept_lower_bound_m": 0.0176,
+      "obstacle": "hall_south_west",
+      "pose": [
+        -5.103365,
+        -0.786514,
+        -2.034444
+      ]
+    },
+    "tangent": {
+      "sample_min_m": 0.064934,
+      "swept_lower_bound_m": 0.059985,
+      "obstacle": "hall_south_west",
+      "pose": [
+        -5.074837,
+        -0.71676,
+        -1.959013
+      ]
+    },
+    "tangent_in_odom": {
+      "sample_min_m": 0.039048,
+      "swept_lower_bound_m": 0.034099,
+      "obstacle": "hall_south_west",
+      "pose": [
+        -5.105277,
+        -0.686524,
+        -1.937376
+      ]
+    }
+  },
+  "worst_tangent_in_odom": 0.034099,
+  "plans": [
+    {
+      "t": 3.73,
+      "points": 134,
+      "published_yaw": {
+        "sample_min_m": 0.177489,
+        "swept_lower_bound_m": 0.172513,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.967079,
+          -0.683744,
+          -1.936071
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.186926,
+        "swept_lower_bound_m": 0.182021,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.961973,
+          -0.669998,
+          -1.916916
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.177135,
+        "swept_lower_bound_m": 0.172231,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.971605,
+          -0.673628,
+          -1.916937
+        ]
+      }
+    },
+    {
+      "t": 25.13,
+      "points": 28,
+      "published_yaw": {
+        "sample_min_m": 0.022589,
+        "swept_lower_bound_m": 0.0176,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -5.103365,
+          -0.786514,
+          -2.034444
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.064934,
+        "swept_lower_bound_m": 0.059985,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -5.074837,
+          -0.71676,
+          -1.959013
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.039048,
+        "swept_lower_bound_m": 0.034099,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -5.105277,
+          -0.686524,
+          -1.937376
+        ]
+      }
+    }
+  ],
+  "lethal_cells_near_box": {},
+  "local_plans": 162,
+  "worst_local_plan": {
+    "sample_min_m": 0.088081,
+    "swept_lower_bound_m": 0.083116,
+    "obstacle": "hall_south_west",
+    "pose": [
+      -5.037632,
+      -0.855794,
+      -2.035901
+    ]
+  },
+  "max_dwb_forward_mps": 0.65,
+  "dwb_all_rejected_cycles": 0,
+  "observed_dwb_rejections": 30328,
+  "evaluation_messages": 165,
+  "critic_reasons": {}
+}

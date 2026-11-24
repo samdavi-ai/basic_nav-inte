@@ -1,0 +1,41 @@
+{
+  "active_mission": {
+    "id": "standalone-e32f4323-29e7-4990-aaf5-4ba563e00186",
+    "name": "Standalone apartment patrol",
+    "trace_id": "b084bc8f-51dd-4197-8207-8b92bd389005"
+  },
+  "autonomy_state": "MISSION_EXECUTING",
+  "battery": null,
+  "current_room": "Central Hallway",
+  "last_autonomy_transition": {
+    "mission_id": "standalone-e32f4323-29e7-4990-aaf5-4ba563e00186",
+    "mission_name": "Standalone apartment patrol",
+    "previous_state": "MISSION_PLANNING",
+    "reason": "Path confirmed. Tracking trajectory to Kitchen & Dining doorway staging",
+    "state": "MISSION_EXECUTING",
+    "x": -0.03437585042424971,
+    "y": -0.03580738663508018
+  },
+  "last_scan_completed": null,
+  "last_vision_detection": null,
+  "last_voice_command": null,
+  "perception": {
+    "current": true,
+    "received_at": 1795421470,
+    "sample": {
+      "age_s": 0.14829184500001702,
+      "frames_processed": 58,
+      "localized_detections_last_frame": 0,
+      "model_loaded": true,
+      "ready": true
+    }
+  },
+  "robot_position": {
+    "speed": 0.0,
+    "theta": -0.215,
+    "x": -0.056,
+    "y": -0.042
+  },
+  "status": "online",
+  "world_objects": []
+}

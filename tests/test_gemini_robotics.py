@@ -215,11 +215,8 @@ class TestToolRegistryAndCanonicalEvents(unittest.TestCase):
         self.assertEqual(outcome["state"], "MISSION_COMPLETED")
         mock_get.assert_called_once()
 
-    @patch("requests.post")
+    @patch("gracemo_sdk.authorization.dispatch_action", return_value={"status": "dispatched"})
     def test_navigate_to_room_canonical_event(self, mock_post):
-        mock_resp = MagicMock()
-        mock_resp.status_code = 200
-        mock_post.return_value = mock_resp
 
         with patch.object(
             self.registry,
@@ -235,7 +232,7 @@ class TestToolRegistryAndCanonicalEvents(unittest.TestCase):
         calls = mock_post.call_args_list
         action_call = None
         for c in calls:
-            body = c.kwargs.get("json", {})
+            body = c.args[1]
             if body.get("event_type", {}).get("type") == "ActionRequested":
                 action_call = body
                 break
@@ -250,11 +247,8 @@ class TestToolRegistryAndCanonicalEvents(unittest.TestCase):
         self.assertEqual(action_call["event_type"]["data"]["params"]["room"], "Kitchen & Dining")
         self.assertEqual(action_call["trace_id"], result.data["trace_id"])
 
-    @patch("requests.post")
+    @patch("gracemo_sdk.authorization.dispatch_action", return_value={"status": "dispatched"})
     def test_navigate_to_uses_one_correlated_autonomy_route(self, mock_post):
-        mock_resp = MagicMock()
-        mock_resp.status_code = 200
-        mock_post.return_value = mock_resp
 
         with patch.object(
             self.registry,
@@ -268,33 +262,27 @@ class TestToolRegistryAndCanonicalEvents(unittest.TestCase):
         self.assertEqual(wait_for_result.call_args.args[0], result.data["trace_id"])
         self.assertEqual(wait_for_result.call_args.args[1], 3.0)
         self.assertEqual(mock_post.call_count, 1)
-        action = mock_post.call_args.kwargs["json"]["event_type"]["data"]
+        action = mock_post.call_args.args[1]["event_type"]["data"]
         self.assertEqual(action["action"], "NavigateTo")
 
-    @patch("requests.post")
+    @patch("gracemo_sdk.authorization.dispatch_action", return_value={"status": "dispatched"})
     def test_stop_canonical_event(self, mock_post):
-        mock_resp = MagicMock()
-        mock_resp.status_code = 200
-        mock_post.return_value = mock_resp
 
         result = self.registry.stop()
         self.assertTrue(result.success)
 
-        body = mock_post.call_args.kwargs["json"]
+        body = mock_post.call_args.args[1]
         self.assertEqual(body["event_type"]["type"], "ActionRequested")
         self.assertEqual(body["event_type"]["data"]["action"], "Stop")
         self.assertEqual(body["source"], "Brain")
 
-    @patch("requests.post")
+    @patch("gracemo_sdk.authorization.dispatch_action", return_value={"status": "dispatched"})
     def test_speak_canonical_event(self, mock_post):
-        mock_resp = MagicMock()
-        mock_resp.status_code = 200
-        mock_post.return_value = mock_resp
 
         result = self.registry.speak("Hello, welcome to LPU!")
         self.assertTrue(result.success)
 
-        body = mock_post.call_args.kwargs["json"]
+        body = mock_post.call_args.args[1]
         self.assertEqual(body["event_type"]["data"]["action"], "Speak")
         self.assertEqual(body["event_type"]["data"]["params"]["text"], "Hello, welcome to LPU!")
 
@@ -427,14 +415,19 @@ class TestVisualPerceptionIntegration(unittest.TestCase):
         self.assertTrue(resp.is_mock)
         self.assertIn("dining table", resp.text.lower())
 
-    @patch("pathlib.Path.exists")
-    @patch("pathlib.Path.read_bytes")
-    def test_get_latest_camera_frame_provider(self, mock_read, mock_exists):
-        mock_exists.return_value = True
-        mock_read.return_value = b"test_frame_data"
+    def test_get_latest_camera_frame_provider(self):
+        import os
+        from tempfile import TemporaryDirectory
+        from pathlib import Path
+
         provider = MNSEContextProvider(kernel_url="http://127.0.0.1:7780")
-        frame = provider.get_latest_camera_frame("/tmp/test.jpg")
-        self.assertEqual(frame, b"test_frame_data")
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "camera.jpg"
+            self.assertIsNone(provider.get_latest_camera_frame(str(path)))
+            path.write_bytes(b"test_frame_data")
+            self.assertEqual(provider.get_latest_camera_frame(str(path)), b"test_frame_data")
+            os.utime(path, (1, 1))
+            self.assertIsNone(provider.get_latest_camera_frame(str(path)))
 
 
 if __name__ == "__main__":

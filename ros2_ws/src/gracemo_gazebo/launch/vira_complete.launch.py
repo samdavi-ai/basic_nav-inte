@@ -23,6 +23,7 @@ def generate_launch_description():
     launch_nav2 = LaunchConfiguration("launch_nav2", default="true")
     launch_interaction = LaunchConfiguration("launch_interaction", default="true")
     kernel_url = LaunchConfiguration("kernel_url", default="http://127.0.0.1:7780")
+    navigation_stagnant_timeout_sec = LaunchConfiguration("navigation_stagnant_timeout_sec", default="12.0")
 
     mode = LaunchConfiguration("mode", default="localization")
     map_yaml_file = LaunchConfiguration(
@@ -39,6 +40,7 @@ def generate_launch_description():
         DeclareLaunchArgument("launch_nav2", default_value="true", description="Launch Nav2 and SLAM Toolbox"),
         DeclareLaunchArgument("launch_interaction", default_value="true", description="Launch Interaction & Navigation Bridge"),
         DeclareLaunchArgument("kernel_url", default_value="http://127.0.0.1:7780", description="VIRA Kernel EventBus URL"),
+        DeclareLaunchArgument("navigation_stagnant_timeout_sec", default_value="12.0", description="Seconds without measured progress before coordinator cancels and retries a Nav2 goal"),
         DeclareLaunchArgument("mode", default_value="localization", description="Autonomy mode: 'localization' or 'mapping'"),
         DeclareLaunchArgument("map", default_value=os.path.join(pkg_gracemo_nav2, "maps", "apartment_map.yaml"), description="Path to map yaml file"),
 
@@ -50,6 +52,7 @@ def generate_launch_description():
             launch_arguments={
                 "use_sim_time": use_sim_time,
                 "kernel_url": kernel_url,
+                "navigation_stagnant_timeout_sec": navigation_stagnant_timeout_sec,
             }.items()
         ),
 
@@ -78,6 +81,7 @@ def generate_launch_description():
             output="screen",
             condition=IfCondition(launch_interaction),
             parameters=[{
+                "require_coordinator": True,
                 "kernel_url": kernel_url,
                 "use_sim_time": use_sim_time,
             }]

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "discovery_complete": true,
+  "duration_s": 3,
+  "samples": {
+    "cmd_vel": 64,
+    "cmd_vel_mux": 60,
+    "cmd_vel_smoothed": 60
+  },
+  "peak": {
+    "cmd_vel": 0.0,
+    "cmd_vel_mux": 0.0,
+    "cmd_vel_smoothed": 0.0
+  },
+  "mux_state": {
+    "active_source": "NONE",
+    "teleop_active": false,
+    "rl_active": false,
+    "nav_active": false,
+    "teleop_age_sec": null,
+    "rl_age_sec": null,
+    "nav_age_sec": 6.334,
+    "zero_command_held": true,
+    "current_linear_x": 0.0,
+    "current_angular_z": 0.0
+  },
+  "odom_displacement_m": 0.008076520250393718
+}

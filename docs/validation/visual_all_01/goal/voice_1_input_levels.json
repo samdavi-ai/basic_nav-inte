@@ -1,0 +1,47 @@
+[
+  {
+    "samples": 78336,
+    "peak_pcm": 16051,
+    "decoded_utterances": 1
+  },
+  {
+    "samples": 160256,
+    "peak_pcm": 16587,
+    "decoded_utterances": 3
+  },
+  {
+    "samples": 241152,
+    "peak_pcm": 10273,
+    "decoded_utterances": 4
+  },
+  {
+    "samples": 322048,
+    "peak_pcm": 10858,
+    "decoded_utterances": 5
+  },
+  {
+    "samples": 404480,
+    "peak_pcm": 12694,
+    "decoded_utterances": 5
+  },
+  {
+    "samples": 486400,
+    "peak_pcm": 9308,
+    "decoded_utterances": 6
+  },
+  {
+    "samples": 567808,
+    "peak_pcm": 8491,
+    "decoded_utterances": 7
+  },
+  {
+    "samples": 648192,
+    "peak_pcm": 10748,
+    "decoded_utterances": 9
+  },
+  {
+    "samples": 729088,
+    "peak_pcm": 9189,
+    "decoded_utterances": 10
+  }
+]

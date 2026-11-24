@@ -1,0 +1,4 @@
+<library path="vira_planner_fixture_barrier">
+  <class type="vira_validation::SynchronizedNavfn" base_class_type="nav2_core::GlobalPlanner"/>
+  <class type="vira_validation::ClearanceNavfn" base_class_type="nav2_core::GlobalPlanner"/>
+</library>

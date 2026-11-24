@@ -1,0 +1,35 @@
+{
+  "success": false,
+  "timed_out": false,
+  "mission_id": "standalone-ffb097db-e8e5-4630-a8a7-5079028814d5",
+  "trace_id": "62fc8cdd-7f07-48c1-b1d3-041c149fe01d",
+  "rooms": [
+    "Simulation destination"
+  ],
+  "coordinator_result": {
+    "mission_id": "standalone-ffb097db-e8e5-4630-a8a7-5079028814d5",
+    "name": "Standalone apartment patrol",
+    "success": false,
+    "status": "FAILED",
+    "reason": "Retries exhausted (watchdog_stagnant_12s)",
+    "waypoints_completed": 0,
+    "total_waypoints": 1,
+    "duration_sec": 59.3,
+    "end_pose": {
+      "x": -0.05,
+      "y": -0.13
+    },
+    "timestamp": 1795264716.3338883
+  },
+  "kernel_result": {
+    "state": "NAVIGATION_FAILURE",
+    "previous_state": "MISSION_EXECUTING",
+    "reason": "Mission incomplete: Retries exhausted (watchdog_stagnant_12s)",
+    "mission_id": "standalone-ffb097db-e8e5-4630-a8a7-5079028814d5",
+    "mission_name": "Standalone apartment patrol",
+    "x": -0.035516235966411194,
+    "y": -0.12616654566371327,
+    "trace_id": "62fc8cdd-7f07-48c1-b1d3-041c149fe01d"
+  },
+  "timestamp": 1795264716.3451324
+}

@@ -1,0 +1,19 @@
+{
+  "mission_id": "standalone-670c4679-4b3c-46f9-98bd-8268a3a72a2e",
+  "trace_id": "5cb46396-3279-4f0d-9392-98f5401ea247",
+  "motion_pose": {
+    "x": -0.05971968834106279,
+    "y": -0.0450220335643545,
+    "linear_x": -0.002104806346674583,
+    "angular_z": -0.1649839504468877
+  },
+  "speed_at_recognition": 0.1563384484552377,
+  "sensor_age_s": 0.0071583999997528736,
+  "zero_latency_s": 0.03666562200032786,
+  "rest_latency_s": 0.1799009549999937,
+  "max_displacement_m": 0.007583569627110994,
+  "stable_speed": 0.015083824529063764,
+  "state": "EMERGENCY_STOP",
+  "latched": true,
+  "passed": true
+}

@@ -1,0 +1,15 @@
+{
+  "Offline emergency microphone receiving samples": 1,
+  "Offline interruption unavailable": 1,
+  "Using input device": 7,
+  "Start Speaking": 7,
+  "Speech End": 6,
+  "Pre-STT Filtered": 1,
+  "Emergency stop delivery unconfirmed": 0,
+  "Offline stop recognition unavailable": 0,
+  "Conversational transcription unavailable": 0,
+  "Microphone emergency stop": 0,
+  "Error opening audio stream": 0,
+  "Error reading audio": 0,
+  "Traceback (most recent call last)": 0
+}

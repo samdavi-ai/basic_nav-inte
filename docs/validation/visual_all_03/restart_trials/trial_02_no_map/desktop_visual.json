@@ -1,0 +1,10 @@
+{
+  "kernel_current": true,
+  "frames_processed": 414,
+  "visual_state": "tracking",
+  "map_keyframes": 12,
+  "trajectory_items": 165,
+  "camera_frame": "camera_optical_link",
+  "face_status": "disabled",
+  "dropped_pending": 2
+}

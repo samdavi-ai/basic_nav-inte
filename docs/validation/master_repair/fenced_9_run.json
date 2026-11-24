@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/fenced_9",
+    "--planner-fence",
+    "--synchronize-replan",
+    "--index",
+    "9"
+  ],
+  "exit": 0
+}

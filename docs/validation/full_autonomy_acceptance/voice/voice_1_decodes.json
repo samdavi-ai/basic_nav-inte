@@ -1,0 +1,98 @@
+[
+  {
+    "text": "right",
+    "words": [
+      {
+        "conf": 1.0,
+        "end": 7.02,
+        "start": 6.66,
+        "word": "right"
+      }
+    ],
+    "accepted": false,
+    "estimated_onset": 3114.0803593269998,
+    "decoded_at": 3119.156709722,
+    "capture_seconds": 11.68
+  },
+  {
+    "text": "right now",
+    "words": [
+      {
+        "conf": 0.84062,
+        "end": 11.79,
+        "start": 11.52,
+        "word": "right"
+      },
+      {
+        "conf": 0.84062,
+        "end": 12.18,
+        "start": 11.79,
+        "word": "now"
+      }
+    ],
+    "accepted": false,
+    "estimated_onset": 3118.940359327,
+    "decoded_at": 3124.235137781,
+    "capture_seconds": 16.736
+  },
+  {
+    "text": "are",
+    "words": [
+      {
+        "conf": 0.453229,
+        "end": 26.1,
+        "start": 25.71,
+        "word": "are"
+      }
+    ],
+    "accepted": false,
+    "estimated_onset": 3133.130359327,
+    "decoded_at": 3134.53278903,
+    "capture_seconds": 27.04
+  },
+  {
+    "text": "that",
+    "words": [
+      {
+        "conf": 0.375482,
+        "end": 31.38,
+        "start": 31.11,
+        "word": "that"
+      }
+    ],
+    "accepted": false,
+    "estimated_onset": 3138.530359327,
+    "decoded_at": 3139.522676189,
+    "capture_seconds": 32.096
+  },
+  {
+    "text": "stop",
+    "words": [
+      {
+        "conf": 1.0,
+        "end": 41.88,
+        "start": 41.46,
+        "word": "stop"
+      }
+    ],
+    "accepted": true,
+    "estimated_onset": 3148.880359327,
+    "decoded_at": 3150.385493715,
+    "capture_seconds": 42.88
+  },
+  {
+    "text": "guy",
+    "words": [
+      {
+        "conf": 0.423088,
+        "end": 46.53,
+        "start": 46.27704,
+        "word": "guy"
+      }
+    ],
+    "accepted": false,
+    "estimated_onset": 3153.697399327,
+    "decoded_at": 3155.563340788,
+    "capture_seconds": 47.936
+  }
+]

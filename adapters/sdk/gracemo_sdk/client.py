@@ -19,6 +19,7 @@ class AdapterClient:
         source: str = "RobotBridge",
         trace_id: Optional[str] = None,
         session_id: Optional[str] = None,
+        parent_event_id: Optional[str] = None,
     ) -> bool:
         """Emit a structured event to the Kernel EventBus."""
         valid_sources = {
@@ -53,14 +54,24 @@ class AdapterClient:
                 "type": event_type,
                 "data": data,
             },
-            "parent_event_id": None,
+            "parent_event_id": parent_event_id,
         }
 
         try:
+            if event_type == 'ActionRequested':
+                from .authorization import dispatch_action
+                return dispatch_action(self.base_url,payload)['status']=='dispatched'
             resp = requests.post(f"{self.base_url}/emit", json=payload, timeout=2.0)
             return resp.status_code == 200
         except Exception:
             return False
+
+    def get_trace_history(self, trace_id: str, limit: int = 100) -> List[Dict[str, Any]]:
+        """Retrieve durable trace events, newest first. Transport errors propagate."""
+        response = requests.get(f"{self.base_url}/history",
+                                params={"trace_id": trace_id, "limit": limit}, timeout=3)
+        response.raise_for_status()
+        return response.json()
 
     def get_snapshot(self) -> Optional[Dict[str, Any]]:
         """Fetch current live state snapshot from Kernel (InspectorState)."""

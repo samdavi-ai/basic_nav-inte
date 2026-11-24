@@ -21,3 +21,4 @@ anyhow = { workspace = true }
 toml = { workspace = true }
 chrono = { workspace = true }
 rusqlite = { workspace = true }
+uuid = { workspace = true }

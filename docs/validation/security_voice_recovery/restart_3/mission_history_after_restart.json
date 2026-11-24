@@ -1,0 +1,112 @@
+[
+  {
+    "event_type": "RobotPosition",
+    "id": "10e79f6f-f05f-4160-aba1-0587f1c54098",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":-0.034,\"y\":-0.072,\"theta\":-0.425,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795380815,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "8e9947aa-25c7-422d-9a2a-9df146e378a0",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":-0.033,\"y\":-0.061,\"theta\":-0.34,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795380815,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "ab597fd5-1949-4eca-85c2-a1383e32f2ad",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":-0.034,\"y\":-0.049,\"theta\":-0.26,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795380815,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "459a0416-2b48-425c-9a34-1f1fb72e6e4f",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":-0.035,\"y\":-0.037,\"theta\":-0.194,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795380814,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "62bb29bf-8339-4afb-bb3a-8cf490201357",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":-0.036,\"y\":-0.03,\"theta\":-0.149,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795380814,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "e72dbc97-0768-436c-9206-1b0de286e32c",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"MISSION_EXECUTING\",\"previous_state\":\"MISSION_PLANNING\",\"reason\":\"Path confirmed. Tracking trajectory to Kitchen & Dining doorway staging\",\"mission_id\":\"standalone-e1261fa4-26bb-489b-b9d4-d1264f3284f4\",\"mission_name\":\"Standalone apartment patrol\",\"x\":0.0002873908829606923,\"y\":-0.05131974187672686}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795380814,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "e374048a-b494-41ea-9844-e94c81b8633d",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"MISSION_PLANNING\",\"previous_state\":\"MISSION_ACCEPTED\",\"reason\":\"Planning path to waypoint 1/11: Kitchen & Dining doorway staging\",\"mission_id\":\"standalone-e1261fa4-26bb-489b-b9d4-d1264f3284f4\",\"mission_name\":\"Standalone apartment patrol\",\"x\":0.0002873908829606923,\"y\":-0.05131974187672686}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795380814,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  },
+  {
+    "event_type": "RobotPosition",
+    "id": "24ca08f9-4ec6-44ac-80f3-e9da402a4134",
+    "observed_by": "kernel_bridge",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"RobotPosition\",\"data\":{\"x\":-0.035,\"y\":-0.029,\"theta\":-0.14,\"speed\":0.0}}",
+    "session_id": null,
+    "source": "RobotBridge",
+    "timestamp": 1795380814,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  },
+  {
+    "event_type": "AutonomyStateChanged",
+    "id": "0a5783f6-a77c-4e8d-8a10-22e235209020",
+    "observed_by": "AutonomousSupervisor",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"AutonomyStateChanged\",\"data\":{\"state\":\"MISSION_ACCEPTED\",\"previous_state\":\"AUTONOMY_READY\",\"reason\":\"Mission 'Standalone apartment patrol' with 11 waypoints accepted\",\"mission_id\":\"standalone-e1261fa4-26bb-489b-b9d4-d1264f3284f4\",\"mission_name\":\"Standalone apartment patrol\",\"x\":0.0002873908829606923,\"y\":-0.05131974187672686}}",
+    "session_id": "ros2_autonomy",
+    "source": "System",
+    "timestamp": 1795380814,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  },
+  {
+    "event_type": "ActionRequested(StartMission",
+    "id": "cb5b9678-0c71-4e95-b4fd-d88c7cb6d91c",
+    "observed_by": "StandaloneMissionRunner",
+    "parent_event_id": null,
+    "payload": "{\"type\":\"ActionRequested\",\"data\":{\"action\":\"StartMission\",\"params\":{\"mission_id\":\"standalone-e1261fa4-26bb-489b-b9d4-d1264f3284f4\",\"mission_name\":\"Standalone apartment patrol\",\"waypoints\":[{\"coords\":{\"frame_id\":\"map\",\"x\":-5.0,\"y\":-2.5,\"yaw\":-1.57},\"dwell_sec\":0.0,\"name\":\"Kitchen & Dining\"},{\"coords\":{\"frame_id\":\"map\",\"x\":-5.0,\"y\":2.2,\"yaw\":1.57},\"dwell_sec\":0.0,\"name\":\"Master Bedroom\"},{\"coords\":{\"frame_id\":\"map\",\"x\":4.5,\"y\":3.0,\"yaw\":1.57},\"dwell_sec\":0.0,\"name\":\"Home Study\"},{\"coords\":{\"frame_id\":\"map\",\"x\":4.0,\"y\":-2.5,\"yaw\":-1.57},\"dwell_sec\":0.0,\"name\":\"Living Room\"},{\"coords\":{\"frame_id\":\"map\",\"x\":0.0,\"y\":0.0,\"yaw\":0.0},\"dwell_sec\":0.0,\"name\":\"Central Hallway\"}]}}}",
+    "session_id": "standalone_autonomous_mission",
+    "source": "Brain",
+    "timestamp": 1795380814,
+    "trace_id": "17010c7b-4cdc-4aa3-ae42-6810373c5654"
+  }
+]

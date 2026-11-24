@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/temporary",
+    "--master-recovery",
+    "--temporary"
+  ],
+  "exit": 0,
+  "wall_s": 32.57329395100169,
+  "analysis_exit": 0
+}

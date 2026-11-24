@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/original",
+    "--master-recovery",
+    "--regression",
+    "original"
+  ],
+  "exit": 0,
+  "wall_s": 27.9193310390001,
+  "analysis_exit": 0
+}

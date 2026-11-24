@@ -2,7 +2,60 @@
 # Start the local ROS 2 Jazzy and Gazebo Harmonic simulation stack.
 # This launcher only stops process groups that it started itself.
 
-set -euo pipefail
+set -eo pipefail
+
+RUN_PATROL=false
+SHOW_GUI=true
+PATROL_TIMEOUT=300
+PATROL_ROOMS=()
+PATROL_ROOMS_SPECIFIED=false
+while (($#)); do
+    case "$1" in
+        --patrol)
+            RUN_PATROL=true
+            shift
+            ;;
+        --timeout)
+            if (($# < 2)); then
+                printf '%s\n' '--timeout requires seconds' >&2
+                exit 2
+            fi
+            PATROL_TIMEOUT="$2"
+            shift 2
+            ;;
+        --no-gui)
+            SHOW_GUI=false
+            shift
+            ;;
+        --rooms)
+            PATROL_ROOMS_SPECIFIED=true
+            shift
+            while (($#)) && [[ "$1" != --* ]]; do
+                PATROL_ROOMS+=("$1")
+                shift
+            done
+            if ((${#PATROL_ROOMS[@]} == 0)); then
+                printf '%s\n' '--rooms requires at least one room name' >&2
+                exit 2
+            fi
+            ;;
+        --help|-h)
+            cat <<'EOF'
+Usage: launch_full_simulation.sh [--patrol] [--no-gui] [--timeout SECONDS] [--rooms ROOM ...]
+
+Starts the local ROS 2 Jazzy / Gazebo Harmonic simulation. With --patrol,
+waits for autonomy readiness and dispatches a real mission through the kernel.
+The default patrol covers all configured rooms. Use --rooms to select a subset.
+Press Ctrl+C to stop only processes started by this launcher.
+EOF
+            exit 0
+            ;;
+        *)
+            printf 'Unknown option: %s\n' "$1" >&2
+            exit 2
+            ;;
+    esac
+done
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 WS_DIR="$DIR/ros2_ws"
@@ -19,20 +72,36 @@ if [[ ! -r "$ROS_SETUP" ]]; then
     printf 'ROS 2 Jazzy setup not found: %s\n' "$ROS_SETUP" >&2
     exit 1
 fi
-if [[ ! -r "$WS_SETUP" ]]; then
-    printf 'ROS workspace is not built. Build it first with: (cd "%s" && colcon build --symlink-install)\n' "$WS_DIR" >&2
-    exit 1
-fi
 if ! command -v setsid >/dev/null 2>&1; then
     printf 'setsid is required so this launcher can stop only its own child processes.\n' >&2
     exit 1
 fi
 
 source "$ROS_SETUP"
+if [[ ! -r "$WS_SETUP" ]]; then
+    if ! command -v colcon >/dev/null 2>&1; then
+        printf 'ROS workspace is not built and colcon is unavailable: %s\n' "$WS_DIR" >&2
+        exit 1
+    fi
+    printf 'ROS workspace is not built; building it now...\n'
+    (cd "$WS_DIR" && colcon build --symlink-install)
+fi
+if [[ ! -r "$WS_SETUP" ]]; then
+    printf 'ROS workspace build did not create the expected setup file: %s\n' "$WS_SETUP" >&2
+    exit 1
+fi
+
+if [[ "$RUN_PATROL" == true && ! -x "$KERNEL_BIN" ]]; then
+    printf 'Building the GRaCEmo kernel for the standalone patrol...\n'
+    cargo build --manifest-path "$DIR/kernel/Cargo.toml" --bin gracemo-kernel
+fi
+
 source "$WS_SETUP"
+set -u
 
 export DISPLAY="${DISPLAY:-:0}"
 export ROS_DOMAIN_ID="${ROS_DOMAIN_ID:-68}"
+export ROS_LOG_DIR="${ROS_LOG_DIR:-/tmp/gracemo_ros_logs}"
 export ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST
 export GZ_PARTITION="${GZ_PARTITION:-gracemo-${ROS_DOMAIN_ID}}"
 export GZ_IP=127.0.0.1
@@ -72,7 +141,11 @@ cleanup() {
     trap - EXIT INT TERM
     printf '\nStopping simulation processes started by this launcher...\n'
 
-    stop_owned_groups INT
+    # ros2 launch forwards SIGINT to its children. Signaling the entire group
+    # here delivers it twice and can interrupt node cleanup mid-callback.
+    for pgid in "${OWNED_GROUPS[@]}"; do
+        kill -INT "$pgid" 2>/dev/null || true
+    done
     for _ in {1..30}; do
         local any_running=false
         for pgid in "${OWNED_GROUPS[@]}"; do
@@ -113,8 +186,20 @@ fi
 printf 'Starting Gazebo, Nav2, and bridge nodes...\n'
 start_group 'ROS simulation' "$SIM_LOG" ros2 launch gracemo_gazebo vira_complete.launch.py mode:=localization headless:=true use_rviz:=false
 
-printf 'Opening Gazebo GUI client...\n'
-start_group 'Gazebo GUI' "$GUI_LOG" gz sim -g
+if [[ "$SHOW_GUI" == true ]]; then
+    printf 'Opening Gazebo GUI client...\n'
+    start_group 'Gazebo GUI' "$GUI_LOG" gz sim -g
+fi
+
+if [[ "$RUN_PATROL" == true ]]; then
+    mission_args=(--timeout "$PATROL_TIMEOUT" --out "$DIR/docs/validation/standalone_patrol_latest.json")
+    if [[ "$PATROL_ROOMS_SPECIFIED" == true ]]; then
+        mission_args+=(--rooms "${PATROL_ROOMS[@]}")
+    fi
+    printf 'Waiting for autonomy readiness, then running the standalone patrol...\n'
+    python3 "$DIR/scripts/run_autonomous_mission.py" "${mission_args[@]}"
+    printf 'Standalone patrol completed. Simulation remains active until Ctrl+C.\n'
+fi
 
 printf 'Simulation is running. Press Ctrl+C to stop only this launch session.\n'
 while :; do

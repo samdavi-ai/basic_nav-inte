@@ -1,0 +1,9 @@
+{
+  "detector": "YuNet 2023mar",
+  "input": "public zidane.jpg replay",
+  "count": 1,
+  "confidence": [
+    0.9265342950820923
+  ],
+  "latency_ms": 25.750496000000567
+}

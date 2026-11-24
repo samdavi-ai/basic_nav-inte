@@ -1,0 +1,213 @@
+{
+  "method": "Visible garment pixel containment; each capture gets a one-to-one assignment",
+  "counts": {
+    "frames": 21,
+    "visible_sweaters": 31,
+    "predictions": 22,
+    "matched": 22,
+    "id_switches_including_reentry": 7
+  },
+  "precision": 1.0,
+  "recall": 0.7096774193548387,
+  "idf1": 0.22641509433962265,
+  "appearance_pairs": {
+    "genuine": {
+      "count": 103,
+      "at_or_above_threshold": 38
+    },
+    "impostor": {
+      "count": 97,
+      "at_or_above_threshold": 4
+    }
+  },
+  "appearance_threshold": 0.94,
+  "associations": [
+    {
+      "stamp_ns": 17800000000,
+      "visible": [],
+      "matched": {}
+    },
+    {
+      "stamp_ns": 18800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {}
+    },
+    {
+      "stamp_ns": 19800000000,
+      "visible": [],
+      "matched": {}
+    },
+    {
+      "stamp_ns": 20800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "92344d1747bf4731aa1da49e2c1ce7fd",
+        "cyan": "c5af3f810c6149e2bc0ae523669ec4d8"
+      }
+    },
+    {
+      "stamp_ns": 21800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "92344d1747bf4731aa1da49e2c1ce7fd",
+        "cyan": "c5af3f810c6149e2bc0ae523669ec4d8"
+      }
+    },
+    {
+      "stamp_ns": 22800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "92344d1747bf4731aa1da49e2c1ce7fd",
+        "cyan": "9d5e0cb9067549b08de884da09357920"
+      }
+    },
+    {
+      "stamp_ns": 23800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "92344d1747bf4731aa1da49e2c1ce7fd"
+      }
+    },
+    {
+      "stamp_ns": 24800000000,
+      "visible": [],
+      "matched": {}
+    },
+    {
+      "stamp_ns": 25800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "64293857d0314263a6f3d0eb33907eaf",
+        "cyan": "f5bc94a7004c4ca9b1fa848d4bd0b5d6"
+      }
+    },
+    {
+      "stamp_ns": 26800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "64293857d0314263a6f3d0eb33907eaf"
+      }
+    },
+    {
+      "stamp_ns": 27800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "64293857d0314263a6f3d0eb33907eaf",
+        "cyan": "f5bc94a7004c4ca9b1fa848d4bd0b5d6"
+      }
+    },
+    {
+      "stamp_ns": 28800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {}
+    },
+    {
+      "stamp_ns": 29800000000,
+      "visible": [],
+      "matched": {}
+    },
+    {
+      "stamp_ns": 30800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "080bddf78abb4b91b5f0359a1ddad8f8",
+        "cyan": "c016fd5a4072490dae28fb637ec8c9f7"
+      }
+    },
+    {
+      "stamp_ns": 31800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "080bddf78abb4b91b5f0359a1ddad8f8"
+      }
+    },
+    {
+      "stamp_ns": 32800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "080bddf78abb4b91b5f0359a1ddad8f8",
+        "cyan": "c016fd5a4072490dae28fb637ec8c9f7"
+      }
+    },
+    {
+      "stamp_ns": 33800000000,
+      "visible": [
+        "cyan"
+      ],
+      "matched": {}
+    },
+    {
+      "stamp_ns": 34800000000,
+      "visible": [],
+      "matched": {}
+    },
+    {
+      "stamp_ns": 35800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "8cef4814a4304b0e89c84887b885f2eb",
+        "cyan": "c89b57c64a13469ca3967f978dd3aac1"
+      }
+    },
+    {
+      "stamp_ns": 36800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "8cef4814a4304b0e89c84887b885f2eb"
+      }
+    },
+    {
+      "stamp_ns": 37800000000,
+      "visible": [
+        "magenta",
+        "cyan"
+      ],
+      "matched": {
+        "magenta": "8cef4814a4304b0e89c84887b885f2eb",
+        "cyan": "c89b57c64a13469ca3967f978dd3aac1"
+      }
+    }
+  ]
+}

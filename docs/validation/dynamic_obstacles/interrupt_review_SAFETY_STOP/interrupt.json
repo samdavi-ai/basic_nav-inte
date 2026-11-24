@@ -1,0 +1,33 @@
+{
+  "target": "SAFETY_STOP",
+  "status": "PASS",
+  "mission_id": "standalone-8786f063-16ec-40bf-b509-bd50e0455c5e",
+  "trigger": {
+    "state": "SAFETY_STOP",
+    "sim_time": 6.550000000000001,
+    "plan_valid": false,
+    "ages": {
+      "depth": 0.35,
+      "scan": 0.016,
+      "odom": 0.01,
+      "grid": 0.466,
+      "global": 0.014,
+      "plan": 3.066,
+      "rollout": 0.05,
+      "command": 0.018
+    }
+  },
+  "pose": {
+    "x": 1.029701571764535,
+    "y": -0.04943870151524949,
+    "linear_x": 0.21404682530132285,
+    "angular_z": -0.00629226976163174
+  },
+  "request_wall": 17073.362601838,
+  "request_sim": 6.55,
+  "zero_latency_s": 0.004932540003210306,
+  "max_displacement_m": 0.019061833065421623,
+  "final_second_speed": 0.019778125938297177,
+  "rejected": true,
+  "reset": true
+}

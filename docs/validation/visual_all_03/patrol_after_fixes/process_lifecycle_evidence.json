@@ -1,0 +1,13 @@
+[
+  {
+    "launch": 1,
+    "launcher_pid": 27626,
+    "started": 1795438103.6205525,
+    "ros_domain": 118,
+    "partition": "vira-restart-0dbcd9b991a44a3b8036cfea868bf8a9",
+    "kernel_pid": 27666,
+    "ended": 1795438354.981683,
+    "exit_code": 143,
+    "kernel_exited": true
+  }
+]

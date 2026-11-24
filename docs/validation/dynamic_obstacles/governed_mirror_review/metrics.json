@@ -1,0 +1,157 @@
+{
+  "case": {
+    "index": 7,
+    "seed": 42,
+    "kind": "crossing",
+    "box": [
+      1.9,
+      0.67,
+      0.365,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      0.0
+    ],
+    "min_robot_x": 0.13866641234500748,
+    "min_plan_count": 1,
+    "crossing_speed": 0.338,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world",
+    "level": 1,
+    "govern_speed": true,
+    "swept_critic": true
+  },
+  "mission_id": "standalone-c4d267db-810a-4640-b0cd-e39ef3b67606",
+  "trace_id": "75787414-732e-40e9-a7a7-7ffc404546da",
+  "matched_terminal": true,
+  "dwb_evaluation_messages_after_request": 151,
+  "observed_dwb_rejections_after_request": 38303,
+  "route_resumptions": [
+    {
+      "t": 12.892,
+      "global_clearance_m": 0.16323,
+      "local_clearance_m": 0.14142903317017133,
+      "local_stamp": 12.82
+    }
+  ],
+  "runner_timed_out": false,
+  "goal_within_035m": true,
+  "final_zero_command_window_s": 0.218,
+  "planner_actions": [
+    {
+      "t": 3.36,
+      "kind": "planning_result",
+      "uuid": "5db7d38478de59178357ceb8f212ed1e",
+      "accepted": 3.356,
+      "path_stamp": 3.356,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 7.986,
+      "kind": "planning_result",
+      "uuid": "c637a5334ac28bf218f29b53718ba41a",
+      "accepted": 7.982,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 9.516,
+      "kind": "planning_result",
+      "uuid": "bff82a698d5e47a5473bfe4f09eff6d9",
+      "accepted": 9.514,
+      "path_stamp": 9.514,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 12.764,
+      "kind": "planning_result",
+      "uuid": "223bdccbe33a3404d095ac897aba73ec",
+      "accepted": 12.76,
+      "path_stamp": 12.76,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    }
+  ],
+  "insertion_within_proven_planner_interval": false,
+  "state": "COMPLETED",
+  "kernel_terminal": "MISSION_COMPLETED",
+  "retries": 3,
+  "insert_requested": 3.96,
+  "first_scene_confirmation": 4.33,
+  "last_scene_confirmation": [
+    20.898,
+    1.9,
+    -0.6622065633397269
+  ],
+  "fixture_z_range_m": [
+    0.505037999898926,
+    0.5220172516729301
+  ],
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": 7.16,
+  "risk_to_zero_s": 0.54,
+  "risk_to_chassis_stop_s": 0.592,
+  "selected_rollouts_after_insertion": 142,
+  "worst_frozen_rollout_fixture_m": 0.00636,
+  "minimum_scene_interpolated_m": 0.091199,
+  "whole_mission_interpolated_m": 0.091199,
+  "minimum_fixture_interpolated_m": 0.091199,
+  "sensor_transform_drops": 44,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "depth": 7.0,
+    "scan": 7.656
+  },
+  "first_lethal_marks": {
+    "global_costmap": 4.44,
+    "local_costmap": 4.822
+  },
+  "preexisting_matches": {},
+  "first_monitor_action": null,
+  "first_risk_action": 6.568,
+  "monitor_stop": null,
+  "guard_stop": 6.568,
+  "first_final_zero_after_stop_action": 7.108,
+  "sensor_to_local_mark_s": -2.178,
+  "local_mark_to_stop_s": 2.286,
+  "sensor_to_stop_s": 0.108,
+  "peak_linear_speed_until_stop_mps": 0.0024545842209877946,
+  "max_displacement_until_stop_m": 0.0004774275053513898,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": 0.09619,
+  "goal_error_m": 0.22142,
+  "old_and_new_plans": [
+    {
+      "t": 3.356,
+      "points": 178,
+      "frozen_fixture_clearance_m": 0.14365,
+      "frozen_scene_clearance_m": 0.14365
+    },
+    {
+      "t": 9.514,
+      "points": 45,
+      "frozen_fixture_clearance_m": 0.05071,
+      "frozen_scene_clearance_m": 0.05071
+    },
+    {
+      "t": 12.76,
+      "points": 44,
+      "frozen_fixture_clearance_m": 0.16323,
+      "frozen_scene_clearance_m": 0.16323
+    }
+  ],
+  "after_insertion_plan_count": 2,
+  "confirmed_motion_m": 1.3322
+}

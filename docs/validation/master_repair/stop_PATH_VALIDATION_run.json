@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/stop_PATH_VALIDATION",
+    "--master-recovery",
+    "--interrupt-at",
+    "PATH_VALIDATION"
+  ],
+  "exit": 0,
+  "wall_s": 25.08774503300083
+}

@@ -1,0 +1,270 @@
+{
+  "box": [
+    2.35,
+    0.5,
+    0.3,
+    0.4
+  ],
+  "map_truth_error_m": 0.03782077709454365,
+  "plan_stream": "plan",
+  "footprint_edges_m": [
+    0.72,
+    0.7,
+    0.72,
+    0.7
+  ],
+  "executed": {
+    "sample_min_m": 0.213841,
+    "swept_lower_bound_m": 0.208874,
+    "obstacle": "fixture",
+    "pose": [
+      1.929433,
+      -0.254292,
+      -0.036678
+    ],
+    "speed_bound_min_m": 0.188727
+  },
+  "truth_final": [
+    4.266185540528918,
+    -0.054637502884401286,
+    0.24185476378461207
+  ],
+  "truth_goal_error_m": 0.24011,
+  "max_truth_sample_gap_s": 0.20800000000000018,
+  "global_paths": 4,
+  "first_path": {
+    "t": 9.598,
+    "points": 181,
+    "published_yaw": {
+      "sample_min_m": 0.190162,
+      "swept_lower_bound_m": 0.185298,
+      "obstacle": "fixture",
+      "pose": [
+        1.79535,
+        -0.234846,
+        0.0
+      ]
+    },
+    "tangent": {
+      "sample_min_m": 0.07459,
+      "swept_lower_bound_m": 0.069595,
+      "obstacle": "fixture",
+      "pose": [
+        2.210456,
+        -0.276643,
+        -0.786391
+      ]
+    },
+    "tangent_in_odom": {
+      "sample_min_m": 0.077489,
+      "swept_lower_bound_m": 0.072494,
+      "obstacle": "fixture",
+      "pose": [
+        2.203263,
+        -0.279472,
+        -0.786406
+      ]
+    }
+  },
+  "worst_tangent_path": {
+    "t": 9.598,
+    "points": 181,
+    "published_yaw": {
+      "sample_min_m": 0.190162,
+      "swept_lower_bound_m": 0.185298,
+      "obstacle": "fixture",
+      "pose": [
+        1.79535,
+        -0.234846,
+        0.0
+      ]
+    },
+    "tangent": {
+      "sample_min_m": 0.07459,
+      "swept_lower_bound_m": 0.069595,
+      "obstacle": "fixture",
+      "pose": [
+        2.210456,
+        -0.276643,
+        -0.786391
+      ]
+    },
+    "tangent_in_odom": {
+      "sample_min_m": 0.077489,
+      "swept_lower_bound_m": 0.072494,
+      "obstacle": "fixture",
+      "pose": [
+        2.203263,
+        -0.279472,
+        -0.786406
+      ]
+    }
+  },
+  "worst_tangent_in_odom": 0.072494,
+  "plans": [
+    {
+      "t": 9.598,
+      "points": 181,
+      "published_yaw": {
+        "sample_min_m": 0.190162,
+        "swept_lower_bound_m": 0.185298,
+        "obstacle": "fixture",
+        "pose": [
+          1.79535,
+          -0.234846,
+          0.0
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.07459,
+        "swept_lower_bound_m": 0.069595,
+        "obstacle": "fixture",
+        "pose": [
+          2.210456,
+          -0.276643,
+          -0.786391
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.077489,
+        "swept_lower_bound_m": 0.072494,
+        "obstacle": "fixture",
+        "pose": [
+          2.203263,
+          -0.279472,
+          -0.786406
+        ]
+      }
+    },
+    {
+      "t": 17.42,
+      "points": 30,
+      "published_yaw": {
+        "sample_min_m": 0.34434,
+        "swept_lower_bound_m": 0.339463,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          3.948671,
+          -0.20566,
+          0.0
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.257362,
+        "swept_lower_bound_m": 0.252376,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          3.948671,
+          -0.20566,
+          0.284512
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.289638,
+        "swept_lower_bound_m": 0.284652,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          3.936748,
+          -0.172224,
+          0.289223
+        ]
+      }
+    },
+    {
+      "t": 18.412,
+      "points": 16,
+      "published_yaw": {
+        "sample_min_m": 0.447726,
+        "swept_lower_bound_m": 0.443306,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          4.282994,
+          -0.102274,
+          0.0
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.348456,
+        "swept_lower_bound_m": 0.343473,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          4.447354,
+          -0.050846,
+          0.732509
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.370914,
+        "swept_lower_bound_m": 0.365931,
+        "obstacle": "hall_north_middle",
+        "pose": [
+          4.484209,
+          0.037865,
+          0.789812
+        ]
+      }
+    },
+    {
+      "t": 19.388,
+      "points": 10,
+      "published_yaw": {
+        "sample_min_m": 0.446629,
+        "swept_lower_bound_m": 0.441999,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          4.336975,
+          -0.103371,
+          0.0
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.325092,
+        "swept_lower_bound_m": 0.320095,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          4.336975,
+          -0.103371,
+          0.448799
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.358704,
+        "swept_lower_bound_m": 0.353707,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          4.318736,
+          -0.069274,
+          0.45162
+        ]
+      }
+    }
+  ],
+  "lethal_cells_near_box": {
+    "global": {
+      "snapshots": 9,
+      "first": 18,
+      "max": 36,
+      "median": 21.0
+    },
+    "local": {
+      "snapshots": 28,
+      "first": 22,
+      "max": 26,
+      "median": 20.0
+    }
+  },
+  "local_plans": 202,
+  "worst_local_plan": {
+    "sample_min_m": 0.154392,
+    "swept_lower_bound_m": 0.150002,
+    "obstacle": "fixture",
+    "pose": [
+      2.436428,
+      -0.211265,
+      0.0815
+    ]
+  },
+  "max_dwb_forward_mps": 0.65,
+  "dwb_all_rejected_cycles": 0,
+  "critic_reasons": {}
+}

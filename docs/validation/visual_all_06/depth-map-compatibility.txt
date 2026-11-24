@@ -1,0 +1,4 @@
+baseline 1 REJECT Saved depth image format or resolution differs from the configured camera
+baseline 2 PASS
+matched-roundtrip01 1 PASS
+matched-roundtrip01 2 REJECT Saved depth image format or resolution differs from the configured camera

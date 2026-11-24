@@ -248,7 +248,7 @@ class TestEndToEndInteractionLoop(unittest.TestCase):
           - First cancel stops robot and sets state to IDLE
           - Second cancel returns True without errors or inconsistent state
         """
-        self.gateway.process_text("Take me to Uni-Mall.", trace_id="trace-cancel-test")
+        self.gateway.process_text("Take me to the study.", trace_id="trace-cancel-test")
         time.sleep(0.05)
         self.assertEqual(self.robot_bridge.state_machine.state, RobotState.NAVIGATING)
 

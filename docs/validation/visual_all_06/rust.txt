@@ -1,0 +1,68 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
+     Running unittests src/lib.rs (kernel/target/debug/deps/gracemo_k-c44590f35f8064e5)
+
+running 5 tests
+test lexer::tests::test_lexer_simple_pipeline ... ok
+test planner::tests::test_planner_valid_plan ... ok
+test tests::test_end_to_end_k_execution ... ok
+test parser::tests::test_parse_pipeline ... ok
+test planner::tests::test_planner_missing_arg ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (kernel/target/debug/deps/gracemo_kernel-8f2760d0af10e0b6)
+
+running 11 tests
+test context_compiler::tests::test_to_toon_backwards_compatibility ... ok
+test context_compiler::tests::test_to_toon_with_live_inspector_state ... ok
+test context_compiler::tests::test_to_toon_with_apartment_map ... ok
+test context_compiler::tests::test_to_toon_with_located_in_graph_edges ... ok
+test graph::tests::test_coordinate_room_resolution ... ok
+test context_compiler::tests::test_to_toon_with_world_objects ... ok
+test graph::tests::test_seeded_doorway_portals ... ok
+test graph::tests::test_room_exploration_state_and_queries ... ok
+test graph::tests::test_room_objects_query_and_located_in_persistence ... ok
+test graph::tests::test_visual_observation_supersede_delete_and_retention_views ... ok
+test graph::tests::test_object_detected_lifecycle_and_association ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/main.rs (kernel/target/debug/deps/gracemo_kernel-866e9146421db058)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/benchmark_vcsc.rs (kernel/target/debug/deps/benchmark_vcsc-04f3d7f0e82e0da2)
+
+running 1 test
+test test_vcsc_empirical_token_benchmark ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (kernel/target/debug/deps/gracemo_types-4e361907447ff3a7)
+
+running 2 tests
+test event_contract_tests::legacy_events_get_a_usable_trace_id_and_new_events_parse ... ok
+test event_contract_tests::event_preserves_adapter_trace_through_kernel_contract ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests gracemo_k
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests gracemo_kernel
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests gracemo_types
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

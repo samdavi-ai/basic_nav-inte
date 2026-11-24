@@ -1,0 +1,21 @@
+{
+  "frames": 8,
+  "samples": 24,
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "latency_p50_ms": 59.28289899975425,
+  "latency_p95_ms": 65.03422840000894,
+  "peak_rss_delta_kib": 138788,
+  "dataset_sha256": "d4058c1849147993ae744306d777c9e845b5f02733f6354dc4c6ee647a9cdc9e",
+  "detections": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": []
+  }
+}

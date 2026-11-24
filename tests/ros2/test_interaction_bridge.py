@@ -12,6 +12,7 @@ import json
 import math
 import sys
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 # Setup paths
@@ -42,6 +43,14 @@ class TestInteractionBridgeNode(unittest.TestCase):
 
     def setUp(self):
         self.node = InteractionBridgeNode()
+        # This suite exercises the bridge translator. Deliver the simulated
+        # kernel echo only via its normal action subscription callback.
+        def accepted(_, envelope):
+            self.node._on_eventbus_action_requested(envelope)
+            return {"status": "dispatched"}
+        transport = patch("gracemo_sdk.authorization.dispatch_action", side_effect=accepted)
+        self.transport = transport.start()
+        self.addCleanup(transport.stop)
         # Capture published messages for verification
         self.published_cmd_vel = []
         self.published_goal_pose = []
@@ -85,6 +94,13 @@ class TestInteractionBridgeNode(unittest.TestCase):
 
     def tearDown(self):
         self.node.destroy_node()
+
+    def test_denied_text_produces_no_ros_action(self):
+        self.transport.side_effect = PermissionError("not provisioned")
+        result = self.node.process_text_command("go to bedroom")
+        self.assertEqual(result.intent, "DISPATCH_UNCONFIRMED")
+        self.assertFalse(self.published_coord_cmd)
+        self.assertFalse(self.published_goal_pose)
 
     def test_initial_state_and_topics(self):
         """Node should start with IDLE state, valid PlaceResolver, and online topics."""
@@ -258,6 +274,31 @@ class TestInteractionBridgeNode(unittest.TestCase):
         self.assertTrue(last_coord.get("trace_id"))
         self.assertEqual(len(last_coord.get("waypoints", [])), 5)
         self.assertEqual(self.node.fsm.state, CognitiveState.EXECUTING)
+
+    def test_retryable_planning_failure_keeps_interaction_fsm_recoverable(self):
+        """A transient Nav2 planning rejection must not strand interaction in ERROR."""
+        self.node.fsm.transition_to(CognitiveState.EXECUTING, reason="Mission accepted")
+
+        planning_failure = RosString()
+        planning_failure.data = json.dumps({"state": "PLANNING_FAILURE"})
+        self.node._on_coord_feedback(planning_failure)
+        self.assertEqual(self.node.fsm.state, CognitiveState.THINKING)
+
+        obstacle_handling = RosString()
+        obstacle_handling.data = json.dumps({"state": "OBSTACLE_HANDLING"})
+        self.node._on_coord_feedback(obstacle_handling)
+        self.assertEqual(self.node.fsm.state, CognitiveState.THINKING)
+
+        retry = RosString()
+        retry.data = json.dumps({"state": "MISSION_PLANNING"})
+        self.node._on_coord_feedback(retry)
+        self.assertEqual(self.node.fsm.state, CognitiveState.EXECUTING)
+
+    def test_new_command_recovers_interaction_fsm_after_terminal_navigation_error(self):
+        """A later command can start after a terminal navigation failure."""
+        self.node.fsm.transition_to(CognitiveState.ERROR, reason="Navigation failed")
+        self.node.process_text_command("hello")
+        self.assertNotEqual(self.node.fsm.state, CognitiveState.ERROR)
 
     def test_nail_gate_phonetic_navigation(self):
         """Phonetic STT mishearing 'Nail gate to the kitchen' resolves and dispatches navigation goal."""

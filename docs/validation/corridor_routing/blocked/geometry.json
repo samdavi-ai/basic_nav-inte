@@ -1,0 +1,54 @@
+{
+  "box": [
+    2.0,
+    0.0,
+    0.35,
+    1.65
+  ],
+  "footprint_edges_m": [
+    0.72,
+    0.7,
+    0.72,
+    0.7
+  ],
+  "executed": {
+    "sample_min_m": 0.076655,
+    "swept_lower_bound_m": 0.074721,
+    "obstacle": "hall_north_middle",
+    "pose": [
+      -1.440548,
+      0.326621,
+      -0.653068
+    ],
+    "speed_bound_min_m": 0.051399
+  },
+  "truth_final": [
+    -1.4405481451278397,
+    0.3266210644425287,
+    -0.6530678896393209
+  ],
+  "truth_goal_error_m": 5.94952,
+  "max_truth_sample_gap_s": 0.03800000000000381,
+  "global_paths": 0,
+  "first_path": null,
+  "worst_tangent_path": null,
+  "plans": [],
+  "lethal_cells_near_box": {
+    "global": {
+      "snapshots": 39,
+      "first": 43,
+      "max": 79,
+      "median": 36.0
+    },
+    "local": {
+      "snapshots": 129,
+      "first": 43,
+      "max": 82,
+      "median": 0.0
+    }
+  },
+  "local_plans": 0,
+  "max_dwb_forward_mps": 0.0,
+  "dwb_all_rejected_cycles": 0,
+  "critic_reasons": {}
+}

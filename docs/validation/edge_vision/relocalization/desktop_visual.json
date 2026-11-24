@@ -1,0 +1,107 @@
+{
+  "current": true,
+  "received_at": 1795426329,
+  "sample": {
+    "acquired_pair_hz": 3.719445562782121,
+    "age_s": 4.1157000850944314e-05,
+    "available_ram_bytes": 5729320960,
+    "camera_frame": "camera_optical_link",
+    "captured_at": 1795426328.782719,
+    "cpu_percent": 103.1,
+    "degraded": false,
+    "detector_ms": 65.69731599938677,
+    "detector_target_hz": 5.0,
+    "dropped_pending": 0,
+    "face_status": "disabled",
+    "frames_processed": 180,
+    "gpu_percent": null,
+    "image_stamp_ns": 42600000000,
+    "localized_detections_last_frame": 1,
+    "mission_id": null,
+    "model_loaded": true,
+    "observations": [
+      {
+        "bbox": {
+          "cx": 60.0,
+          "cy": 182.5,
+          "height": 109.0,
+          "width": 120.0,
+          "x1": 0.0,
+          "x2": 120.0,
+          "y1": 128.0,
+          "y2": 237.0
+        },
+        "camera_id": "camera_optical_link",
+        "class_name": "sofa",
+        "confidence": 0.388,
+        "depth_m": 1.774,
+        "depth_patch_mad_m": 0.005251049995422363,
+        "id": "2a306830",
+        "image_stamp_ns": 42600000000,
+        "position_camera": {
+          "x": -0.718,
+          "y": 0.449,
+          "z": 1.774
+        },
+        "position_uncertainty_m": null,
+        "position_world": {
+          "x": 4.406,
+          "y": -4.358,
+          "z": 0.571
+        },
+        "timestamp": 1795426328.9827304,
+        "track_id": null,
+        "world_frame": "map"
+      }
+    ],
+    "person_tracks": [],
+    "power_w": null,
+    "process_rss_bytes": 568557568,
+    "processed_hz": 3.698896139783325,
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "ready": true,
+    "reid_enabled": false,
+    "rejected_inputs": 0,
+    "sync_skew_ms": 0.0,
+    "synchronized_pairs": 181,
+    "temperature_c": null,
+    "trace_id": null,
+    "tracking_ms": 0.0187660007213708,
+    "visual_odometry": {
+      "features": 171,
+      "frame_id": "visual_origin_optical",
+      "inliers": 110,
+      "keyframes": 12,
+      "latency_ms": 2.74146700030542,
+      "optical_pose": [
+        [
+          -0.03734967448701912,
+          -0.002157189498582994,
+          0.9992999291249762,
+          2.8783473480160557
+        ],
+        [
+          -0.005081649671048586,
+          0.9999851503438664,
+          0.001968737759956441,
+          0.7904320238638578
+        ],
+        [
+          -0.999289336805076,
+          -0.005004560441632225,
+          -0.03736008193850251,
+          5.35523797144934
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "state": "tracking"
+    }
+  }
+}

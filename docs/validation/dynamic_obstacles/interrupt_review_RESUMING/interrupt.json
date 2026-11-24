@@ -1,0 +1,25 @@
+{
+  "target": "RESUMING",
+  "status": "PASS",
+  "mission_id": "standalone-cd20f594-5248-4016-91bd-d67adbaa3f2a",
+  "trigger": {
+    "state": "RESUMING",
+    "sim_time": 6.45,
+    "hold_since": 4.5,
+    "global_plan_stamp": 6.038,
+    "local_rollout_stamp": 6.4
+  },
+  "pose": {
+    "x": 0.5139369258973532,
+    "y": -0.030462040734365852,
+    "linear_x": -0.0021626651518441013,
+    "angular_z": -0.009217859659637959
+  },
+  "request_wall": 17263.187772758,
+  "request_sim": 6.458,
+  "zero_latency_s": 0.0020852330017078202,
+  "max_displacement_m": 0.009095603300889692,
+  "final_second_speed": 0.018675692681789775,
+  "rejected": true,
+  "reset": true
+}

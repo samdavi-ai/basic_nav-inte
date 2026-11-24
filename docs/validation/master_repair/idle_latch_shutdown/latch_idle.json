@@ -1,0 +1,36 @@
+{
+  "events": {
+    "latch": 20130.079088634,
+    "reset": 20134.08344459
+  },
+  "latched": {
+    "samples": {
+      "cmd_vel": 51,
+      "cmd_vel_mux": 60,
+      "cmd_vel_smoothed": 60,
+      "source": 15
+    },
+    "peak": {
+      "cmd_vel": 0.0,
+      "cmd_vel_mux": 0.0,
+      "cmd_vel_smoothed": 0.0,
+      "source": false
+    },
+    "passed": true
+  },
+  "after_reset": {
+    "samples": {
+      "cmd_vel": 59,
+      "cmd_vel_mux": 59,
+      "cmd_vel_smoothed": 60,
+      "source": 15
+    },
+    "peak": {
+      "cmd_vel": 0.0,
+      "cmd_vel_mux": 0.0,
+      "cmd_vel_smoothed": 0.0,
+      "source": false
+    },
+    "passed": true
+  }
+}

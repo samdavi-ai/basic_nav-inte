@@ -1,0 +1,212 @@
+{
+  "box": [
+    4.15,
+    2.25,
+    0.45,
+    0.45
+  ],
+  "map_truth_error_m": 0.09338324656390007,
+  "plan_stream": "plan",
+  "footprint_edges_m": [
+    0.72,
+    0.7,
+    0.72,
+    0.7
+  ],
+  "executed": {
+    "sample_min_m": -0.010844,
+    "swept_lower_bound_m": -0.015839,
+    "obstacle": "hall_north_east",
+    "pose": [
+      5.203781,
+      1.383003,
+      1.744877
+    ],
+    "speed_bound_min_m": -0.03339
+  },
+  "truth_final": [
+    4.846345266840735,
+    2.9415085129621557,
+    0.20757680478877055
+  ],
+  "truth_goal_error_m": 0.35125,
+  "max_truth_sample_gap_s": 0.3519999999999994,
+  "global_paths": 2,
+  "first_path": {
+    "t": 9.392,
+    "points": 244,
+    "published_yaw": {
+      "sample_min_m": 0.077023,
+      "swept_lower_bound_m": 0.072027,
+      "obstacle": "hall_north_middle",
+      "pose": [
+        4.834537,
+        0.530588,
+        0.0
+      ]
+    },
+    "tangent": {
+      "sample_min_m": 0.031802,
+      "swept_lower_bound_m": 0.026808,
+      "obstacle": "hall_north_middle",
+      "pose": [
+        4.912062,
+        0.778102,
+        2.074279
+      ]
+    },
+    "tangent_in_odom": {
+      "sample_min_m": 0.024267,
+      "swept_lower_bound_m": 0.019273,
+      "obstacle": "hall_north_middle",
+      "pose": [
+        4.904525,
+        0.775093,
+        2.074264
+      ]
+    }
+  },
+  "worst_tangent_path": {
+    "t": 24.364,
+    "points": 92,
+    "published_yaw": {
+      "sample_min_m": 0.02834,
+      "swept_lower_bound_m": 0.023476,
+      "obstacle": "fixture",
+      "pose": [
+        4.75625,
+        2.84375,
+        0.0
+      ]
+    },
+    "tangent": {
+      "sample_min_m": 0.022096,
+      "swept_lower_bound_m": 0.017098,
+      "obstacle": "fixture",
+      "pose": [
+        4.564883,
+        2.963265,
+        72.678093
+      ]
+    },
+    "tangent_in_odom": {
+      "sample_min_m": 0.093903,
+      "swept_lower_bound_m": 0.088905,
+      "obstacle": "hall_north_east",
+      "pose": [
+        5.177012,
+        1.519852,
+        70.706926
+      ]
+    }
+  },
+  "worst_tangent_in_odom": 0.019273,
+  "plans": [
+    {
+      "t": 9.392,
+      "points": 244,
+      "published_yaw": {
+        "sample_min_m": 0.077023,
+        "swept_lower_bound_m": 0.072027,
+        "obstacle": "hall_north_middle",
+        "pose": [
+          4.834537,
+          0.530588,
+          0.0
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.031802,
+        "swept_lower_bound_m": 0.026808,
+        "obstacle": "hall_north_middle",
+        "pose": [
+          4.912062,
+          0.778102,
+          2.074279
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.024267,
+        "swept_lower_bound_m": 0.019273,
+        "obstacle": "hall_north_middle",
+        "pose": [
+          4.904525,
+          0.775093,
+          2.074264
+        ]
+      }
+    },
+    {
+      "t": 24.364,
+      "points": 92,
+      "published_yaw": {
+        "sample_min_m": 0.02834,
+        "swept_lower_bound_m": 0.023476,
+        "obstacle": "fixture",
+        "pose": [
+          4.75625,
+          2.84375,
+          0.0
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.022096,
+        "swept_lower_bound_m": 0.017098,
+        "obstacle": "fixture",
+        "pose": [
+          4.564883,
+          2.963265,
+          72.678093
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.093903,
+        "swept_lower_bound_m": 0.088905,
+        "obstacle": "hall_north_east",
+        "pose": [
+          5.177012,
+          1.519852,
+          70.706926
+        ]
+      }
+    }
+  ],
+  "lethal_cells_near_box": {
+    "global": {
+      "snapshots": 18,
+      "first": 0,
+      "max": 44,
+      "median": 20.5
+    },
+    "local": {
+      "snapshots": 56,
+      "first": 0,
+      "max": 35,
+      "median": 17.5
+    }
+  },
+  "local_plans": 413,
+  "worst_local_plan": {
+    "sample_min_m": -0.010844,
+    "swept_lower_bound_m": -0.015043,
+    "obstacle": "hall_north_east",
+    "pose": [
+      5.203781,
+      1.383003,
+      1.744877
+    ]
+  },
+  "max_dwb_forward_mps": 0.65,
+  "dwb_all_rejected_cycles": 0,
+  "critic_reasons": {},
+  "acceptance": {
+    "positive_executed_clearance": false,
+    "matched_completion": true,
+    "map_goal": true,
+    "gazebo_goal": false,
+    "gazebo_yaw": true,
+    "map_gazebo_agreement": true,
+    "clear_chosen_rollouts": false,
+    "clear_global_paths": true
+  }
+}

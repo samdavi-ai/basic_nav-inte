@@ -1,0 +1,22 @@
+[
+  {
+    "path": "ros2_ws/src/gracemo_nav2/config/nav2_params.yaml",
+    "expected_sha256": "91beac6308cd922881b3a14017a021d968c0478d6d7fd716d4b58a2501666c06",
+    "current_sha256": "91beac6308cd922881b3a14017a021d968c0478d6d7fd716d4b58a2501666c06"
+  },
+  {
+    "path": "ros2_ws/src/gracemo_nav2/behavior_trees/navigate_to_pose_gracemo.xml",
+    "expected_sha256": "573cdd8d2724d3ae0aaf4f10206e2ada58203fae27e0b4301b2e36bc6d5a46e1",
+    "current_sha256": "573cdd8d2724d3ae0aaf4f10206e2ada58203fae27e0b4301b2e36bc6d5a46e1"
+  },
+  {
+    "path": "docs/validation/dynamic_obstacles/PRIVATE_TRIALS.md",
+    "expected_sha256": "79b24e4d97e55694f2207ed26e755920108a9ee49c5b3823733cc849d69ad9b2",
+    "current_sha256": "79b24e4d97e55694f2207ed26e755920108a9ee49c5b3823733cc849d69ad9b2"
+  },
+  {
+    "path": "docs/validation/dynamic_obstacles/private_trial_index.json",
+    "expected_sha256": "e53a2dcf08cf0db0c8bdbc5c3dab072289dc537a9f56830ab42cc40caa4421d2",
+    "current_sha256": "e53a2dcf08cf0db0c8bdbc5c3dab072289dc537a9f56830ab42cc40caa4421d2"
+  }
+]

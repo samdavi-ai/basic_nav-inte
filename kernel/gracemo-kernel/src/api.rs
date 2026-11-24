@@ -3,7 +3,8 @@ use crate::graph::GraphDb;
 use crate::inspector_state::{update_from_event, SharedInspectorState};
 use crate::ledger::Ledger;
 use axum::{
-    extract::{Query, State},
+    extract::{Path, Query, State},
+    http::HeaderMap,
     response::{
         sse::{Event as SseEvent, KeepAlive, Sse},
         IntoResponse, Json,
@@ -19,6 +20,8 @@ use tower_http::cors::CorsLayer;
 
 #[derive(Clone)]
 pub struct AppState {
+    pub recovered_missions: std::sync::Arc<Vec<serde_json::Value>>,
+    pub registry: std::sync::Arc<crate::authorization::Registry>,
     pub tx: broadcast::Sender<Event>,
     pub live_state: SharedInspectorState,
     pub ledger: Ledger,
@@ -27,6 +30,7 @@ pub struct AppState {
 
 #[derive(Deserialize)]
 pub struct HistoryQuery {
+    pub trace_id: Option<String>,
     pub limit: Option<usize>,
 }
 
@@ -51,19 +55,43 @@ pub struct WorldObjectsQuery {
     pub room: Option<String>,
 }
 
+#[derive(Deserialize)]
+pub struct VisualObservationsQuery {
+    pub object_id: Option<String>,
+    pub include_history: Option<bool>,
+    pub limit: Option<usize>,
+}
+
+#[derive(Deserialize)]
+pub struct DeleteVisualObservationRequest {
+    pub reason: String,
+}
+
 pub fn create_router(state: AppState) -> Router {
     Router::new()
         .route("/health", get(health_handler))
+        .route("/recovery/release-emergency-hold", post(crate::authorization::release_hold))
+        .route("/recovery/abandon", post(crate::authorization::abandon))
+        .route("/recovery/missions", get(recovered_missions))
+        .route("/perception", get(perception_handler))
         .route("/snapshot", get(snapshot_handler))
         .route("/state", get(snapshot_handler))
         .route("/context", get(context_handler))
         .route("/graph", get(graph_handler))
         .route("/world/objects", get(world_objects_handler))
+        .route("/visual/observations", get(visual_observations_handler))
+        .route("/visual/observations/:observation_id/delete", post(delete_visual_observation_handler))
         .route("/world/rooms", get(world_rooms_handler))
         .route("/world/rooms/:room_id", get(world_room_handler))
         .route("/world/rooms/:room_id/objects", get(world_room_objects_handler))
         .route("/world/exploration/status", get(world_exploration_status_handler))
         .route("/k/execute", post(k_execute_handler))
+        .route("/adapters", get(crate::authorization::registry_status))
+        .route("/adapters/connect", post(crate::authorization::connect))
+        .route("/adapters/disconnect", post(crate::authorization::disconnect))
+        .route("/actions/decisions", get(crate::authorization::decisions))
+        .route("/actions/authorize", post(crate::authorization::authorize))
+        .route("/actions/dispatch", post(crate::authorization::dispatch))
         .route("/emit", post(emit_handler))
         .route("/events/live", get(sse_handler))
         .route("/history", get(history_handler))
@@ -71,13 +99,20 @@ pub fn create_router(state: AppState) -> Router {
         .with_state(state)
 }
 
-pub async fn process_incoming_event(state: AppState, event: Event) {
-    // 1. Update InspectorState (NOW)
-    update_from_event(&state.live_state, &event.event_type).await;
+pub async fn process_incoming_event(state: AppState, event: Event) -> Result<(), String> {
+    if let gracemo_types::EventType::ActionRequested(action) = &event.event_type {
+        action.validate()?;
+    }
+    if matches!(event.event_type, gracemo_types::EventType::ActionRequested(_)) {
+        return Err("Authenticated action authorization required".into());
+    }
+    state.ledger.record_event(&event).map_err(|_| "Ledger refused event".to_string())?;
+    publish_event(state,event).await;
+    Ok(())
+}
 
-    // 2. Persist to Ledger (PAST)
-    let _ = state.ledger.record_event(&event);
-
+pub(crate) async fn publish_event(state:AppState,event:Event) {
+    update_from_event(&state.live_state, &event.event_type, event.trace_id).await;
     // 3. Process into Relational Knowledge Graph (RELATIONS)
     let current_room = {
         let read_guard = state.live_state.read().await;
@@ -99,10 +134,21 @@ pub async fn process_incoming_event(state: AppState, event: Event) {
     let _ = state.tx.send(event);
 }
 
+async fn recovered_missions(State(s):State<AppState>)->impl IntoResponse {
+    let mut pending=Vec::new();
+    for r in s.recovered_missions.iter().filter(|r|r["requires_operator_review"]==true) {
+        match s.ledger.reviewed(r["action_id"].as_str().unwrap_or("")) {
+            Ok(false)=>pending.push(r), Ok(true)=>{}, Err(_)=>return axum::http::StatusCode::INTERNAL_SERVER_ERROR.into_response(),
+        }
+    }
+    Json(json!({"at_kernel_start":s.recovered_missions.as_ref(),"pending_review":pending,"automatic_resume":false})).into_response()
+}
+
 async fn health_handler() -> impl IntoResponse {
     Json(json!({
         "status": "healthy",
         "service": "gracemo-kernel",
+        "pid": std::process::id(),
         "version": "0.0.3"
     }))
 }
@@ -113,10 +159,32 @@ pub struct ContextQuery {
     pub format: Option<String>,
 }
 
+async fn perception_handler(State(state): State<AppState>) -> impl IntoResponse {
+    let live = state.live_state.read().await;
+    let mut data = live["perception"].clone();
+    let captured = data["sample"]["captured_at"].as_f64();
+    let now = chrono::Utc::now().timestamp_millis() as f64 / 1000.0;
+    let current = captured.is_some_and(|t| (0.0..=3.0).contains(&(now-t))) && data["sample"]["ready"] == true;
+    data["current"] = json!(current);
+    Json(data)
+}
+
 async fn snapshot_handler(State(state): State<AppState>) -> impl IntoResponse {
     let objs = state.graph.query_world_objects(None, false).unwrap_or_default();
     let mut snapshot = state.live_state.read().await.clone();
     snapshot["world_objects"] = json!(objs);
+    snapshot["kernel_emergency_hold"] = match state.ledger.emergency_hold() {
+        Ok(id) => json!({"latched":id.is_some(),"event_id":id}),
+        Err(_) => json!({"latched":true,"error":"ledger unavailable"}),
+    };
+    if let Some(received)=snapshot["perception"]["received_at"].as_i64(){
+        let age=chrono::Utc::now().timestamp()-received;
+        let capture_age = snapshot["perception"]["sample"]["captured_at"].as_f64()
+            .map(|t| chrono::Utc::now().timestamp_millis() as f64/1000.0 - t);
+        snapshot["perception"]["current"]=json!((0..=3).contains(&age)
+            && capture_age.is_some_and(|dt| (0.0..=3.0).contains(&dt))
+            && snapshot["perception"]["sample"]["ready"]==true);
+    }
     Json(snapshot)
 }
 
@@ -195,6 +263,45 @@ async fn world_objects_handler(
     }
 }
 
+async fn visual_observations_handler(
+    State(state): State<AppState>,
+    Query(params): Query<VisualObservationsQuery>,
+    headers: HeaderMap,
+) -> impl IntoResponse {
+    if let Err(status) = state.require_capability(&headers, "ReadVisualMemory") {
+        return status.into_response();
+    }
+    match state.graph.query_visual_observations(
+        params.object_id.as_deref(), params.include_history.unwrap_or(false), params.limit.unwrap_or(100)) {
+        Ok(observations) => Json(json!({"observations":observations,"count":observations.len()})).into_response(),
+        Err(_) => (axum::http::StatusCode::INTERNAL_SERVER_ERROR,
+                   Json(json!({"error":"visual observation store unavailable"}))).into_response(),
+    }
+}
+
+async fn delete_visual_observation_handler(
+    State(state): State<AppState>,
+    Path(observation_id): Path<String>,
+    headers: HeaderMap,
+    Json(request): Json<DeleteVisualObservationRequest>,
+) -> impl IntoResponse {
+    let operator = match state.require_capability(&headers, "DeleteVisualMemory") {
+        Ok(operator) => operator,
+        Err(status) => return status.into_response(),
+    };
+    let reason = request.reason.trim();
+    if reason.is_empty() || reason.len() > 500 {
+        return (axum::http::StatusCode::BAD_REQUEST,
+                Json(json!({"error":"reason must contain 1 to 500 characters"}))).into_response();
+    }
+    match state.graph.delete_visual_observation(&observation_id, &operator, reason) {
+        Ok(true) => axum::http::StatusCode::NO_CONTENT.into_response(),
+        Ok(false) => axum::http::StatusCode::NOT_FOUND.into_response(),
+        Err(_) => (axum::http::StatusCode::INTERNAL_SERVER_ERROR,
+                   Json(json!({"error":"visual observation deletion failed"}))).into_response(),
+    }
+}
+
 async fn world_rooms_handler(
     State(state): State<AppState>,
 ) -> impl IntoResponse {
@@ -258,8 +365,11 @@ async fn emit_handler(
     State(state): State<AppState>,
     Json(event): Json<Event>,
 ) -> impl IntoResponse {
-    process_incoming_event(state, event).await;
-    Json(json!({ "status": "emitted" }))
+    match process_incoming_event(state, event).await {
+        Ok(()) => Json(json!({ "status": "emitted" })).into_response(),
+        Err(reason) => (axum::http::StatusCode::UNPROCESSABLE_ENTITY,
+                        Json(json!({ "error": reason }))).into_response(),
+    }
 }
 
 async fn sse_handler(
@@ -282,14 +392,23 @@ async fn history_handler(
     Query(params): Query<HistoryQuery>,
 ) -> impl IntoResponse {
     let limit = params.limit.unwrap_or(20).min(100);
-    let events = state.ledger.query_recent(limit);
+    let mut events = state.ledger.query_history(limit, params.trace_id.as_deref());
+    events.retain(|event| {
+        if event["event_type"] == "ObjectDetected" {
+            event["id"].as_str().is_some_and(|id|
+                state.graph.visual_observation_hidden(id).map(|hidden| !hidden).unwrap_or(false))
+        } else {
+            true
+        }
+    });
     Json(events)
 }
 
 async fn k_execute_handler(
+    State(state): State<AppState>,
     Json(req): Json<KExecuteRequest>,
 ) -> impl IntoResponse {
-    match gracemo_k::execute_k_expression(&req.expression) {
+    match crate::k_execution::execute(&state, &req.expression).await {
         Ok(summary) => Json(json!({ "success": true, "result": summary })).into_response(),
         Err(e) => (
             axum::http::StatusCode::BAD_REQUEST,

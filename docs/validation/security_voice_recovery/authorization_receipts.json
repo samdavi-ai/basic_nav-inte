@@ -1,0 +1,90 @@
+[
+  {
+    "action_id": "90f974a5-5dee-4e24-8b9c-9c340f254ee0",
+    "active_mission_trace_id": null,
+    "adapter_id": "StandaloneMissionRunner",
+    "adapter_session": "b05e355d-c000-45f2-b8aa-249a458c695c",
+    "authorization_id": "6b333539-d4b3-49ed-91fb-ff145af57754",
+    "canonical_action": {
+      "action": "StartMission",
+      "params": {
+        "mission_id": "standalone-150658e9-99b0-47bf-b3bb-e34fe08ab2ed",
+        "mission_name": "Standalone apartment patrol",
+        "waypoints": [
+          {
+            "coords": {
+              "frame_id": "map",
+              "x": 4.5,
+              "y": 0.0,
+              "yaw": 0.0
+            },
+            "dwell_sec": 0.0,
+            "name": "Simulation destination"
+          }
+        ]
+      }
+    },
+    "capability": "StartMission",
+    "expires_at": 1795381134,
+    "issued_at": 1795381129,
+    "issuer": "c3439d7a-612a-40e8-8c04-2694c0a00d8a",
+    "mission_id": "standalone-150658e9-99b0-47bf-b3bb-e34fe08ab2ed",
+    "parameter_sha256": "7ae6ab700945662c8b86641bed84dfe97123c180f6cf9df6ff361947ec5ea295",
+    "policy_version": 1,
+    "scope": "single_dispatch",
+    "trace_id": "62232832-cde2-4225-b301-fbad58e6fd10"
+  },
+  {
+    "action_id": "a15e9502-8200-4a76-a2a0-053b7d3d2ed9",
+    "active_mission_trace_id": null,
+    "adapter_id": "StandaloneMissionRunner",
+    "adapter_session": "8b3fd5d8-2328-42fc-adfc-164ea1fd485b",
+    "authorization_id": "7fad6778-156c-4253-81a2-0c1b1e359340",
+    "canonical_action": {
+      "action": "StartMission",
+      "params": {
+        "mission_id": "standalone-89303168-a578-4a32-8e3f-d28a8e7811d8",
+        "mission_name": "Standalone apartment patrol",
+        "waypoints": [
+          {
+            "coords": {
+              "frame_id": "map",
+              "x": 4.5,
+              "y": 0.0,
+              "yaw": 0.0
+            },
+            "dwell_sec": 0.0,
+            "name": "Simulation destination"
+          }
+        ]
+      }
+    },
+    "capability": "StartMission",
+    "expires_at": 1795381165,
+    "issued_at": 1795381160,
+    "issuer": "98c11b77-bde8-4d6c-bbea-47d37d99b9f0",
+    "mission_id": "standalone-89303168-a578-4a32-8e3f-d28a8e7811d8",
+    "parameter_sha256": "8bb8a2457fb4bc55dc5de7355c259ca76ec3288d54fe27df35db813ab7ac8745",
+    "policy_version": 1,
+    "scope": "single_dispatch",
+    "trace_id": "27bac76c-b625-4100-b8dc-615b1b7dd402"
+  },
+  {
+    "action_id": "634e2986-41a6-41ca-8caf-d434be260f9a",
+    "adapter_id": "graceemo_interaction",
+    "adapter_session": "4d373873-0e86-4b55-a421-19ab8a87ed04",
+    "authorization_id": "2995daa5-cf6c-4bae-a33f-179f15ed43c1",
+    "canonical_action": {
+      "action": "Stop"
+    },
+    "capability": "Stop",
+    "expires_at": 1795380970,
+    "issued_at": 1795380965,
+    "issuer": "1b517a86-8c91-43a2-a82b-64404dd087af",
+    "mission_id": "standalone-c81d9459-936b-481f-a41b-0962ec26370f",
+    "parameter_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "policy_version": 1,
+    "scope": "single_dispatch",
+    "trace_id": "b1531888-eb83-4f29-8470-173b2cff8bd8"
+  }
+]

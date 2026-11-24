@@ -210,6 +210,7 @@ def main():
         )
         if not result["checks"]["estop_latched"]:
             raise RuntimeError("Coordinator/terrain monitor did not latch E-stop")
+        latch_observed_time = time.monotonic()
 
         zero_seen = False
         max_cmd_after_stop = 0.0
@@ -271,6 +272,13 @@ def main():
         if not result["checks"]["no_motion_while_latched"]:
             raise RuntimeError("Robot moved while E-stop was latched")
 
+        observed = [(stamp, max(abs(cmd["linear_x"]), abs(cmd["angular_z"])))
+                    for stamp, cmd in node.cmd_events if stamp >= stop_request_time]
+        result["request_to_observed_latch_ms"] = round(1000 * (latch_observed_time - stop_request_time), 2)
+        result["request_to_first_observed_zero_ms"] = next(
+            (round(1000 * (stamp - stop_request_time), 2) for stamp, mag in observed if mag <= .001), None)
+        result["peak_cmd_between_observed_latch_and_reset"] = max(
+            (mag for stamp, mag in observed if stamp >= latch_observed_time), default=None)
         node.publish_command({"intent": "RESET_ESTOP"})
         result["checks"]["explicit_reset_returned_ready"] = node.wait_for(
             lambda: node.state == "AUTONOMY_READY" and node.estop_value is False,

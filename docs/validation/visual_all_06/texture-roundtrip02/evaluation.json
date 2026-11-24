@@ -1,0 +1,210 @@
+{
+  "rgb_sim_hz": 9.920317450158405,
+  "depth_median_m": {
+    "median": 2.456026554107666,
+    "p95": 4.585109901428223,
+    "max": 5.550288200378418
+  },
+  "nearest_depth_skew_ms": {
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 0.0
+  },
+  "image_mean_abs_change": {
+    "median": 7.403834635416667,
+    "p95": 16.744117838541666,
+    "max": 20.840559895833334
+  },
+  "exactly_repeated_images": 1,
+  "rejection_log_counts": {},
+  "graph_events": 117,
+  "keyframe_decisions": 51,
+  "graph_matches": [
+    {
+      "t": 49.0,
+      "ref": 47,
+      "loop": 36,
+      "proximity": 0,
+      "inliers": 153.0,
+      "iterations": 2.0
+    },
+    {
+      "t": 50.0,
+      "ref": 48,
+      "loop": 35,
+      "proximity": 0,
+      "inliers": 146.0,
+      "iterations": 4.0
+    },
+    {
+      "t": 51.1,
+      "ref": 49,
+      "loop": 33,
+      "proximity": 0,
+      "inliers": 139.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 53.1,
+      "ref": 51,
+      "loop": 33,
+      "proximity": 0,
+      "inliers": 69.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 54.1,
+      "ref": 52,
+      "loop": 33,
+      "proximity": 0,
+      "inliers": 69.0,
+      "iterations": 2.0
+    },
+    {
+      "t": 65.1,
+      "ref": 62,
+      "loop": 32,
+      "proximity": 0,
+      "inliers": 97.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 66.2,
+      "ref": 63,
+      "loop": 32,
+      "proximity": 0,
+      "inliers": 94.0,
+      "iterations": 4.0
+    },
+    {
+      "t": 106.4,
+      "ref": 101,
+      "loop": 12,
+      "proximity": 0,
+      "inliers": 61.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 107.5,
+      "ref": 102,
+      "loop": 23,
+      "proximity": 23,
+      "inliers": 107.0,
+      "iterations": 3.0
+    },
+    {
+      "t": 108.7,
+      "ref": 103,
+      "loop": 12,
+      "proximity": 12,
+      "inliers": 146.0,
+      "iterations": 2.0
+    },
+    {
+      "t": 109.7,
+      "ref": 104,
+      "loop": 12,
+      "proximity": 12,
+      "inliers": 204.0,
+      "iterations": 2.0
+    }
+  ],
+  "interval": [
+    0.004,
+    125.0
+  ],
+  "counts": {
+    "resources": 69,
+    "truth": 7533,
+    "rgb": 1241,
+    "/camera/camera_info": 1246,
+    "neck": 3926,
+    "depth": 1245,
+    "/camera/depth/camera_info": 1246,
+    "odom": 1242,
+    "info": 1242,
+    "localization": 117,
+    "graph": 117
+  },
+  "rgb_duplicates": 0,
+  "out_of_order": 0,
+  "missing_same_stamp_depth": 0,
+  "valid_depth_fraction": {
+    "median": 0.8975,
+    "p95": 0.9907916666666666,
+    "max": 1.0
+  },
+  "rgb_calibration": {
+    "kind": "/camera/camera_info",
+    "t": 0.004,
+    "frame": "camera_optical_link",
+    "k": [
+      246.89624622675555,
+      0.0,
+      160.0,
+      0.0,
+      246.89624622675555,
+      120.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 320,
+    "height": 240,
+    "model": "plumb_bob"
+  },
+  "depth_calibration": {
+    "kind": "/camera/depth/camera_info",
+    "t": 0.004,
+    "frame": "camera_optical_link",
+    "k": [
+      123.44812311337778,
+      0.0,
+      80.0,
+      0.0,
+      123.44812311337778,
+      60.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "width": 160,
+    "height": 120,
+    "model": "plumb_bob"
+  },
+  "availability": 0.9975825946817083,
+  "observed_camera_stamps": 1246,
+  "missing_rgb_at_camera_stamp": 5,
+  "observed_camera_coverage": 0.9935794542536116,
+  "matched": 1238,
+  "valid_without_truth": 0,
+  "loss_transitions": 1,
+  "recovery_transitions": 2,
+  "translation_rmse_m": 0.1751607288900858,
+  "rotation_rmse_deg": 1.301192201117881,
+  "translation_m": {
+    "median": 0.13539637678420338,
+    "p95": 0.29385007909300165,
+    "max": 0.3785323590829656
+  },
+  "rotation_deg": {
+    "median": 0.8777920705460676,
+    "p95": 2.063771038480671,
+    "max": 9.781711467429433
+  },
+  "latency_s": {
+    "median": 0.017891407012939453,
+    "p95": 0.027835190296173096,
+    "max": 0.040125131607055664
+  },
+  "matches": {
+    "median": 256.0,
+    "p95": 361.95000000000005,
+    "max": 485.0
+  },
+  "features": {
+    "median": 487.0,
+    "p95": 583.95,
+    "max": 619.0
+  }
+}

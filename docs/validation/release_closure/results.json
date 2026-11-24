@@ -1,0 +1,3299 @@
+[
+  {
+    "run": "patrol",
+    "scenario": {
+      "index": 0,
+      "seed": 42,
+      "kind": "patrol",
+      "box": null,
+      "goal": null,
+      "min_robot_x": 0.23494998392273192,
+      "min_plan_count": 1,
+      "crossing_speed": 0.0,
+      "initial_pose": [
+        0,
+        0,
+        0
+      ],
+      "world": "apartment_floor.world",
+      "level": 1,
+      "approach": true,
+      "rectangular_guard": true,
+      "clearance_recovery": true,
+      "dense_truth": true,
+      "master_recovery": true,
+      "doorway_trial": true,
+      "govern_speed": true,
+      "swept_critic": true
+    },
+    "verdict": "FAIL",
+    "run_exit": null,
+    "mission_id": "standalone-db3ec5e0-bca2-4d43-829c-52fd7830b433",
+    "trace_id": "593b939c-4cb5-4ab1-bd83-825c52becf0e",
+    "correlated": true,
+    "coordinator": {
+      "mission_id": "standalone-db3ec5e0-bca2-4d43-829c-52fd7830b433",
+      "name": "Standalone apartment patrol",
+      "success": false,
+      "status": "FAILED",
+      "reason": "Recovery deadline expired without a validated route",
+      "waypoints_completed": 0,
+      "total_waypoints": 11,
+      "duration_sec": 15.9,
+      "end_pose": {
+        "x": -0.0,
+        "y": -0.1
+      },
+      "timestamp": 1795283998.138778
+    },
+    "kernel": {
+      "state": "NAVIGATION_FAILURE",
+      "previous_state": "MISSION_EXECUTING",
+      "reason": "Mission incomplete: Recovery deadline expired without a validated route",
+      "mission_id": "standalone-db3ec5e0-bca2-4d43-829c-52fd7830b433",
+      "mission_name": "Standalone apartment patrol",
+      "x": 0.0013282637560195398,
+      "y": -0.10430892829880108,
+      "trace_id": "593b939c-4cb5-4ab1-bd83-825c52becf0e"
+    },
+    "timed_out": false,
+    "swept_min_m": 0.321633,
+    "speed_bound_min_m": 0.31836,
+    "raw_min_m": 0.322569,
+    "sensor_hits": null,
+    "map_marks": null,
+    "stop": null,
+    "zero": null,
+    "rest": null,
+    "resumptions": null,
+    "retries": null,
+    "goal_error": null,
+    "planner_interval_verified": null,
+    "insert_requested": null,
+    "insert_confirmed": null,
+    "plans": [
+      {
+        "t": 3.77,
+        "points": 134,
+        "published_yaw": {
+          "sample_min_m": 0.178626,
+          "swept_lower_bound_m": 0.173649,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.965954,
+            -0.683346,
+            -1.936071
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.188071,
+          "swept_lower_bound_m": 0.183167,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.960848,
+            -0.6696,
+            -1.916916
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.180709,
+          "swept_lower_bound_m": 0.175805,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.968081,
+            -0.672334,
+            -1.916931
+          ]
+        }
+      },
+      {
+        "t": 10.572,
+        "points": 124,
+        "published_yaw": {
+          "sample_min_m": 0.04082,
+          "swept_lower_bound_m": 0.035844,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.087814,
+            -0.723934,
+            -2.019488
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.073683,
+          "swept_lower_bound_m": 0.068711,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.072438,
+            -0.690184,
+            -1.928445
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.031983,
+          "swept_lower_bound_m": 0.027011,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.154772,
+            -0.610322,
+            -1.767657
+          ]
+        }
+      }
+    ],
+    "worst_local_m": null,
+    "dwb_evaluations": 0,
+    "dwb_rejected": null,
+    "transitions": [
+      {
+        "t": 3.854,
+        "kind": "guard",
+        "state": "NAVIGATING",
+        "sim_time": 3.85,
+        "reason": null,
+        "generation": {
+          "grid": 6,
+          "global": 1
+        },
+        "hold_since": null,
+        "global_plan_stamp": 3.768,
+        "local_rollout_stamp": null,
+        "ages": {
+          "odom": 0.010000000000000231,
+          "scan": 0.021999999999999797,
+          "grid": 0.1419999999999999,
+          "depth": 0.25,
+          "global": 0.9140000000000001,
+          "plan": 0.0820000000000003,
+          "command": 0.0019999999999997797
+        }
+      },
+      {
+        "t": 7.55,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 7.550000000000001,
+        "reason": "invalid_rollout",
+        "generation": {
+          "grid": 12,
+          "global": 3
+        },
+        "hold_since": 7.550000000000001,
+        "global_plan_stamp": 3.768,
+        "local_rollout_stamp": null,
+        "ages": {
+          "odom": 0.010000000000000675,
+          "scan": 0.02600000000000069,
+          "grid": 0.2600000000000007,
+          "depth": 0.15000000000000036,
+          "global": 0.636000000000001,
+          "plan": 3.782000000000001,
+          "command": 0.020000000000000462
+        }
+      },
+      {
+        "t": 7.6,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 7.6000000000000005,
+        "reason": null,
+        "generation": {
+          "grid": 12,
+          "global": 3
+        },
+        "hold_since": 7.550000000000001,
+        "global_plan_stamp": 3.768,
+        "local_rollout_stamp": null,
+        "ages": {
+          "odom": 0.020000000000000462,
+          "scan": 0.07600000000000051,
+          "grid": 0.3100000000000005,
+          "depth": 0.20000000000000018,
+          "global": 0.6860000000000008,
+          "plan": 3.8320000000000007,
+          "command": 0.009999999999999787
+        }
+      },
+      {
+        "t": 7.8,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 7.800000000000001,
+        "reason": null,
+        "generation": {
+          "grid": 12,
+          "global": 3
+        },
+        "hold_since": 7.550000000000001,
+        "global_plan_stamp": 3.768,
+        "local_rollout_stamp": null,
+        "ages": {
+          "odom": 0.020000000000000462,
+          "scan": 0.010000000000000675,
+          "grid": 0.5100000000000007,
+          "depth": 0.40000000000000036,
+          "global": 0.886000000000001,
+          "plan": 4.032000000000001,
+          "command": 0.009999999999999787
+        }
+      },
+      {
+        "t": 8.95,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 8.950000000000001,
+        "reason": null,
+        "generation": {
+          "grid": 14,
+          "global": 4
+        },
+        "hold_since": 7.550000000000001,
+        "global_plan_stamp": 3.768,
+        "local_rollout_stamp": null,
+        "ages": {
+          "odom": 0.010000000000001563,
+          "scan": 0.040000000000000924,
+          "grid": 0.4620000000000015,
+          "depth": 0.15000000000000036,
+          "global": 0.04400000000000048,
+          "plan": 5.182000000000001,
+          "command": 0.0259999999999998
+        }
+      },
+      {
+        "t": 9.01,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 9.0,
+        "reason": null,
+        "generation": {
+          "grid": 14,
+          "global": 4
+        },
+        "hold_since": 7.550000000000001,
+        "global_plan_stamp": 3.768,
+        "local_rollout_stamp": null,
+        "ages": {
+          "odom": 0.019999999999999574,
+          "scan": 0.02200000000000024,
+          "grid": 0.5120000000000005,
+          "depth": 0.1999999999999993,
+          "global": 0.09399999999999942,
+          "plan": 5.232,
+          "command": 0.016000000000000014
+        }
+      },
+      {
+        "t": 10.6,
+        "kind": "guard",
+        "state": "PATH_VALIDATION",
+        "sim_time": 10.600000000000001,
+        "reason": null,
+        "generation": {
+          "grid": 17,
+          "global": 4
+        },
+        "hold_since": 7.550000000000001,
+        "global_plan_stamp": 10.57,
+        "local_rollout_stamp": null,
+        "ages": {
+          "odom": 0.02000000000000135,
+          "scan": 0.040000000000000924,
+          "grid": 0.3260000000000005,
+          "depth": 0.40000000000000213,
+          "global": 1.6940000000000008,
+          "plan": 0.030000000000001137,
+          "command": 1.5360000000000014
+        }
+      },
+      {
+        "t": 19.6,
+        "kind": "guard",
+        "state": "RECOVERY_EXPIRED",
+        "sim_time": 19.6,
+        "reason": null,
+        "generation": {
+          "grid": 32,
+          "global": 9
+        },
+        "hold_since": 7.550000000000001,
+        "global_plan_stamp": 10.57,
+        "local_rollout_stamp": null,
+        "ages": {
+          "odom": 0.020000000000003126,
+          "scan": 0.06400000000000006,
+          "grid": 0.35800000000000054,
+          "depth": 0.40000000000000213,
+          "global": 0.7379999999999995,
+          "plan": 9.030000000000001,
+          "command": 0.03200000000000003
+        }
+      }
+    ],
+    "interrupt": null,
+    "idle": {
+      "command_graph": {
+        "cmd_vel_nav": {
+          "publishers": [
+            "controller_server",
+            "behavior_server",
+            "behavior_server",
+            "behavior_server"
+          ],
+          "subscribers": [
+            "dynamic_braking_guard"
+          ]
+        },
+        "cmd_vel_guarded_nav": {
+          "publishers": [
+            "dynamic_braking_guard"
+          ],
+          "subscribers": [
+            "cmd_vel_mux"
+          ]
+        },
+        "cmd_vel_mux": {
+          "publishers": [
+            "cmd_vel_mux"
+          ],
+          "subscribers": [
+            "idle_zero_observer",
+            "velocity_smoother"
+          ]
+        },
+        "cmd_vel_smoothed": {
+          "publishers": [
+            "velocity_smoother"
+          ],
+          "subscribers": [
+            "idle_zero_observer",
+            "collision_monitor"
+          ]
+        },
+        "cmd_vel_safe": {
+          "publishers": [
+            "collision_monitor"
+          ],
+          "subscribers": [
+            "gracemo_terrain_monitor"
+          ]
+        },
+        "cmd_vel": {
+          "publishers": [
+            "gracemo_terrain_monitor"
+          ],
+          "subscribers": [
+            "idle_zero_observer",
+            "gracemo_sensor_bridge"
+          ]
+        }
+      },
+      "passed": true,
+      "discovery_complete": true,
+      "duration_s": 3,
+      "samples": {
+        "cmd_vel": 60,
+        "cmd_vel_mux": 62,
+        "cmd_vel_smoothed": 60
+      },
+      "peak": {
+        "cmd_vel": 0.0,
+        "cmd_vel_mux": 0.0,
+        "cmd_vel_smoothed": 0.0
+      },
+      "mux_state": {
+        "active_source": "NONE",
+        "teleop_active": false,
+        "rl_active": false,
+        "nav_active": false,
+        "teleop_age_sec": null,
+        "rl_age_sec": null,
+        "nav_age_sec": 6.4,
+        "zero_command_held": true,
+        "current_linear_x": 0.0,
+        "current_angular_z": 0.0
+      },
+      "odom_displacement_m": 0.007964085189605495
+    },
+    "estop": {
+      "result": "FAIL",
+      "scope": "Gazebo only",
+      "goal": {
+        "x": 4.5,
+        "y": 3.0
+      },
+      "checks": {},
+      "state": "NAVIGATION_FAILURE",
+      "error": "Gazebo sensors, Nav2, terrain monitor, or coordinator were not ready",
+      "estop_active": null,
+      "state_history": []
+    },
+    "latch_idle": null,
+    "shutdown": null,
+    "after_coordinator_restart": null,
+    "after_nav_restart": null,
+    "fixture_actor_aborted": false,
+    "gazebo_shutdown_escalated": true,
+    "fixture_cleanup": "no inserted obstacle",
+    "scenario_id": "patrol",
+    "obstacle_trajectory": [],
+    "collision_creation_s": null,
+    "first_observable_s": null,
+    "recovery_attempts": 1,
+    "controller_deadline_warnings": 0,
+    "waypoint_dispatches": [
+      "[coordinator_node.py-19] [INFO] [1795283982.234515410] [gracemo_command_coordinator]: \ud83d\udd04 [FSM Transition] MISSION_ACCEPTED \u2794 MISSION_PLANNING | Reason: Planning path to waypoint 1/11: Kitchen & Dining doorway staging"
+    ],
+    "geometry": {
+      "sample_min_m": 0.322569,
+      "swept_lower_bound_m": 0.321633,
+      "obstacle": "hall_south_middle",
+      "pose": [
+        -0.023699,
+        -0.076479,
+        -0.86699
+      ],
+      "raw_pose_min_m": 0.322569,
+      "speed_bound_min_m": 0.31836
+    },
+    "build": "default CMake flags",
+    "active_profile": "lattice and directed turn"
+  },
+  {
+    "run": "patrol_margin",
+    "scenario": {
+      "index": 0,
+      "seed": 42,
+      "kind": "patrol",
+      "box": null,
+      "goal": null,
+      "min_robot_x": 0.23494998392273192,
+      "min_plan_count": 1,
+      "crossing_speed": 0.0,
+      "initial_pose": [
+        0,
+        0,
+        0
+      ],
+      "world": "apartment_floor.world",
+      "level": 1,
+      "planner_cell_margin": true,
+      "approach": true,
+      "rectangular_guard": true,
+      "clearance_recovery": true,
+      "dense_truth": true,
+      "master_recovery": true,
+      "doorway_trial": true,
+      "govern_speed": true,
+      "swept_critic": true
+    },
+    "verdict": "FAIL",
+    "run_exit": null,
+    "mission_id": "standalone-bb8fb273-8960-47dc-b13b-b28e47ca880e",
+    "trace_id": "61655585-285d-4409-b65c-b9dea4538645",
+    "correlated": true,
+    "coordinator": {
+      "mission_id": "standalone-bb8fb273-8960-47dc-b13b-b28e47ca880e",
+      "name": "Standalone apartment patrol",
+      "success": false,
+      "status": "FAILED",
+      "reason": "Recovery deadline expired without a validated route",
+      "waypoints_completed": 0,
+      "total_waypoints": 11,
+      "duration_sec": 41.5,
+      "end_pose": {
+        "x": -4.69,
+        "y": -0.33
+      },
+      "timestamp": 1795288781.6507125
+    },
+    "kernel": {
+      "state": "NAVIGATION_FAILURE",
+      "previous_state": "MISSION_EXECUTING",
+      "reason": "Mission incomplete: Recovery deadline expired without a validated route",
+      "mission_id": "standalone-bb8fb273-8960-47dc-b13b-b28e47ca880e",
+      "mission_name": "Standalone apartment patrol",
+      "x": -4.696573102138798,
+      "y": -0.3317492978687915,
+      "trace_id": "61655585-285d-4409-b65c-b9dea4538645"
+    },
+    "timed_out": false,
+    "swept_min_m": 0.128686,
+    "speed_bound_min_m": 0.126624,
+    "raw_min_m": 0.130833,
+    "sensor_hits": null,
+    "map_marks": null,
+    "stop": null,
+    "zero": null,
+    "rest": null,
+    "resumptions": null,
+    "retries": null,
+    "goal_error": null,
+    "planner_interval_verified": null,
+    "insert_requested": null,
+    "insert_confirmed": null,
+    "plans": [
+      {
+        "t": 3.412,
+        "points": 131,
+        "published_yaw": {
+          "sample_min_m": 0.092277,
+          "swept_lower_bound_m": 0.087376,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.044827,
+            -0.689155,
+            -1.989575
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.125022,
+          "swept_lower_bound_m": 0.120031,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.033017,
+            -0.657063,
+            -1.87623
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.117736,
+          "swept_lower_bound_m": 0.112745,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.040224,
+            -0.659785,
+            -1.876245
+          ]
+        }
+      },
+      {
+        "t": 23.746,
+        "points": 20,
+        "published_yaw": {
+          "sample_min_m": 0.091937,
+          "swept_lower_bound_m": 0.087009,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.034017,
+            -0.806976,
+            -2.034444
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.136748,
+          "swept_lower_bound_m": 0.131908,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.028195,
+            -0.791225,
+            -1.847596
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.164245,
+          "swept_lower_bound_m": 0.159404,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.001806,
+            -0.737927,
+            -1.843193
+          ]
+        }
+      },
+      {
+        "t": 27.112,
+        "points": 24,
+        "published_yaw": {
+          "sample_min_m": 0.082485,
+          "swept_lower_bound_m": 0.077579,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.043469,
+            -0.818814,
+            -2.034444
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.138477,
+          "swept_lower_bound_m": 0.133529,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.022994,
+            -0.750409,
+            -1.861617
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.173525,
+          "swept_lower_bound_m": 0.168578,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.987398,
+            -0.696851,
+            -1.863862
+          ]
+        }
+      }
+    ],
+    "worst_local_m": {
+      "sample_min_m": 0.12294,
+      "swept_lower_bound_m": 0.118372,
+      "obstacle": "hall_south_middle",
+      "pose": [
+        -1.602399,
+        -0.369835,
+        -3.316225
+      ]
+    },
+    "dwb_evaluations": 194,
+    "dwb_rejected": 37922,
+    "transitions": [
+      {
+        "t": 3.464,
+        "kind": "guard",
+        "state": "NAVIGATING",
+        "sim_time": 3.45,
+        "reason": null,
+        "generation": {
+          "grid": 5,
+          "global": 1
+        },
+        "hold_since": null,
+        "global_plan_stamp": 3.406,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.050000000000000266,
+          "scan": 0.018000000000000238,
+          "odom": 0.010000000000000231,
+          "grid": 0.512,
+          "global": 0.8420000000000001,
+          "plan": 0.04400000000000004,
+          "command": 0.0019999999999997797
+        }
+      },
+      {
+        "t": 21.728,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 21.650000000000002,
+        "reason": "invalid_rollout",
+        "generation": {
+          "grid": 37,
+          "global": 11
+        },
+        "hold_since": 21.650000000000002,
+        "global_plan_stamp": 3.406,
+        "local_rollout_stamp": 21.48,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.0660000000000025,
+          "odom": 0.010000000000001563,
+          "grid": 0.43400000000000105,
+          "global": 1.4440000000000026,
+          "plan": 18.244000000000003,
+          "command": 0.0779999999999994,
+          "rollout": 0.1700000000000017
+        }
+      },
+      {
+        "t": 21.884,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 21.700000000000003,
+        "reason": null,
+        "generation": {
+          "grid": 37,
+          "global": 11
+        },
+        "hold_since": 21.650000000000002,
+        "global_plan_stamp": 3.406,
+        "local_rollout_stamp": 21.56,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.052000000000003155,
+          "odom": 0.020000000000003126,
+          "grid": 0.48400000000000176,
+          "global": 1.4940000000000033,
+          "plan": 18.294000000000004,
+          "command": 0.04200000000000159,
+          "rollout": 0.14000000000000412
+        }
+      },
+      {
+        "t": 22.004,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 22.0,
+        "reason": null,
+        "generation": {
+          "grid": 38,
+          "global": 12
+        },
+        "hold_since": 21.650000000000002,
+        "global_plan_stamp": 3.406,
+        "local_rollout_stamp": 21.76,
+        "ages": {
+          "depth": 0.1999999999999993,
+          "scan": 0.019999999999999574,
+          "odom": 0.019999999999999574,
+          "grid": 0.23600000000000065,
+          "global": 0.04400000000000048,
+          "plan": 18.594,
+          "command": 0.09799999999999898,
+          "rollout": 0.23999999999999844
+        }
+      },
+      {
+        "t": 22.142,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 22.05,
+        "reason": null,
+        "generation": {
+          "grid": 38,
+          "global": 12
+        },
+        "hold_since": 21.650000000000002,
+        "global_plan_stamp": 3.406,
+        "local_rollout_stamp": 21.9,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.07000000000000028,
+          "odom": 0.010000000000001563,
+          "grid": 0.28600000000000136,
+          "global": 0.0940000000000012,
+          "plan": 18.644000000000002,
+          "command": 0.006000000000000227,
+          "rollout": 0.15000000000000213
+        }
+      },
+      {
+        "t": 22.296,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 22.1,
+        "reason": null,
+        "generation": {
+          "grid": 38,
+          "global": 12
+        },
+        "hold_since": 21.650000000000002,
+        "global_plan_stamp": 3.406,
+        "local_rollout_stamp": 21.9,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.05600000000000094,
+          "odom": 0.020000000000003126,
+          "grid": 0.3360000000000021,
+          "global": 0.1440000000000019,
+          "plan": 18.694000000000003,
+          "command": 0.05600000000000094,
+          "rollout": 0.20000000000000284
+        }
+      },
+      {
+        "t": 23.768,
+        "kind": "guard",
+        "state": "PATH_VALIDATION",
+        "sim_time": 23.766000000000002,
+        "reason": null,
+        "generation": {
+          "grid": 41,
+          "global": 13
+        },
+        "hold_since": 21.650000000000002,
+        "global_plan_stamp": 23.744,
+        "local_rollout_stamp": 22.04,
+        "ages": {
+          "depth": 0.16600000000000037,
+          "scan": 0.07000000000000028,
+          "odom": 0.026000000000003354,
+          "grid": 0.4200000000000017,
+          "global": 0.028000000000002245,
+          "plan": 0.022000000000002018,
+          "command": 1.597999999999999,
+          "rollout": 1.7260000000000026
+        }
+      },
+      {
+        "t": 25.172,
+        "kind": "guard",
+        "state": "RESUMING",
+        "sim_time": 25.150000000000002,
+        "reason": null,
+        "generation": {
+          "grid": 44,
+          "global": 13
+        },
+        "hold_since": null,
+        "global_plan_stamp": 23.744,
+        "local_rollout_stamp": 25.0,
+        "ages": {
+          "depth": 0.15000000000000213,
+          "scan": 0.06800000000000139,
+          "odom": 0.010000000000001563,
+          "grid": 0.004000000000001336,
+          "global": 1.4120000000000026,
+          "plan": 1.4060000000000024,
+          "command": 0.0019999999999988916,
+          "rollout": 0.15000000000000213
+        }
+      },
+      {
+        "t": 25.312,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 25.200000000000003,
+        "reason": "invalid_rollout",
+        "generation": {
+          "grid": 44,
+          "global": 13
+        },
+        "hold_since": 25.200000000000003,
+        "global_plan_stamp": 23.744,
+        "local_rollout_stamp": 25.0,
+        "ages": {
+          "depth": 0.20000000000000284,
+          "scan": 0.054000000000002046,
+          "odom": 0.020000000000003126,
+          "grid": 0.054000000000002046,
+          "global": 1.4620000000000033,
+          "plan": 1.456000000000003,
+          "command": 0.0519999999999996,
+          "rollout": 0.20000000000000284
+        }
+      },
+      {
+        "t": 25.462,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 25.25,
+        "reason": null,
+        "generation": {
+          "grid": 44,
+          "global": 13
+        },
+        "hold_since": 25.200000000000003,
+        "global_plan_stamp": 23.744,
+        "local_rollout_stamp": 25.0,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.038000000000000256,
+          "odom": 0.010000000000001563,
+          "grid": 0.1039999999999992,
+          "global": 1.5120000000000005,
+          "plan": 1.5060000000000002,
+          "command": 0.10199999999999676,
+          "rollout": 0.25
+        }
+      },
+      {
+        "t": 25.564,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 25.3,
+        "reason": null,
+        "generation": {
+          "grid": 44,
+          "global": 13
+        },
+        "hold_since": 25.200000000000003,
+        "global_plan_stamp": 23.744,
+        "local_rollout_stamp": 25.14,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.019999999999999574,
+          "odom": 0.019999999999999574,
+          "grid": 0.15399999999999991,
+          "global": 1.5620000000000012,
+          "plan": 1.556000000000001,
+          "command": 0.0259999999999998,
+          "rollout": 0.16000000000000014
+        }
+      },
+      {
+        "t": 25.712,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 25.558,
+        "reason": null,
+        "generation": {
+          "grid": 45,
+          "global": 14
+        },
+        "hold_since": 25.200000000000003,
+        "global_plan_stamp": 23.744,
+        "local_rollout_stamp": 25.38,
+        "ages": {
+          "depth": 0.15800000000000125,
+          "scan": 0.0799999999999983,
+          "odom": 0.018000000000000682,
+          "grid": 0.030000000000001137,
+          "global": 0.015999999999998238,
+          "plan": 1.814,
+          "command": 0.029999999999997584,
+          "rollout": 0.17800000000000082
+        }
+      },
+      {
+        "t": 25.862000000000002,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 25.6,
+        "reason": null,
+        "generation": {
+          "grid": 45,
+          "global": 14
+        },
+        "hold_since": 25.200000000000003,
+        "global_plan_stamp": 23.744,
+        "local_rollout_stamp": 25.38,
+        "ages": {
+          "depth": 0.20000000000000284,
+          "scan": 0.05799999999999983,
+          "odom": 0.020000000000003126,
+          "grid": 0.07200000000000273,
+          "global": 0.05799999999999983,
+          "plan": 1.8560000000000016,
+          "command": 0.07199999999999918,
+          "rollout": 0.22000000000000242
+        }
+      },
+      {
+        "t": 27.15,
+        "kind": "guard",
+        "state": "PATH_VALIDATION",
+        "sim_time": 27.150000000000002,
+        "reason": null,
+        "generation": {
+          "grid": 47,
+          "global": 14
+        },
+        "hold_since": 25.200000000000003,
+        "global_plan_stamp": 27.11,
+        "local_rollout_stamp": 25.52,
+        "ages": {
+          "depth": 0.15000000000000213,
+          "scan": 0.02400000000000091,
+          "odom": 0.010000000000001563,
+          "grid": 0.5400000000000027,
+          "global": 1.6080000000000005,
+          "plan": 0.0400000000000027,
+          "command": 1.5,
+          "rollout": 1.6300000000000026
+        }
+      },
+      {
+        "t": 27.96,
+        "kind": "guard",
+        "state": "RESUMING",
+        "sim_time": 27.85,
+        "reason": null,
+        "generation": {
+          "grid": 49,
+          "global": 15
+        },
+        "hold_since": null,
+        "global_plan_stamp": 27.11,
+        "local_rollout_stamp": 27.7,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.062000000000001165,
+          "odom": 0.010000000000001563,
+          "grid": 0.1460000000000008,
+          "global": 0.45600000000000307,
+          "plan": 0.740000000000002,
+          "command": 0.015999999999998238,
+          "rollout": 0.15000000000000213
+        }
+      },
+      {
+        "t": 28.084,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 27.900000000000002,
+        "reason": "invalid_rollout",
+        "generation": {
+          "grid": 49,
+          "global": 15
+        },
+        "hold_since": 27.900000000000002,
+        "global_plan_stamp": 27.11,
+        "local_rollout_stamp": 27.7,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.04800000000000182,
+          "odom": 0.020000000000003126,
+          "grid": 0.1960000000000015,
+          "global": 0.5060000000000038,
+          "plan": 0.7900000000000027,
+          "command": 0.06599999999999895,
+          "rollout": 0.20000000000000284
+        }
+      },
+      {
+        "t": 28.086,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 27.950000000000003,
+        "reason": null,
+        "generation": {
+          "grid": 49,
+          "global": 15
+        },
+        "hold_since": 27.900000000000002,
+        "global_plan_stamp": 27.11,
+        "local_rollout_stamp": 27.7,
+        "ages": {
+          "depth": 0.15000000000000213,
+          "scan": 0.03200000000000358,
+          "odom": 0.010000000000001563,
+          "grid": 0.24600000000000222,
+          "global": 0.5560000000000045,
+          "plan": 0.8400000000000034,
+          "command": 0.11599999999999966,
+          "rollout": 0.25000000000000355
+        }
+      },
+      {
+        "t": 28.09,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 28.0,
+        "reason": null,
+        "generation": {
+          "grid": 49,
+          "global": 15
+        },
+        "hold_since": 27.900000000000002,
+        "global_plan_stamp": 27.11,
+        "local_rollout_stamp": 27.82,
+        "ages": {
+          "depth": 0.1999999999999993,
+          "scan": 0.08200000000000074,
+          "odom": 0.019999999999999574,
+          "grid": 0.2959999999999994,
+          "global": 0.6060000000000016,
+          "plan": 0.8900000000000006,
+          "command": 0.03399999999999892,
+          "rollout": 0.17999999999999972
+        }
+      },
+      {
+        "t": 29.152,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 29.150000000000002,
+        "reason": null,
+        "generation": {
+          "grid": 51,
+          "global": 16
+        },
+        "hold_since": 27.900000000000002,
+        "global_plan_stamp": 27.11,
+        "local_rollout_stamp": 28.98,
+        "ages": {
+          "depth": 0.15000000000000213,
+          "scan": 0.04400000000000048,
+          "odom": 0.010000000000001563,
+          "grid": 0.2940000000000005,
+          "global": 0.01600000000000179,
+          "plan": 2.0400000000000027,
+          "command": 0.04400000000000048,
+          "rollout": 0.1700000000000017
+        }
+      },
+      {
+        "t": 29.264,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 29.200000000000003,
+        "reason": null,
+        "generation": {
+          "grid": 51,
+          "global": 16
+        },
+        "hold_since": 27.900000000000002,
+        "global_plan_stamp": 27.11,
+        "local_rollout_stamp": 28.98,
+        "ages": {
+          "depth": 0.20000000000000284,
+          "scan": 0.026000000000003354,
+          "odom": 0.020000000000003126,
+          "grid": 0.3440000000000012,
+          "global": 0.0660000000000025,
+          "plan": 2.0900000000000034,
+          "command": 0.0940000000000012,
+          "rollout": 0.22000000000000242
+        }
+      },
+      {
+        "t": 39.922,
+        "kind": "guard",
+        "state": "RECOVERY_EXPIRED",
+        "sim_time": 39.900000000000006,
+        "reason": null,
+        "generation": {
+          "grid": 69,
+          "global": 22
+        },
+        "hold_since": 27.900000000000002,
+        "global_plan_stamp": 27.11,
+        "local_rollout_stamp": 39.8,
+        "ages": {
+          "depth": 0.10000000000000853,
+          "scan": 0.034000000000006025,
+          "odom": 0.020000000000003126,
+          "grid": 0.010000000000005116,
+          "global": 0.3680000000000092,
+          "plan": 12.790000000000006,
+          "command": 0.008000000000002672,
+          "rollout": 0.10000000000000853
+        }
+      }
+    ],
+    "interrupt": null,
+    "idle": {
+      "command_graph": {
+        "cmd_vel_nav": {
+          "publishers": [
+            "controller_server",
+            "behavior_server",
+            "behavior_server",
+            "behavior_server"
+          ],
+          "subscribers": [
+            "dynamic_braking_guard"
+          ]
+        },
+        "cmd_vel_guarded_nav": {
+          "publishers": [
+            "dynamic_braking_guard"
+          ],
+          "subscribers": [
+            "cmd_vel_mux"
+          ]
+        },
+        "cmd_vel_mux": {
+          "publishers": [
+            "cmd_vel_mux"
+          ],
+          "subscribers": [
+            "idle_zero_observer",
+            "velocity_smoother"
+          ]
+        },
+        "cmd_vel_smoothed": {
+          "publishers": [
+            "velocity_smoother"
+          ],
+          "subscribers": [
+            "idle_zero_observer",
+            "collision_monitor"
+          ]
+        },
+        "cmd_vel_safe": {
+          "publishers": [
+            "collision_monitor"
+          ],
+          "subscribers": [
+            "gracemo_terrain_monitor"
+          ]
+        },
+        "cmd_vel": {
+          "publishers": [
+            "gracemo_terrain_monitor"
+          ],
+          "subscribers": [
+            "idle_zero_observer",
+            "gracemo_sensor_bridge"
+          ]
+        }
+      },
+      "passed": true,
+      "discovery_complete": true,
+      "duration_s": 3,
+      "samples": {
+        "cmd_vel": 63,
+        "cmd_vel_mux": 58,
+        "cmd_vel_smoothed": 60
+      },
+      "peak": {
+        "cmd_vel": 0.0,
+        "cmd_vel_mux": 0.0,
+        "cmd_vel_smoothed": 0.0
+      },
+      "mux_state": {
+        "active_source": "NONE",
+        "teleop_active": false,
+        "rl_active": false,
+        "nav_active": false,
+        "teleop_age_sec": null,
+        "rl_age_sec": null,
+        "nav_age_sec": 8.65,
+        "zero_command_held": true,
+        "current_linear_x": 0.0,
+        "current_angular_z": 0.0
+      },
+      "odom_displacement_m": 0.007032942915465051
+    },
+    "estop": {
+      "result": "FAIL",
+      "scope": "Gazebo only",
+      "goal": {
+        "x": 4.5,
+        "y": 3.0
+      },
+      "checks": {},
+      "state": "NAVIGATION_FAILURE",
+      "error": "Gazebo sensors, Nav2, terrain monitor, or coordinator were not ready",
+      "estop_active": null,
+      "state_history": []
+    },
+    "latch_idle": null,
+    "shutdown": null,
+    "after_coordinator_restart": null,
+    "after_nav_restart": null,
+    "fixture_actor_aborted": false,
+    "gazebo_shutdown_escalated": true,
+    "fixture_cleanup": "no inserted obstacle",
+    "scenario_id": "patrol_margin",
+    "obstacle_trajectory": [],
+    "collision_creation_s": null,
+    "first_observable_s": null,
+    "recovery_attempts": 3,
+    "controller_deadline_warnings": 161,
+    "waypoint_dispatches": [
+      "[coordinator_node.py-19] [INFO] [1795288740.121383602] [gracemo_command_coordinator]: \ud83d\udd04 [FSM Transition] MISSION_ACCEPTED \u2794 MISSION_PLANNING | Reason: Planning path to waypoint 1/11: Kitchen & Dining doorway staging"
+    ],
+    "geometry": {
+      "sample_min_m": 0.130833,
+      "swept_lower_bound_m": 0.128686,
+      "obstacle": "hall_south_middle",
+      "pose": [
+        -0.993368,
+        -0.360542,
+        -2.962181
+      ],
+      "raw_pose_min_m": 0.130833,
+      "speed_bound_min_m": 0.126624
+    },
+    "build": "default CMake flags",
+    "active_profile": "integer age and planner cell margin"
+  },
+  {
+    "run": "patrol_ns",
+    "scenario": {
+      "index": 0,
+      "seed": 42,
+      "kind": "patrol",
+      "box": null,
+      "goal": null,
+      "min_robot_x": 0.23494998392273192,
+      "min_plan_count": 1,
+      "crossing_speed": 0.0,
+      "initial_pose": [
+        0,
+        0,
+        0
+      ],
+      "world": "apartment_floor.world",
+      "level": 1,
+      "approach": true,
+      "rectangular_guard": true,
+      "clearance_recovery": true,
+      "dense_truth": true,
+      "master_recovery": true,
+      "doorway_trial": true,
+      "govern_speed": true,
+      "swept_critic": true
+    },
+    "verdict": "FAIL",
+    "run_exit": null,
+    "mission_id": "standalone-67646b30-24fb-49d1-afe6-ac0fb7bb17ec",
+    "trace_id": "ebd646d5-9596-4283-8010-1df4e35ba291",
+    "correlated": true,
+    "coordinator": {
+      "mission_id": "standalone-67646b30-24fb-49d1-afe6-ac0fb7bb17ec",
+      "name": "Standalone apartment patrol",
+      "success": false,
+      "status": "FAILED",
+      "reason": "Recovery deadline expired without a validated route",
+      "waypoints_completed": 0,
+      "total_waypoints": 11,
+      "duration_sec": 12.5,
+      "end_pose": {
+        "x": -0.02,
+        "y": -0.03
+      },
+      "timestamp": 1795288657.270375
+    },
+    "kernel": {
+      "state": "NAVIGATION_FAILURE",
+      "previous_state": "MISSION_EXECUTING",
+      "reason": "Mission incomplete: Recovery deadline expired without a validated route",
+      "mission_id": "standalone-67646b30-24fb-49d1-afe6-ac0fb7bb17ec",
+      "mission_name": "Standalone apartment patrol",
+      "x": -0.011580001524234476,
+      "y": -0.030844837068457386,
+      "trace_id": "ebd646d5-9596-4283-8010-1df4e35ba291"
+    },
+    "timed_out": false,
+    "swept_min_m": 0.470298,
+    "speed_bound_min_m": 0.466157,
+    "raw_min_m": 0.470333,
+    "sensor_hits": null,
+    "map_marks": null,
+    "stop": null,
+    "zero": null,
+    "rest": null,
+    "resumptions": null,
+    "retries": null,
+    "goal_error": null,
+    "planner_interval_verified": null,
+    "insert_requested": null,
+    "insert_confirmed": null,
+    "plans": [
+      {
+        "t": 3.808,
+        "points": 134,
+        "published_yaw": {
+          "sample_min_m": 0.01051,
+          "swept_lower_bound_m": 0.005596,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.115444,
+            -0.834121,
+            -2.034444
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.030713,
+          "swept_lower_bound_m": 0.025761,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.128093,
+            -1.137841,
+            -1.268759
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.023112,
+          "swept_lower_bound_m": 0.01816,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.135648,
+            -1.140695,
+            -1.268774
+          ]
+        }
+      },
+      {
+        "t": 4.764,
+        "points": 134,
+        "published_yaw": {
+          "sample_min_m": 0.098348,
+          "swept_lower_bound_m": 0.093359,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.027606,
+            -0.809198,
+            -2.034444
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.155015,
+          "swept_lower_bound_m": 0.150066,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.027606,
+            -0.809198,
+            -1.780878
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.147461,
+          "swept_lower_bound_m": 0.142512,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.035156,
+            -0.812053,
+            -1.780893
+          ]
+        }
+      },
+      {
+        "t": 6.5,
+        "points": 132,
+        "published_yaw": {
+          "sample_min_m": 0.027254,
+          "swept_lower_bound_m": 0.022304,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.099553,
+            -0.727765,
+            -2.034444
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.060711,
+          "swept_lower_bound_m": 0.055719,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.084837,
+            -0.696462,
+            -1.931122
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.05316,
+          "swept_lower_bound_m": 0.048167,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.092385,
+            -0.699316,
+            -1.931137
+          ]
+        }
+      }
+    ],
+    "worst_local_m": null,
+    "dwb_evaluations": 0,
+    "dwb_rejected": null,
+    "transitions": [
+      {
+        "t": 3.85,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 3.85,
+        "reason": "invalid_global",
+        "generation": {
+          "grid": 6,
+          "global": 1
+        },
+        "hold_since": 3.85,
+        "global_plan_stamp": 3.8040000000000003,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.050000000000000266,
+          "scan": 0.021999999999999797,
+          "odom": 0.010000000000000231,
+          "grid": 0.3780000000000001,
+          "global": 0.9199999999999999,
+          "plan": 0.04599999999999982,
+          "command": 0.02400000000000002
+        }
+      },
+      {
+        "t": 3.9,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 3.9000000000000004,
+        "reason": null,
+        "generation": {
+          "grid": 6,
+          "global": 1
+        },
+        "hold_since": 3.85,
+        "global_plan_stamp": 3.8040000000000003,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.10000000000000053,
+          "scan": 0.07200000000000006,
+          "odom": 0.020000000000000462,
+          "grid": 0.4280000000000004,
+          "global": 0.9700000000000002,
+          "plan": 0.09600000000000009,
+          "command": 0.01200000000000001
+        }
+      },
+      {
+        "t": 3.948,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 3.95,
+        "reason": null,
+        "generation": {
+          "grid": 6,
+          "global": 1
+        },
+        "hold_since": 3.85,
+        "global_plan_stamp": 3.8040000000000003,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.15000000000000036,
+          "scan": 0.05400000000000027,
+          "odom": 0.010000000000000231,
+          "grid": 0.4780000000000002,
+          "global": 1.02,
+          "plan": 0.1459999999999999,
+          "command": 0.028000000000000025
+        }
+      },
+      {
+        "t": 4.848,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 4.8500000000000005,
+        "reason": null,
+        "generation": {
+          "grid": 8,
+          "global": 2
+        },
+        "hold_since": 3.85,
+        "global_plan_stamp": 4.76,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.2500000000000009,
+          "scan": 0.03200000000000092,
+          "odom": 0.010000000000000675,
+          "grid": 0.27200000000000024,
+          "global": 0.03200000000000092,
+          "plan": 0.09000000000000075,
+          "command": 0.010000000000000675
+        }
+      },
+      {
+        "t": 4.914,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 4.9,
+        "reason": null,
+        "generation": {
+          "grid": 8,
+          "global": 2
+        },
+        "hold_since": 3.85,
+        "global_plan_stamp": 4.76,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.3000000000000007,
+          "scan": 0.014000000000000234,
+          "odom": 0.020000000000000462,
+          "grid": 0.32200000000000006,
+          "global": 0.08200000000000074,
+          "plan": 0.14000000000000057,
+          "command": 0.038000000000000256
+        }
+      },
+      {
+        "t": 6.55,
+        "kind": "guard",
+        "state": "PATH_VALIDATION",
+        "sim_time": 6.550000000000001,
+        "reason": null,
+        "generation": {
+          "grid": 11,
+          "global": 2
+        },
+        "hold_since": 3.85,
+        "global_plan_stamp": 6.5,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.15000000000000036,
+          "scan": 0.016000000000000902,
+          "odom": 0.010000000000000675,
+          "grid": 0.20400000000000063,
+          "global": 1.732000000000001,
+          "plan": 0.05000000000000071,
+          "command": 0.018000000000000682
+        }
+      },
+      {
+        "t": 15.85,
+        "kind": "guard",
+        "state": "RECOVERY_EXPIRED",
+        "sim_time": 15.850000000000001,
+        "reason": null,
+        "generation": {
+          "grid": 27,
+          "global": 7
+        },
+        "hold_since": 3.85,
+        "global_plan_stamp": 6.5,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.07400000000000162,
+          "odom": 0.010000000000001563,
+          "grid": 0.20400000000000063,
+          "global": 1.352000000000002,
+          "plan": 9.350000000000001,
+          "command": 0.008000000000000895
+        }
+      }
+    ],
+    "interrupt": null,
+    "idle": {
+      "command_graph": {
+        "cmd_vel_nav": {
+          "publishers": [
+            "controller_server",
+            "behavior_server",
+            "behavior_server",
+            "behavior_server"
+          ],
+          "subscribers": [
+            "dynamic_braking_guard"
+          ]
+        },
+        "cmd_vel_guarded_nav": {
+          "publishers": [
+            "dynamic_braking_guard"
+          ],
+          "subscribers": [
+            "cmd_vel_mux"
+          ]
+        },
+        "cmd_vel_mux": {
+          "publishers": [
+            "cmd_vel_mux"
+          ],
+          "subscribers": [
+            "idle_zero_observer",
+            "velocity_smoother"
+          ]
+        },
+        "cmd_vel_smoothed": {
+          "publishers": [
+            "velocity_smoother"
+          ],
+          "subscribers": [
+            "idle_zero_observer",
+            "collision_monitor"
+          ]
+        },
+        "cmd_vel_safe": {
+          "publishers": [
+            "collision_monitor"
+          ],
+          "subscribers": [
+            "gracemo_terrain_monitor"
+          ]
+        },
+        "cmd_vel": {
+          "publishers": [
+            "gracemo_terrain_monitor"
+          ],
+          "subscribers": [
+            "gracemo_sensor_bridge",
+            "idle_zero_observer"
+          ]
+        }
+      },
+      "passed": true,
+      "discovery_complete": true,
+      "duration_s": 3,
+      "samples": {
+        "cmd_vel": 60,
+        "cmd_vel_mux": 52,
+        "cmd_vel_smoothed": 60
+      },
+      "peak": {
+        "cmd_vel": 0.0,
+        "cmd_vel_mux": 0.0,
+        "cmd_vel_smoothed": 0.0
+      },
+      "mux_state": {
+        "active_source": "NONE",
+        "teleop_active": false,
+        "rl_active": false,
+        "nav_active": false,
+        "teleop_age_sec": null,
+        "rl_age_sec": null,
+        "nav_age_sec": 6.95,
+        "zero_command_held": true,
+        "current_linear_x": 0.0,
+        "current_angular_z": 0.0
+      },
+      "odom_displacement_m": 0.00708343646146204
+    },
+    "estop": {
+      "result": "FAIL",
+      "scope": "Gazebo only",
+      "goal": {
+        "x": 4.5,
+        "y": 3.0
+      },
+      "checks": {},
+      "state": "NAVIGATION_FAILURE",
+      "error": "Gazebo sensors, Nav2, terrain monitor, or coordinator were not ready",
+      "estop_active": null,
+      "state_history": []
+    },
+    "latch_idle": null,
+    "shutdown": null,
+    "after_coordinator_restart": null,
+    "after_nav_restart": null,
+    "fixture_actor_aborted": false,
+    "gazebo_shutdown_escalated": true,
+    "fixture_cleanup": "no inserted obstacle",
+    "scenario_id": "patrol_ns",
+    "obstacle_trajectory": [],
+    "collision_creation_s": null,
+    "first_observable_s": null,
+    "recovery_attempts": 1,
+    "controller_deadline_warnings": 0,
+    "waypoint_dispatches": [
+      "[coordinator_node.py-19] [INFO] [1795288644.810851151] [gracemo_command_coordinator]: \ud83d\udd04 [FSM Transition] MISSION_ACCEPTED \u2794 MISSION_PLANNING | Reason: Planning path to waypoint 1/11: Kitchen & Dining doorway staging"
+    ],
+    "geometry": {
+      "sample_min_m": 0.470333,
+      "swept_lower_bound_m": 0.470298,
+      "obstacle": "hall_south_middle",
+      "pose": [
+        -0.037584,
+        -0.030323,
+        -0.148275
+      ],
+      "raw_pose_min_m": 0.470333,
+      "speed_bound_min_m": 0.466157
+    },
+    "build": "default CMake flags",
+    "active_profile": "drift settling and integer nanosecond rollout age"
+  },
+  {
+    "run": "patrol_optimized",
+    "scenario": {
+      "index": 0,
+      "seed": 42,
+      "kind": "patrol",
+      "box": null,
+      "goal": null,
+      "min_robot_x": 0.23494998392273192,
+      "min_plan_count": 1,
+      "crossing_speed": 0.0,
+      "initial_pose": [
+        0,
+        0,
+        0
+      ],
+      "world": "apartment_floor.world",
+      "level": 1,
+      "planner_cell_margin": true,
+      "approach": true,
+      "rectangular_guard": true,
+      "clearance_recovery": true,
+      "dense_truth": true,
+      "master_recovery": true,
+      "doorway_trial": true,
+      "govern_speed": true,
+      "swept_critic": true
+    },
+    "verdict": "FAIL",
+    "run_exit": null,
+    "mission_id": "standalone-c1ff2510-9f42-4ef4-935a-b9f5e402af7f",
+    "trace_id": "3f24bd02-fb57-4413-a41a-a083e71ada59",
+    "correlated": true,
+    "coordinator": {
+      "mission_id": "standalone-c1ff2510-9f42-4ef4-935a-b9f5e402af7f",
+      "name": "Standalone apartment patrol",
+      "success": false,
+      "status": "FAILED",
+      "reason": "Recovery deadline expired without a validated route",
+      "waypoints_completed": 0,
+      "total_waypoints": 11,
+      "duration_sec": 45.1,
+      "end_pose": {
+        "x": -4.76,
+        "y": -0.44
+      },
+      "timestamp": 1795288923.5372562
+    },
+    "kernel": {
+      "state": "NAVIGATION_FAILURE",
+      "previous_state": "MISSION_EXECUTING",
+      "reason": "Mission incomplete: Recovery deadline expired without a validated route",
+      "mission_id": "standalone-c1ff2510-9f42-4ef4-935a-b9f5e402af7f",
+      "mission_name": "Standalone apartment patrol",
+      "x": -4.763323152868308,
+      "y": -0.4473109658520385,
+      "trace_id": "3f24bd02-fb57-4413-a41a-a083e71ada59"
+    },
+    "timed_out": false,
+    "swept_min_m": 0.150651,
+    "speed_bound_min_m": 0.148629,
+    "raw_min_m": 0.152836,
+    "sensor_hits": null,
+    "map_marks": null,
+    "stop": null,
+    "zero": null,
+    "rest": null,
+    "resumptions": null,
+    "retries": null,
+    "goal_error": null,
+    "planner_interval_verified": null,
+    "insert_requested": null,
+    "insert_confirmed": null,
+    "plans": [
+      {
+        "t": 3.504,
+        "points": 131,
+        "published_yaw": {
+          "sample_min_m": 0.0921,
+          "swept_lower_bound_m": 0.087198,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.044984,
+            -0.689252,
+            -1.989575
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.124841,
+          "swept_lower_bound_m": 0.119841,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.033172,
+            -0.657163,
+            -1.876331
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.117556,
+          "swept_lower_bound_m": 0.112556,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.04038,
+            -0.659886,
+            -1.876346
+          ]
+        }
+      },
+      {
+        "t": 11.978,
+        "points": 117,
+        "published_yaw": {
+          "sample_min_m": 0.11995,
+          "swept_lower_bound_m": 0.114974,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.015142,
+            -0.689797,
+            -2.004531
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.151159,
+          "swept_lower_bound_m": 0.146185,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.004093,
+            -0.662153,
+            -1.888016
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.116151,
+          "swept_lower_bound_m": 0.111178,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.044015,
+            -0.65118,
+            -1.867862
+          ]
+        }
+      },
+      {
+        "t": 25.72,
+        "points": 37,
+        "published_yaw": {
+          "sample_min_m": 0.147141,
+          "swept_lower_bound_m": 0.142152,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.978813,
+            -0.751155,
+            -2.034444
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.202475,
+          "swept_lower_bound_m": 0.197562,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.958319,
+            -0.68337,
+            4.418792
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.174529,
+          "swept_lower_bound_m": 0.169616,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.996061,
+            -0.628124,
+            4.456001
+          ]
+        }
+      },
+      {
+        "t": 30.804,
+        "points": 22,
+        "published_yaw": {
+          "sample_min_m": 0.084358,
+          "swept_lower_bound_m": 0.079447,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.045797,
+            -0.96082,
+            -2.034444
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.137063,
+          "swept_lower_bound_m": 0.132154,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.0168,
+            -0.871809,
+            -1.893731
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.142765,
+          "swept_lower_bound_m": 0.137856,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.019827,
+            -0.834218,
+            -1.857052
+          ]
+        }
+      }
+    ],
+    "worst_local_m": {
+      "sample_min_m": 0.07207,
+      "swept_lower_bound_m": 0.067736,
+      "obstacle": "hall_south_west",
+      "pose": [
+        -5.048732,
+        -0.807584,
+        -2.067111
+      ]
+    },
+    "dwb_evaluations": 220,
+    "dwb_rejected": 47965,
+    "transitions": [
+      {
+        "t": 3.558,
+        "kind": "guard",
+        "state": "NAVIGATING",
+        "sim_time": 3.5500000000000003,
+        "reason": null,
+        "generation": {
+          "grid": 6,
+          "global": 1
+        },
+        "hold_since": null,
+        "global_plan_stamp": 3.5,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.15000000000000036,
+          "scan": 0.050000000000000266,
+          "odom": 0.010000000000000231,
+          "grid": 0.1860000000000004,
+          "global": 0.9080000000000004,
+          "plan": 0.050000000000000266,
+          "command": 0.006000000000000227
+        }
+      },
+      {
+        "t": 9.65,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 9.65,
+        "reason": "invalid_rollout",
+        "generation": {
+          "grid": 16,
+          "global": 4
+        },
+        "hold_since": 9.65,
+        "global_plan_stamp": 3.5,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.014000000000001123,
+          "odom": 0.009999999999999787,
+          "grid": 0.548,
+          "global": 1.2840000000000007,
+          "plan": 6.15,
+          "command": 0.02800000000000047
+        }
+      },
+      {
+        "t": 9.7,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 9.700000000000001,
+        "reason": null,
+        "generation": {
+          "grid": 17,
+          "global": 4
+        },
+        "hold_since": 9.65,
+        "global_plan_stamp": 3.5,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.06400000000000183,
+          "odom": 0.02000000000000135,
+          "grid": 0.01600000000000179,
+          "global": 1.3340000000000014,
+          "plan": 6.200000000000001,
+          "command": 0.030000000000001137
+        }
+      },
+      {
+        "t": 9.9,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 9.9,
+        "reason": null,
+        "generation": {
+          "grid": 17,
+          "global": 4
+        },
+        "hold_since": 9.65,
+        "global_plan_stamp": 3.5,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.09999999999999964,
+          "scan": 0.06600000000000072,
+          "odom": 0.019999999999999574,
+          "grid": 0.21600000000000108,
+          "global": 1.5340000000000007,
+          "plan": 6.4,
+          "command": 0.03599999999999959
+        }
+      },
+      {
+        "t": 10.3,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 10.3,
+        "reason": null,
+        "generation": {
+          "grid": 18,
+          "global": 5
+        },
+        "hold_since": 9.65,
+        "global_plan_stamp": 3.5,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.07000000000000028,
+          "odom": 0.0,
+          "grid": 0.040000000000000924,
+          "global": 0.02000000000000135,
+          "plan": 6.800000000000001,
+          "command": 0.0
+        }
+      },
+      {
+        "t": 10.364,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 10.350000000000001,
+        "reason": null,
+        "generation": {
+          "grid": 18,
+          "global": 5
+        },
+        "hold_since": 9.65,
+        "global_plan_stamp": 3.5,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.15000000000000213,
+          "scan": 0.05200000000000138,
+          "odom": 0.010000000000001563,
+          "grid": 0.09000000000000163,
+          "global": 0.07000000000000206,
+          "plan": 6.850000000000001,
+          "command": 0.02200000000000024
+        }
+      },
+      {
+        "t": 12.0,
+        "kind": "guard",
+        "state": "PATH_VALIDATION",
+        "sim_time": 12.0,
+        "reason": null,
+        "generation": {
+          "grid": 21,
+          "global": 5
+        },
+        "hold_since": 9.65,
+        "global_plan_stamp": 11.974,
+        "local_rollout_stamp": null,
+        "ages": {
+          "depth": 0.1999999999999993,
+          "scan": 0.05400000000000027,
+          "odom": 0.019999999999999574,
+          "grid": 0.0519999999999996,
+          "global": 1.7200000000000006,
+          "plan": 0.0259999999999998,
+          "command": 1.596
+        }
+      },
+      {
+        "t": 14.808,
+        "kind": "guard",
+        "state": "RESUMING",
+        "sim_time": 14.850000000000001,
+        "reason": null,
+        "generation": {
+          "grid": 26,
+          "global": 7
+        },
+        "hold_since": null,
+        "global_plan_stamp": 11.974,
+        "local_rollout_stamp": 14.8,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.06400000000000183,
+          "odom": 0.010000000000001563,
+          "grid": 0.04800000000000182,
+          "global": 0.870000000000001,
+          "plan": 2.8760000000000012,
+          "command": 0.02800000000000047,
+          "rollout": 0.05000000000000071
+        }
+      },
+      {
+        "t": 15.022,
+        "kind": "guard",
+        "state": "NAVIGATING",
+        "sim_time": 14.9,
+        "reason": null,
+        "generation": {
+          "grid": 26,
+          "global": 7
+        },
+        "hold_since": null,
+        "global_plan_stamp": 11.974,
+        "local_rollout_stamp": 14.84,
+        "ages": {
+          "depth": 0.09999999999999964,
+          "scan": 0.05000000000000071,
+          "odom": 0.019999999999999574,
+          "grid": 0.09800000000000075,
+          "global": 0.9199999999999999,
+          "plan": 2.926,
+          "command": 0.03200000000000003,
+          "rollout": 0.0600000000000005
+        }
+      },
+      {
+        "t": 22.696,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 22.700000000000003,
+        "reason": "stale_observations",
+        "generation": {
+          "grid": 38,
+          "global": 12
+        },
+        "hold_since": 22.700000000000003,
+        "global_plan_stamp": 11.974,
+        "local_rollout_stamp": 22.62,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.062000000000001165,
+          "odom": 0.020000000000003126,
+          "grid": 1.1800000000000033,
+          "global": 0.28000000000000114,
+          "plan": 10.726000000000003,
+          "command": 0.030000000000001137,
+          "rollout": 0.08000000000000185
+        }
+      },
+      {
+        "t": 22.802,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 22.75,
+        "reason": null,
+        "generation": {
+          "grid": 39,
+          "global": 12
+        },
+        "hold_since": 22.700000000000003,
+        "global_plan_stamp": 11.974,
+        "local_rollout_stamp": 22.7,
+        "ages": {
+          "depth": 0.14999999999999858,
+          "scan": 0.045999999999999375,
+          "odom": 0.010000000000001563,
+          "grid": 0.045999999999999375,
+          "global": 0.3299999999999983,
+          "plan": 10.776,
+          "command": 0.00999999999999801,
+          "rollout": 0.05000000000000071
+        }
+      },
+      {
+        "t": 23.1,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 23.1,
+        "reason": null,
+        "generation": {
+          "grid": 39,
+          "global": 12
+        },
+        "hold_since": 22.700000000000003,
+        "global_plan_stamp": 11.974,
+        "local_rollout_stamp": 23.06,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.0660000000000025,
+          "odom": 0.020000000000003126,
+          "grid": 0.3960000000000008,
+          "global": 0.6799999999999997,
+          "plan": 11.126000000000001,
+          "command": 0.004000000000001336,
+          "rollout": 0.0400000000000027
+        }
+      },
+      {
+        "t": 24.18,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 24.150000000000002,
+        "reason": null,
+        "generation": {
+          "grid": 41,
+          "global": 13
+        },
+        "hold_since": 22.700000000000003,
+        "global_plan_stamp": 11.974,
+        "local_rollout_stamp": 24.1,
+        "ages": {
+          "depth": 0.15000000000000213,
+          "scan": 0.05800000000000338,
+          "odom": 0.010000000000001563,
+          "grid": 0.35400000000000276,
+          "global": 0.0020000000000024443,
+          "plan": 12.176000000000002,
+          "command": 0.02400000000000091,
+          "rollout": 0.05000000000000071
+        }
+      },
+      {
+        "t": 24.29,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 24.200000000000003,
+        "reason": null,
+        "generation": {
+          "grid": 41,
+          "global": 13
+        },
+        "hold_since": 22.700000000000003,
+        "global_plan_stamp": 11.974,
+        "local_rollout_stamp": 24.14,
+        "ages": {
+          "depth": 0.20000000000000284,
+          "scan": 0.044000000000004036,
+          "odom": 0.020000000000003126,
+          "grid": 0.40400000000000347,
+          "global": 0.052000000000003155,
+          "plan": 12.226000000000003,
+          "command": 0.03200000000000003,
+          "rollout": 0.060000000000002274
+        }
+      },
+      {
+        "t": 25.75,
+        "kind": "guard",
+        "state": "PATH_VALIDATION",
+        "sim_time": 25.75,
+        "reason": null,
+        "generation": {
+          "grid": 44,
+          "global": 13
+        },
+        "hold_since": 22.700000000000003,
+        "global_plan_stamp": 25.712,
+        "local_rollout_stamp": 24.18,
+        "ages": {
+          "depth": 0.14999999999999858,
+          "scan": 0.010000000000001563,
+          "odom": 0.010000000000001563,
+          "grid": 0.31200000000000117,
+          "global": 1.6020000000000003,
+          "plan": 0.038000000000000256,
+          "command": 1.5259999999999998,
+          "rollout": 1.5700000000000003
+        }
+      },
+      {
+        "t": 25.888,
+        "kind": "guard",
+        "state": "RESUMING",
+        "sim_time": 25.8,
+        "reason": null,
+        "generation": {
+          "grid": 44,
+          "global": 13
+        },
+        "hold_since": null,
+        "global_plan_stamp": 25.712,
+        "local_rollout_stamp": 25.72,
+        "ages": {
+          "depth": 0.1999999999999993,
+          "scan": 0.060000000000002274,
+          "odom": 0.019999999999999574,
+          "grid": 0.3620000000000019,
+          "global": 1.652000000000001,
+          "plan": 0.08800000000000097,
+          "command": 0.03599999999999781,
+          "rollout": 0.08000000000000185
+        }
+      },
+      {
+        "t": 25.996,
+        "kind": "guard",
+        "state": "NAVIGATING",
+        "sim_time": 25.85,
+        "reason": null,
+        "generation": {
+          "grid": 44,
+          "global": 14
+        },
+        "hold_since": null,
+        "global_plan_stamp": 25.712,
+        "local_rollout_stamp": 25.8,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.04400000000000048,
+          "odom": 0.010000000000001563,
+          "grid": 0.4120000000000026,
+          "global": 0.04400000000000048,
+          "plan": 0.13800000000000168,
+          "command": 0.013999999999999346,
+          "rollout": 0.05000000000000071
+        }
+      },
+      {
+        "t": 27.55,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 27.508000000000003,
+        "reason": "invalid_rollout",
+        "generation": {
+          "grid": 47,
+          "global": 15
+        },
+        "hold_since": 27.508000000000003,
+        "global_plan_stamp": 25.712,
+        "local_rollout_stamp": 27.32,
+        "ages": {
+          "depth": 0.10800000000000409,
+          "scan": 0.052000000000003155,
+          "odom": 0.008000000000002672,
+          "grid": 0.37400000000000233,
+          "global": 0.012000000000004007,
+          "plan": 1.796000000000003,
+          "command": 0.08999999999999986,
+          "rollout": 0.1880000000000024
+        }
+      },
+      {
+        "t": 27.702,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 27.55,
+        "reason": null,
+        "generation": {
+          "grid": 47,
+          "global": 15
+        },
+        "hold_since": 27.508000000000003,
+        "global_plan_stamp": 25.712,
+        "local_rollout_stamp": 27.4,
+        "ages": {
+          "depth": 0.15000000000000213,
+          "scan": 0.028000000000002245,
+          "odom": 0.010000000000001563,
+          "grid": 0.41600000000000037,
+          "global": 0.054000000000002046,
+          "plan": 1.838000000000001,
+          "command": 0.038000000000000256,
+          "rollout": 0.15000000000000213
+        }
+      },
+      {
+        "t": 27.854,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 27.85,
+        "reason": null,
+        "generation": {
+          "grid": 48,
+          "global": 15
+        },
+        "hold_since": 27.508000000000003,
+        "global_plan_stamp": 25.712,
+        "local_rollout_stamp": 27.7,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.062000000000001165,
+          "odom": 0.010000000000001563,
+          "grid": 0.13600000000000279,
+          "global": 0.35400000000000276,
+          "plan": 2.1380000000000017,
+          "command": 0.05000000000000071,
+          "rollout": 0.15000000000000213
+        }
+      },
+      {
+        "t": 29.32,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 29.252000000000002,
+        "reason": null,
+        "generation": {
+          "grid": 50,
+          "global": 16
+        },
+        "hold_since": 27.508000000000003,
+        "global_plan_stamp": 25.712,
+        "local_rollout_stamp": 29.1,
+        "ages": {
+          "depth": 0.052000000000003155,
+          "scan": 0.07800000000000296,
+          "odom": 0.012000000000004007,
+          "grid": 0.2380000000000031,
+          "global": 0.012000000000004007,
+          "plan": 3.5400000000000027,
+          "command": 0.060000000000002274,
+          "rollout": 0.15200000000000102
+        }
+      },
+      {
+        "t": 29.472,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 29.3,
+        "reason": null,
+        "generation": {
+          "grid": 50,
+          "global": 16
+        },
+        "hold_since": 27.508000000000003,
+        "global_plan_stamp": 25.712,
+        "local_rollout_stamp": 29.18,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.062000000000001165,
+          "odom": 0.019999999999999574,
+          "grid": 0.28600000000000136,
+          "global": 0.060000000000002274,
+          "plan": 3.588000000000001,
+          "command": 0.013999999999999346,
+          "rollout": 0.120000000000001
+        }
+      },
+      {
+        "t": 30.848,
+        "kind": "guard",
+        "state": "PATH_VALIDATION",
+        "sim_time": 30.85,
+        "reason": null,
+        "generation": {
+          "grid": 53,
+          "global": 16
+        },
+        "hold_since": 27.508000000000003,
+        "global_plan_stamp": 30.808,
+        "local_rollout_stamp": 29.28,
+        "ages": {
+          "depth": 0.05000000000000071,
+          "scan": 0.028000000000002245,
+          "odom": 0.010000000000001563,
+          "grid": 0.10800000000000054,
+          "global": 1.610000000000003,
+          "plan": 0.04200000000000159,
+          "command": 0.0019999999999988916,
+          "rollout": 1.5700000000000003
+        }
+      },
+      {
+        "t": 32.188,
+        "kind": "guard",
+        "state": "RESUMING",
+        "sim_time": 32.050000000000004,
+        "reason": null,
+        "generation": {
+          "grid": 55,
+          "global": 17
+        },
+        "hold_since": null,
+        "global_plan_stamp": 30.808,
+        "local_rollout_stamp": 31.92,
+        "ages": {
+          "depth": 0.05000000000000426,
+          "scan": 0.04000000000000625,
+          "odom": 0.010000000000005116,
+          "grid": 0.16600000000000392,
+          "global": 0.9200000000000053,
+          "plan": 1.2420000000000044,
+          "command": 0.008000000000002672,
+          "rollout": 0.13000000000000256
+        }
+      },
+      {
+        "t": 32.286,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 32.1,
+        "reason": "invalid_rollout",
+        "generation": {
+          "grid": 55,
+          "global": 17
+        },
+        "hold_since": 32.1,
+        "global_plan_stamp": 30.808,
+        "local_rollout_stamp": 31.92,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.021999999999998465,
+          "odom": 0.020000000000003126,
+          "grid": 0.21600000000000108,
+          "global": 0.9700000000000024,
+          "plan": 1.2920000000000016,
+          "command": 0.05799999999999983,
+          "rollout": 0.17999999999999972
+        }
+      },
+      {
+        "t": 32.42,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 32.15,
+        "reason": null,
+        "generation": {
+          "grid": 55,
+          "global": 17
+        },
+        "hold_since": 32.1,
+        "global_plan_stamp": 30.808,
+        "local_rollout_stamp": 32.04,
+        "ages": {
+          "depth": 0.14999999999999858,
+          "scan": 0.07199999999999562,
+          "odom": 0.00999999999999801,
+          "grid": 0.26599999999999824,
+          "global": 1.0199999999999996,
+          "plan": 1.3419999999999987,
+          "command": 0.021999999999998465,
+          "rollout": 0.10999999999999943
+        }
+      },
+      {
+        "t": 32.58,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 32.300000000000004,
+        "reason": null,
+        "generation": {
+          "grid": 55,
+          "global": 17
+        },
+        "hold_since": 32.1,
+        "global_plan_stamp": 30.808,
+        "local_rollout_stamp": 32.2,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.02400000000000091,
+          "odom": 0.020000000000003126,
+          "grid": 0.4160000000000039,
+          "global": 1.1700000000000053,
+          "plan": 1.4920000000000044,
+          "command": 0.010000000000005116,
+          "rollout": 0.10000000000000142
+        }
+      },
+      {
+        "t": 33.09,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 33.050000000000004,
+        "reason": null,
+        "generation": {
+          "grid": 56,
+          "global": 18
+        },
+        "hold_since": 32.1,
+        "global_plan_stamp": 30.808,
+        "local_rollout_stamp": 32.9,
+        "ages": {
+          "depth": 0.05000000000000426,
+          "scan": 0.05000000000000426,
+          "odom": 0.010000000000005116,
+          "grid": 0.5840000000000032,
+          "global": 0.02200000000000557,
+          "plan": 2.2420000000000044,
+          "command": 0.054000000000002046,
+          "rollout": 0.15000000000000568
+        }
+      },
+      {
+        "t": 33.23,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 33.1,
+        "reason": null,
+        "generation": {
+          "grid": 57,
+          "global": 18
+        },
+        "hold_since": 32.1,
+        "global_plan_stamp": 30.808,
+        "local_rollout_stamp": 32.98,
+        "ages": {
+          "depth": 0.10000000000000142,
+          "scan": 0.03200000000000358,
+          "odom": 0.020000000000003126,
+          "grid": 0.021999999999998465,
+          "global": 0.07200000000000273,
+          "plan": 2.2920000000000016,
+          "command": 0.021999999999998465,
+          "rollout": 0.12000000000000455
+        }
+      },
+      {
+        "t": 44.238,
+        "kind": "guard",
+        "state": "RECOVERY_EXPIRED",
+        "sim_time": 44.152,
+        "reason": null,
+        "generation": {
+          "grid": 76,
+          "global": 24
+        },
+        "hold_since": 32.1,
+        "global_plan_stamp": 30.808,
+        "local_rollout_stamp": 44.04,
+        "ages": {
+          "depth": 0.15200000000000102,
+          "scan": 0.06199999999999761,
+          "odom": 0.012000000000000455,
+          "grid": 0.2539999999999978,
+          "global": 0.012000000000000455,
+          "plan": 13.344000000000001,
+          "command": 0.0,
+          "rollout": 0.11200000000000188
+        }
+      }
+    ],
+    "interrupt": null,
+    "idle": {
+      "command_graph": {
+        "cmd_vel_nav": {
+          "publishers": [
+            "controller_server",
+            "behavior_server",
+            "behavior_server",
+            "behavior_server"
+          ],
+          "subscribers": [
+            "dynamic_braking_guard"
+          ]
+        },
+        "cmd_vel_guarded_nav": {
+          "publishers": [
+            "dynamic_braking_guard"
+          ],
+          "subscribers": [
+            "cmd_vel_mux"
+          ]
+        },
+        "cmd_vel_mux": {
+          "publishers": [
+            "cmd_vel_mux"
+          ],
+          "subscribers": [
+            "velocity_smoother",
+            "idle_zero_observer"
+          ]
+        },
+        "cmd_vel_smoothed": {
+          "publishers": [
+            "velocity_smoother"
+          ],
+          "subscribers": [
+            "collision_monitor",
+            "idle_zero_observer"
+          ]
+        },
+        "cmd_vel_safe": {
+          "publishers": [
+            "collision_monitor"
+          ],
+          "subscribers": [
+            "gracemo_terrain_monitor"
+          ]
+        },
+        "cmd_vel": {
+          "publishers": [
+            "gracemo_terrain_monitor"
+          ],
+          "subscribers": [
+            "gracemo_sensor_bridge",
+            "idle_zero_observer"
+          ]
+        }
+      },
+      "passed": true,
+      "discovery_complete": true,
+      "duration_s": 3,
+      "samples": {
+        "cmd_vel": 64,
+        "cmd_vel_mux": 58,
+        "cmd_vel_smoothed": 60
+      },
+      "peak": {
+        "cmd_vel": 0.0,
+        "cmd_vel_mux": 0.0,
+        "cmd_vel_smoothed": 0.0
+      },
+      "mux_state": {
+        "active_source": "NONE",
+        "teleop_active": false,
+        "rl_active": false,
+        "nav_active": false,
+        "teleop_age_sec": null,
+        "rl_age_sec": null,
+        "nav_age_sec": 6.8,
+        "zero_command_held": true,
+        "current_linear_x": 0.0,
+        "current_angular_z": 0.0
+      },
+      "odom_displacement_m": 0.00719268140841685
+    },
+    "estop": {
+      "result": "FAIL",
+      "scope": "Gazebo only",
+      "goal": {
+        "x": 4.5,
+        "y": 3.0
+      },
+      "checks": {},
+      "state": "NAVIGATION_FAILURE",
+      "error": "Gazebo sensors, Nav2, terrain monitor, or coordinator were not ready",
+      "estop_active": null,
+      "state_history": []
+    },
+    "latch_idle": null,
+    "shutdown": null,
+    "after_coordinator_restart": null,
+    "after_nav_restart": null,
+    "fixture_actor_aborted": false,
+    "gazebo_shutdown_escalated": true,
+    "fixture_cleanup": "no inserted obstacle",
+    "scenario_id": "patrol_optimized",
+    "obstacle_trajectory": [],
+    "collision_creation_s": null,
+    "first_observable_s": null,
+    "recovery_attempts": 4,
+    "controller_deadline_warnings": 175,
+    "waypoint_dispatches": [
+      "[coordinator_node.py-19] [INFO] [1795288878.427026732] [gracemo_command_coordinator]: \ud83d\udd04 [FSM Transition] MISSION_ACCEPTED \u2794 MISSION_PLANNING | Reason: Planning path to waypoint 1/11: Kitchen & Dining doorway staging"
+    ],
+    "geometry": {
+      "sample_min_m": 0.152836,
+      "swept_lower_bound_m": 0.150651,
+      "obstacle": "hall_south_middle",
+      "pose": [
+        -0.894277,
+        -0.336724,
+        -2.95593
+      ],
+      "raw_pose_min_m": 0.152836,
+      "speed_bound_min_m": 0.148629
+    },
+    "build": "Release",
+    "active_profile": "planner cell margin with optimized critic build"
+  },
+  {
+    "run": "patrol_settle",
+    "scenario": {
+      "index": 0,
+      "seed": 42,
+      "kind": "patrol",
+      "box": null,
+      "goal": null,
+      "min_robot_x": 0.23494998392273192,
+      "min_plan_count": 1,
+      "crossing_speed": 0.0,
+      "initial_pose": [
+        0,
+        0,
+        0
+      ],
+      "world": "apartment_floor.world",
+      "level": 1,
+      "approach": true,
+      "rectangular_guard": true,
+      "clearance_recovery": true,
+      "dense_truth": true,
+      "master_recovery": true,
+      "doorway_trial": true,
+      "govern_speed": true,
+      "swept_critic": true
+    },
+    "verdict": "FAIL",
+    "run_exit": null,
+    "mission_id": "standalone-5002573d-6f14-4932-bf17-0e32f706dd23",
+    "trace_id": "30f6384a-644f-4110-848b-870b4f275c59",
+    "correlated": true,
+    "coordinator": {
+      "mission_id": "standalone-5002573d-6f14-4932-bf17-0e32f706dd23",
+      "name": "Standalone apartment patrol",
+      "success": false,
+      "status": "FAILED",
+      "reason": "Recovery deadline expired without a validated route",
+      "waypoints_completed": 0,
+      "total_waypoints": 11,
+      "duration_sec": 32.8,
+      "end_pose": {
+        "x": -4.6,
+        "y": -0.35
+      },
+      "timestamp": 1795288560.1225255
+    },
+    "kernel": {
+      "state": "NAVIGATION_FAILURE",
+      "previous_state": "MISSION_EXECUTING",
+      "reason": "Mission incomplete: Recovery deadline expired without a validated route",
+      "mission_id": "standalone-5002573d-6f14-4932-bf17-0e32f706dd23",
+      "mission_name": "Standalone apartment patrol",
+      "x": -4.620761105474161,
+      "y": -0.358287358870054,
+      "trace_id": "30f6384a-644f-4110-848b-870b4f275c59"
+    },
+    "timed_out": false,
+    "swept_min_m": 0.173956,
+    "speed_bound_min_m": 0.171808,
+    "raw_min_m": 0.176016,
+    "sensor_hits": null,
+    "map_marks": null,
+    "stop": null,
+    "zero": null,
+    "rest": null,
+    "resumptions": null,
+    "retries": null,
+    "goal_error": null,
+    "planner_interval_verified": null,
+    "insert_requested": null,
+    "insert_confirmed": null,
+    "plans": [
+      {
+        "t": 3.73,
+        "points": 134,
+        "published_yaw": {
+          "sample_min_m": 0.177489,
+          "swept_lower_bound_m": 0.172513,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.967079,
+            -0.683744,
+            -1.936071
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.186926,
+          "swept_lower_bound_m": 0.182021,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.961973,
+            -0.669998,
+            -1.916916
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.177135,
+          "swept_lower_bound_m": 0.172231,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -4.971605,
+            -0.673628,
+            -1.916937
+          ]
+        }
+      },
+      {
+        "t": 25.13,
+        "points": 28,
+        "published_yaw": {
+          "sample_min_m": 0.022589,
+          "swept_lower_bound_m": 0.0176,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.103365,
+            -0.786514,
+            -2.034444
+          ]
+        },
+        "tangent": {
+          "sample_min_m": 0.064934,
+          "swept_lower_bound_m": 0.059985,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.074837,
+            -0.71676,
+            -1.959013
+          ]
+        },
+        "tangent_in_odom": {
+          "sample_min_m": 0.039048,
+          "swept_lower_bound_m": 0.034099,
+          "obstacle": "hall_south_west",
+          "pose": [
+            -5.105277,
+            -0.686524,
+            -1.937376
+          ]
+        }
+      }
+    ],
+    "worst_local_m": {
+      "sample_min_m": 0.088081,
+      "swept_lower_bound_m": 0.083116,
+      "obstacle": "hall_south_west",
+      "pose": [
+        -5.037632,
+        -0.855794,
+        -2.035901
+      ]
+    },
+    "dwb_evaluations": 165,
+    "dwb_rejected": 30328,
+    "transitions": [
+      {
+        "t": 3.808,
+        "kind": "guard",
+        "state": "NAVIGATING",
+        "sim_time": 3.8000000000000003,
+        "reason": null,
+        "generation": {
+          "grid": 6,
+          "global": 1
+        },
+        "hold_since": null,
+        "global_plan_stamp": 3.726,
+        "local_rollout_stamp": null,
+        "ages": {
+          "odom": 0.020000000000000018,
+          "scan": 0.038000000000000256,
+          "depth": 0.20000000000000018,
+          "grid": 0.27,
+          "global": 0.9220000000000002,
+          "plan": 0.07400000000000029,
+          "command": 0.03600000000000003
+        }
+      },
+      {
+        "t": 22.136,
+        "kind": "guard",
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 22.05,
+        "reason": "invalid_rollout",
+        "generation": {
+          "grid": 37,
+          "global": 11
+        },
+        "hold_since": 22.05,
+        "global_plan_stamp": 3.726,
+        "local_rollout_stamp": 21.9,
+        "ages": {
+          "odom": 0.010000000000001563,
+          "scan": 0.07000000000000028,
+          "depth": 0.05000000000000071,
+          "grid": 0.5860000000000021,
+          "global": 0.4939999999999998,
+          "plan": 18.324,
+          "command": 0.06400000000000006,
+          "rollout": 0.15000000000000213
+        }
+      },
+      {
+        "t": 22.298000000000002,
+        "kind": "guard",
+        "state": "SAFETY_STOP",
+        "sim_time": 22.1,
+        "reason": null,
+        "generation": {
+          "grid": 38,
+          "global": 11
+        },
+        "hold_since": 22.05,
+        "global_plan_stamp": 3.726,
+        "local_rollout_stamp": 21.98,
+        "ages": {
+          "odom": 0.020000000000003126,
+          "scan": 0.05600000000000094,
+          "depth": 0.10000000000000142,
+          "grid": 0.022000000000002018,
+          "global": 0.5440000000000005,
+          "plan": 18.374000000000002,
+          "command": 0.021999999999998465,
+          "rollout": 0.120000000000001
+        }
+      },
+      {
+        "t": 22.552,
+        "kind": "guard",
+        "state": "COSTMAP_UPDATE",
+        "sim_time": 22.450000000000003,
+        "reason": null,
+        "generation": {
+          "grid": 38,
+          "global": 11
+        },
+        "hold_since": 22.05,
+        "global_plan_stamp": 3.726,
+        "local_rollout_stamp": 22.2,
+        "ages": {
+          "odom": 0.010000000000001563,
+          "scan": 0.07400000000000162,
+          "depth": 0.05000000000000426,
+          "grid": 0.37200000000000344,
+          "global": 0.8940000000000019,
+          "plan": 18.724000000000004,
+          "command": 0.08999999999999986,
+          "rollout": 0.25000000000000355
+        }
+      },
+      {
+        "t": 23.5,
+        "kind": "guard",
+        "state": "ROUTE_REASSESSMENT",
+        "sim_time": 23.450000000000003,
+        "reason": null,
+        "generation": {
+          "grid": 40,
+          "global": 12
+        },
+        "hold_since": 22.05,
+        "global_plan_stamp": 3.726,
+        "local_rollout_stamp": 23.28,
+        "ages": {
+          "odom": 0.010000000000001563,
+          "scan": 0.020000000000003126,
+          "depth": 0.05000000000000426,
+          "grid": 0.2900000000000027,
+          "global": 0.044000000000004036,
+          "plan": 19.724000000000004,
+          "command": 0.022000000000002018,
+          "rollout": 0.1700000000000017
+        }
+      },
+      {
+        "t": 23.622,
+        "kind": "guard",
+        "state": "REPLANNING",
+        "sim_time": 23.5,
+        "reason": null,
+        "generation": {
+          "grid": 40,
+          "global": 12
+        },
+        "hold_since": 22.05,
+        "global_plan_stamp": 3.726,
+        "local_rollout_stamp": 23.28,
+        "ages": {
+          "odom": 0.019999999999999574,
+          "scan": 0.07000000000000028,
+          "depth": 0.10000000000000142,
+          "grid": 0.33999999999999986,
+          "global": 0.0940000000000012,
+          "plan": 19.774,
+          "command": 0.07199999999999918,
+          "rollout": 0.21999999999999886
+        }
+      },
+      {
+        "t": 25.15,
+        "kind": "guard",
+        "state": "PATH_VALIDATION",
+        "sim_time": 25.150000000000002,
+        "reason": null,
+        "generation": {
+          "grid": 43,
+          "global": 12
+        },
+        "hold_since": 22.05,
+        "global_plan_stamp": 25.128,
+        "local_rollout_stamp": 23.42,
+        "ages": {
+          "odom": 0.010000000000001563,
+          "scan": 0.06800000000000139,
+          "depth": 0.15000000000000213,
+          "grid": 0.32200000000000273,
+          "global": 1.7440000000000033,
+          "plan": 0.022000000000002018,
+          "command": 1.5800000000000018,
+          "rollout": 1.7300000000000004
+        }
+      },
+      {
+        "t": 34.152,
+        "kind": "guard",
+        "state": "RECOVERY_EXPIRED",
+        "sim_time": 34.050000000000004,
+        "reason": null,
+        "generation": {
+          "grid": 57,
+          "global": 17
+        },
+        "hold_since": 22.05,
+        "global_plan_stamp": 25.128,
+        "local_rollout_stamp": 33.9,
+        "ages": {
+          "odom": 0.010000000000005116,
+          "scan": 0.058000000000006935,
+          "depth": 0.05000000000000426,
+          "grid": 0.5260000000000034,
+          "global": 1.5380000000000038,
+          "plan": 8.922000000000004,
+          "command": 0.05000000000000426,
+          "rollout": 0.15000000000000568
+        }
+      }
+    ],
+    "interrupt": null,
+    "idle": {
+      "command_graph": {
+        "cmd_vel_nav": {
+          "publishers": [
+            "controller_server",
+            "behavior_server",
+            "behavior_server",
+            "behavior_server"
+          ],
+          "subscribers": [
+            "dynamic_braking_guard"
+          ]
+        },
+        "cmd_vel_guarded_nav": {
+          "publishers": [
+            "dynamic_braking_guard"
+          ],
+          "subscribers": [
+            "cmd_vel_mux"
+          ]
+        },
+        "cmd_vel_mux": {
+          "publishers": [
+            "cmd_vel_mux"
+          ],
+          "subscribers": [
+            "velocity_smoother",
+            "idle_zero_observer"
+          ]
+        },
+        "cmd_vel_smoothed": {
+          "publishers": [
+            "velocity_smoother"
+          ],
+          "subscribers": [
+            "collision_monitor",
+            "idle_zero_observer"
+          ]
+        },
+        "cmd_vel_safe": {
+          "publishers": [
+            "collision_monitor"
+          ],
+          "subscribers": [
+            "gracemo_terrain_monitor"
+          ]
+        },
+        "cmd_vel": {
+          "publishers": [
+            "gracemo_terrain_monitor"
+          ],
+          "subscribers": [
+            "gracemo_sensor_bridge",
+            "idle_zero_observer"
+          ]
+        }
+      },
+      "passed": true,
+      "discovery_complete": true,
+      "duration_s": 3,
+      "samples": {
+        "cmd_vel": 67,
+        "cmd_vel_mux": 58,
+        "cmd_vel_smoothed": 60
+      },
+      "peak": {
+        "cmd_vel": 0.0,
+        "cmd_vel_mux": 0.0,
+        "cmd_vel_smoothed": 0.0
+      },
+      "mux_state": {
+        "active_source": "NONE",
+        "teleop_active": false,
+        "rl_active": false,
+        "nav_active": false,
+        "teleop_age_sec": null,
+        "rl_age_sec": null,
+        "nav_age_sec": 8.55,
+        "zero_command_held": true,
+        "current_linear_x": 0.0,
+        "current_angular_z": 0.0
+      },
+      "odom_displacement_m": 0.007371661523055798
+    },
+    "estop": {
+      "result": "FAIL",
+      "scope": "Gazebo only",
+      "goal": {
+        "x": 4.5,
+        "y": 3.0
+      },
+      "checks": {},
+      "state": "NAVIGATION_FAILURE",
+      "error": "Gazebo sensors, Nav2, terrain monitor, or coordinator were not ready",
+      "estop_active": null,
+      "state_history": []
+    },
+    "latch_idle": null,
+    "shutdown": null,
+    "after_coordinator_restart": null,
+    "after_nav_restart": null,
+    "fixture_actor_aborted": false,
+    "gazebo_shutdown_escalated": true,
+    "fixture_cleanup": "no inserted obstacle",
+    "scenario_id": "patrol_settle",
+    "obstacle_trajectory": [],
+    "collision_creation_s": null,
+    "first_observable_s": null,
+    "recovery_attempts": 1,
+    "controller_deadline_warnings": 103,
+    "waypoint_dispatches": [
+      "[coordinator_node.py-19] [INFO] [1795288527.300034788] [gracemo_command_coordinator]: \ud83d\udd04 [FSM Transition] MISSION_ACCEPTED \u2794 MISSION_PLANNING | Reason: Planning path to waypoint 1/11: Kitchen & Dining doorway staging"
+    ],
+    "geometry": {
+      "sample_min_m": 0.176016,
+      "swept_lower_bound_m": 0.173956,
+      "obstacle": "hall_south_middle",
+      "pose": [
+        -0.631607,
+        -0.31262,
+        -2.952729
+      ],
+      "raw_pose_min_m": 0.176016,
+      "speed_bound_min_m": 0.171808
+    },
+    "build": "default CMake flags",
+    "active_profile": "lattice, directed turn and zero-command drift settling"
+  }
+]

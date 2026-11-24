@@ -1,0 +1,105 @@
+{
+  "case": {
+    "index": 6,
+    "seed": 42,
+    "kind": "beside",
+    "box": [
+      2.0,
+      -0.69,
+      0.359,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      0.0
+    ],
+    "min_robot_x": 0.3374795433316231,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world"
+  },
+  "mission_id": "standalone-794f0f6b-ec10-4b08-8d64-bbdc609b0701",
+  "trace_id": "4c03444a-3800-4469-8c72-1349ff590d78",
+  "matched_terminal": true,
+  "runner_timed_out": false,
+  "goal_within_035m": true,
+  "final_zero_command_window_s": 0.496,
+  "planner_actions": [],
+  "insertion_within_proven_planner_interval": false,
+  "state": "COMPLETED",
+  "kernel_terminal": "MISSION_COMPLETED",
+  "retries": 0,
+  "insert_requested": 5.48,
+  "first_scene_confirmation": 6.074,
+  "last_scene_confirmation": [
+    6.074,
+    2.0,
+    -0.69
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": null,
+  "risk_to_zero_s": null,
+  "risk_to_chassis_stop_s": null,
+  "selected_rollouts_after_insertion": 191,
+  "worst_frozen_rollout_fixture_m": 0.11191,
+  "minimum_scene_interpolated_m": 0.142649,
+  "minimum_fixture_interpolated_m": 0.142649,
+  "sensor_transform_drops": 1,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "depth": 5.8,
+    "scan": 6.402
+  },
+  "first_lethal_marks": {
+    "global_costmap": 6.178,
+    "local_costmap": 6.332
+  },
+  "preexisting_matches": {
+    "local_costmap": 5.146,
+    "depth": 5.4,
+    "global_costmap": 4.644
+  },
+  "first_monitor_action": null,
+  "first_risk_action": null,
+  "monitor_stop": null,
+  "guard_stop": null,
+  "first_final_zero_after_stop_action": null,
+  "sensor_to_local_mark_s": 0.532,
+  "local_mark_to_stop_s": null,
+  "sensor_to_stop_s": null,
+  "peak_linear_speed_until_stop_mps": null,
+  "max_displacement_until_stop_m": null,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": 0.14762,
+  "goal_error_m": 0.19818,
+  "old_and_new_plans": [
+    {
+      "t": 4.518,
+      "points": 178,
+      "frozen_fixture_clearance_m": 0.15704
+    },
+    {
+      "t": 11.804,
+      "points": 41,
+      "frozen_fixture_clearance_m": 0.9486
+    },
+    {
+      "t": 12.76,
+      "points": 23,
+      "frozen_fixture_clearance_m": 1.39539
+    },
+    {
+      "t": 13.732,
+      "points": 13,
+      "frozen_fixture_clearance_m": 1.63906
+    }
+  ],
+  "after_insertion_plan_count": 3,
+  "confirmed_motion_m": 0.0
+}

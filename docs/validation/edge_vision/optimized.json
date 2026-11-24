@@ -1,0 +1,32 @@
+{
+  "frames": 8,
+  "samples": 24,
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "latency_p50_ms": 42.85210799980632,
+  "latency_p95_ms": 51.03300294990731,
+  "peak_rss_delta_kib": 138136,
+  "dataset_sha256": "d4058c1849147993ae744306d777c9e845b5f02733f6354dc4c6ee647a9cdc9e",
+  "detections": {
+    "1": [],
+    "2": [],
+    "3": [
+      [
+        "monitor",
+        0.37774,
+        [
+          271.0,
+          130.0,
+          319.0,
+          236.0
+        ]
+      ]
+    ],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": []
+  }
+}

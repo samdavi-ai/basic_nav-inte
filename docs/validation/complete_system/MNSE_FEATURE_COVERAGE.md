@@ -1,0 +1,5 @@
+# MNSE feature coverage
+
+The probe opened /events/live, posted a synthetic ObjectDetected event through /emit, read /snapshot, /history, /context and /graph, and asked the Gemini MNSEContextProvider for compiled context. The fixture appeared in the adapter response. It restarted the Rust kernel, leaving its SQLite state directory intact, and retrieved the same event and graph object. No adapter wrote to SQLite directly. [Requests, responses and provenance](context_adapter_restart.json)
+
+The isolated kernel previously failed to rebind a stale Unix socket on restart. It now holds an exclusive state-directory lock before reclaiming a stale socket. The live inspector is initialized on startup; persistent history and graph data have separate lifetimes. Room membership, person observation and room exploration have graph handlers. General mission/action/event graph relationships, contradictory observation arbitration and every requested historical filter remain unqualified. /history returns recent rows with a limit capped at 100. [Implementation](../../../kernel/gracemo-kernel/src/api.rs)

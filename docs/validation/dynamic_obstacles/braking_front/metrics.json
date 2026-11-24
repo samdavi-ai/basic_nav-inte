@@ -1,0 +1,166 @@
+{
+  "case": {
+    "index": 0,
+    "seed": 42,
+    "kind": "front",
+    "box": [
+      2.0,
+      -0.4,
+      0.322,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      0.0
+    ],
+    "min_robot_x": 0.23494998392273192,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world"
+  },
+  "mission_id": "standalone-aee14104-1964-4602-bf43-106dc3d7e76b",
+  "trace_id": "89c7ad72-7340-45d2-a733-3f246a0fec84",
+  "matched_terminal": true,
+  "runner_timed_out": false,
+  "goal_within_035m": false,
+  "final_zero_command_window_s": 55.808,
+  "planner_actions": [
+    {
+      "t": 3.678,
+      "kind": "planning_result",
+      "uuid": "a0e09687066af6267a7498c2d52e3951",
+      "accepted": 3.672,
+      "path_stamp": 3.672,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 6.11,
+      "kind": "planning_result",
+      "uuid": "7e62744953516e11001ad8a70d6c34a4",
+      "accepted": 6.104,
+      "path_stamp": 6.104,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 20.51,
+      "kind": "planning_result",
+      "uuid": "35a1282c6cb8b5b4d264f65815ff1590",
+      "accepted": 20.506,
+      "path_stamp": 20.506,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 34.506,
+      "kind": "planning_result",
+      "uuid": "1852b171119e3a32b5b6f07826868757",
+      "accepted": 34.502,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 35.31,
+      "kind": "planning_result",
+      "uuid": "eaac1d40363ad1271223b71e2aad2db5",
+      "accepted": 34.524,
+      "path_stamp": 35.306,
+      "duration": 0.782,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 48.506,
+      "kind": "planning_result",
+      "uuid": "7266205d6ca337183cd1d809b6209749",
+      "accepted": 48.502,
+      "path_stamp": 48.502,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    }
+  ],
+  "insertion_within_proven_planner_interval": false,
+  "state": "FAILED",
+  "kernel_terminal": "NAVIGATION_FAILURE",
+  "retries": 3,
+  "insert_requested": 4.462,
+  "first_scene_confirmation": 4.966,
+  "last_scene_confirmation": [
+    4.966,
+    2.0,
+    -0.4
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": 5.94,
+  "risk_to_zero_s": 0.224,
+  "risk_to_chassis_stop_s": 0.34,
+  "selected_rollouts_after_insertion": 332,
+  "worst_frozen_rollout_fixture_m": -0.07233,
+  "minimum_scene_interpolated_m": 0.297211,
+  "minimum_fixture_interpolated_m": 0.571616,
+  "sensor_transform_drops": 1,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "depth": 4.8
+  },
+  "first_lethal_marks": {
+    "local_costmap": 5.186,
+    "global_costmap": 6.15
+  },
+  "preexisting_matches": {},
+  "first_monitor_action": null,
+  "first_risk_action": 5.6,
+  "monitor_stop": null,
+  "guard_stop": 5.6,
+  "first_final_zero_after_stop_action": 5.824,
+  "sensor_to_local_mark_s": 0.386,
+  "local_mark_to_stop_s": 0.638,
+  "sensor_to_stop_s": 1.024,
+  "peak_linear_speed_until_stop_mps": 0.8933136049316611,
+  "max_displacement_until_stop_m": 0.4896583366351191,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": 0.5765,
+  "goal_error_m": 3.73077,
+  "old_and_new_plans": [
+    {
+      "t": 3.672,
+      "points": 178,
+      "frozen_fixture_clearance_m": -0.13199
+    },
+    {
+      "t": 6.104,
+      "points": 147,
+      "frozen_fixture_clearance_m": 0.0623
+    },
+    {
+      "t": 20.506,
+      "points": 145,
+      "frozen_fixture_clearance_m": 0.05029
+    },
+    {
+      "t": 35.306,
+      "points": 165,
+      "frozen_fixture_clearance_m": 0.02729
+    },
+    {
+      "t": 48.502,
+      "points": 146,
+      "frozen_fixture_clearance_m": 0.07352
+    }
+  ],
+  "after_insertion_plan_count": 4,
+  "confirmed_motion_m": 0.0
+}

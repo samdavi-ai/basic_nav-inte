@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "timed_out": false,
+  "mission_id": "standalone-5c7fb6ab-cee9-4257-a527-baed36b00be7",
+  "trace_id": "3f04d1ad-8ef9-4dc3-a37c-893fcc097368",
+  "rooms": [
+    "Simulation destination"
+  ],
+  "coordinator_result": {
+    "mission_id": "standalone-5c7fb6ab-cee9-4257-a527-baed36b00be7",
+    "name": "Standalone apartment patrol",
+    "success": true,
+    "status": "COMPLETED",
+    "reason": "",
+    "waypoints_completed": 2,
+    "total_waypoints": 2,
+    "duration_sec": 108.6,
+    "end_pose": {
+      "x": -0.0,
+      "y": 0.18
+    },
+    "timestamp": 1795462379.471355
+  },
+  "kernel_result": {
+    "state": "MISSION_COMPLETED",
+    "previous_state": "DESTINATION_REACHED",
+    "reason": "All 2 destinations reached",
+    "mission_id": "standalone-5c7fb6ab-cee9-4257-a527-baed36b00be7",
+    "mission_name": "Standalone apartment patrol",
+    "x": 0.006575173927640459,
+    "y": 0.1811397467164689,
+    "trace_id": "3f04d1ad-8ef9-4dc3-a37c-893fcc097368"
+  },
+  "timestamp": 1795462379.9033203,
+  "receipt": {
+    "action_id": "844062f8-2294-4565-abd1-a4841adfc13a",
+    "active_mission_trace_id": "bc183b04-a7a3-4106-81f7-fe6cd4cac288",
+    "adapter_id": "StandaloneMissionRunner",
+    "adapter_session": "d03008b5-ad3d-469e-8e54-64ebf25fa6c4",
+    "authorization_id": "e7dc81c6-b131-42ab-ab16-7eaef8596b64",
+    "canonical_action": {
+      "action": "StartMission",
+      "params": {
+        "mission_id": "standalone-5c7fb6ab-cee9-4257-a527-baed36b00be7",
+        "mission_name": "Standalone apartment patrol",
+        "waypoints": [
+          {
+            "coords": {
+              "frame_id": "map",
+              "x": 0.0,
+              "y": 0.0,
+              "yaw": 0.0
+            },
+            "dwell_sec": 0.0,
+            "name": "Simulation destination"
+          }
+        ]
+      }
+    },
+    "capability": "StartMission",
+    "expires_at": 1795462275,
+    "issued_at": 1795462270,
+    "issuer": "57aa7a11-afc9-4a40-af46-ae2e75ce4f08",
+    "mission_id": "standalone-5c7fb6ab-cee9-4257-a527-baed36b00be7",
+    "parameter_sha256": "b5c875d8a47b414e28a7741afbb14f4e89f12efb5c497c2c30b0adb5c4407631",
+    "policy_version": 1,
+    "scope": "single_dispatch",
+    "trace_id": "3f04d1ad-8ef9-4dc3-a37c-893fcc097368"
+  }
+}

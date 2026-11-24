@@ -1,0 +1,23 @@
+[
+  {
+    "text": "i mean",
+    "words": [
+      {
+        "conf": 0.34514,
+        "end": 3.63,
+        "start": 3.54,
+        "word": "i"
+      },
+      {
+        "conf": 0.34514,
+        "end": 3.99,
+        "start": 3.78,
+        "word": "mean"
+      }
+    ],
+    "accepted": false,
+    "estimated_onset": 3191.7839336469997,
+    "decoded_at": 3193.180988416,
+    "capture_seconds": 4.736
+  }
+]

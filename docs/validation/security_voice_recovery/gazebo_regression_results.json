@@ -1,0 +1,32 @@
+[
+  {
+    "run": "final_corridor_1",
+    "mission_id": "standalone-150658e9-99b0-47bf-b3bb-e34fe08ab2ed",
+    "goal_success": true,
+    "kernel": "MISSION_COMPLETED",
+    "historical_swept_m": 0.13712,
+    "swept_m": 0.123425,
+    "speed_bound_m": 0.005475,
+    "duration_s": 11.7,
+    "goal_error_m": 0.23693,
+    "global_paths": 4,
+    "denied_http_status": 401,
+    "denied_ros_commands": 0,
+    "authorized_ros_control": true
+  },
+  {
+    "run": "final_corridor_2",
+    "mission_id": "standalone-89303168-a578-4a32-8e3f-d28a8e7811d8",
+    "goal_success": true,
+    "kernel": "MISSION_COMPLETED",
+    "historical_swept_m": 0.133977,
+    "swept_m": 0.136731,
+    "speed_bound_m": 0.023812,
+    "duration_s": 12.2,
+    "goal_error_m": 0.22507,
+    "global_paths": 4,
+    "denied_http_status": 401,
+    "denied_ros_commands": 0,
+    "authorized_ros_control": true
+  }
+]

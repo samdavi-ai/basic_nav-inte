@@ -1,0 +1,190 @@
+{
+  "case": {
+    "index": 0,
+    "seed": 42,
+    "kind": "front",
+    "box": [
+      2.0,
+      -0.4,
+      0.322,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      0.0
+    ],
+    "min_robot_x": 0.23494998392273192,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world",
+    "level": 1,
+    "master_recovery": true,
+    "doorway_trial": true,
+    "govern_speed": true,
+    "swept_critic": true
+  },
+  "mission_id": "standalone-26932461-b993-44cb-bc1e-c55055396c3e",
+  "trace_id": "41b50bcc-a326-4022-b57f-7d94a54391b1",
+  "matched_terminal": true,
+  "dwb_evaluation_messages_after_request": 100,
+  "observed_dwb_rejections_after_request": 26926,
+  "route_resumptions": [
+    {
+      "t": 9.008,
+      "global_clearance_m": 0.02024,
+      "local_clearance_m": 0.12597533920643467,
+      "local_stamp": 8.96
+    },
+    {
+      "t": 11.368,
+      "global_clearance_m": 0.05984,
+      "local_clearance_m": 0.11881524600344816,
+      "local_stamp": 11.36
+    },
+    {
+      "t": 15.334,
+      "global_clearance_m": 0.05303,
+      "local_clearance_m": 0.14549395482632102,
+      "local_stamp": 15.22
+    }
+  ],
+  "runner_timed_out": false,
+  "goal_within_035m": false,
+  "final_zero_command_window_s": 1.224,
+  "planner_actions": [
+    {
+      "t": 3.714,
+      "kind": "planning_result",
+      "uuid": "e1ec5f2880bfcf0f8a2a2d0b8db240c3",
+      "accepted": 3.71,
+      "path_stamp": 3.71,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 5.83,
+      "kind": "planning_result",
+      "uuid": "224e9ea0f34350c6ce6968b7d1d03d8a",
+      "accepted": 5.61,
+      "path_stamp": 5.61,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 8.158,
+      "kind": "planning_result",
+      "uuid": "5d549ec3843e2ab54379f818dc13fbfc",
+      "accepted": 8.156,
+      "path_stamp": 8.156,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 11.258,
+      "kind": "planning_result",
+      "uuid": "9336477f85ce1c1622481bf9699df1e7",
+      "accepted": 11.256,
+      "path_stamp": 11.256,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 15.158,
+      "kind": "planning_result",
+      "uuid": "4a3a44f98ff80cdf9ea0adcc6633b63e",
+      "accepted": 15.156,
+      "path_stamp": 15.156,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    }
+  ],
+  "insertion_within_proven_planner_interval": false,
+  "state": "FAILED",
+  "kernel_terminal": "NAVIGATION_FAILURE",
+  "retries": 3,
+  "insert_requested": 4.52,
+  "first_scene_confirmation": 4.896,
+  "last_scene_confirmation": [
+    4.896,
+    2.0,
+    -0.4
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": 6.28,
+  "risk_to_zero_s": 0.554,
+  "risk_to_chassis_stop_s": 0.558,
+  "selected_rollouts_after_insertion": 88,
+  "worst_frozen_rollout_fixture_m": -0.06465,
+  "minimum_scene_interpolated_m": 0.329365,
+  "whole_mission_interpolated_m": 0.329365,
+  "minimum_fixture_interpolated_m": 0.329365,
+  "sensor_transform_drops": 26,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "depth": 6.4,
+    "scan": 12.012
+  },
+  "first_lethal_marks": {
+    "local_costmap": 5.366,
+    "global_costmap": 6.582
+  },
+  "preexisting_matches": {},
+  "first_monitor_action": null,
+  "first_risk_action": 5.722,
+  "monitor_stop": null,
+  "guard_stop": 5.722,
+  "first_final_zero_after_stop_action": 6.276,
+  "sensor_to_local_mark_s": -1.034,
+  "local_mark_to_stop_s": 0.91,
+  "sensor_to_stop_s": -0.124,
+  "peak_linear_speed_until_stop_mps": null,
+  "max_displacement_until_stop_m": null,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": 0.33435,
+  "goal_error_m": 3.42194,
+  "old_and_new_plans": [
+    {
+      "t": 3.71,
+      "points": 178,
+      "frozen_fixture_clearance_m": -0.13238,
+      "frozen_scene_clearance_m": -0.13238
+    },
+    {
+      "t": 5.61,
+      "points": 154,
+      "frozen_fixture_clearance_m": 0.06393,
+      "frozen_scene_clearance_m": 0.06393
+    },
+    {
+      "t": 8.156,
+      "points": 155,
+      "frozen_fixture_clearance_m": 0.02024,
+      "frozen_scene_clearance_m": 0.02024
+    },
+    {
+      "t": 11.256,
+      "points": 147,
+      "frozen_fixture_clearance_m": 0.05984,
+      "frozen_scene_clearance_m": 0.05984
+    },
+    {
+      "t": 15.156,
+      "points": 143,
+      "frozen_fixture_clearance_m": 0.05303,
+      "frozen_scene_clearance_m": 0.05303
+    }
+  ],
+  "after_insertion_plan_count": 4,
+  "confirmed_motion_m": 0.0
+}

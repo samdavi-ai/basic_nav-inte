@@ -1,0 +1,22 @@
+{
+  "wall_seconds": 146.01410449400282,
+  "observer_messages_per_wall_second": {
+    "rgb": 9.019676589216711,
+    "info": 8.80051967892443,
+    "odom": 8.80051967892443,
+    "graph": 0.36982728611822513
+  },
+  "matched_nonlost_poses_per_wall_second": 3.759910742201955,
+  "processes": {
+    "rtabmap": {
+      "samples": 73,
+      "median_cpu_percent_one_core": 11.1,
+      "peak_rss_mib": 351.5078125
+    },
+    "rgbd_odometry": {
+      "samples": 73,
+      "median_cpu_percent_one_core": 51.6,
+      "peak_rss_mib": 229.69140625
+    }
+  }
+}

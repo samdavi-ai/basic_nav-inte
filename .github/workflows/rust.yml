@@ -1,0 +1,30 @@
+name: Rust kernel checks
+
+on:
+  push:
+    branches: [SAM_NEW]
+  pull_request:
+    branches: [SAM_NEW]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rust-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  kernel:
+    name: Kernel workspace tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install native crypto headers
+        run: sudo apt-get update && sudo apt-get install --yes libssl-dev pkg-config
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: kernel -> target
+      - name: Test Rust workspace
+        run: cargo test --locked --manifest-path kernel/Cargo.toml

@@ -66,7 +66,7 @@ pub fn create_shared_state() -> SharedInspectorState {
         "last_vision_detection": null,
         "last_voice_command": null,
         "last_scan_completed": null,
-        "current_room": "Central Hallway",
+        "current_room": null,
         "autonomy_state": "SYSTEM_OFFLINE",
         "active_mission": null,
         "last_autonomy_transition": null,
@@ -74,9 +74,32 @@ pub fn create_shared_state() -> SharedInspectorState {
     })))
 }
 
-pub async fn update_from_event(state: &SharedInspectorState, event_type: &EventType) {
+pub async fn update_from_event(state: &SharedInspectorState, event_type: &EventType, trace_id: uuid::Uuid) {
     let mut live = state.write().await;
     match event_type {
+        EventType::Custom { name, payload } if name == "scene_provider_result" => {
+            live["last_scene_provider_result"] = json!({
+                "received_at": chrono::Utc::now().timestamp(),
+                "result": payload,
+            });
+        }
+        EventType::Custom{name,payload} if name=="rgbd_perception_status" => {
+            let previous = &live["perception"];
+            let mut previous_classes = Value::Null;
+            if previous["room"].is_string() && previous["room"] == live["current_room"]
+                && previous["sample"]["camera_frame"] == payload["camera_frame"]
+                && previous["sample"]["ready"] == true {
+                if let (Some(now), Some(then), Some(observations)) = (
+                    payload["captured_at"].as_f64(), previous["sample"]["captured_at"].as_f64(),
+                    previous["sample"]["observations"].as_array()) {
+                    if now > then && now-then <= 3.0 {
+                        previous_classes = json!(observations.iter().filter_map(|o| o["class_name"].as_str()).collect::<Vec<_>>());
+                    }
+                }
+            }
+            live["perception"]=json!({"received_at":chrono::Utc::now().timestamp(),"sample":payload,
+                "room":live["current_room"],"previous_classes":previous_classes});
+        }
         EventType::RobotPosition { x, y, theta, speed } => {
             let room = if *y > 1.0 {
                 if *x < 0.0 {
@@ -164,6 +187,7 @@ pub async fn update_from_event(state: &SharedInspectorState, event_type: &EventT
             if mission_id.is_some() || mission_name.is_some() {
                 live["active_mission"] = json!({
                     "id": mission_id,
+                    "trace_id": trace_id,
                     "name": mission_name,
                 });
             } else if state == "AUTONOMY_READY" || state == "SYSTEM_OFFLINE" {

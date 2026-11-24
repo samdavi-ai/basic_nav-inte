@@ -64,6 +64,7 @@ class CoordinateTransformer:
         self,
         point_camera: Point3D,
         fallback_transform: Optional[Tuple[Tuple[float, float, float], Tuple[float, float, float, float]]] = None,
+        stamp=None,
     ) -> Optional[Point3D]:
         """
         Transforms a Point3D from its source frame (e.g. 'camera_optical_link') to 'world'.
@@ -84,7 +85,7 @@ class CoordinateTransformer:
                 t = self.tf_buffer.lookup_transform(
                     self.target_frame,
                     source_frame,
-                    rclpy.time.Time(),
+                    stamp if stamp is not None else rclpy.time.Time(),
                 )
                 trans = t.transform.translation
                 rot = t.transform.rotation

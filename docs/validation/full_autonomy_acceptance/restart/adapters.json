@@ -1,0 +1,27 @@
+{
+  "adapters": [
+    {
+      "capabilities": [
+        "StartMission",
+        "Cancel"
+      ],
+      "connected": true,
+      "id": "StandaloneMissionRunner"
+    },
+    {
+      "capabilities": [
+        "ReviewInterruptedMission",
+        "ReleaseEmergencyHold"
+      ],
+      "connected": false,
+      "id": "recovery-operator"
+    },
+    {
+      "capabilities": [
+        "Stop"
+      ],
+      "connected": false,
+      "id": "graceemo_interaction"
+    }
+  ]
+}

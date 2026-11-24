@@ -14,11 +14,11 @@
 # ==============================================================================
 
 set -eo pipefail
+RGBD_MAPPING_PID=
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WS_DIR="$DIR/ros2_ws"
-PID_FILE="/tmp/gracemo_master.pid"
-PIDS_LIST="/tmp/gracemo_pids.txt"
+
 
 # ------------------------------------------------------------------------------
 # GPU Acceleration & EGL Driver Initialization
@@ -64,6 +64,7 @@ echo "   ✅ Confirmed: MOTOR_OUTPUT_ENABLED = 0 and PROTOCOL_CONFIRMED = False.
 # STEP 1: Parse Arguments & Concurrency Management
 # ------------------------------------------------------------------------------
 RESTART_REQUESTED=false
+PRIVATE_SIM=false
 HEADLESS=false
 RUN_VERIFICATION=true
 AUTO_DURATION=""
@@ -73,6 +74,7 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --help|-h)
             echo "Usage: ./run_gracemo.sh [OPTIONS]"
+            echo "  --private-simulation  Isolate the kernel, logs and Gazebo session (requires GRACEMO_STATE_DIR and ROS_DOMAIN_ID)"
             echo "  --headless         Run in headless offscreen mode"
             echo "  --restart, -r      Perform clean restart of existing instances"
             echo "  --no-verify        Skip autonomous readiness verification gate"
@@ -81,6 +83,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --restart|-r)
             RESTART_REQUESTED=true
+            shift
+            ;;
+        --private-simulation)
+            PRIVATE_SIM=true
             shift
             ;;
         --headless)
@@ -106,38 +112,31 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Check if a previous instance is actively running
-EXISTING_PROCS=$(pgrep -f "vira_complete.launch.py|gracemo_control_center/main.py|vira_interaction/model.py|gracemo_command_coordinator|gracemo_interaction_bridge|gracemo_sensor_bridge|gracemo_kernel_bridge|gz sim" || true)
-if [ -n "$EXISTING_PROCS" ]; then
-    echo "🔄 Existing or orphaned GRaCEmo processes detected (PIDs: $EXISTING_PROCS)."
-    echo "   Performing clean teardown to prevent dual-instance collisions and clock jumps..."
-    pkill -INT -f "gracemo_control_center/main.py" 2>/dev/null || true
-    pkill -INT -f "vira_interaction/model.py" 2>/dev/null || true
-    pkill -INT -f "vira_complete.launch.py" 2>/dev/null || true
-    pkill -INT -f "prototype.launch.py" 2>/dev/null || true
-    pkill -INT -f "gracemo-kernel" 2>/dev/null || true
-    pkill -INT -f "rviz2" 2>/dev/null || true
-    pkill -INT -f "gracemo_command_coordinator" 2>/dev/null || true
-    pkill -INT -f "gracemo_interaction_bridge" 2>/dev/null || true
-    pkill -INT -f "gracemo_sensor_bridge" 2>/dev/null || true
-    pkill -INT -f "gracemo_kernel_bridge" 2>/dev/null || true
-    pkill -INT -f "gracemo_terrain_monitor" 2>/dev/null || true
-    pkill -INT -f "cmd_vel_mux" 2>/dev/null || true
-    pkill -INT -f "controller_server|planner_server|bt_navigator|behavior_server|smoother_server|waypoint_follower|velocity_smoother|collision_monitor|map_server|amcl|lifecycle_manager" 2>/dev/null || true
-    pkill -INT -f "gz sim|gzserver|gzclient|ruby.*gz" 2>/dev/null || true
-    sleep 2
-    pkill -9 -f "gz sim|gzserver|gzclient|ruby.*gz" 2>/dev/null || true
-    pkill -9 -f "rviz2" 2>/dev/null || true
-    pkill -9 -f "gracemo_command_coordinator|gracemo_interaction_bridge|gracemo_sensor_bridge|gracemo_kernel_bridge|cmd_vel_mux|gracemo_terrain_monitor" 2>/dev/null || true
-    pkill -9 -f "controller_server|planner_server|bt_navigator|behavior_server|smoother_server|waypoint_follower|velocity_smoother|collision_monitor|map_server|amcl|lifecycle_manager" 2>/dev/null || true
-    pkill -9 -f "gracemo-kernel" 2>/dev/null || true
-    pkill -9 -f "vira_interaction/model.py|gracemo_control_center/main.py" 2>/dev/null || true
-    sleep 1
-    echo "   ✅ Clean teardown complete. Fresh environment guaranteed."
+# Refuse to interfere with any pre-existing session.  The supported launcher
+# tracks only its own process groups; killing by executable name can terminate
+# an unrelated Gazebo session or a healthy developer service.
+EXISTING_PROCS=$(pgrep -f "vira_complete.launch.py|gracemo_control_center/main.py|vira_interaction/model.py|gracemo_command_coordinator|gz sim" || true)
+if [ "$PRIVATE_SIM" != true ] && [ -n "$EXISTING_PROCS" ]; then
+    echo "Existing simulation or GRaCEmo processes detected (PIDs: $EXISTING_PROCS)."
+    echo "Refusing to kill processes this launcher does not own. Stop that session first, then retry."
+    exit 1
 fi
 
+LOG_DIR=/tmp
+if [ "$PRIVATE_SIM" = true ]; then
+    : "${GRACEMO_STATE_DIR:?Set a persistent private state directory}"
+    : "${ROS_DOMAIN_ID:?Set a dedicated local ROS domain}"
+    : "${GZ_PARTITION:?Set a dedicated Gazebo partition}"
+    mkdir -p -m 700 "$GRACEMO_STATE_DIR"
+    LOG_DIR=$(mktemp -d "$GRACEMO_STATE_DIR/launch.XXXXXX")
+    export GRACEMO_STATE_DIR
+    export VIRA_AUDIO_WORK_DIR="$LOG_DIR"
+    export VIRA_CAMERA_CACHE="$LOG_DIR/camera.jpg"
+fi
 # Reset PID tracking
-rm -f "$PID_FILE" "$PIDS_LIST" 2>/dev/null || true
+SESSION_DIR=$(mktemp -d)
+PID_FILE="$SESSION_DIR/master.pid"
+PIDS_LIST="$SESSION_DIR/children"
 touch "$PIDS_LIST"
 echo $$ > "$PID_FILE"
 
@@ -154,13 +153,13 @@ else
 fi
 
 export DISPLAY="${DISPLAY:-:0}"
-export ROS_DOMAIN_ID=0
+export ROS_DOMAIN_ID="${ROS_DOMAIN_ID:-68}"
 export ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST
-export GZ_PARTITION=gracemo
+export GZ_PARTITION="${GZ_PARTITION:-gracemo-${ROS_DOMAIN_ID}}"
 export GZ_IP=127.0.0.1
 export QT_X11_NO_MITSHM=1
 export GZ_SIM_RESOURCE_PATH="$WS_DIR/install/gracemo_gazebo/share/gracemo_gazebo/models:$WS_DIR/install/gracemo_description/share:$HOME/.gz/fuel/fuel.gazebosim.org/openrobotics/models:/opt/ros/jazzy/share:$HOME/.gz/fuel/fuel.gazebosim.org/openrobotics/models/cardboard box/3/materials/textures:$HOME/.gz/fuel/fuel.gazebosim.org/openrobotics/models/cardboard box/3/meshes"
-export PYTHONPATH="$DIR:$WS_DIR/src/gracemo_bridge:$DIR/vira_interaction:$PYTHONPATH"
+export PYTHONPATH="$DIR/adapters/sdk:$DIR:$WS_DIR/src/gracemo_bridge:$DIR/vira_interaction:$PYTHONPATH"
 
 # Native Interaction Engine Environment (from vira_interaction/run.sh)
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
@@ -183,6 +182,8 @@ fi
 # STEP 3: Unified Graceful Shutdown Trap
 # ------------------------------------------------------------------------------
 cleanup() {
+    local result=${1:-0}
+    trap - EXIT INT TERM
     echo ""
     echo "================================================================================"
     echo "🛑 Caught shutdown signal. Executing unified graceful termination..."
@@ -221,53 +222,53 @@ except Exception:
     if [ -f "$PIDS_LIST" ]; then
         while read -r pid; do
             if [ -n "$pid" ] && kill -0 "$pid" 2>/dev/null; then
-                kill -INT "$pid" 2>/dev/null || true
+                kill -INT -- "-$pid" 2>/dev/null || true
             fi
         done < "$PIDS_LIST"
     fi
 
-    # 3. Terminate known launcher-owned process signatures (never touch unrelated desktop apps)
-    echo "   [3/4] Reaping UI, voice, simulation, and bridge processes..."
-    pkill -INT -f "gracemo_control_center/main.py" 2>/dev/null || true
-    pkill -INT -f "vira_interaction/model.py" 2>/dev/null || true
-    pkill -INT -f "vira_complete.launch.py" 2>/dev/null || true
-    pkill -INT -f "gracemo-kernel" 2>/dev/null || true
-    pkill -INT -f "rviz2.*gracemo|gracemo.*rviz|rviz2_nav2" 2>/dev/null || true
-
-    # Allow 2.5 seconds for graceful shutdown
-    for i in {1..5}; do
-        if ! pgrep -f "vira_complete.launch.py|gracemo_control_center|vira_interaction/model.py" > /dev/null; then
-            break
-        fi
-        sleep 0.5
-    done
-
-    # Force-kill any lingering launcher-specific Gazebo or ROS nodes
-    pkill -9 -f "gz sim|gzserver|gzclient|ruby.*gz" 2>/dev/null || true
-    pkill -9 -f "rviz2" 2>/dev/null || true
-    pkill -9 -f "ros_gz_bridge" 2>/dev/null || true
-    pkill -9 -f "gracemo_sensor_bridge" 2>/dev/null || true
-    pkill -9 -f "gracemo_kernel_bridge" 2>/dev/null || true
-    pkill -9 -f "gracemo_interaction_bridge" 2>/dev/null || true
-    pkill -9 -f "gracemo_command_coordinator" 2>/dev/null || true
-    pkill -9 -f "gracemo_terrain_monitor" 2>/dev/null || true
-    pkill -9 -f "cmd_vel_mux" 2>/dev/null || true
-    pkill -9 -f "controller_server|planner_server|bt_navigator|behavior_server|smoother_server|waypoint_follower|velocity_smoother|collision_monitor|map_server|amcl|lifecycle_manager" 2>/dev/null || true
-    pkill -9 -f "gracemo-kernel" 2>/dev/null || true
-    pkill -9 -f "vira_interaction/model.py" 2>/dev/null || true
-    pkill -9 -f "gracemo_control_center/main.py" 2>/dev/null || true
+    # 3. Do not use name-based pkill here.  Every process launched below is
+    # recorded in PIDS_LIST, while independently started ROS/Gazebo sessions
+    # are deliberately left alone.
+    echo "   [3/4] Reaping only recorded launcher child processes..."
+    sleep 1
+    # RTAB-Map flushes its visual dictionary after the ROS shutdown signal.
+    # Keep the owned mapper alive while it finishes this bounded save.
+    if [ -n "${RGBD_MAPPING_PID:-}" ]; then
+        for ((attempt=0; attempt<48; attempt++)); do
+            kill -0 -- "-$RGBD_MAPPING_PID" 2>/dev/null || break
+            grep -Fq '[rtabmap-1]: process has finished cleanly' "$LOG_DIR/gracemo_rgbd_slam.log" && break
+            sleep 0.25
+        done
+    fi
+    if [ -f "$PIDS_LIST" ]; then
+        while read -r pid; do
+            if [ -n "$pid" ] && kill -0 "$pid" 2>/dev/null; then
+                kill -TERM -- "-$pid" 2>/dev/null || true
+            fi
+        done < "$PIDS_LIST"
+        sleep 1
+        while read -r pid; do
+            if [ -n "$pid" ] && kill -0 "$pid" 2>/dev/null; then
+                kill -KILL -- "-$pid" 2>/dev/null || true
+            fi
+        done < "$PIDS_LIST"
+    fi
 
     rm -f "$PID_FILE" "$PIDS_LIST" 2>/dev/null || true
     echo "   [4/4] Confirming clean state..."
+    rmdir "$SESSION_DIR" 2>/dev/null || true
     REMAINING=$(ps aux | grep -E "gz sim|gracemo_command_coordinator|gracemo-kernel|vira_interaction/model.py" | grep -v grep || true)
     if [ -z "$REMAINING" ]; then
         echo "✅ SUCCESS: All GRaCEmo ViRa processes terminated. Zero orphaned processes."
     else
         echo "⚠️ Note: Remaining processes: $REMAINING"
     fi
-    exit 0
+    exit "$result"
 }
-trap cleanup EXIT INT TERM
+trap 'cleanup $?' EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 
 # ------------------------------------------------------------------------------
 # STEP 4: Stage 1 — Authoritative Cognitive Kernel Daemon (MNSE)
@@ -275,35 +276,57 @@ trap cleanup EXIT INT TERM
 echo "🧠 [Stage 1/5] Checking / Starting Cognitive Kernel Daemon..."
 KERNEL_BIN="$DIR/kernel/target/debug/gracemo-kernel"
 
-if curl -s http://127.0.0.1:7780/health > /dev/null 2>&1; then
+export VIRA_GAZEBO_INTERACTION=1
+export VIRA_KERNEL_URL=http://127.0.0.1:7780
+if [ "$PRIVATE_SIM" = true ]; then
+    setsid "$KERNEL_BIN" --isolated-simulation > "$LOG_DIR/gracemo_kernel.log" 2>&1 &
+    KERNEL_PID=$!
+    echo "$KERNEL_PID" >> "$PIDS_LIST"
+    for i in {1..50}; do
+        kill -0 "$KERNEL_PID" 2>/dev/null || exit 1
+        if [ -s "$GRACEMO_STATE_DIR/listen.port" ]; then
+            VIRA_KERNEL_URL="http://127.0.0.1:$(cat "$GRACEMO_STATE_DIR/listen.port")"
+            if curl -fsS --max-time 1 "$VIRA_KERNEL_URL/health" 2>/dev/null | python3 -c 'import json, sys; sys.exit(json.load(sys.stdin).get("pid") != int(sys.argv[1]))' "$KERNEL_PID" 2>/dev/null; then
+                break
+            fi
+        fi
+        sleep .1
+    done
+    curl -fsS --max-time 2 "$VIRA_KERNEL_URL/health" | python3 -c 'import json,sys;sys.exit(json.load(sys.stdin).get("pid")!=int(sys.argv[1]))' "$KERNEL_PID"
+elif curl -fsS --max-time 2 http://127.0.0.1:7780/health > /dev/null 2>&1; then
     echo "   ✓ Cognitive Kernel is already running and healthy at http://127.0.0.1:7780."
 else
     if [ -x "$KERNEL_BIN" ]; then
         echo "   Launching Cognitive Kernel daemon..."
-        "$KERNEL_BIN" > /tmp/gracemo_kernel.log 2>&1 &
+        setsid "$KERNEL_BIN" > "$LOG_DIR/gracemo_kernel.log" 2>&1 &
         KERNEL_PID=$!
         echo $KERNEL_PID >> "$PIDS_LIST"
         
         # Poll health endpoint
         for i in {1..20}; do
-            if curl -s http://127.0.0.1:7780/health > /dev/null 2>&1; then
+            if curl -fsS --max-time 2 http://127.0.0.1:7780/health > /dev/null 2>&1; then
                 echo "   ✓ Cognitive Kernel online (PID $KERNEL_PID). REST: http://127.0.0.1:7780"
                 break
             fi
             sleep 0.5
         done
     else
-        echo "   ⚠️ Cognitive Kernel binary not found at $KERNEL_BIN. Continuing with mock/cloud bridge."
+        echo "Missing kernel executable: $KERNEL_BIN" >&2
+        exit 1
     fi
 fi
 
 # ------------------------------------------------------------------------------
+for endpoint in health snapshot context graph; do
+    curl -fsS --max-time 3 "$VIRA_KERNEL_URL/$endpoint" >/dev/null || exit 1
+done
+
 # STEP 5: Stage 2 — Master Simulation & Autonomy Substrate (vira_complete.launch.py)
 # ------------------------------------------------------------------------------
 echo "🚀 [Stage 2/5] Launching Master Simulation & Autonomy Substrate..."
 
 SIM_RUNNING=false
-if pgrep -f "gz sim" > /dev/null && pgrep -f "coordinator_node" > /dev/null; then
+if [ "$PRIVATE_SIM" != true ] && pgrep -f "gz sim" > /dev/null && pgrep -f "coordinator_node" > /dev/null; then
     SIM_RUNNING=true
 fi
 
@@ -314,13 +337,38 @@ else
     if [ "$HEADLESS" = true ]; then
         RVIZ_OPT="use_rviz:=false"
     fi
-    ros2 launch gracemo_gazebo vira_complete.launch.py mode:=localization "$RVIZ_OPT" 2>&1 | tee /tmp/gracemo_simulation.log &
+    setsid ros2 launch gracemo_gazebo vira_complete.launch.py mode:=localization headless:="$HEADLESS" kernel_url:="$VIRA_KERNEL_URL" "$RVIZ_OPT" > "$LOG_DIR/gracemo_simulation.log" 2>&1 &
     SIM_PID=$!
     echo $SIM_PID >> "$PIDS_LIST"
     echo "   Simulation launched with PID $SIM_PID (Logs: /tmp/gracemo_simulation.log)"
 fi
 
 # ------------------------------------------------------------------------------
+# Use the same kernel and simulation clock for camera observations and mission state.
+if [ -n "${VIRA_RTABMAP_DATABASE:-}" ]; then
+    if [ "$PRIVATE_SIM" != true ] || [ -e "$VIRA_RTABMAP_DATABASE" ]; then
+        echo "RGB-D mapping requires private simulation and a new database path." >&2
+        exit 1
+    fi
+    map_args=()
+    if [ "${VIRA_TEST_DISTRIBUTED_FEATURES:-}" = 1 ]; then map_args+=(distributed_features:=true); fi
+    if [ "${VIRA_TEST_METRIC_RGBD:-}" = 1 ]; then map_args+=(metric_rgbd:=true); fi
+    if [ "${VIRA_TEST_MAPPING_CAMERA_RATE:-}" = 1 ]; then map_args+=(benchmark_camera_rate:=true); fi
+    if [ -n "${VIRA_RTABMAP_INPUT:-}" ]; then
+        map_args+=(source_map:="$VIRA_RTABMAP_INPUT" source_sha256:="${VIRA_RTABMAP_SHA256:?missing map fingerprint}")
+        if [ "${VIRA_TEST_RGBD_2X:-}" = 1 ]; then map_args+=(camera_scale:=2); fi
+        if [ "${VIRA_TEST_MATCHED_DEPTH_SIZE:-}" = 1 ]; then map_args+=(depth_divisor:=1); fi
+    fi
+    setsid ros2 launch "$DIR/ros2_ws/src/gracemo_nav2/launch/gazebo_rgbd_mapping.launch.py" \
+        database:="$VIRA_RTABMAP_DATABASE" visual_odometry:=true descriptor:="${VIRA_RTABMAP_DESCRIPTOR:-default}" \
+        optical_flow:="${VIRA_RTABMAP_OPTICAL_FLOW:-false}" planar_registration:="${VIRA_RTABMAP_PLANAR:-false}" \
+        "${map_args[@]}" > "$LOG_DIR/gracemo_rgbd_slam.log" 2>&1 &
+    RGBD_MAPPING_PID=$!
+    echo "$RGBD_MAPPING_PID" >> "$PIDS_LIST"
+fi
+setsid python3 -m adapters.perception.perception_service --ros-args -p use_sim_time:=true > "$LOG_DIR/gracemo_perception.log" 2>&1 &
+echo $! >> "$PIDS_LIST"
+
 # STEP 6: Stage 3 — Autonomous Readiness Verification Gate
 # ------------------------------------------------------------------------------
 if [ "$RUN_VERIFICATION" = true ]; then
@@ -330,8 +378,8 @@ if [ "$RUN_VERIFICATION" = true ]; then
     READY=false
     for attempt in {1..15}; do
         sleep 4
-        if python3 "$DIR/scripts/verify_system_readiness.py" > /tmp/gracemo_readiness.log 2>&1; then
-            cat /tmp/gracemo_readiness.log
+        if python3 "$DIR/scripts/verify_system_readiness.py" > "$LOG_DIR/gracemo_readiness.log" 2>&1; then
+            cat "$LOG_DIR/gracemo_readiness.log"
             READY=true
             echo "   🎉 All 11 Autonomous Readiness Stages Confirmed (State: AUTONOMY_READY)."
             break
@@ -342,7 +390,8 @@ if [ "$RUN_VERIFICATION" = true ]; then
 
     if [ "$READY" != true ]; then
         echo "   ⚠️ Readiness gate timed out or detected issues. Last diagnostic summary:"
-        tail -n 25 /tmp/gracemo_readiness.log 2>/dev/null || true
+        tail -n 25 "$LOG_DIR/gracemo_readiness.log" 2>/dev/null || true
+        exit 1
     fi
 fi
 
@@ -352,7 +401,7 @@ fi
 echo "🗣️  [Stage 4/5] Starting Pygame ViRa Face & Voice Interaction Engine..."
 
 FACE_RUNNING=false
-if pgrep -f "vira_interaction/model.py" > /dev/null; then
+if [ "$PRIVATE_SIM" != true ] && pgrep -f "vira_interaction/model.py" > /dev/null; then
     FACE_RUNNING=true
 fi
 
@@ -394,13 +443,13 @@ if [ "$FACE_RUNNING" = true ]; then
     echo "   ✓ Pygame ViRa face and voice interaction engine is already running."
 elif [ "$HEADLESS" = true ]; then
     echo "   Headless mode: Starting Pygame ViRa in offscreen mode..."
-    (cd "$VIRA_DIR" && SDL_VIDEODRIVER=dummy "$VIRA_PYTHON" -u "$VIRA_DIR/model.py" 2>&1 | tee /tmp/gracemo_voice.log) &
+    VIRA_ADAPTER_TOKEN_FILE="${VIRA_VOICE_TOKEN_FILE:-}" setsid bash -c 'cd "$1" && SDL_VIDEODRIVER=dummy exec "$2" -u "$1/model.py"' _ "$VIRA_DIR" "$VIRA_PYTHON" > "$LOG_DIR/gracemo_voice.log" 2>&1 &
     VOICE_PID=$!
     echo $VOICE_PID >> "$PIDS_LIST"
     echo "   Pygame ViRa face online (Headless PID: $VOICE_PID)"
 else
     echo "   Launching Pygame ViRa face GUI window & voice services (streaming live logs)..."
-    (cd "$VIRA_DIR" && "$VIRA_PYTHON" -u "$VIRA_DIR/model.py" 2>&1 | tee /tmp/gracemo_voice.log) &
+    VIRA_ADAPTER_TOKEN_FILE="${VIRA_VOICE_TOKEN_FILE:-}" setsid bash -c 'cd "$1" && exec "$2" -u "$1/model.py"' _ "$VIRA_DIR" "$VIRA_PYTHON" > "$LOG_DIR/gracemo_voice.log" 2>&1 &
     VOICE_PID=$!
     echo $VOICE_PID >> "$PIDS_LIST"
     echo "   Pygame ViRa face window and voice services online (PID: $VOICE_PID)"

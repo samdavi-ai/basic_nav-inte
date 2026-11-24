@@ -412,6 +412,9 @@ class ToolRegistry:
             self.last_action_requested_envelope = envelope
         self.emitted_events.append(envelope)
         try:
+            if event_type == "ActionRequested":
+                from gracemo_sdk.authorization import dispatch_action
+                return dispatch_action(self.kernel_url,envelope)['status']=='dispatched'
             resp = requests.post(f"{self.kernel_url}/emit", json=envelope, timeout=2.0)
             return resp.status_code == 200
         except Exception as e:
@@ -729,7 +732,7 @@ class ToolRegistry:
         Emits canonical ActionRequested(NavigateTo).
         """
         log.info(f"🧭 [TOOL] Resolving target object '{object_name}' through MNSE for NavigateTo...")
-        resolution = self.context_provider.resolve_object(object_name, visible_only=visible_only)
+        resolution = self.context_provider.resolve_object(object_name, visible_only=True)
 
         if not resolution.is_resolved:
             log.warning(f"⚠️ [TOOL] navigate_to_object resolution failed for '{object_name}': status={resolution.status}")
@@ -758,8 +761,10 @@ class ToolRegistry:
         # Obtain current robot pose
         snap = self.context_provider.get_robot_context()
         pos = snap.get("robot_position") or {}
-        rx = float(pos.get("x", 0.0))
-        ry = float(pos.get("y", 0.0))
+        if not all(isinstance(pos.get(k),(float,int)) and math.isfinite(pos[k]) for k in ("x","y")):
+            return ToolResult(tool_name="navigate_to_object",success=False,data={"status":"UNKNOWN_POSE"},
+                              message="Current robot pose unavailable.")
+        rx, ry = pos["x"], pos["y"]
 
         dx = resolved_obj.world_x - rx
         dy = resolved_obj.world_y - ry
@@ -955,13 +960,12 @@ class ToolRegistry:
         log.info("🛑 [TOOL] Emergency motor stop commanded")
         ok = self._emit_canonical_event("ActionRequested", {
             "action": "Stop",
-            "params": {},
         })
         return ToolResult(
             tool_name="stop",
             success=ok,
             data={},
-            message="Robot base stopped immediately.",
+            message="Kernel accepted the stop request." if ok else "Stop delivery unconfirmed.",
         )
 
     def get_robot_state(self) -> ToolResult:
@@ -999,12 +1003,11 @@ class ToolRegistry:
 
         return ToolResult(
             tool_name="inspect_visual_scene",
-            success=True,
+            success=bool(frame_bytes),
             data={
                 "room": current_room,
                 "frame_available": frame_bytes is not None,
                 "frame_size_bytes": len(frame_bytes) if frame_bytes else 0,
-                "frame_path": "/tmp/gracemo_camera_latest.jpg",
                 "focus": focus,
             },
             message=f"Captured live visual camera frame in {current_room}." if frame_bytes else f"Camera frame not yet available in {current_room}.",

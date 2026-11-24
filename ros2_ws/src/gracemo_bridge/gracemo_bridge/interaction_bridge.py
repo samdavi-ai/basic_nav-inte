@@ -90,6 +90,7 @@ class InteractionBridgeNode(Node):
             self.declare_parameter("use_sim_time", True)
         self.declare_parameter("kernel_url", "http://127.0.0.1:7780")
         self.declare_parameter("nav_frame_id", "map")
+        self.require_coordinator = self.declare_parameter("require_coordinator", False).value
         self.declare_parameter("tolerance_m", 0.35)
         self.declare_parameter("enable_tts", True)
         self.declare_parameter("auto_arrival_announcement", True)
@@ -114,7 +115,6 @@ class InteractionBridgeNode(Node):
         self._active_trace_id: Optional[str] = None
         self._interrupted_for_voice: bool = False
         self._dispatched_actions: Dict[str, float] = {}
-        self._last_direct_trace_id: Optional[str] = None
         self._lock = threading.RLock()
 
         # TF Buffer & Listener for map-frame arrival calculations
@@ -253,7 +253,7 @@ class InteractionBridgeNode(Node):
     def process_text_command(self, text: str, trace_id: Optional[str] = None) -> GatewayResult:
         """Processes text through the Interaction Gateway and executes semantic ROS 2 actions."""
         tid = trace_id or str(uuid.uuid4())
-        self._last_direct_trace_id = tid
+        self._recover_fsm_from_navigation_error("New interaction command")
         res: GatewayResult = self.gateway.process_text(text, trace_id=tid)
 
         # 1. Publish speech response
@@ -261,12 +261,7 @@ class InteractionBridgeNode(Node):
             self._publish_speech(res.response)
             self._speak(res.response)
 
-        # 2. Dispatch extracted actions to ROS 2
-        for act in res.semantic_commands:
-            action_name = act.get("action")
-            params = act.get("params", {})
-            self._dispatch_semantic_action_to_ros2(action_name, params, tid)
-
+        # Authorized actions arrive through the kernel event subscription.
         return res
 
     def _dispatch_semantic_action_to_ros2(self, action_name: str, params: Dict[str, Any], trace_id: str):
@@ -450,6 +445,9 @@ class InteractionBridgeNode(Node):
     ):
         """Publishes Nav2 /goal_pose and transitions interaction state to EXECUTING + FOCUS."""
         tid = trace_id or str(uuid.uuid4())
+        if self.require_coordinator and self.pub_coord_cmd.get_subscription_count()==0:
+            self.get_logger().error("Coordinator unavailable. Navigation request could not be delivered.")
+            return
         self.get_logger().info(f"🚀 [NAV GOAL] Dispatching goal '{target_name}' -> ({tx:.2f}, {ty:.2f})")
 
         with self._lock:
@@ -479,7 +477,7 @@ class InteractionBridgeNode(Node):
         # 1B. Fallback: Publish standard Nav2 Goal Pose ONLY when coordinator node is not active.
         # When coordinator is active, it acts as the sole Nav2 action client.
         # Publishing duplicate /goal_pose preempts/cancels bt_navigator goals.
-        if self.pub_coord_cmd.get_subscription_count() == 0:
+        if not self.require_coordinator and self.pub_coord_cmd.get_subscription_count() == 0:
             goal_msg = PoseStamped()
             goal_msg.header.stamp = self.get_clock().now().to_msg()
             goal_msg.header.frame_id = self.nav_frame_id
@@ -553,11 +551,17 @@ class InteractionBridgeNode(Node):
                 self.safety_gate.reset_emergency_stop()
                 self.fsm.transition_to(CognitiveState.IDLE, reason="Destination reached", expression=Expression.HAPPY)
                 self._publish_expression(Expression.HAPPY.value)
+            elif state == "PLANNING_FAILURE":
+                # Planner failures are recoverable while the coordinator is retrying.
+                # Keep the interaction FSM out of ERROR so OBSTACLE_HANDLING and the
+                # subsequent MISSION_PLANNING/MISSION_EXECUTING states remain legal.
+                self.fsm.transition_to(CognitiveState.THINKING, reason="Planner retry in progress", expression=Expression.INTENT)
+                self._publish_expression(Expression.INTENT.value)
             elif state in ("EMERGENCY_STOP", "TERRAIN_SAFETY_STOP"):
                 self.safety_gate.trigger_emergency_stop()
                 self.fsm.emergency_stop(reason=f"State: {state}")
                 self._publish_expression(Expression.IDLE.value)
-            elif state in ("NAVIGATION_FAILURE", "PLANNING_FAILURE", "FAILED"):
+            elif state in ("NAVIGATION_FAILURE", "FAILED"):
                 self.fsm.transition_to(CognitiveState.ERROR, reason="Navigation failure", expression=Expression.SAD)
                 self._publish_expression(Expression.SAD.value)
 
@@ -582,6 +586,14 @@ class InteractionBridgeNode(Node):
                 self._speak(speech)
         except Exception:
             pass
+
+    def _recover_fsm_from_navigation_error(self, reason: str):
+        """Move the interaction FSM through recovery before accepting a new command."""
+        if self.fsm.state == CognitiveState.ERROR:
+            self.fsm.transition_to(CognitiveState.RECOVERY, reason=reason, expression=Expression.INTENT)
+            self.fsm.transition_to(CognitiveState.IDLE, reason="Interaction ready after navigation failure", expression=Expression.IDLE)
+        elif self.fsm.state == CognitiveState.RECOVERY:
+            self.fsm.transition_to(CognitiveState.IDLE, reason="Interaction recovery complete", expression=Expression.IDLE)
 
     def _handle_navigation_arrived(self, destination: str, x: float, y: float):
         """Executed upon arrival at waypoint: triggers announcement and HAPPY expression."""
@@ -620,7 +632,8 @@ class InteractionBridgeNode(Node):
         action = data.get("action")
         params = data.get("params", {})
         tid = envelope.get("trace_id", str(uuid.uuid4()))
-        if action and envelope.get("source") != "ROS2InteractionBridge" and tid != self._last_direct_trace_id:
+        if action:
+            self._recover_fsm_from_navigation_error("New kernel action")
             self._dispatch_semantic_action_to_ros2(action, params, tid)
 
     def _on_eventbus_nav_started(self, envelope: Dict[str, Any]):

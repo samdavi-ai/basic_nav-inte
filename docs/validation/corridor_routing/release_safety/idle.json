@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "duration_s": 3,
+  "samples": {
+    "cmd_vel": 49,
+    "cmd_vel_mux": 0,
+    "cmd_vel_smoothed": 0
+  },
+  "peak": {
+    "cmd_vel": 0.0,
+    "cmd_vel_mux": null,
+    "cmd_vel_smoothed": null
+  },
+  "mux_state": {},
+  "odom_displacement_m": null
+}

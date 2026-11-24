@@ -1,0 +1,13 @@
+{
+  "result": "FAIL",
+  "scope": "Gazebo only",
+  "goal": {
+    "x": 4.5,
+    "y": 3.0
+  },
+  "checks": {},
+  "state": "AUTONOMY_READY",
+  "error": "Gazebo sensors, Nav2, terrain monitor, or coordinator were not ready",
+  "estop_active": null,
+  "state_history": []
+}

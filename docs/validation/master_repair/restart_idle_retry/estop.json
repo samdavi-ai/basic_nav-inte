@@ -1,0 +1,18 @@
+{
+  "result": "FAIL",
+  "scope": "Gazebo only",
+  "goal": {
+    "x": 4.5,
+    "y": 3.0
+  },
+  "checks": {
+    "mission_started_and_moving": false
+  },
+  "state": "EMERGENCY_STOP",
+  "error": "Robot did not begin the guarded navigation goal",
+  "estop_active": true,
+  "state_history": [
+    "AUTONOMY_READY",
+    "EMERGENCY_STOP"
+  ]
+}

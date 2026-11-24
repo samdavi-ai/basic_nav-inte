@@ -113,15 +113,7 @@ class VisionAdapter:
         cap = self._open_camera()
 
         if cap is None:
-            # Fallback simulated presence mode (prevents crashes when camera hardware is absent)
-            default_user = self.config.get_nested("face_recognition.default_user_name", "Sam")
-            self.client.emit(
-                "PersonVisible",
-                {"identity": default_user, "confidence": 0.98, "distance": 1.1, "track_id": 1, "x_offset": 0.0},
-                source="Vision"
-            )
-            while self.running:
-                time.sleep(1.0)
+            self.client.emit("Custom", {"name":"vision_unavailable","payload":{"reason":"camera unavailable"}},source="Vision")
             return
 
         self.client.emit("AdapterConnected", {"name": "vision"}, source="Vision")
@@ -146,7 +138,7 @@ class VisionAdapter:
                     x_m, depth_m, z_m = self.spatial_estimator.estimate_from_box(fw, primary_face["center_x"], img_w=w)
                     person_detected = True
                     person_info = {
-                        "identity": primary_face["identity"],
+                        "identity": "unknown",
                         "confidence": primary_face["confidence"],
                         "distance": depth_m,
                         "x_offset": x_m,
@@ -192,7 +184,7 @@ class VisionAdapter:
                 # 3. Throttled Event Emission to Kernel
                 now = time.time()
                 if now - self.last_emit_time >= self.min_interval:
-                    if person_detected and person_info:
+                    if person_detected and person_info and person_info.get("confidence") is not None:
                         self.client.emit("PersonVisible", person_info, source="Vision")
 
                     for obj in detected_objects:

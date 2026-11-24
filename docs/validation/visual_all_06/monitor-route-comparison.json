@@ -1,0 +1,57 @@
+[
+  {
+    "run": "powered-roundtrip01",
+    "available_percent": 41.40271493212669,
+    "translation_rmse_m": 0.07344352652027726,
+    "rotation_rmse_deg": 0.9272703712491615,
+    "monitor_reached": true,
+    "return_reached": true,
+    "estop": "PASS",
+    "graph_hz": 0.36982728611822513,
+    "clean_map": true
+  },
+  {
+    "run": "desktop-roundtrip01",
+    "available_percent": 99.84627209838585,
+    "translation_rmse_m": 0.5665781239165028,
+    "rotation_rmse_deg": 6.382502848927275,
+    "monitor_reached": true,
+    "return_reached": true,
+    "estop": "PASS",
+    "graph_hz": 8.321776696592533,
+    "clean_map": true
+  },
+  {
+    "run": "matched-roundtrip01",
+    "available_percent": 98.62464183381088,
+    "translation_rmse_m": 0.493055000935466,
+    "rotation_rmse_deg": 5.1984676734152035,
+    "monitor_reached": true,
+    "return_reached": true,
+    "estop": "PASS",
+    "graph_hz": 5.415537075023473,
+    "clean_map": false
+  },
+  {
+    "run": "metric-roundtrip01",
+    "available_percent": 98.68421052631578,
+    "translation_rmse_m": 0.6476596109688842,
+    "rotation_rmse_deg": 7.225624674144571,
+    "monitor_reached": true,
+    "return_reached": true,
+    "estop": "PASS",
+    "graph_hz": 8.532331918475988,
+    "clean_map": true
+  },
+  {
+    "run": "planar-desktop01",
+    "available_percent": 46.97318007662835,
+    "translation_rmse_m": 0.0880121289519868,
+    "rotation_rmse_deg": 0.8563178677367417,
+    "monitor_reached": true,
+    "return_reached": true,
+    "estop": "PASS",
+    "graph_hz": 4.128233735974609,
+    "clean_map": true
+  }
+]

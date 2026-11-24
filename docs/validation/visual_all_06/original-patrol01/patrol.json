@@ -1,0 +1,114 @@
+{
+  "success": true,
+  "timed_out": false,
+  "mission_id": "standalone-88d50ffa-ecfb-4a50-84fb-67b798ee6c81",
+  "trace_id": "03181c96-cc94-490b-81a2-87b92d64f286",
+  "rooms": [
+    "Kitchen & Dining",
+    "Master Bedroom",
+    "Home Study",
+    "Living Room",
+    "Central Hallway"
+  ],
+  "coordinator_result": {
+    "mission_id": "standalone-88d50ffa-ecfb-4a50-84fb-67b798ee6c81",
+    "name": "Standalone apartment patrol",
+    "success": true,
+    "status": "COMPLETED",
+    "reason": "",
+    "waypoints_completed": 11,
+    "total_waypoints": 11,
+    "duration_sec": 195.3,
+    "end_pose": {
+      "x": 0.06,
+      "y": 0.18
+    },
+    "timestamp": 1795461792.2262673
+  },
+  "kernel_result": {
+    "state": "MISSION_COMPLETED",
+    "previous_state": "DESTINATION_REACHED",
+    "reason": "All 11 destinations reached",
+    "mission_id": "standalone-88d50ffa-ecfb-4a50-84fb-67b798ee6c81",
+    "mission_name": "Standalone apartment patrol",
+    "x": 0.10842903206682,
+    "y": 0.1911412929840559,
+    "trace_id": "03181c96-cc94-490b-81a2-87b92d64f286"
+  },
+  "timestamp": 1795461792.6479478,
+  "receipt": {
+    "action_id": "ad866b7f-afda-4e02-adb1-6a4d14a5b5f0",
+    "active_mission_trace_id": null,
+    "adapter_id": "StandaloneMissionRunner",
+    "adapter_session": "32741eb4-405e-4e8f-8330-90ff302c9195",
+    "authorization_id": "28240389-ba77-44b3-8b85-f9a4f2f88f1e",
+    "canonical_action": {
+      "action": "StartMission",
+      "params": {
+        "mission_id": "standalone-88d50ffa-ecfb-4a50-84fb-67b798ee6c81",
+        "mission_name": "Standalone apartment patrol",
+        "waypoints": [
+          {
+            "coords": {
+              "frame_id": "map",
+              "x": -5.0,
+              "y": -2.5,
+              "yaw": -1.57
+            },
+            "dwell_sec": 0.0,
+            "name": "Kitchen & Dining"
+          },
+          {
+            "coords": {
+              "frame_id": "map",
+              "x": -5.0,
+              "y": 2.2,
+              "yaw": 1.57
+            },
+            "dwell_sec": 0.0,
+            "name": "Master Bedroom"
+          },
+          {
+            "coords": {
+              "frame_id": "map",
+              "x": 4.5,
+              "y": 3.0,
+              "yaw": 1.57
+            },
+            "dwell_sec": 0.0,
+            "name": "Home Study"
+          },
+          {
+            "coords": {
+              "frame_id": "map",
+              "x": 4.0,
+              "y": -2.5,
+              "yaw": -1.57
+            },
+            "dwell_sec": 0.0,
+            "name": "Living Room"
+          },
+          {
+            "coords": {
+              "frame_id": "map",
+              "x": 0.0,
+              "y": 0.0,
+              "yaw": 0.0
+            },
+            "dwell_sec": 0.0,
+            "name": "Central Hallway"
+          }
+        ]
+      }
+    },
+    "capability": "StartMission",
+    "expires_at": 1795461601,
+    "issued_at": 1795461596,
+    "issuer": "af76572b-9482-4e92-818b-8a67c0335a80",
+    "mission_id": "standalone-88d50ffa-ecfb-4a50-84fb-67b798ee6c81",
+    "parameter_sha256": "cc721d7fb1ea6a3806035ad1ff92d0e477e59720f109bf22989a227961116c8f",
+    "policy_version": 1,
+    "scope": "single_dispatch",
+    "trace_id": "03181c96-cc94-490b-81a2-87b92d64f286"
+  }
+}

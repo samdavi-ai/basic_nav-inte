@@ -1,0 +1,10 @@
+{
+  "faces": 2,
+  "identity_states": [
+    "unknown",
+    "unknown"
+  ],
+  "latency_ms": 46.87290000038047,
+  "backend": "cascade",
+  "mode": "local detection only"
+}

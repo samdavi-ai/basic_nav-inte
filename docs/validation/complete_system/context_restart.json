@@ -1,0 +1,2339 @@
+{
+  "input": {
+    "id": "761b44e7-727c-4c9d-96c8-4273a8a00e90",
+    "trace_id": "16ed97e3-344d-4fb7-ba79-46cb6a59a2ab",
+    "timestamp": 1795372900,
+    "source": "Vision",
+    "observed_by": "synthetic_fixture",
+    "parent_event_id": null,
+    "event_type": {
+      "type": "ObjectDetected",
+      "data": {
+        "class_name": "demo_laptop",
+        "confidence": 0.95,
+        "x": 4.5,
+        "y": 3.0
+      }
+    }
+  },
+  "sse": {
+    "id": "761b44e7-727c-4c9d-96c8-4273a8a00e90",
+    "trace_id": "16ed97e3-344d-4fb7-ba79-46cb6a59a2ab",
+    "session_id": null,
+    "timestamp": 1795372900,
+    "source": "Vision",
+    "observed_by": "synthetic_fixture",
+    "event_type": {
+      "type": "ObjectDetected",
+      "data": {
+        "class_name": "demo_laptop",
+        "confidence": 0.95,
+        "x": 4.5,
+        "y": 3.0,
+        "z": null,
+        "bbox": null,
+        "depth_m": null,
+        "frame_id": null
+      }
+    },
+    "parent_event_id": null
+  },
+  "malformed_status": 422,
+  "before_restart": {
+    "/history": [
+      {
+        "event_type": "ObjectDetected",
+        "id": "761b44e7-727c-4c9d-96c8-4273a8a00e90",
+        "observed_by": "synthetic_fixture",
+        "payload": "{\"type\":\"ObjectDetected\",\"data\":{\"class_name\":\"demo_laptop\",\"confidence\":0.95,\"x\":4.5,\"y\":3.0,\"z\":null,\"bbox\":null,\"depth_m\":null,\"frame_id\":null}}",
+        "source": "Vision",
+        "timestamp": 1795372900,
+        "trace_id": "16ed97e3-344d-4fb7-ba79-46cb6a59a2ab"
+      }
+    ],
+    "/graph": {
+      "edge_count": 18,
+      "edges": [
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:hallway",
+          "target": "portal:bedroom",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:bedroom",
+          "target": "room:bedroom",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:bedroom",
+          "target": "portal:bedroom",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:bedroom",
+          "target": "room:hallway",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:hallway",
+          "target": "portal:study",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:study",
+          "target": "room:study",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:study",
+          "target": "portal:study",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:study",
+          "target": "room:hallway",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:hallway",
+          "target": "portal:kitchen",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:kitchen",
+          "target": "room:kitchen",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:kitchen",
+          "target": "portal:kitchen",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:kitchen",
+          "target": "room:hallway",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:hallway",
+          "target": "portal:living",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:living",
+          "target": "room:living",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:living",
+          "target": "portal:living",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:living",
+          "target": "room:hallway",
+          "updated_at": 1795372900,
+          "weight": 1
+        },
+        {
+          "confidence": 0.949999988079071,
+          "properties": {
+            "observed_at": 1795372900.0,
+            "x": 4.5,
+            "y": 3.0,
+            "z": 0.0
+          },
+          "relation": "LOCATED_IN",
+          "source": "object:demo_laptop_001",
+          "target": "room:study",
+          "updated_at": 1795372901,
+          "weight": 1
+        },
+        {
+          "confidence": 0.949999988079071,
+          "properties": {
+            "observed_at": 1795372900.0,
+            "x": 4.5,
+            "y": 3.0,
+            "z": 0.0
+          },
+          "relation": "LOCATED_IN",
+          "source": "object:demo_laptop",
+          "target": "room:study",
+          "updated_at": 1795372901,
+          "weight": 1
+        }
+      ],
+      "node_count": 12,
+      "nodes": [
+        {
+          "id": "room:bedroom",
+          "label": "Master Bedroom",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:bedroom",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": -5.0,
+            "target_y": 2.8,
+            "x_max": 0.0,
+            "x_min": -9.0,
+            "y_max": 7.0,
+            "y_min": 1.0
+          },
+          "type": "Room",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "room:study",
+          "label": "Home Study",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:study",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 4.0,
+            "target_y": 3.8,
+            "x_max": 9.0,
+            "x_min": 0.0,
+            "y_max": 7.0,
+            "y_min": 1.0
+          },
+          "type": "Room",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "room:kitchen",
+          "label": "Kitchen & Dining",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:kitchen",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": -4.5,
+            "target_y": -2.5,
+            "x_max": 0.0,
+            "x_min": -9.0,
+            "y_max": -1.0,
+            "y_min": -7.0
+          },
+          "type": "Room",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "room:living",
+          "label": "Living Room",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:living",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 4.0,
+            "target_y": -2.5,
+            "x_max": 9.0,
+            "x_min": 0.0,
+            "y_max": -1.0,
+            "y_min": -7.0
+          },
+          "type": "Room",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "room:hallway",
+          "label": "Central Hallway",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 0.0,
+            "target_y": 0.0,
+            "x_max": 9.0,
+            "x_min": -9.0,
+            "y_max": 1.0,
+            "y_min": -1.0
+          },
+          "type": "Room",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "portal:bedroom",
+          "label": "Bedroom Doorway",
+          "properties": {
+            "approach_x": -5.0,
+            "approach_y": 0.0,
+            "approach_yaw": 1.5708,
+            "connects_from": "room:hallway",
+            "connects_to": "room:bedroom",
+            "door_x": -5.0,
+            "door_y": 1.0,
+            "provenance": "seeded_topology",
+            "target_x": -5.0,
+            "target_y": 2.8,
+            "threshold_x": -5.0,
+            "threshold_y": 1.4,
+            "threshold_yaw": 1.5708,
+            "width": 1.2
+          },
+          "type": "Portal",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "portal:study",
+          "label": "Study Doorway",
+          "properties": {
+            "approach_x": 5.0,
+            "approach_y": 0.0,
+            "approach_yaw": 1.5708,
+            "connects_from": "room:hallway",
+            "connects_to": "room:study",
+            "door_x": 5.0,
+            "door_y": 1.0,
+            "provenance": "seeded_topology",
+            "target_x": 4.0,
+            "target_y": 3.8,
+            "threshold_x": 5.0,
+            "threshold_y": 1.4,
+            "threshold_yaw": 1.5708,
+            "width": 1.2
+          },
+          "type": "Portal",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "portal:kitchen",
+          "label": "Kitchen Doorway",
+          "properties": {
+            "approach_x": -5.0,
+            "approach_y": 0.0,
+            "approach_yaw": -1.5708,
+            "connects_from": "room:hallway",
+            "connects_to": "room:kitchen",
+            "door_x": -5.0,
+            "door_y": -1.0,
+            "provenance": "seeded_topology",
+            "target_x": -4.5,
+            "target_y": -2.5,
+            "threshold_x": -5.0,
+            "threshold_y": -1.4,
+            "threshold_yaw": -1.5708,
+            "width": 1.2
+          },
+          "type": "Portal",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "portal:living",
+          "label": "Living Room Doorway",
+          "properties": {
+            "approach_x": 5.0,
+            "approach_y": 0.0,
+            "approach_yaw": -1.5708,
+            "connects_from": "room:hallway",
+            "connects_to": "room:living",
+            "door_x": 5.0,
+            "door_y": -1.0,
+            "provenance": "seeded_topology",
+            "target_x": 4.0,
+            "target_y": -2.5,
+            "threshold_x": 5.0,
+            "threshold_y": -1.4,
+            "threshold_yaw": -1.5708,
+            "width": 1.2
+          },
+          "type": "Portal",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "robot:vira",
+          "label": "GRaCEmo ViRa",
+          "properties": {
+            "height": 1.45,
+            "type": "Humanoid Service Robot"
+          },
+          "type": "Robot",
+          "updated_at": 1795372900
+        },
+        {
+          "id": "object:demo_laptop_001",
+          "label": "demo_laptop",
+          "properties": {
+            "bbox": null,
+            "class_name": "demo_laptop",
+            "confidence": 0.949999988079071,
+            "currently_visible": true,
+            "depth_m": null,
+            "first_seen": 1795372900.0,
+            "frame_id": "world",
+            "last_seen": 1795372900.0,
+            "max_confidence": 0.949999988079071,
+            "object_id": "demo_laptop_001",
+            "observation_count": 1,
+            "position": [
+              4.5,
+              3.0,
+              0.0
+            ],
+            "source": "Vision",
+            "world_x": 4.5,
+            "world_y": 3.0,
+            "world_z": 0.0
+          },
+          "type": "WorldObject",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "object:demo_laptop",
+          "label": "demo_laptop",
+          "properties": {
+            "source": "YOLOv11",
+            "x": 4.5,
+            "y": 3.0,
+            "z": 0.0
+          },
+          "type": "Object",
+          "updated_at": 1795372901
+        }
+      ]
+    },
+    "/context": {
+      "now": {
+        "active_mission": null,
+        "autonomy_state": "SYSTEM_OFFLINE",
+        "battery": null,
+        "current_room": "Central Hallway",
+        "last_autonomy_transition": null,
+        "last_scan_completed": null,
+        "last_vision_detection": {
+          "confidence": 0.949999988079071,
+          "identity": "demo_laptop",
+          "x": 4.5,
+          "y": 3.0,
+          "z": 0.0
+        },
+        "last_voice_command": null,
+        "robot_position": null,
+        "status": "online",
+        "world_objects": [
+          {
+            "bbox": null,
+            "class_name": "demo_laptop",
+            "confidence": 0.949999988079071,
+            "currently_visible": true,
+            "depth_m": null,
+            "first_seen": 1795372900.0,
+            "frame_id": "world",
+            "last_seen": 1795372900.0,
+            "max_confidence": 0.949999988079071,
+            "object_id": "demo_laptop_001",
+            "observation_count": 1,
+            "position": [
+              4.5,
+              3.0,
+              0.0
+            ],
+            "source": "Vision",
+            "world_x": 4.5,
+            "world_y": 3.0,
+            "world_z": 0.0
+          }
+        ]
+      },
+      "recent_history": [
+        {
+          "event_type": "ObjectDetected",
+          "id": "761b44e7-727c-4c9d-96c8-4273a8a00e90",
+          "observed_by": "synthetic_fixture",
+          "payload": "{\"type\":\"ObjectDetected\",\"data\":{\"class_name\":\"demo_laptop\",\"confidence\":0.95,\"x\":4.5,\"y\":3.0,\"z\":null,\"bbox\":null,\"depth_m\":null,\"frame_id\":null}}",
+          "source": "Vision",
+          "timestamp": 1795372900,
+          "trace_id": "16ed97e3-344d-4fb7-ba79-46cb6a59a2ab"
+        }
+      ],
+      "graph": {
+        "edge_count": 18,
+        "edges": [
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:hallway",
+            "target": "portal:bedroom",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:bedroom",
+            "target": "room:bedroom",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:bedroom",
+            "target": "portal:bedroom",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:bedroom",
+            "target": "room:hallway",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:hallway",
+            "target": "portal:study",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:study",
+            "target": "room:study",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:study",
+            "target": "portal:study",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:study",
+            "target": "room:hallway",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:hallway",
+            "target": "portal:kitchen",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:kitchen",
+            "target": "room:kitchen",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:kitchen",
+            "target": "portal:kitchen",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:kitchen",
+            "target": "room:hallway",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:hallway",
+            "target": "portal:living",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:living",
+            "target": "room:living",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:living",
+            "target": "portal:living",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:living",
+            "target": "room:hallway",
+            "updated_at": 1795372900,
+            "weight": 1
+          },
+          {
+            "confidence": 0.949999988079071,
+            "properties": {
+              "observed_at": 1795372900.0,
+              "x": 4.5,
+              "y": 3.0,
+              "z": 0.0
+            },
+            "relation": "LOCATED_IN",
+            "source": "object:demo_laptop_001",
+            "target": "room:study",
+            "updated_at": 1795372901,
+            "weight": 1
+          },
+          {
+            "confidence": 0.949999988079071,
+            "properties": {
+              "observed_at": 1795372900.0,
+              "x": 4.5,
+              "y": 3.0,
+              "z": 0.0
+            },
+            "relation": "LOCATED_IN",
+            "source": "object:demo_laptop",
+            "target": "room:study",
+            "updated_at": 1795372901,
+            "weight": 1
+          }
+        ],
+        "node_count": 12,
+        "nodes": [
+          {
+            "id": "room:bedroom",
+            "label": "Master Bedroom",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "portal_id": "portal:bedroom",
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": -5.0,
+              "target_y": 2.8,
+              "x_max": 0.0,
+              "x_min": -9.0,
+              "y_max": 7.0,
+              "y_min": 1.0
+            },
+            "type": "Room",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "room:study",
+            "label": "Home Study",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "portal_id": "portal:study",
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": 4.0,
+              "target_y": 3.8,
+              "x_max": 9.0,
+              "x_min": 0.0,
+              "y_max": 7.0,
+              "y_min": 1.0
+            },
+            "type": "Room",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "room:kitchen",
+            "label": "Kitchen & Dining",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "portal_id": "portal:kitchen",
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": -4.5,
+              "target_y": -2.5,
+              "x_max": 0.0,
+              "x_min": -9.0,
+              "y_max": -1.0,
+              "y_min": -7.0
+            },
+            "type": "Room",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "room:living",
+            "label": "Living Room",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "portal_id": "portal:living",
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": 4.0,
+              "target_y": -2.5,
+              "x_max": 9.0,
+              "x_min": 0.0,
+              "y_max": -1.0,
+              "y_min": -7.0
+            },
+            "type": "Room",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "room:hallway",
+            "label": "Central Hallway",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": 0.0,
+              "target_y": 0.0,
+              "x_max": 9.0,
+              "x_min": -9.0,
+              "y_max": 1.0,
+              "y_min": -1.0
+            },
+            "type": "Room",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "portal:bedroom",
+            "label": "Bedroom Doorway",
+            "properties": {
+              "approach_x": -5.0,
+              "approach_y": 0.0,
+              "approach_yaw": 1.5708,
+              "connects_from": "room:hallway",
+              "connects_to": "room:bedroom",
+              "door_x": -5.0,
+              "door_y": 1.0,
+              "provenance": "seeded_topology",
+              "target_x": -5.0,
+              "target_y": 2.8,
+              "threshold_x": -5.0,
+              "threshold_y": 1.4,
+              "threshold_yaw": 1.5708,
+              "width": 1.2
+            },
+            "type": "Portal",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "portal:study",
+            "label": "Study Doorway",
+            "properties": {
+              "approach_x": 5.0,
+              "approach_y": 0.0,
+              "approach_yaw": 1.5708,
+              "connects_from": "room:hallway",
+              "connects_to": "room:study",
+              "door_x": 5.0,
+              "door_y": 1.0,
+              "provenance": "seeded_topology",
+              "target_x": 4.0,
+              "target_y": 3.8,
+              "threshold_x": 5.0,
+              "threshold_y": 1.4,
+              "threshold_yaw": 1.5708,
+              "width": 1.2
+            },
+            "type": "Portal",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "portal:kitchen",
+            "label": "Kitchen Doorway",
+            "properties": {
+              "approach_x": -5.0,
+              "approach_y": 0.0,
+              "approach_yaw": -1.5708,
+              "connects_from": "room:hallway",
+              "connects_to": "room:kitchen",
+              "door_x": -5.0,
+              "door_y": -1.0,
+              "provenance": "seeded_topology",
+              "target_x": -4.5,
+              "target_y": -2.5,
+              "threshold_x": -5.0,
+              "threshold_y": -1.4,
+              "threshold_yaw": -1.5708,
+              "width": 1.2
+            },
+            "type": "Portal",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "portal:living",
+            "label": "Living Room Doorway",
+            "properties": {
+              "approach_x": 5.0,
+              "approach_y": 0.0,
+              "approach_yaw": -1.5708,
+              "connects_from": "room:hallway",
+              "connects_to": "room:living",
+              "door_x": 5.0,
+              "door_y": -1.0,
+              "provenance": "seeded_topology",
+              "target_x": 4.0,
+              "target_y": -2.5,
+              "threshold_x": 5.0,
+              "threshold_y": -1.4,
+              "threshold_yaw": -1.5708,
+              "width": 1.2
+            },
+            "type": "Portal",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "robot:vira",
+            "label": "GRaCEmo ViRa",
+            "properties": {
+              "height": 1.45,
+              "type": "Humanoid Service Robot"
+            },
+            "type": "Robot",
+            "updated_at": 1795372900
+          },
+          {
+            "id": "object:demo_laptop_001",
+            "label": "demo_laptop",
+            "properties": {
+              "bbox": null,
+              "class_name": "demo_laptop",
+              "confidence": 0.949999988079071,
+              "currently_visible": true,
+              "depth_m": null,
+              "first_seen": 1795372900.0,
+              "frame_id": "world",
+              "last_seen": 1795372900.0,
+              "max_confidence": 0.949999988079071,
+              "object_id": "demo_laptop_001",
+              "observation_count": 1,
+              "position": [
+                4.5,
+                3.0,
+                0.0
+              ],
+              "source": "Vision",
+              "world_x": 4.5,
+              "world_y": 3.0,
+              "world_z": 0.0
+            },
+            "type": "WorldObject",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "object:demo_laptop",
+            "label": "demo_laptop",
+            "properties": {
+              "source": "YOLOv11",
+              "x": 4.5,
+              "y": 3.0,
+              "z": 0.0
+            },
+            "type": "Object",
+            "updated_at": 1795372901
+          }
+        ]
+      },
+      "world_objects": [
+        {
+          "object_id": "demo_laptop_001",
+          "class_name": "demo_laptop",
+          "confidence": 0.95,
+          "max_confidence": 0.95,
+          "world_x": 4.5,
+          "world_y": 3.0,
+          "world_z": 0.0,
+          "position": [
+            4.5,
+            3.0,
+            0.0
+          ],
+          "first_seen": 1795372900.0,
+          "last_seen": 1795372900.0,
+          "observation_count": 1,
+          "currently_visible": true,
+          "source": "Vision",
+          "frame_id": "world",
+          "bbox": null,
+          "depth_m": null
+        }
+      ],
+      "rooms": [
+        {
+          "connected_rooms": [
+            "room:hallway"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Master Bedroom",
+          "last_explored": null,
+          "object_count": 0,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:bedroom",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": -5.0,
+            "target_y": 2.8,
+            "x_max": 0.0,
+            "x_min": -9.0,
+            "y_max": 7.0,
+            "y_min": 1.0
+          },
+          "room_id": "room:bedroom",
+          "scan_count": 0
+        },
+        {
+          "connected_rooms": [
+            "room:bedroom",
+            "room:kitchen",
+            "room:living",
+            "room:study"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Central Hallway",
+          "last_explored": null,
+          "object_count": 0,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 0.0,
+            "target_y": 0.0,
+            "x_max": 9.0,
+            "x_min": -9.0,
+            "y_max": 1.0,
+            "y_min": -1.0
+          },
+          "room_id": "room:hallway",
+          "scan_count": 0
+        },
+        {
+          "connected_rooms": [
+            "room:hallway"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Kitchen & Dining",
+          "last_explored": null,
+          "object_count": 0,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:kitchen",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": -4.5,
+            "target_y": -2.5,
+            "x_max": 0.0,
+            "x_min": -9.0,
+            "y_max": -1.0,
+            "y_min": -7.0
+          },
+          "room_id": "room:kitchen",
+          "scan_count": 0
+        },
+        {
+          "connected_rooms": [
+            "room:hallway"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Living Room",
+          "last_explored": null,
+          "object_count": 0,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:living",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 4.0,
+            "target_y": -2.5,
+            "x_max": 9.0,
+            "x_min": 0.0,
+            "y_max": -1.0,
+            "y_min": -7.0
+          },
+          "room_id": "room:living",
+          "scan_count": 0
+        },
+        {
+          "connected_rooms": [
+            "room:hallway"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Home Study",
+          "last_explored": null,
+          "object_count": 1,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:study",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 4.0,
+            "target_y": 3.8,
+            "x_max": 9.0,
+            "x_min": 0.0,
+            "y_max": 7.0,
+            "y_min": 1.0
+          },
+          "room_id": "room:study",
+          "scan_count": 0
+        }
+      ]
+    },
+    "/snapshot": {
+      "active_mission": null,
+      "autonomy_state": "SYSTEM_OFFLINE",
+      "battery": null,
+      "current_room": "Central Hallway",
+      "last_autonomy_transition": null,
+      "last_scan_completed": null,
+      "last_vision_detection": {
+        "confidence": 0.949999988079071,
+        "identity": "demo_laptop",
+        "x": 4.5,
+        "y": 3.0,
+        "z": 0.0
+      },
+      "last_voice_command": null,
+      "robot_position": null,
+      "status": "online",
+      "world_objects": [
+        {
+          "bbox": null,
+          "class_name": "demo_laptop",
+          "confidence": 0.949999988079071,
+          "currently_visible": true,
+          "depth_m": null,
+          "first_seen": 1795372900.0,
+          "frame_id": "world",
+          "last_seen": 1795372900.0,
+          "max_confidence": 0.949999988079071,
+          "object_id": "demo_laptop_001",
+          "observation_count": 1,
+          "position": [
+            4.5,
+            3.0,
+            0.0
+          ],
+          "source": "Vision",
+          "world_x": 4.5,
+          "world_y": 3.0,
+          "world_z": 0.0
+        }
+      ]
+    }
+  },
+  "after_restart": {
+    "/history": [
+      {
+        "event_type": "ObjectDetected",
+        "id": "761b44e7-727c-4c9d-96c8-4273a8a00e90",
+        "observed_by": "synthetic_fixture",
+        "payload": "{\"type\":\"ObjectDetected\",\"data\":{\"class_name\":\"demo_laptop\",\"confidence\":0.95,\"x\":4.5,\"y\":3.0,\"z\":null,\"bbox\":null,\"depth_m\":null,\"frame_id\":null}}",
+        "source": "Vision",
+        "timestamp": 1795372900,
+        "trace_id": "16ed97e3-344d-4fb7-ba79-46cb6a59a2ab"
+      }
+    ],
+    "/graph": {
+      "edge_count": 18,
+      "edges": [
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:hallway",
+          "target": "portal:bedroom",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:bedroom",
+          "target": "room:bedroom",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:bedroom",
+          "target": "portal:bedroom",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:bedroom",
+          "target": "room:hallway",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:hallway",
+          "target": "portal:study",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:study",
+          "target": "room:study",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:study",
+          "target": "portal:study",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:study",
+          "target": "room:hallway",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:hallway",
+          "target": "portal:kitchen",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:kitchen",
+          "target": "room:kitchen",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:kitchen",
+          "target": "portal:kitchen",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:kitchen",
+          "target": "room:hallway",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:hallway",
+          "target": "portal:living",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:living",
+          "target": "room:living",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "CONNECTS",
+          "source": "room:living",
+          "target": "portal:living",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 1.0,
+          "properties": {
+            "provenance": "seeded_topology"
+          },
+          "relation": "LEADS_TO",
+          "source": "portal:living",
+          "target": "room:hallway",
+          "updated_at": 1795372901,
+          "weight": 2
+        },
+        {
+          "confidence": 0.949999988079071,
+          "properties": {
+            "observed_at": 1795372900.0,
+            "x": 4.5,
+            "y": 3.0,
+            "z": 0.0
+          },
+          "relation": "LOCATED_IN",
+          "source": "object:demo_laptop_001",
+          "target": "room:study",
+          "updated_at": 1795372901,
+          "weight": 1
+        },
+        {
+          "confidence": 0.949999988079071,
+          "properties": {
+            "observed_at": 1795372900.0,
+            "x": 4.5,
+            "y": 3.0,
+            "z": 0.0
+          },
+          "relation": "LOCATED_IN",
+          "source": "object:demo_laptop",
+          "target": "room:study",
+          "updated_at": 1795372901,
+          "weight": 1
+        }
+      ],
+      "node_count": 12,
+      "nodes": [
+        {
+          "id": "room:bedroom",
+          "label": "Master Bedroom",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:bedroom",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": -5.0,
+            "target_y": 2.8,
+            "x_max": 0.0,
+            "x_min": -9.0,
+            "y_max": 7.0,
+            "y_min": 1.0
+          },
+          "type": "Room",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "room:study",
+          "label": "Home Study",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:study",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 4.0,
+            "target_y": 3.8,
+            "x_max": 9.0,
+            "x_min": 0.0,
+            "y_max": 7.0,
+            "y_min": 1.0
+          },
+          "type": "Room",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "room:kitchen",
+          "label": "Kitchen & Dining",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:kitchen",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": -4.5,
+            "target_y": -2.5,
+            "x_max": 0.0,
+            "x_min": -9.0,
+            "y_max": -1.0,
+            "y_min": -7.0
+          },
+          "type": "Room",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "room:living",
+          "label": "Living Room",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:living",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 4.0,
+            "target_y": -2.5,
+            "x_max": 9.0,
+            "x_min": 0.0,
+            "y_max": -1.0,
+            "y_min": -7.0
+          },
+          "type": "Room",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "room:hallway",
+          "label": "Central Hallway",
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 0.0,
+            "target_y": 0.0,
+            "x_max": 9.0,
+            "x_min": -9.0,
+            "y_max": 1.0,
+            "y_min": -1.0
+          },
+          "type": "Room",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "portal:bedroom",
+          "label": "Bedroom Doorway",
+          "properties": {
+            "approach_x": -5.0,
+            "approach_y": 0.0,
+            "approach_yaw": 1.5708,
+            "connects_from": "room:hallway",
+            "connects_to": "room:bedroom",
+            "door_x": -5.0,
+            "door_y": 1.0,
+            "provenance": "seeded_topology",
+            "target_x": -5.0,
+            "target_y": 2.8,
+            "threshold_x": -5.0,
+            "threshold_y": 1.4,
+            "threshold_yaw": 1.5708,
+            "width": 1.2
+          },
+          "type": "Portal",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "portal:study",
+          "label": "Study Doorway",
+          "properties": {
+            "approach_x": 5.0,
+            "approach_y": 0.0,
+            "approach_yaw": 1.5708,
+            "connects_from": "room:hallway",
+            "connects_to": "room:study",
+            "door_x": 5.0,
+            "door_y": 1.0,
+            "provenance": "seeded_topology",
+            "target_x": 4.0,
+            "target_y": 3.8,
+            "threshold_x": 5.0,
+            "threshold_y": 1.4,
+            "threshold_yaw": 1.5708,
+            "width": 1.2
+          },
+          "type": "Portal",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "portal:kitchen",
+          "label": "Kitchen Doorway",
+          "properties": {
+            "approach_x": -5.0,
+            "approach_y": 0.0,
+            "approach_yaw": -1.5708,
+            "connects_from": "room:hallway",
+            "connects_to": "room:kitchen",
+            "door_x": -5.0,
+            "door_y": -1.0,
+            "provenance": "seeded_topology",
+            "target_x": -4.5,
+            "target_y": -2.5,
+            "threshold_x": -5.0,
+            "threshold_y": -1.4,
+            "threshold_yaw": -1.5708,
+            "width": 1.2
+          },
+          "type": "Portal",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "portal:living",
+          "label": "Living Room Doorway",
+          "properties": {
+            "approach_x": 5.0,
+            "approach_y": 0.0,
+            "approach_yaw": -1.5708,
+            "connects_from": "room:hallway",
+            "connects_to": "room:living",
+            "door_x": 5.0,
+            "door_y": -1.0,
+            "provenance": "seeded_topology",
+            "target_x": 4.0,
+            "target_y": -2.5,
+            "threshold_x": 5.0,
+            "threshold_y": -1.4,
+            "threshold_yaw": -1.5708,
+            "width": 1.2
+          },
+          "type": "Portal",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "robot:vira",
+          "label": "GRaCEmo ViRa",
+          "properties": {
+            "height": 1.45,
+            "type": "Humanoid Service Robot"
+          },
+          "type": "Robot",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "object:demo_laptop_001",
+          "label": "demo_laptop",
+          "properties": {
+            "bbox": null,
+            "class_name": "demo_laptop",
+            "confidence": 0.949999988079071,
+            "currently_visible": true,
+            "depth_m": null,
+            "first_seen": 1795372900.0,
+            "frame_id": "world",
+            "last_seen": 1795372900.0,
+            "max_confidence": 0.949999988079071,
+            "object_id": "demo_laptop_001",
+            "observation_count": 1,
+            "position": [
+              4.5,
+              3.0,
+              0.0
+            ],
+            "source": "Vision",
+            "world_x": 4.5,
+            "world_y": 3.0,
+            "world_z": 0.0
+          },
+          "type": "WorldObject",
+          "updated_at": 1795372901
+        },
+        {
+          "id": "object:demo_laptop",
+          "label": "demo_laptop",
+          "properties": {
+            "source": "YOLOv11",
+            "x": 4.5,
+            "y": 3.0,
+            "z": 0.0
+          },
+          "type": "Object",
+          "updated_at": 1795372901
+        }
+      ]
+    },
+    "/context": {
+      "now": {
+        "active_mission": null,
+        "autonomy_state": "SYSTEM_OFFLINE",
+        "battery": null,
+        "current_room": "Central Hallway",
+        "last_autonomy_transition": null,
+        "last_scan_completed": null,
+        "last_vision_detection": null,
+        "last_voice_command": null,
+        "robot_position": null,
+        "status": "online",
+        "world_objects": []
+      },
+      "recent_history": [
+        {
+          "event_type": "ObjectDetected",
+          "id": "761b44e7-727c-4c9d-96c8-4273a8a00e90",
+          "observed_by": "synthetic_fixture",
+          "payload": "{\"type\":\"ObjectDetected\",\"data\":{\"class_name\":\"demo_laptop\",\"confidence\":0.95,\"x\":4.5,\"y\":3.0,\"z\":null,\"bbox\":null,\"depth_m\":null,\"frame_id\":null}}",
+          "source": "Vision",
+          "timestamp": 1795372900,
+          "trace_id": "16ed97e3-344d-4fb7-ba79-46cb6a59a2ab"
+        }
+      ],
+      "graph": {
+        "edge_count": 18,
+        "edges": [
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:hallway",
+            "target": "portal:bedroom",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:bedroom",
+            "target": "room:bedroom",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:bedroom",
+            "target": "portal:bedroom",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:bedroom",
+            "target": "room:hallway",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:hallway",
+            "target": "portal:study",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:study",
+            "target": "room:study",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:study",
+            "target": "portal:study",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:study",
+            "target": "room:hallway",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:hallway",
+            "target": "portal:kitchen",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:kitchen",
+            "target": "room:kitchen",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:kitchen",
+            "target": "portal:kitchen",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:kitchen",
+            "target": "room:hallway",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:hallway",
+            "target": "portal:living",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:living",
+            "target": "room:living",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "CONNECTS",
+            "source": "room:living",
+            "target": "portal:living",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 1.0,
+            "properties": {
+              "provenance": "seeded_topology"
+            },
+            "relation": "LEADS_TO",
+            "source": "portal:living",
+            "target": "room:hallway",
+            "updated_at": 1795372901,
+            "weight": 2
+          },
+          {
+            "confidence": 0.949999988079071,
+            "properties": {
+              "observed_at": 1795372900.0,
+              "x": 4.5,
+              "y": 3.0,
+              "z": 0.0
+            },
+            "relation": "LOCATED_IN",
+            "source": "object:demo_laptop_001",
+            "target": "room:study",
+            "updated_at": 1795372901,
+            "weight": 1
+          },
+          {
+            "confidence": 0.949999988079071,
+            "properties": {
+              "observed_at": 1795372900.0,
+              "x": 4.5,
+              "y": 3.0,
+              "z": 0.0
+            },
+            "relation": "LOCATED_IN",
+            "source": "object:demo_laptop",
+            "target": "room:study",
+            "updated_at": 1795372901,
+            "weight": 1
+          }
+        ],
+        "node_count": 12,
+        "nodes": [
+          {
+            "id": "room:bedroom",
+            "label": "Master Bedroom",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "portal_id": "portal:bedroom",
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": -5.0,
+              "target_y": 2.8,
+              "x_max": 0.0,
+              "x_min": -9.0,
+              "y_max": 7.0,
+              "y_min": 1.0
+            },
+            "type": "Room",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "room:study",
+            "label": "Home Study",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "portal_id": "portal:study",
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": 4.0,
+              "target_y": 3.8,
+              "x_max": 9.0,
+              "x_min": 0.0,
+              "y_max": 7.0,
+              "y_min": 1.0
+            },
+            "type": "Room",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "room:kitchen",
+            "label": "Kitchen & Dining",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "portal_id": "portal:kitchen",
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": -4.5,
+              "target_y": -2.5,
+              "x_max": 0.0,
+              "x_min": -9.0,
+              "y_max": -1.0,
+              "y_min": -7.0
+            },
+            "type": "Room",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "room:living",
+            "label": "Living Room",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "portal_id": "portal:living",
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": 4.0,
+              "target_y": -2.5,
+              "x_max": 9.0,
+              "x_min": 0.0,
+              "y_max": -1.0,
+              "y_min": -7.0
+            },
+            "type": "Room",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "room:hallway",
+            "label": "Central Hallway",
+            "properties": {
+              "explored": false,
+              "first_explored": null,
+              "last_explored": null,
+              "provenance": "seeded_topology",
+              "scan_count": 0,
+              "target_x": 0.0,
+              "target_y": 0.0,
+              "x_max": 9.0,
+              "x_min": -9.0,
+              "y_max": 1.0,
+              "y_min": -1.0
+            },
+            "type": "Room",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "portal:bedroom",
+            "label": "Bedroom Doorway",
+            "properties": {
+              "approach_x": -5.0,
+              "approach_y": 0.0,
+              "approach_yaw": 1.5708,
+              "connects_from": "room:hallway",
+              "connects_to": "room:bedroom",
+              "door_x": -5.0,
+              "door_y": 1.0,
+              "provenance": "seeded_topology",
+              "target_x": -5.0,
+              "target_y": 2.8,
+              "threshold_x": -5.0,
+              "threshold_y": 1.4,
+              "threshold_yaw": 1.5708,
+              "width": 1.2
+            },
+            "type": "Portal",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "portal:study",
+            "label": "Study Doorway",
+            "properties": {
+              "approach_x": 5.0,
+              "approach_y": 0.0,
+              "approach_yaw": 1.5708,
+              "connects_from": "room:hallway",
+              "connects_to": "room:study",
+              "door_x": 5.0,
+              "door_y": 1.0,
+              "provenance": "seeded_topology",
+              "target_x": 4.0,
+              "target_y": 3.8,
+              "threshold_x": 5.0,
+              "threshold_y": 1.4,
+              "threshold_yaw": 1.5708,
+              "width": 1.2
+            },
+            "type": "Portal",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "portal:kitchen",
+            "label": "Kitchen Doorway",
+            "properties": {
+              "approach_x": -5.0,
+              "approach_y": 0.0,
+              "approach_yaw": -1.5708,
+              "connects_from": "room:hallway",
+              "connects_to": "room:kitchen",
+              "door_x": -5.0,
+              "door_y": -1.0,
+              "provenance": "seeded_topology",
+              "target_x": -4.5,
+              "target_y": -2.5,
+              "threshold_x": -5.0,
+              "threshold_y": -1.4,
+              "threshold_yaw": -1.5708,
+              "width": 1.2
+            },
+            "type": "Portal",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "portal:living",
+            "label": "Living Room Doorway",
+            "properties": {
+              "approach_x": 5.0,
+              "approach_y": 0.0,
+              "approach_yaw": -1.5708,
+              "connects_from": "room:hallway",
+              "connects_to": "room:living",
+              "door_x": 5.0,
+              "door_y": -1.0,
+              "provenance": "seeded_topology",
+              "target_x": 4.0,
+              "target_y": -2.5,
+              "threshold_x": 5.0,
+              "threshold_y": -1.4,
+              "threshold_yaw": -1.5708,
+              "width": 1.2
+            },
+            "type": "Portal",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "robot:vira",
+            "label": "GRaCEmo ViRa",
+            "properties": {
+              "height": 1.45,
+              "type": "Humanoid Service Robot"
+            },
+            "type": "Robot",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "object:demo_laptop_001",
+            "label": "demo_laptop",
+            "properties": {
+              "bbox": null,
+              "class_name": "demo_laptop",
+              "confidence": 0.949999988079071,
+              "currently_visible": true,
+              "depth_m": null,
+              "first_seen": 1795372900.0,
+              "frame_id": "world",
+              "last_seen": 1795372900.0,
+              "max_confidence": 0.949999988079071,
+              "object_id": "demo_laptop_001",
+              "observation_count": 1,
+              "position": [
+                4.5,
+                3.0,
+                0.0
+              ],
+              "source": "Vision",
+              "world_x": 4.5,
+              "world_y": 3.0,
+              "world_z": 0.0
+            },
+            "type": "WorldObject",
+            "updated_at": 1795372901
+          },
+          {
+            "id": "object:demo_laptop",
+            "label": "demo_laptop",
+            "properties": {
+              "source": "YOLOv11",
+              "x": 4.5,
+              "y": 3.0,
+              "z": 0.0
+            },
+            "type": "Object",
+            "updated_at": 1795372901
+          }
+        ]
+      },
+      "world_objects": [
+        {
+          "object_id": "demo_laptop_001",
+          "class_name": "demo_laptop",
+          "confidence": 0.95,
+          "max_confidence": 0.95,
+          "world_x": 4.5,
+          "world_y": 3.0,
+          "world_z": 0.0,
+          "position": [
+            4.5,
+            3.0,
+            0.0
+          ],
+          "first_seen": 1795372900.0,
+          "last_seen": 1795372900.0,
+          "observation_count": 1,
+          "currently_visible": true,
+          "source": "Vision",
+          "frame_id": "world",
+          "bbox": null,
+          "depth_m": null
+        }
+      ],
+      "rooms": [
+        {
+          "connected_rooms": [
+            "room:hallway"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Master Bedroom",
+          "last_explored": null,
+          "object_count": 0,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:bedroom",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": -5.0,
+            "target_y": 2.8,
+            "x_max": 0.0,
+            "x_min": -9.0,
+            "y_max": 7.0,
+            "y_min": 1.0
+          },
+          "room_id": "room:bedroom",
+          "scan_count": 0
+        },
+        {
+          "connected_rooms": [
+            "room:bedroom",
+            "room:kitchen",
+            "room:living",
+            "room:study"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Central Hallway",
+          "last_explored": null,
+          "object_count": 0,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 0.0,
+            "target_y": 0.0,
+            "x_max": 9.0,
+            "x_min": -9.0,
+            "y_max": 1.0,
+            "y_min": -1.0
+          },
+          "room_id": "room:hallway",
+          "scan_count": 0
+        },
+        {
+          "connected_rooms": [
+            "room:hallway"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Kitchen & Dining",
+          "last_explored": null,
+          "object_count": 0,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:kitchen",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": -4.5,
+            "target_y": -2.5,
+            "x_max": 0.0,
+            "x_min": -9.0,
+            "y_max": -1.0,
+            "y_min": -7.0
+          },
+          "room_id": "room:kitchen",
+          "scan_count": 0
+        },
+        {
+          "connected_rooms": [
+            "room:hallway"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Living Room",
+          "last_explored": null,
+          "object_count": 0,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:living",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 4.0,
+            "target_y": -2.5,
+            "x_max": 9.0,
+            "x_min": 0.0,
+            "y_max": -1.0,
+            "y_min": -7.0
+          },
+          "room_id": "room:living",
+          "scan_count": 0
+        },
+        {
+          "connected_rooms": [
+            "room:hallway"
+          ],
+          "explored": false,
+          "first_explored": null,
+          "label": "Home Study",
+          "last_explored": null,
+          "object_count": 1,
+          "properties": {
+            "explored": false,
+            "first_explored": null,
+            "last_explored": null,
+            "portal_id": "portal:study",
+            "provenance": "seeded_topology",
+            "scan_count": 0,
+            "target_x": 4.0,
+            "target_y": 3.8,
+            "x_max": 9.0,
+            "x_min": 0.0,
+            "y_max": 7.0,
+            "y_min": 1.0
+          },
+          "room_id": "room:study",
+          "scan_count": 0
+        }
+      ]
+    },
+    "/snapshot": {
+      "active_mission": null,
+      "autonomy_state": "SYSTEM_OFFLINE",
+      "battery": null,
+      "current_room": "Central Hallway",
+      "last_autonomy_transition": null,
+      "last_scan_completed": null,
+      "last_vision_detection": null,
+      "last_voice_command": null,
+      "robot_position": null,
+      "status": "online",
+      "world_objects": [
+        {
+          "bbox": null,
+          "class_name": "demo_laptop",
+          "confidence": 0.949999988079071,
+          "currently_visible": true,
+          "depth_m": null,
+          "first_seen": 1795372900.0,
+          "frame_id": "world",
+          "last_seen": 1795372900.0,
+          "max_confidence": 0.949999988079071,
+          "object_id": "demo_laptop_001",
+          "observation_count": 1,
+          "position": [
+            4.5,
+            3.0,
+            0.0
+          ],
+          "source": "Vision",
+          "world_x": 4.5,
+          "world_y": 3.0,
+          "world_z": 0.0
+        }
+      ]
+    }
+  }
+}

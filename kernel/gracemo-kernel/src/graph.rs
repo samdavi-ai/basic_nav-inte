@@ -1,7 +1,7 @@
 use anyhow::Result;
 use chrono::Utc;
 use gracemo_types::{Event, EventType, WorldObject};
-use rusqlite::{params, Connection};
+use rusqlite::{params, Connection, OptionalExtension};
 use serde_json::{json, Value};
 use std::path::Path;
 use std::sync::{Arc, Mutex};
@@ -78,7 +78,129 @@ impl GraphDb {
             [],
         )?;
 
+        conn.execute_batch("CREATE TABLE IF NOT EXISTS visual_observations (
+            observation_id TEXT PRIMARY KEY,
+            object_id TEXT NOT NULL,
+            class_name TEXT NOT NULL,
+            captured_at INTEGER NOT NULL,
+            image_stamp_ns INTEGER,
+            source_camera TEXT,
+            coordinate_frame TEXT NOT NULL,
+            x REAL NOT NULL, y REAL NOT NULL, z REAL NOT NULL,
+            confidence REAL NOT NULL,
+            detection_id TEXT, track_id TEXT,
+            mission_id TEXT, trace_id TEXT NOT NULL,
+            provenance_source TEXT NOT NULL,
+            observed_by TEXT NOT NULL,
+            map_version TEXT,
+            status TEXT NOT NULL DEFAULT 'active',
+            superseded_by TEXT,
+            deleted_at INTEGER, deleted_by TEXT, delete_reason TEXT
+        );
+        CREATE INDEX IF NOT EXISTS visual_observations_object_time
+            ON visual_observations(object_id,captured_at DESC);
+        CREATE INDEX IF NOT EXISTS visual_observations_status_time
+            ON visual_observations(status,captured_at DESC);")?;
+
         Ok(())
+    }
+
+    fn visual_retention_cutoff() -> i64 {
+        let days = std::env::var("VIRA_VISUAL_MEMORY_RETENTION_DAYS")
+            .ok().and_then(|v| v.parse::<i64>().ok()).filter(|v| (1..=3650).contains(v)).unwrap_or(30);
+        Utc::now().timestamp().saturating_sub(days.saturating_mul(86_400))
+    }
+
+    fn expire_visual_observations(&self) -> Result<()> {
+        let cutoff = Self::visual_retention_cutoff();
+        let conn = self.conn.lock().map_err(|_| anyhow::anyhow!("graph database unavailable"))?;
+        conn.execute("UPDATE visual_observations SET status='expired' WHERE captured_at < ?1 AND status IN ('active','superseded')", [cutoff])?;
+        conn.execute("DELETE FROM nodes WHERE type='WorldObject' AND CAST(json_extract(properties,'$.last_seen') AS REAL) < ?1", [cutoff as f64])?;
+        conn.execute("DELETE FROM nodes WHERE type='Object' AND NOT EXISTS (
+            SELECT 1 FROM nodes w WHERE w.type='WorldObject'
+            AND lower(json_extract(w.properties,'$.class_name'))=lower(nodes.label))", [])?;
+        Ok(())
+    }
+
+    fn record_visual_observation(
+        &self, event: &Event, object_id: &str, class_name: &str, confidence: f32,
+        x: f64, y: f64, z: f64, coordinate_frame: Option<&str>, source_camera: Option<&str>,
+        detection_id: Option<&str>, track_id: Option<&str>, image_stamp_ns: Option<i64>,
+    ) -> Result<()> {
+        let mut conn = self.conn.lock().map_err(|_| anyhow::anyhow!("graph database unavailable"))?;
+        let tx = conn.transaction()?;
+        let observation_id = event.id.to_string();
+        let exists: bool = tx.query_row("SELECT EXISTS(SELECT 1 FROM visual_observations WHERE observation_id=?1)",
+            [&observation_id], |row| row.get(0))?;
+        if exists { return Ok(()); }
+        tx.execute("UPDATE visual_observations SET status='superseded', superseded_by=?1
+            WHERE object_id=?2 AND status='active'", params![observation_id, object_id])?;
+        tx.execute("INSERT INTO visual_observations(
+            observation_id,object_id,class_name,captured_at,image_stamp_ns,source_camera,coordinate_frame,
+            x,y,z,confidence,detection_id,track_id,mission_id,trace_id,provenance_source,observed_by,map_version,status)
+            VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14,?15,?16,?17,NULL,'active')",
+            params![observation_id,object_id,class_name,event.timestamp,image_stamp_ns,source_camera,
+                coordinate_frame.unwrap_or("world"),x,y,z,confidence,detection_id,track_id,
+                event.session_id.as_deref(),event.trace_id.to_string(),event.source.to_string(),event.observed_by])?;
+        tx.commit()?;
+        Ok(())
+    }
+
+    /// Return object observations. Deleted and expired records are never exposed by this view.
+    pub fn query_visual_observations(&self, object_id: Option<&str>, include_history: bool, limit: usize) -> Result<Vec<Value>> {
+        self.expire_visual_observations()?;
+        let conn = self.conn.lock().map_err(|_| anyhow::anyhow!("graph database unavailable"))?;
+        let statuses = if include_history { "status IN ('active','superseded')" } else { "status='active'" };
+        let sql = format!("SELECT observation_id,object_id,class_name,captured_at,image_stamp_ns,source_camera,
+            coordinate_frame,x,y,z,confidence,detection_id,track_id,mission_id,trace_id,provenance_source,
+            observed_by,map_version,status,superseded_by FROM visual_observations WHERE {statuses}
+            AND (?1 IS NULL OR object_id=?1) ORDER BY captured_at DESC,observation_id DESC LIMIT ?2");
+        let mut stmt = conn.prepare(&sql)?;
+        let rows = stmt.query_map(params![object_id, limit.clamp(1,500) as i64], |row| {
+            Ok(json!({
+                "observation_id":row.get::<_,String>(0)?, "object_id":row.get::<_,String>(1)?,
+                "class_name":row.get::<_,String>(2)?, "captured_at":row.get::<_,i64>(3)?,
+                "image_stamp_ns":row.get::<_,Option<i64>>(4)?, "source_camera":row.get::<_,Option<String>>(5)?,
+                "coordinate_frame":row.get::<_,String>(6)?, "position":{"x":row.get::<_,f64>(7)?,"y":row.get::<_,f64>(8)?,"z":row.get::<_,f64>(9)?},
+                "confidence":row.get::<_,f64>(10)?, "detection_id":row.get::<_,Option<String>>(11)?,
+                "track_id":row.get::<_,Option<String>>(12)?, "mission_id":row.get::<_,Option<String>>(13)?,
+                "trace_id":row.get::<_,String>(14)?, "provenance":{"source":row.get::<_,String>(15)?,"observed_by":row.get::<_,String>(16)?},
+                "map_version":row.get::<_,Option<String>>(17)?, "status":row.get::<_,String>(18)?,
+                "superseded_by":row.get::<_,Option<String>>(19)?
+            }))
+        })?.collect::<std::result::Result<Vec<_>,_>>()?;
+        Ok(rows)
+    }
+
+    /// Deleted and expired detections must not reappear through the event ledger views.
+    pub fn visual_observation_hidden(&self, observation_id: &str) -> Result<bool> {
+        let conn = self.conn.lock().map_err(|_| anyhow::anyhow!("graph database unavailable"))?;
+        Ok(conn.query_row("SELECT EXISTS(SELECT 1 FROM visual_observations
+            WHERE observation_id=?1 AND status IN ('deleted','expired'))", [observation_id], |row| row.get(0))?)
+    }
+
+    /// Tombstone a visual observation while retaining a non-public audit record.
+    pub fn delete_visual_observation(&self, observation_id: &str, operator: &str, reason: &str) -> Result<bool> {
+        let mut conn = self.conn.lock().map_err(|_| anyhow::anyhow!("graph database unavailable"))?;
+        let tx = conn.transaction()?;
+        let entity: Option<(String,String)> = tx.query_row(
+            "SELECT object_id,class_name FROM visual_observations WHERE observation_id=?1 AND status IN ('active','superseded')",
+            [observation_id], |row| Ok((row.get(0)?,row.get(1)?))).optional()?;
+        let Some((object_id,class_name)) = entity else { return Ok(false); };
+        tx.execute("UPDATE visual_observations SET status='deleted',deleted_at=?1,deleted_by=?2,delete_reason=?3
+            WHERE observation_id=?4", params![Utc::now().timestamp(),operator,reason,observation_id])?;
+        let active: bool = tx.query_row("SELECT EXISTS(SELECT 1 FROM visual_observations WHERE object_id=?1 AND status='active')",
+            [&object_id], |row| row.get(0))?;
+        if !active {
+            tx.execute("DELETE FROM nodes WHERE id=?1 AND type='WorldObject'", [format!("object:{object_id}")])?;
+            let remaining_class: bool = tx.query_row("SELECT EXISTS(SELECT 1 FROM nodes WHERE type='WorldObject'
+                AND lower(json_extract(properties,'$.class_name'))=lower(?1))", [&class_name], |row| row.get(0))?;
+            if !remaining_class {
+                tx.execute("DELETE FROM nodes WHERE id=?1 AND type='Object'", [format!("object:{}",class_name.to_lowercase().trim())])?;
+            }
+        }
+        tx.commit()?;
+        Ok(true)
     }
 
     /// Seed the canonical physical apartment topology
@@ -352,6 +474,7 @@ impl GraphDb {
         class_filter: Option<&str>,
         visible_only: bool,
     ) -> Result<Vec<WorldObject>> {
+        self.expire_visual_observations()?;
         let conn = self.conn.lock().unwrap();
         let current_time = Utc::now().timestamp() as f64;
         let mut stmt = conn.prepare("SELECT properties FROM nodes WHERE type = 'WorldObject'")?;
@@ -703,7 +826,8 @@ impl GraphDb {
     pub fn process_event(&self, event: &Event, current_room: &str) -> Result<()> {
         match &event.event_type {
             // Real YOLOv11 Visual Detections with 3D Spatial Position
-            EventType::ObjectDetected { class_name, confidence, x, y, z, bbox, depth_m, frame_id } => {
+            EventType::ObjectDetected { class_name, confidence, x, y, z, bbox, depth_m, frame_id,
+                detection_id, track_id, camera_id, image_stamp_ns } => {
                 let detected_z = z.unwrap_or(0.0) as f64;
                 let detected_x = *x as f64;
                 let detected_y = *y as f64;
@@ -830,6 +954,10 @@ impl GraphDb {
                     *confidence,
                     Some(json!({"observed_at": timestamp, "x": updated_object.world_x, "y": updated_object.world_y, "z": updated_object.world_z})),
                 )?;
+                self.record_visual_observation(event, &updated_object.object_id, class_name,
+                    *confidence, detected_x, detected_y, detected_z, frame_id.as_deref(),
+                    camera_id.as_deref(), detection_id.as_deref(), track_id.as_deref(),
+                    *image_stamp_ns)?;
             }
 
             // Real Odometry / Navigation Arrived
@@ -943,6 +1071,7 @@ mod tests {
                 bbox: Some(vec![100.0, 150.0, 200.0, 300.0]),
                 depth_m: Some(2.18),
                 frame_id: Some("world".to_string()),
+                detection_id: None, track_id: None, camera_id: None, image_stamp_ns: None,
             },
         );
         db.process_event(&ev1, "Kitchen & Dining").unwrap();
@@ -969,6 +1098,7 @@ mod tests {
                 bbox: Some(vec![102.0, 152.0, 202.0, 302.0]),
                 depth_m: Some(2.19),
                 frame_id: Some("world".to_string()),
+                detection_id: None, track_id: None, camera_id: None, image_stamp_ns: None,
             },
         );
         db.process_event(&ev2, "Kitchen & Dining").unwrap();
@@ -993,6 +1123,7 @@ mod tests {
                 bbox: None,
                 depth_m: None,
                 frame_id: None,
+                detection_id: None, track_id: None, camera_id: None, image_stamp_ns: None,
             },
         );
         db.process_event(&ev3, "Living Room").unwrap();
@@ -1047,6 +1178,7 @@ mod tests {
                 bbox: None,
                 depth_m: Some(2.5),
                 frame_id: Some("world".to_string()),
+                detection_id: None, track_id: None, camera_id: None, image_stamp_ns: None,
             },
         );
         db.process_event(&ev_bed, "Central Hallway").unwrap();
@@ -1064,6 +1196,7 @@ mod tests {
                 bbox: None,
                 depth_m: Some(2.0),
                 frame_id: Some("world".to_string()),
+                detection_id: None, track_id: None, camera_id: None, image_stamp_ns: None,
             },
         );
         db.process_event(&ev_desk, "Home Study").unwrap();
@@ -1145,5 +1278,47 @@ mod tests {
         assert_eq!(status_all["explored_rooms"], 5);
         assert_eq!(status_all["unexplored_rooms"], 0);
         assert_eq!(status_all["all_explored"], true);
+    }
+
+    #[test]
+    fn test_visual_observation_supersede_delete_and_retention_views() {
+        use gracemo_types::EventSource;
+        let db = GraphDb::open(":memory:").expect("in-memory database");
+        let mut first = Event::new(EventSource::Vision, "camera", EventType::ObjectDetected {
+            class_name: "chair".into(), confidence: 0.8, x: 1.0, y: 2.0,
+            z: Some(0.5), bbox: None, depth_m: Some(1.0), frame_id: Some("map".into()),
+            detection_id: Some("det-1".into()), track_id: Some("track-7".into()),
+            camera_id: Some("front-rgbd".into()), image_stamp_ns: Some(1234),
+        });
+        first.session_id = Some("mission-9".into());
+        db.process_event(&first, "Home Study").unwrap();
+        let mut second = Event::new(EventSource::Vision, "camera", EventType::ObjectDetected {
+            class_name: "chair".into(), confidence: 0.9, x: 1.1, y: 2.0,
+            z: Some(0.5), bbox: None, depth_m: Some(1.1), frame_id: Some("map".into()),
+            detection_id: Some("det-2".into()), track_id: Some("track-7".into()),
+            camera_id: Some("front-rgbd".into()), image_stamp_ns: Some(2234),
+        });
+        second.session_id = Some("mission-9".into());
+        db.process_event(&second, "Home Study").unwrap();
+
+        let active = db.query_visual_observations(Some("chair_001"), false, 10).unwrap();
+        assert_eq!(active.len(), 1);
+        assert_eq!(active[0]["observation_id"], second.id.to_string());
+        assert_eq!(active[0]["mission_id"], "mission-9");
+        assert_eq!(active[0]["track_id"], "track-7");
+        assert_eq!(active[0]["source_camera"], "front-rgbd");
+        assert_eq!(active[0]["image_stamp_ns"], 2234);
+        let history = db.query_visual_observations(Some("chair_001"), true, 10).unwrap();
+        assert_eq!(history.len(), 2);
+        assert_eq!(history.iter().find(|row| row["observation_id"] == first.id.to_string()).unwrap()["status"], "superseded");
+
+        assert!(db.delete_visual_observation(&second.id.to_string(), "operator", "privacy request").unwrap());
+        assert!(db.query_visual_observations(Some("chair_001"), false, 10).unwrap().is_empty());
+        assert!(db.visual_observation_hidden(&second.id.to_string()).unwrap());
+        assert!(db.query_world_objects(Some("chair"), false).unwrap().is_empty());
+        assert!(!db.delete_visual_observation(&second.id.to_string(), "operator", "repeat").unwrap());
+        let after_delete = db.query_visual_observations(Some("chair_001"), true, 10).unwrap();
+        assert_eq!(after_delete.len(), 1);
+        assert_eq!(after_delete[0]["observation_id"], first.id.to_string());
     }
 }

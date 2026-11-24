@@ -1,0 +1,30 @@
+{
+  "success": false,
+  "timed_out": true,
+  "mission_id": "standalone-c81d9459-936b-481f-a41b-0962ec26370f",
+  "trace_id": "b1531888-eb83-4f29-8470-173b2cff8bd8",
+  "rooms": [
+    "Kitchen & Dining",
+    "Master Bedroom",
+    "Home Study",
+    "Living Room",
+    "Central Hallway"
+  ],
+  "coordinator_result": {
+    "mission_id": "standalone-c81d9459-936b-481f-a41b-0962ec26370f",
+    "name": "Standalone apartment patrol",
+    "success": false,
+    "status": "CANCELLED",
+    "reason": "Cancelled by operator",
+    "waypoints_completed": 0,
+    "total_waypoints": 11,
+    "duration_sec": 100.1,
+    "end_pose": {
+      "x": -2.53,
+      "y": -0.12
+    },
+    "timestamp": 1795381049.505217
+  },
+  "kernel_result": null,
+  "timestamp": 1795381054.9683518
+}

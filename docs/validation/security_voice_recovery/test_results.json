@@ -1,0 +1,17 @@
+{
+  "python_component": {
+    "tests": "43",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "6.036"
+  },
+  "rust_component_passed": 18,
+  "focused_latch_component_passed": 3,
+  "ros_boundary_runs": [
+    "final_corridor_1/boundary.json",
+    "final_corridor_2/boundary.json"
+  ],
+  "latest_native_launcher_trial": "combined_3/voice_1_diagnostics.json",
+  "restart": "desktop_recovery/process_lifecycle_evidence.json"
+}

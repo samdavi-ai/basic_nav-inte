@@ -1,0 +1,110 @@
+{
+  "wall_seconds": 154.00244769599885,
+  "observer_messages_per_wall_second": {
+    "rgb": 8.785574646649934,
+    "info": 8.668693387492729,
+    "odom": 8.668693387492729,
+    "graph": 8.532331918475988
+  },
+  "matched_nonlost_poses_per_wall_second": 8.668693387492729,
+  "complete_wall_windows": [
+    {
+      "wall_seconds": 10.010217289000138,
+      "valid_pose_hz": 6.693161403561524,
+      "graph_hz": 6.593263472165083
+    },
+    {
+      "wall_seconds": 11.990178346000903,
+      "valid_pose_hz": 9.090773869627627,
+      "graph_hz": 9.007372274493427
+    },
+    {
+      "wall_seconds": 10.003384290997928,
+      "valid_pose_hz": 8.397158157323998,
+      "graph_hz": 8.397158157323998
+    },
+    {
+      "wall_seconds": 10.00725395200061,
+      "valid_pose_hz": 8.79362114942705,
+      "graph_hz": 8.69369363636538
+    },
+    {
+      "wall_seconds": 10.00072043199907,
+      "valid_pose_hz": 8.899358861710482,
+      "graph_hz": 8.899358861710482
+    },
+    {
+      "wall_seconds": 11.992164251001668,
+      "valid_pose_hz": 8.922492867879342,
+      "graph_hz": 8.839105084067386
+    },
+    {
+      "wall_seconds": 10.009105899000133,
+      "valid_pose_hz": 8.89190312282446,
+      "graph_hz": 8.89190312282446
+    },
+    {
+      "wall_seconds": 10.000867390001076,
+      "valid_pose_hz": 8.799236763001467,
+      "graph_hz": 8.899228089853757
+    },
+    {
+      "wall_seconds": 10.030154675998347,
+      "valid_pose_hz": 8.773543663347441,
+      "graph_hz": 8.673844303536674
+    },
+    {
+      "wall_seconds": 11.965195868000592,
+      "valid_pose_hz": 8.859027563726194,
+      "graph_hz": 8.357573173326598
+    },
+    {
+      "wall_seconds": 12.002258792999783,
+      "valid_pose_hz": 8.831670923628444,
+      "graph_hz": 8.498400322736805
+    },
+    {
+      "wall_seconds": 12.003108036999038,
+      "valid_pose_hz": 8.831046065174103,
+      "graph_hz": 8.664422554510441
+    },
+    {
+      "wall_seconds": 11.999657561002095,
+      "valid_pose_hz": 8.666913990778493,
+      "graph_hz": 8.250235433529529
+    },
+    {
+      "wall_seconds": 11.988180910997471,
+      "valid_pose_hz": 8.67521109100002,
+      "graph_hz": 8.67521109100002
+    }
+  ],
+  "backend_reported_stamp_delay_s": {
+    "odometry": {
+      "median": 0.052,
+      "p95": 0.08,
+      "max": 0.11
+    },
+    "mapping": {
+      "median": 0.1,
+      "p95": 0.1425999999999999,
+      "max": 0.194
+    }
+  },
+  "processes": {
+    "rtabmap": {
+      "samples": 77,
+      "median_cpu_percent_one_core": 65.4,
+      "peak_rss_mib": 569.4609375,
+      "first_rss_mib": 225.07421875,
+      "last_rss_mib": 569.4609375
+    },
+    "rgbd_odometry": {
+      "samples": 77,
+      "median_cpu_percent_one_core": 26.5,
+      "peak_rss_mib": 237.6796875,
+      "first_rss_mib": 202.296875,
+      "last_rss_mib": 237.6796875
+    }
+  }
+}

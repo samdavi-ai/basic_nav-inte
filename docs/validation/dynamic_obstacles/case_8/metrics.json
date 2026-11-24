@@ -1,0 +1,682 @@
+{
+  "case": {
+    "index": 8,
+    "seed": 42,
+    "kind": "doorway",
+    "box": [
+      4.98,
+      1.05,
+      0.272,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      3.0
+    ],
+    "min_robot_x": 3.3,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world"
+  },
+  "mission_id": "standalone-e8147b4b-965f-45ba-bef8-78c9148b92f3",
+  "trace_id": "2320827c-08c6-4a4c-b914-1c5942620316",
+  "matched_terminal": true,
+  "runner_timed_out": false,
+  "goal_within_035m": false,
+  "final_zero_command_window_s": 1.26,
+  "planner_actions": [
+    {
+      "t": 3.63,
+      "kind": "planning_result",
+      "uuid": "a819d61c18fd3a920e7fa3f464cbe563",
+      "accepted": 3.622,
+      "path_stamp": 3.622,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 11.448,
+      "kind": "planning_result",
+      "uuid": "7d0bb4fe12e7217995f9b74a23898cd5",
+      "accepted": 11.446,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 12.282,
+      "kind": "planning_result",
+      "uuid": "c31bfbcf523244066e0bfca45fd24724",
+      "accepted": 11.464,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 13.21,
+      "kind": "planning_result",
+      "uuid": "2967b5019d2716d7a10b5edc09e8a263",
+      "accepted": 12.308,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 14.132,
+      "kind": "planning_result",
+      "uuid": "e1d4da663a1a0a775f2dcc787c35433e",
+      "accepted": 13.22,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 17.182,
+      "kind": "planning_result",
+      "uuid": "78e119211539b6d553bae4a55cd54bc6",
+      "accepted": 17.176,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 17.92,
+      "kind": "planning_result",
+      "uuid": "19ffbb8d7fa3adc34e502b0a680c0c8e",
+      "accepted": 17.196,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 20.51,
+      "kind": "planning_result",
+      "uuid": "16b89835bd02881ae70464217a1ebd52",
+      "accepted": 20.506,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 20.764,
+      "kind": "planning_result",
+      "uuid": "a8ce6d614abfcd332cd4471083911101",
+      "accepted": 20.53,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 21.72,
+      "kind": "planning_result",
+      "uuid": "fe08f43e4eb1816d22f84c9a3be5007f",
+      "accepted": 20.78,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 22.698,
+      "kind": "planning_result",
+      "uuid": "bdfbcf18d8dad80097446dbd09a76df7",
+      "accepted": 21.744,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 25.782,
+      "kind": "planning_result",
+      "uuid": "8d9cf2fd5ea5fce4227eb7f76eab469a",
+      "accepted": 25.78,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 26.218,
+      "kind": "planning_result",
+      "uuid": "9a3b8a39b535f424e2c6a87ddf94f8e9",
+      "accepted": 25.792,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 28.836,
+      "kind": "planning_result",
+      "uuid": "020f94e42c77b62deceb78bb5d0f0fae",
+      "accepted": 28.834,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 28.89,
+      "kind": "planning_result",
+      "uuid": "cb8a41712d446b22dbdd03cab90dc059",
+      "accepted": 28.856,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 30.428,
+      "kind": "planning_result",
+      "uuid": "50bbff70653e04a025cf4cd09321bd99",
+      "accepted": 30.418,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 30.712,
+      "kind": "planning_result",
+      "uuid": "3e68e1f4ccedc747c0482e233dca2ea3",
+      "accepted": 30.45,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 31.588,
+      "kind": "planning_result",
+      "uuid": "0fe8f14175e228946645e632df843e1f",
+      "accepted": 30.732,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 32.51,
+      "kind": "planning_result",
+      "uuid": "46982eff3825931d58b2e83d8be7e480",
+      "accepted": 31.6,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 35.57,
+      "kind": "planning_result",
+      "uuid": "1e2ac4af3e92fa70b85a8917371f0688",
+      "accepted": 35.566,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 36.244,
+      "kind": "planning_result",
+      "uuid": "7072bdb8eb334c27f7f3ac4e496aca91",
+      "accepted": 35.592,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 38.934,
+      "kind": "planning_result",
+      "uuid": "78fef42ae421753ba45a6a6d77595e10",
+      "accepted": 38.93,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 39.87,
+      "kind": "planning_result",
+      "uuid": "7979f872dd103aaf159fca6cb4509549",
+      "accepted": 38.952,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 40.758,
+      "kind": "planning_result",
+      "uuid": "752743b5a4eb670120ef49842e505da2",
+      "accepted": 39.888,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 41.642,
+      "kind": "planning_result",
+      "uuid": "6d4600b2fbf4a41166e84ff44430f8a1",
+      "accepted": 40.772,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 44.708,
+      "kind": "planning_result",
+      "uuid": "c23cab1bfc79805e96fbdbafa06172f4",
+      "accepted": 44.702,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 45.438,
+      "kind": "planning_result",
+      "uuid": "101827f0c982219e27cce2535c736f82",
+      "accepted": 44.722,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 48.046,
+      "kind": "planning_result",
+      "uuid": "8f3747ca78b5249ea6d06eb2699a8365",
+      "accepted": 48.04,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 48.308,
+      "kind": "planning_result",
+      "uuid": "f8bc902efbe1edafecaad0ee7f6c56d7",
+      "accepted": 48.06,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 49.834,
+      "kind": "planning_result",
+      "uuid": "e0014360cde75ce23e96dfe32c79f9dd",
+      "accepted": 49.828,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 50.19,
+      "kind": "planning_result",
+      "uuid": "dff86a971ce359ce270dbc1f62f766d9",
+      "accepted": 49.852,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 51.148,
+      "kind": "planning_result",
+      "uuid": "6eebe618607033f4af32f25eb2f33b52",
+      "accepted": 50.206,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 52.076,
+      "kind": "planning_result",
+      "uuid": "fbd3f83189a553dea9a3c3ebf1602a35",
+      "accepted": 51.18,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 55.128,
+      "kind": "planning_result",
+      "uuid": "a68447e26615bed3a3a41670eb4de4b7",
+      "accepted": 55.124,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 55.958,
+      "kind": "planning_result",
+      "uuid": "c705a33d109c21c23fda8593b461afcd",
+      "accepted": 55.144,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 58.62,
+      "kind": "planning_result",
+      "uuid": "df7ae3ec98da2ae4e79884eebaf17631",
+      "accepted": 58.616,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 58.778,
+      "kind": "planning_result",
+      "uuid": "6a5b48b9968e47769b2bbd731b3c79a6",
+      "accepted": 58.634,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 59.744,
+      "kind": "planning_result",
+      "uuid": "36e5e2b1cac846e555e0be5909cfcf21",
+      "accepted": 58.796,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 60.714,
+      "kind": "planning_result",
+      "uuid": "e4461e7ab957cc80ffbee66c33e55886",
+      "accepted": 59.76,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 63.78,
+      "kind": "planning_result",
+      "uuid": "2b3309d8e2ef1bc408ab2f0e0a3441dc",
+      "accepted": 63.776,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 64.626,
+      "kind": "planning_result",
+      "uuid": "1a08b5cb8a9e9985c3777da6298a289e",
+      "accepted": 63.796,
+      "path_stamp": 64.622,
+      "duration": 0.8280000000000001,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 65.62,
+      "kind": "planning_result",
+      "uuid": "6f5bb93b02b913bc520e8c0e6ac1c613",
+      "accepted": 65.62,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 66.364,
+      "kind": "planning_result",
+      "uuid": "27d42cd78093a8692f6efc798448aac4",
+      "accepted": 65.63,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 70.444,
+      "kind": "planning_result",
+      "uuid": "48aecaac8b09a581a4de81cb260ef10a",
+      "accepted": 70.438,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 71.194,
+      "kind": "planning_result",
+      "uuid": "ef37e85b1d7c5d1ec0fc3d98775408e0",
+      "accepted": 70.46,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 72.724,
+      "kind": "planning_result",
+      "uuid": "58275eea9ea28ee1a29b8435306f7d97",
+      "accepted": 72.718,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 73.058,
+      "kind": "planning_result",
+      "uuid": "6d5954799e66fdc1be2c410f78ed6e92",
+      "accepted": 72.74,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 74.01,
+      "kind": "planning_result",
+      "uuid": "a9811eb08bb841933cd26efaf49db54e",
+      "accepted": 73.072,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 75.014,
+      "kind": "planning_result",
+      "uuid": "04981802aa872a36a2521f11f4e1522f",
+      "accepted": 74.022,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 78.092,
+      "kind": "planning_result",
+      "uuid": "6f304403cd83f1e05824f28162423c46",
+      "accepted": 78.086,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 78.918,
+      "kind": "planning_result",
+      "uuid": "7cee10705d0ec15974777f3065cd3952",
+      "accepted": 78.11,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 81.486,
+      "kind": "planning_result",
+      "uuid": "9abc44964947f34b8dc1cc85141a0637",
+      "accepted": 81.482,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 81.836,
+      "kind": "planning_result",
+      "uuid": "3cfc61a9078a9cb45c18381ee93cb5da",
+      "accepted": 81.51,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 82.818,
+      "kind": "planning_result",
+      "uuid": "0bfe0e1c7e80608fcd68ee62ecfdca82",
+      "accepted": 81.852,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 83.802,
+      "kind": "planning_result",
+      "uuid": "71ed1589b4c37bd2d9a38cd500a509ab",
+      "accepted": 82.832,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 86.866,
+      "kind": "planning_result",
+      "uuid": "6d53c094df94a6c20d65d7e87a3e9deb",
+      "accepted": 86.862,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 87.692,
+      "kind": "planning_result",
+      "uuid": "f5bbd2f98d563830b0ecdf92bd62371c",
+      "accepted": 86.884,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 90.39,
+      "kind": "planning_result",
+      "uuid": "1b1ffe32d932a0a9ab953d75f1862e85",
+      "accepted": 90.386,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 90.536,
+      "kind": "planning_result",
+      "uuid": "61e5eaebeb8c93143f9b51531cfd4748",
+      "accepted": 90.406,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    }
+  ],
+  "insertion_within_proven_planner_interval": false,
+  "state": "FAILED",
+  "kernel_terminal": "NAVIGATION_FAILURE",
+  "retries": 3,
+  "insert_requested": 10.56,
+  "first_scene_confirmation": 10.948,
+  "last_scene_confirmation": [
+    10.948,
+    4.98,
+    1.05
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": null,
+  "risk_to_zero_s": null,
+  "risk_to_chassis_stop_s": null,
+  "selected_rollouts_after_insertion": 84,
+  "worst_frozen_rollout_fixture_m": -0.14491,
+  "minimum_scene_interpolated_m": 0.206526,
+  "minimum_fixture_interpolated_m": 0.38022,
+  "sensor_transform_drops": 2,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "depth": 10.8,
+    "scan": 12.278
+  },
+  "first_lethal_marks": {
+    "local_costmap": 11.278,
+    "global_costmap": 11.384
+  },
+  "preexisting_matches": {},
+  "first_monitor_action": null,
+  "first_risk_action": null,
+  "monitor_stop": null,
+  "guard_stop": null,
+  "first_final_zero_after_stop_action": null,
+  "sensor_to_local_mark_s": 0.478,
+  "local_mark_to_stop_s": null,
+  "sensor_to_stop_s": null,
+  "peak_linear_speed_until_stop_mps": null,
+  "max_displacement_until_stop_m": null,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": 0.38521,
+  "goal_error_m": 3.43932,
+  "old_and_new_plans": [
+    {
+      "t": 3.622,
+      "points": 244,
+      "frozen_fixture_clearance_m": -0.51375
+    },
+    {
+      "t": 64.622,
+      "points": 119,
+      "frozen_fixture_clearance_m": -0.30998
+    }
+  ],
+  "after_insertion_plan_count": 1,
+  "confirmed_motion_m": 0.0
+}

@@ -22,6 +22,7 @@ import time
 import math
 import json
 import subprocess
+import urllib.request
 from typing import Dict, Any, Tuple
 
 import rclpy
@@ -171,7 +172,7 @@ def run_full_readiness_probe(verbose: bool = True) -> Tuple[bool, Dict[str, Any]
     # -------------------------------------------------------------------------
     localhost_env = os.environ.get("ROS_LOCALHOST_ONLY", "0") == "1" or os.environ.get("ROS_AUTOMATIC_DISCOVERY_RANGE", "") == "LOCALHOST"
     gz_part = os.environ.get("GZ_PARTITION", "gracemo")
-    s1_ok = (gz_part == "gracemo")
+    s1_ok = localhost_env and bool(gz_part.strip())
     diag_s1 = f"ROS_DISCOVERY_RANGE: {os.environ.get('ROS_AUTOMATIC_DISCOVERY_RANGE', 'LOCALHOST')}, GZ_PARTITION: {gz_part}"
     stages["Stage 1: ROS & Localhost DDS Environment"] = {"status": "PASS" if s1_ok else "WARN", "details": diag_s1}
     print(f"[{'PASS' if s1_ok else 'WARN'}] Stage 1: ROS & DDS Environment -> {diag_s1}")
@@ -190,8 +191,11 @@ def run_full_readiness_probe(verbose: bool = True) -> Tuple[bool, Dict[str, Any]
     # -------------------------------------------------------------------------
     # STAGE 3: Robot model & ros_gz_bridge
     # -------------------------------------------------------------------------
-    gz_res = subprocess.run(["gz", "model", "-m", "gracemo_vira"], capture_output=True, text=True, env=dict(os.environ, GZ_PARTITION="gracemo"))
-    model_in_gz = (gz_res.returncode == 0 or "gracemo_vira" in gz_res.stdout)
+    try:
+        gz_res = subprocess.run(["gz", "model", "--list"], capture_output=True, text=True, timeout=6)
+        model_in_gz = gz_res.returncode == 0 and "gracemo_vira" in gz_res.stdout
+    except subprocess.TimeoutExpired:
+        model_in_gz = False
     bridge_rx = (probe.odom_count > 0 or probe.scan_count > 0)
     s3_ok = model_in_gz and bridge_rx
     diag_s3 = f"Gazebo model online: {model_in_gz}, Bridge telemetry received: {bridge_rx}"
@@ -334,7 +338,12 @@ def run_full_readiness_probe(verbose: bool = True) -> Tuple[bool, Dict[str, Any]
     # -------------------------------------------------------------------------
     # STAGE 11: Interaction backend & Kernel health
     # -------------------------------------------------------------------------
-    kernel_ok = os.path.exists("/tmp/gracemo.sock") or (subprocess.run(["pgrep", "-f", "gracemo-kernel"], capture_output=True).returncode == 0)
+    try:
+        endpoint = os.environ.get("VIRA_KERNEL_URL", "http://127.0.0.1:7780")
+        with urllib.request.urlopen(endpoint + "/health", timeout=2) as response:
+            kernel_ok = json.load(response).get("service") == "gracemo-kernel"
+    except (OSError, ValueError):
+        kernel_ok = False
     node_names = probe.get_node_names()
     interaction_bridge_ok = ("gracemo_interaction_bridge" in node_names or subprocess.run(["pgrep", "-f", "interaction_bridge"], capture_output=True).returncode == 0)
     feedback_pubs = probe.get_publishers_info_by_topic("/coordinator/feedback")

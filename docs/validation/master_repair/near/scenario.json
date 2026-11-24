@@ -1,0 +1,30 @@
+{
+  "index": 9,
+  "seed": 42,
+  "kind": "replan",
+  "box": [
+    4.37,
+    0.4,
+    0.318,
+    0.35
+  ],
+  "goal": [
+    4.5,
+    0.0
+  ],
+  "min_robot_x": 0.33428231444845175,
+  "min_plan_count": 1,
+  "crossing_speed": 0.0,
+  "initial_pose": [
+    0,
+    0,
+    0
+  ],
+  "world": "apartment_floor.world",
+  "level": 1,
+  "master_recovery": true,
+  "doorway_trial": true,
+  "govern_speed": true,
+  "swept_critic": true,
+  "synchronize_replan": true
+}

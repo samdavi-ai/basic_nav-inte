@@ -123,6 +123,11 @@ class EventBusClient:
             parent_event_id=parent_event_id,
         )
 
+        if event_type == "ActionRequested":
+            from gracemo_sdk.authorization import dispatch_action
+            dispatch_action(self.base_url, envelope)
+            return envelope
+
         # 1. Record in in-memory ledger & notify local subscribers
         self._mark_seen(envelope["id"])
         with self._lock:
@@ -151,6 +156,12 @@ class EventBusClient:
 
     def emit_envelope(self, envelope: Dict[str, Any]) -> bool:
         """Emits a pre-constructed canonical envelope to ledger, local subscribers, and Kernel."""
+        if envelope.get("event_type", {}).get("type") == "ActionRequested":
+            from gracemo_sdk.authorization import dispatch_action
+            try:
+                return dispatch_action(self.base_url, envelope)["status"] == "dispatched"
+            except (PermissionError, ValueError, requests.RequestException):
+                return False
         self._mark_seen(envelope.get("id", ""))
         with self._lock:
             self._in_memory_ledger.append(envelope)
@@ -234,7 +245,9 @@ class EventBusClient:
                                 if eid and self._mark_seen(eid):
                                     log.debug(f"EventBus SSE: Dropping duplicate loopback event {eid}")
                                     continue
-                                if event.get("source") == self.source_name and event.get("observed_by") == self.observed_by:
+                                if (event.get("event_type", {}).get("type") != "ActionRequested"
+                                        and event.get("source") == self.source_name
+                                        and event.get("observed_by") == self.observed_by):
                                     log.debug(f"EventBus SSE: Dropping self-originated event {eid}")
                                     continue
                                 self._dispatch_local(event)

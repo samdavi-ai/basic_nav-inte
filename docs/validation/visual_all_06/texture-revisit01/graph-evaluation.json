@@ -1,0 +1,88 @@
+{
+  "common_keyframes": [
+    1,
+    11,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "optimized_nodes": 31,
+  "total_nodes": 53,
+  "raw": {
+    "translation_rmse_m": 0.08433529811102639,
+    "rotation_rmse_deg": 1.0256858121781183
+  },
+  "optimized": {
+    "translation_rmse_m": 0.09493622031051756,
+    "rotation_rmse_deg": 1.6497378035445212
+  },
+  "type1_constraints": [
+    {
+      "source": 2,
+      "target": 1,
+      "dt": 1.2,
+      "max_excursion_from_target_m": 0.0029998369505627454,
+      "truth_separation_m": 0.0029998369505627454
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "dt": 2.3,
+      "max_excursion_from_target_m": 0.006315561705242727,
+      "truth_separation_m": 0.006315561705242727
+    },
+    {
+      "source": 4,
+      "target": 1,
+      "dt": 3.4,
+      "max_excursion_from_target_m": 0.009597691361627574,
+      "truth_separation_m": 0.009630805271539518
+    },
+    {
+      "source": 5,
+      "target": 1,
+      "dt": 4.7,
+      "max_excursion_from_target_m": 0.013514192727247595,
+      "truth_separation_m": 0.013514192727247595
+    },
+    {
+      "source": 12,
+      "target": 11,
+      "dt": 1.0,
+      "max_excursion_from_target_m": 0.002946472888834963,
+      "truth_separation_m": 0.0029854206160341745
+    },
+    {
+      "source": 42,
+      "target": 23,
+      "dt": 19.6,
+      "max_excursion_from_target_m": 1.7965199809806656,
+      "truth_separation_m": 1.7965199809806656
+    }
+  ]
+}

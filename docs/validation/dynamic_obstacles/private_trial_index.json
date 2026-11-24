@@ -1,0 +1,1368 @@
+[
+  {
+    "run": "baseline_patrol_review",
+    "seed": 42,
+    "mission_id": "standalone-2f68de56-6a45-4981-a51e-d1186d304226",
+    "trace_id": "e9c196a6-380f-47a3-adca-d5229e263052",
+    "coordinator": "COMPLETED",
+    "kernel": "MISSION_COMPLETED",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {
+      "executed": {
+        "sample_min_m": -0.000601,
+        "swept_lower_bound_m": -0.001101,
+        "obstacle": "hall_north_east",
+        "pose": [
+          5.199174,
+          1.400391,
+          8.009134
+        ],
+        "raw_pose_min_m": 0.002566,
+        "speed_bound_min_m": -0.084429
+      },
+      "truth_goal_error_m": null,
+      "worst_tangent_in_odom": -0.055881,
+      "worst_local_plan": {
+        "sample_min_m": -0.118328,
+        "swept_lower_bound_m": -0.122851,
+        "obstacle": "chair_1",
+        "pose": [
+          -4.941316,
+          -2.499795,
+          -1.419977
+        ]
+      },
+      "observed_dwb_rejections": 85645
+    },
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 11,
+    "waypoints_total": 11,
+    "terminal_reason": "",
+    "duration_s": 176.5,
+    "idle": {
+      "passed": true,
+      "discovery_complete": true,
+      "duration_s": 3,
+      "samples": {
+        "cmd_vel": 60,
+        "cmd_vel_mux": 60,
+        "cmd_vel_smoothed": 60
+      },
+      "peak": {
+        "cmd_vel": 0.0,
+        "cmd_vel_mux": 0.0,
+        "cmd_vel_smoothed": 0.0
+      },
+      "mux_state": {
+        "active_source": "NONE",
+        "teleop_active": false,
+        "rl_active": false,
+        "nav_active": false,
+        "teleop_age_sec": null,
+        "rl_age_sec": null,
+        "nav_age_sec": 7.894,
+        "zero_command_held": true,
+        "current_linear_x": 0.0,
+        "current_angular_z": 0.0
+      },
+      "odom_displacement_m": 0.007958854957947308
+    },
+    "estop_smoke": {
+      "result": "PASS",
+      "scope": "Gazebo only",
+      "goal": {
+        "x": 4.5,
+        "y": 3.0
+      },
+      "checks": {
+        "mission_started_and_moving": true,
+        "estop_latched": true,
+        "zero_command_observed": true,
+        "base_stopped": true,
+        "mission_rejected_while_latched": true,
+        "no_motion_while_latched": true,
+        "explicit_reset_returned_ready": true,
+        "zero_held_after_reset": true
+      },
+      "state": "AUTONOMY_READY",
+      "error": null,
+      "max_command_magnitude_after_stop": 0.0,
+      "peak_odom_speed_after_stop": 0.4427,
+      "max_odom_speed_last_second": 0.0153,
+      "max_drift_after_stop_m": 0.0201,
+      "estop_active": false,
+      "state_history": [
+        "MISSION_ACCEPTED",
+        "MISSION_PLANNING",
+        "MISSION_EXECUTING",
+        "EMERGENCY_STOP",
+        "EMERGENCY_STOP",
+        "AUTONOMY_READY"
+      ]
+    },
+    "assessment": "failed interpolated footprint-clearance gate"
+  },
+  {
+    "run": "governed_front_review",
+    "seed": 42,
+    "mission_id": "standalone-8fc35a67-0220-47d6-9166-37329c7654d4",
+    "trace_id": "934eb76b-a9e7-4fa7-af0c-6c791b5f1d63",
+    "coordinator": "FAILED",
+    "kernel": "NAVIGATION_FAILURE",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": 4.402,
+    "first_scene_confirmation": 4.764,
+    "sensor_hits": {
+      "depth": 4.6
+    },
+    "first_lethal_marks": {
+      "global_costmap": 4.636,
+      "local_costmap": 4.818
+    },
+    "first_risk_action": 4.65,
+    "guard_stop": 4.65,
+    "first_final_zero_after_stop_action": 4.864,
+    "physical_stop_s": 5.0,
+    "whole_mission_interpolated_m": 0.38983,
+    "minimum_scene_interpolated_m": 0.38983,
+    "old_and_new_plans": [
+      {
+        "t": 3.568,
+        "points": 178,
+        "frozen_fixture_clearance_m": -0.13199,
+        "frozen_scene_clearance_m": -0.13199
+      },
+      {
+        "t": 6.178,
+        "points": 53,
+        "frozen_fixture_clearance_m": 0.10766,
+        "frozen_scene_clearance_m": 0.10766
+      },
+      {
+        "t": 8.674,
+        "points": 51,
+        "frozen_fixture_clearance_m": 0.05335,
+        "frozen_scene_clearance_m": 0.05335
+      },
+      {
+        "t": 22.502,
+        "points": 51,
+        "frozen_fixture_clearance_m": 0.08986,
+        "frozen_scene_clearance_m": 0.08986
+      }
+    ],
+    "route_resumptions": [
+      {
+        "t": 6.656,
+        "global_clearance_m": 0.10766,
+        "local_clearance_m": 0.176733,
+        "local_stamp": 6.58
+      },
+      {
+        "t": 23.108,
+        "global_clearance_m": 0.08986,
+        "local_clearance_m": 0.15142693055479578,
+        "local_stamp": 23.06
+      }
+    ],
+    "retries": 3,
+    "goal_error_m": 3.59042,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {},
+    "first_stop_to_resume_s": 2.006,
+    "runner_timed_out": false,
+    "waypoints_completed": 0,
+    "waypoints_total": 1,
+    "terminal_reason": "Retries exhausted (unsafe_swept_route)",
+    "duration_s": 20.3,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "bounded terminal failure with positive interpolated clearance"
+  },
+  {
+    "run": "governed_mirror_review",
+    "seed": 42,
+    "mission_id": "standalone-c4d267db-810a-4640-b0cd-e39ef3b67606",
+    "trace_id": "75787414-732e-40e9-a7a7-7ffc404546da",
+    "coordinator": "COMPLETED",
+    "kernel": "MISSION_COMPLETED",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": 3.96,
+    "first_scene_confirmation": 4.33,
+    "sensor_hits": {
+      "depth": 7.0,
+      "scan": 7.656
+    },
+    "first_lethal_marks": {
+      "global_costmap": 4.44,
+      "local_costmap": 4.822
+    },
+    "first_risk_action": 6.568,
+    "guard_stop": 6.568,
+    "first_final_zero_after_stop_action": 7.108,
+    "physical_stop_s": 7.16,
+    "whole_mission_interpolated_m": 0.091199,
+    "minimum_scene_interpolated_m": 0.091199,
+    "old_and_new_plans": [
+      {
+        "t": 3.356,
+        "points": 178,
+        "frozen_fixture_clearance_m": 0.14365,
+        "frozen_scene_clearance_m": 0.14365
+      },
+      {
+        "t": 9.514,
+        "points": 45,
+        "frozen_fixture_clearance_m": 0.05071,
+        "frozen_scene_clearance_m": 0.05071
+      },
+      {
+        "t": 12.76,
+        "points": 44,
+        "frozen_fixture_clearance_m": 0.16323,
+        "frozen_scene_clearance_m": 0.16323
+      }
+    ],
+    "route_resumptions": [
+      {
+        "t": 12.892,
+        "global_clearance_m": 0.16323,
+        "local_clearance_m": 0.14142903317017133,
+        "local_stamp": 12.82
+      }
+    ],
+    "retries": 3,
+    "goal_error_m": 0.22142,
+    "observed_dwb_rejections_after_request": 38303,
+    "static_geometry": {},
+    "first_stop_to_resume_s": 6.324,
+    "runner_timed_out": false,
+    "waypoints_completed": 1,
+    "waypoints_total": 1,
+    "terminal_reason": "",
+    "duration_s": 17.0,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "completed with positive clearance; fixture teardown failed"
+  },
+  {
+    "run": "governed_review_blocked",
+    "seed": 42,
+    "mission_id": "standalone-9dd99baa-d9a9-403e-a5d8-80c462639d2e",
+    "trace_id": "386e12f2-5c34-421c-851d-07ff968c98ca",
+    "coordinator": "FAILED",
+    "kernel": "NAVIGATION_FAILURE",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {
+      "executed": {
+        "sample_min_m": 0.48499,
+        "swept_lower_bound_m": 0.484568,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          -0.029819,
+          -0.024754,
+          -0.118977
+        ],
+        "raw_pose_min_m": 0.48499,
+        "speed_bound_min_m": 0.451634
+      },
+      "truth_goal_error_m": 4.52989,
+      "worst_tangent_in_odom": null,
+      "worst_local_plan": null,
+      "observed_dwb_rejections": null
+    },
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 0,
+    "waypoints_total": 1,
+    "terminal_reason": "Retries exhausted (nav2_code_6)",
+    "duration_s": 6.4,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "bounded terminal failure with positive interpolated clearance"
+  },
+  {
+    "run": "governed_review_crossing",
+    "seed": 42,
+    "mission_id": "standalone-364e0512-0248-4f0c-9d64-09b2a9ccdf24",
+    "trace_id": "ea2c6e22-bd58-4e9d-81a7-59ff28eb3baa",
+    "coordinator": "COMPLETED",
+    "kernel": "MISSION_COMPLETED",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": 4.46,
+    "first_scene_confirmation": 4.828,
+    "sensor_hits": {
+      "scan": 7.394,
+      "depth": 7.6
+    },
+    "first_lethal_marks": {
+      "global_costmap": 4.78,
+      "local_costmap": 4.958
+    },
+    "first_risk_action": 6.944,
+    "guard_stop": 6.944,
+    "first_final_zero_after_stop_action": 7.292,
+    "physical_stop_s": 7.38,
+    "whole_mission_interpolated_m": 0.21587,
+    "minimum_scene_interpolated_m": 0.21587,
+    "old_and_new_plans": [
+      {
+        "t": 3.692,
+        "points": 178,
+        "frozen_fixture_clearance_m": 0.13801,
+        "frozen_scene_clearance_m": 0.13801
+      },
+      {
+        "t": 8.284,
+        "points": 45,
+        "frozen_fixture_clearance_m": 0.25077,
+        "frozen_scene_clearance_m": 0.25077
+      }
+    ],
+    "route_resumptions": [],
+    "retries": 1,
+    "goal_error_m": 0.23206,
+    "observed_dwb_rejections_after_request": 29261,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 1,
+    "waypoints_total": 1,
+    "terminal_reason": "",
+    "duration_s": 12.9,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "completed with positive interpolated clearance"
+  },
+  {
+    "run": "governed_review_larger",
+    "seed": 42,
+    "mission_id": null,
+    "trace_id": null,
+    "coordinator": null,
+    "kernel": null,
+    "ids_match": false,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": null,
+    "waypoints_completed": null,
+    "waypoints_total": null,
+    "terminal_reason": null,
+    "duration_s": null,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "EXCLUDED: invalid simulation clock"
+  },
+  {
+    "run": "governed_review_mirrored",
+    "seed": 42,
+    "mission_id": "standalone-3d8f8486-dbc7-4f40-aacd-bbbbc0abb382",
+    "trace_id": "d509f2cc-63d2-4562-89cb-d4b3df08b4d3",
+    "coordinator": "COMPLETED",
+    "kernel": "MISSION_COMPLETED",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {
+      "executed": {
+        "sample_min_m": 0.215738,
+        "swept_lower_bound_m": 0.210764,
+        "obstacle": "fixture",
+        "pose": [
+          1.919274,
+          -0.251118,
+          -0.055085
+        ],
+        "raw_pose_min_m": 0.215909,
+        "speed_bound_min_m": 0.066522
+      },
+      "truth_goal_error_m": 0.2304,
+      "worst_tangent_in_odom": 0.07508,
+      "worst_local_plan": {
+        "sample_min_m": 0.149133,
+        "swept_lower_bound_m": 0.144555,
+        "obstacle": "fixture",
+        "pose": [
+          2.403574,
+          -0.208363,
+          0.079253
+        ]
+      },
+      "observed_dwb_rejections": 22024
+    },
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 1,
+    "waypoints_total": 1,
+    "terminal_reason": "",
+    "duration_s": 13.2,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "completed with positive interpolated clearance"
+  },
+  {
+    "run": "governed_review_near_goal",
+    "seed": 42,
+    "mission_id": "standalone-936a8e31-2786-4605-8aeb-518b73f33878",
+    "trace_id": "316d92cb-9a57-447a-9088-1e812b924fc0",
+    "coordinator": "COMPLETED",
+    "kernel": "MISSION_COMPLETED",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 1,
+    "waypoints_total": 1,
+    "terminal_reason": "",
+    "duration_s": 9.9,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "EXCLUDED: fixture insertion unconfirmed"
+  },
+  {
+    "run": "governed_review_original",
+    "seed": 42,
+    "mission_id": "standalone-5b755071-091a-4028-9260-715fa27486a3",
+    "trace_id": "88235df1-7c97-4062-8f03-c313c44ce3c8",
+    "coordinator": "COMPLETED",
+    "kernel": "MISSION_COMPLETED",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {
+      "executed": {
+        "sample_min_m": 0.116894,
+        "swept_lower_bound_m": 0.111911,
+        "obstacle": "fixture",
+        "pose": [
+          1.915073,
+          0.146586,
+          0.046458
+        ],
+        "raw_pose_min_m": 0.116975,
+        "speed_bound_min_m": 0.013143
+      },
+      "truth_goal_error_m": 0.21412,
+      "worst_tangent_in_odom": 0.174727,
+      "worst_local_plan": {
+        "sample_min_m": 0.117016,
+        "swept_lower_bound_m": 0.112263,
+        "obstacle": "fixture",
+        "pose": [
+          1.913535,
+          0.14668,
+          0.046857
+        ]
+      },
+      "observed_dwb_rejections": 18541
+    },
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 1,
+    "waypoints_total": 1,
+    "terminal_reason": "",
+    "duration_s": 12.8,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "completed with positive interpolated clearance"
+  },
+  {
+    "run": "governed_review_patrol",
+    "seed": 42,
+    "mission_id": "standalone-058fe97c-a31c-4b85-9fc1-f927f5d7671c",
+    "trace_id": "43671736-7053-4513-9d06-ef7196257172",
+    "coordinator": "FAILED",
+    "kernel": "NAVIGATION_FAILURE",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {
+      "executed": {
+        "sample_min_m": 0.316077,
+        "swept_lower_bound_m": 0.311873,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          -0.018041,
+          -0.082754,
+          -0.86025
+        ],
+        "raw_pose_min_m": 0.316077,
+        "speed_bound_min_m": 0.290821
+      },
+      "truth_goal_error_m": null,
+      "worst_tangent_in_odom": 0.107366,
+      "worst_local_plan": null,
+      "observed_dwb_rejections": null
+    },
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 0,
+    "waypoints_total": 11,
+    "terminal_reason": "Retries exhausted (nav2_code_6)",
+    "duration_s": 9.9,
+    "idle": {
+      "passed": true,
+      "discovery_complete": true,
+      "duration_s": 3,
+      "samples": {
+        "cmd_vel": 60,
+        "cmd_vel_mux": 59,
+        "cmd_vel_smoothed": 60
+      },
+      "peak": {
+        "cmd_vel": 0.0,
+        "cmd_vel_mux": 0.0,
+        "cmd_vel_smoothed": 0.0
+      },
+      "mux_state": {
+        "active_source": "NONE",
+        "teleop_active": false,
+        "rl_active": false,
+        "nav_active": false,
+        "teleop_age_sec": null,
+        "rl_age_sec": null,
+        "nav_age_sec": 11.35,
+        "zero_command_held": true,
+        "current_linear_x": 0.0,
+        "current_angular_z": 0.0
+      },
+      "odom_displacement_m": 0.008908339620905223
+    },
+    "estop_smoke": {
+      "result": "FAIL",
+      "scope": "Gazebo only",
+      "goal": {
+        "x": 4.5,
+        "y": 3.0
+      },
+      "checks": {},
+      "state": "NAVIGATION_FAILURE",
+      "error": "Gazebo sensors, Nav2, terrain monitor, or coordinator were not ready",
+      "estop_active": null,
+      "state_history": []
+    },
+    "assessment": "bounded terminal failure with positive interpolated clearance"
+  },
+  {
+    "run": "governed_review_replan",
+    "seed": 42,
+    "mission_id": "standalone-5a8fcd2e-fd10-4d0d-9759-6e33e197cbae",
+    "trace_id": "ea280028-d316-4409-b025-cf1692001cd3",
+    "coordinator": "COMPLETED",
+    "kernel": "MISSION_COMPLETED",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 1,
+    "waypoints_total": 1,
+    "terminal_reason": "",
+    "duration_s": 11.2,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "EXCLUDED: fixture insertion unconfirmed"
+  },
+  {
+    "run": "governed_review_replan_trigger_4",
+    "seed": 42,
+    "mission_id": "standalone-e7e2922d-8f38-484c-9233-a642a6a5146f",
+    "trace_id": "ecf8acf6-5b24-4ea8-8121-543690622119",
+    "coordinator": "FAILED",
+    "kernel": "NAVIGATION_FAILURE",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": 11.494,
+    "first_scene_confirmation": 11.864,
+    "sensor_hits": {
+      "scan": 11.748,
+      "depth": 13.4
+    },
+    "first_lethal_marks": {
+      "local_costmap": 12.164,
+      "global_costmap": 12.98
+    },
+    "first_risk_action": 11.85,
+    "guard_stop": 13.548,
+    "first_final_zero_after_stop_action": 12.578,
+    "physical_stop_s": 12.62,
+    "whole_mission_interpolated_m": -0.031133,
+    "minimum_scene_interpolated_m": -0.031133,
+    "old_and_new_plans": [
+      {
+        "t": 3.7,
+        "points": 178,
+        "frozen_fixture_clearance_m": -0.13202,
+        "frozen_scene_clearance_m": -0.13202
+      },
+      {
+        "t": 11.868,
+        "points": 31,
+        "frozen_fixture_clearance_m": -0.30536,
+        "frozen_scene_clearance_m": -0.30536
+      },
+      {
+        "t": 13.308,
+        "points": 39,
+        "frozen_fixture_clearance_m": -0.10749,
+        "frozen_scene_clearance_m": -0.10749
+      }
+    ],
+    "route_resumptions": [],
+    "retries": 2,
+    "goal_error_m": 0.64438,
+    "observed_dwb_rejections_after_request": 7053,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 0,
+    "waypoints_total": 1,
+    "terminal_reason": "Retries exhausted (nav2_code_6)",
+    "duration_s": 16.6,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "failed interpolated footprint-clearance gate"
+  },
+  {
+    "run": "governed_review_replan_trigger_9",
+    "seed": 42,
+    "mission_id": "standalone-2eb03236-537b-4ca1-bcf0-d22e1172c04e",
+    "trace_id": "839574f2-ca71-4d7b-8527-f6faf3a86948",
+    "coordinator": "FAILED",
+    "kernel": "NAVIGATION_FAILURE",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": 9.816,
+    "first_scene_confirmation": 10.13,
+    "sensor_hits": {
+      "scan": 10.166,
+      "depth": 11.2
+    },
+    "first_lethal_marks": {
+      "local_costmap": 10.422,
+      "global_costmap": 10.588000000000001
+    },
+    "first_risk_action": 10.268,
+    "guard_stop": 10.674,
+    "first_final_zero_after_stop_action": 10.674,
+    "physical_stop_s": 10.84,
+    "whole_mission_interpolated_m": 0.124934,
+    "minimum_scene_interpolated_m": 0.124934,
+    "old_and_new_plans": [
+      {
+        "t": 2.592,
+        "points": 178,
+        "frozen_fixture_clearance_m": -0.12631,
+        "frozen_scene_clearance_m": -0.12631
+      },
+      {
+        "t": 9.808,
+        "points": 41,
+        "frozen_fixture_clearance_m": -0.236,
+        "frozen_scene_clearance_m": -0.236
+      },
+      {
+        "t": 10.098,
+        "points": 37,
+        "frozen_fixture_clearance_m": -0.23582,
+        "frozen_scene_clearance_m": -0.23582
+      },
+      {
+        "t": 10.482,
+        "points": 39,
+        "frozen_fixture_clearance_m": -0.25917,
+        "frozen_scene_clearance_m": -0.25917
+      }
+    ],
+    "route_resumptions": [],
+    "retries": 3,
+    "goal_error_m": 0.80423,
+    "observed_dwb_rejections_after_request": 6608,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 0,
+    "waypoints_total": 1,
+    "terminal_reason": "Retries exhausted (nav2_code_6)",
+    "duration_s": 35.1,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "bounded terminal failure with positive interpolated clearance"
+  },
+  {
+    "run": "governed_review_study",
+    "seed": 42,
+    "mission_id": "standalone-5424ee16-5bdc-43e6-a324-483e7a21e701",
+    "trace_id": "8c0b81fe-e323-4045-afe1-92337f419a53",
+    "coordinator": "FAILED",
+    "kernel": "NAVIGATION_FAILURE",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {
+      "executed": {
+        "sample_min_m": 0.112275,
+        "swept_lower_bound_m": 0.10728,
+        "obstacle": "hall_north_east",
+        "pose": [
+          5.163827,
+          1.279304,
+          1.37985
+        ],
+        "raw_pose_min_m": 0.112275,
+        "speed_bound_min_m": -0.003677
+      },
+      "truth_goal_error_m": 1.84431,
+      "worst_tangent_in_odom": 0.019642,
+      "worst_local_plan": {
+        "sample_min_m": 0.083143,
+        "swept_lower_bound_m": 0.078924,
+        "obstacle": "hall_north_east",
+        "pose": [
+          5.184386,
+          1.490285,
+          1.526965
+        ]
+      },
+      "observed_dwb_rejections": 86640
+    },
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 0,
+    "waypoints_total": 2,
+    "terminal_reason": "Retries exhausted (watchdog_stagnant_13s)",
+    "duration_s": 31.6,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "bounded terminal failure with positive interpolated clearance"
+  },
+  {
+    "run": "governed_review_temporary",
+    "seed": 42,
+    "mission_id": null,
+    "trace_id": null,
+    "coordinator": null,
+    "kernel": null,
+    "ids_match": false,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": null,
+    "waypoints_completed": null,
+    "waypoints_total": null,
+    "terminal_reason": null,
+    "duration_s": null,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "EXCLUDED: invalid simulation clock"
+  },
+  {
+    "run": "governed_serial_front",
+    "seed": 42,
+    "mission_id": "standalone-7f1e68de-85c5-4c2c-8115-a03430373a05",
+    "trace_id": "8597073b-ac49-40ef-9742-28727de04ca7",
+    "coordinator": "FAILED",
+    "kernel": "NAVIGATION_FAILURE",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": 4.542,
+    "first_scene_confirmation": 4.916,
+    "sensor_hits": {
+      "depth": 5.8,
+      "scan": 7.92
+    },
+    "first_lethal_marks": {
+      "local_costmap": 4.964,
+      "global_costmap": 6.782
+    },
+    "first_risk_action": 5.382,
+    "guard_stop": 5.382,
+    "first_final_zero_after_stop_action": 5.938,
+    "physical_stop_s": 5.96,
+    "whole_mission_interpolated_m": 0.066946,
+    "minimum_scene_interpolated_m": 0.066946,
+    "old_and_new_plans": [
+      {
+        "t": 3.72,
+        "points": 178,
+        "frozen_fixture_clearance_m": -0.13199,
+        "frozen_scene_clearance_m": -0.13199
+      },
+      {
+        "t": 6.784,
+        "points": 51,
+        "frozen_fixture_clearance_m": 0.09993,
+        "frozen_scene_clearance_m": 0.09993
+      },
+      {
+        "t": 9.41,
+        "points": 48,
+        "frozen_fixture_clearance_m": 0.12196,
+        "frozen_scene_clearance_m": 0.12196
+      },
+      {
+        "t": 11.756,
+        "points": 45,
+        "frozen_fixture_clearance_m": 0.04822,
+        "frozen_scene_clearance_m": 0.04822
+      }
+    ],
+    "route_resumptions": [
+      {
+        "t": 6.972,
+        "global_clearance_m": 0.09993,
+        "local_clearance_m": 0.1571618159389295,
+        "local_stamp": 6.84
+      },
+      {
+        "t": 9.474,
+        "global_clearance_m": 0.12196,
+        "local_clearance_m": 0.16398225707899708,
+        "local_stamp": 9.42
+      },
+      {
+        "t": 11.85,
+        "global_clearance_m": 0.04822,
+        "local_clearance_m": 0.13038479546253637,
+        "local_stamp": 11.78
+      }
+    ],
+    "retries": 3,
+    "goal_error_m": 2.72074,
+    "observed_dwb_rejections_after_request": 26270,
+    "static_geometry": {},
+    "first_stop_to_resume_s": 1.59,
+    "runner_timed_out": false,
+    "waypoints_completed": 0,
+    "waypoints_total": 1,
+    "terminal_reason": "Retries exhausted (unsafe_swept_route)",
+    "duration_s": 10.2,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "bounded terminal failure with positive interpolated clearance"
+  },
+  {
+    "run": "governed_serial_larger",
+    "seed": 42,
+    "mission_id": "standalone-d4cc7010-4aba-4cee-a693-755d40deab43",
+    "trace_id": "4797e727-d7d4-44e3-ba86-26def7b12619",
+    "coordinator": "COMPLETED",
+    "kernel": "MISSION_COMPLETED",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {
+      "executed": {
+        "sample_min_m": 0.086902,
+        "swept_lower_bound_m": 0.081912,
+        "obstacle": "fixture",
+        "pose": [
+          3.060007,
+          0.105183,
+          -0.052367
+        ],
+        "raw_pose_min_m": 0.086906,
+        "speed_bound_min_m": 0.011137
+      },
+      "truth_goal_error_m": 0.21235,
+      "worst_tangent_in_odom": 0.01195,
+      "worst_local_plan": {
+        "sample_min_m": 0.072684,
+        "swept_lower_bound_m": 0.068294,
+        "obstacle": "fixture",
+        "pose": [
+          2.871741,
+          0.100226,
+          -0.135899
+        ]
+      },
+      "observed_dwb_rejections": 27243
+    },
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": false,
+    "waypoints_completed": 1,
+    "waypoints_total": 1,
+    "terminal_reason": "",
+    "duration_s": 11.4,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "completed with positive interpolated clearance"
+  },
+  {
+    "run": "governed_serial_temporary",
+    "seed": 42,
+    "mission_id": "standalone-9186b193-2aff-4c52-ae5f-0b4f599e12b8",
+    "trace_id": "28d1ba23-b644-468a-bc29-da27c6ab7030",
+    "coordinator": "COMPLETED",
+    "kernel": "MISSION_COMPLETED",
+    "ids_match": true,
+    "interrupt": null,
+    "insert_requested": 4.34,
+    "first_scene_confirmation": 4.72,
+    "sensor_hits": {
+      "depth": 5.8
+    },
+    "first_lethal_marks": {
+      "global_costmap": 4.584,
+      "local_costmap": 4.766
+    },
+    "first_risk_action": 5.342,
+    "guard_stop": 5.342,
+    "first_final_zero_after_stop_action": 5.916,
+    "physical_stop_s": 5.92,
+    "whole_mission_interpolated_m": 0.455725,
+    "minimum_scene_interpolated_m": 0.455725,
+    "old_and_new_plans": [
+      {
+        "t": 3.512,
+        "points": 178,
+        "frozen_fixture_clearance_m": -0.53801,
+        "frozen_scene_clearance_m": -0.53801
+      },
+      {
+        "t": 8.322,
+        "points": 50,
+        "frozen_fixture_clearance_m": null,
+        "frozen_scene_clearance_m": 0.448993
+      }
+    ],
+    "route_resumptions": [
+      {
+        "t": 8.55,
+        "global_clearance_m": 0.448993,
+        "local_clearance_m": 0.47777,
+        "local_stamp": 8.44
+      }
+    ],
+    "retries": 1,
+    "goal_error_m": 0.22753,
+    "observed_dwb_rejections_after_request": 18467,
+    "static_geometry": {},
+    "first_stop_to_resume_s": 3.208,
+    "runner_timed_out": false,
+    "waypoints_completed": 1,
+    "waypoints_total": 1,
+    "terminal_reason": "",
+    "duration_s": 13.5,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "completed with positive interpolated clearance"
+  },
+  {
+    "run": "interrupt_review_NAVIGATING",
+    "seed": 42,
+    "mission_id": "standalone-20478c72-e6da-420f-8080-08b5430e4d55",
+    "trace_id": "03176ad7-ed14-4f2f-8b50-5c5ad3d77d1c",
+    "coordinator": "CANCELLED",
+    "kernel": "MISSION_CANCELLED",
+    "ids_match": true,
+    "interrupt": {
+      "target": "NAVIGATING",
+      "status": "PASS",
+      "mission_id": "standalone-20478c72-e6da-420f-8080-08b5430e4d55",
+      "trigger": {
+        "state": "NAVIGATING",
+        "sim_time": 7.800000000000001,
+        "plan_valid": true,
+        "ages": {
+          "depth": 0.2,
+          "scan": 0.078,
+          "odom": 0.02,
+          "grid": 0.54,
+          "global": 0.218,
+          "plan": 0.556,
+          "rollout": 0.04,
+          "command": 0.012
+        }
+      },
+      "pose": {
+        "x": 0.7299936362183487,
+        "y": -0.06103905646265308,
+        "linear_x": -0.005788726059404452,
+        "angular_z": 0.222423263244336
+      },
+      "request_wall": 16738.451709162,
+      "request_sim": 7.8,
+      "zero_latency_s": 0.0021992010006215423,
+      "max_displacement_m": 0.01223611325538119,
+      "final_second_speed": 0.019030216017324315,
+      "rejected": true,
+      "reset": true
+    },
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": true,
+    "waypoints_completed": 0,
+    "waypoints_total": 1,
+    "terminal_reason": "Cancelled by operator",
+    "duration_s": 115.1,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "E-stop probe PASS"
+  },
+  {
+    "run": "interrupt_review_OBSTACLE_DETECTED",
+    "seed": 42,
+    "mission_id": "standalone-dcf91b3a-2e26-4279-a717-1e99d05f2da2",
+    "trace_id": "e0c032c2-e5ea-4c28-abaf-fafb9e1597a1",
+    "coordinator": "CANCELLED",
+    "kernel": "MISSION_CANCELLED",
+    "ids_match": true,
+    "interrupt": {
+      "target": "OBSTACLE_DETECTED",
+      "status": "PASS",
+      "mission_id": "standalone-dcf91b3a-2e26-4279-a717-1e99d05f2da2",
+      "trigger": {
+        "state": "OBSTACLE_DETECTED",
+        "sim_time": 4.800000000000001
+      },
+      "pose": {
+        "x": 0.7857599524851103,
+        "y": -0.034917567626915474,
+        "linear_x": 0.15293620402271954,
+        "angular_z": 0.057790791212310025
+      },
+      "request_wall": 16874.195459156,
+      "request_sim": 4.8,
+      "zero_latency_s": 0.023573534002935048,
+      "max_displacement_m": 0.009813048233903741,
+      "final_second_speed": 0.014368861566716214,
+      "rejected": true,
+      "reset": true
+    },
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": true,
+    "waypoints_completed": 0,
+    "waypoints_total": 1,
+    "terminal_reason": "Cancelled by operator",
+    "duration_s": 115.1,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "E-stop probe PASS"
+  },
+  {
+    "run": "interrupt_review_RESUMING",
+    "seed": 42,
+    "mission_id": "standalone-cd20f594-5248-4016-91bd-d67adbaa3f2a",
+    "trace_id": "a50373d5-df61-4965-8798-affd4f9165b8",
+    "coordinator": "CANCELLED",
+    "kernel": "MISSION_CANCELLED",
+    "ids_match": true,
+    "interrupt": {
+      "target": "RESUMING",
+      "status": "PASS",
+      "mission_id": "standalone-cd20f594-5248-4016-91bd-d67adbaa3f2a",
+      "trigger": {
+        "state": "RESUMING",
+        "sim_time": 6.45,
+        "hold_since": 4.5,
+        "global_plan_stamp": 6.038,
+        "local_rollout_stamp": 6.4
+      },
+      "pose": {
+        "x": 0.5139369258973532,
+        "y": -0.030462040734365852,
+        "linear_x": -0.0021626651518441013,
+        "angular_z": -0.009217859659637959
+      },
+      "request_wall": 17263.187772758,
+      "request_sim": 6.458,
+      "zero_latency_s": 0.0020852330017078202,
+      "max_displacement_m": 0.009095603300889692,
+      "final_second_speed": 0.018675692681789775,
+      "rejected": true,
+      "reset": true
+    },
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": true,
+    "waypoints_completed": 0,
+    "waypoints_total": 1,
+    "terminal_reason": "Cancelled by operator",
+    "duration_s": 115.0,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "E-stop probe PASS"
+  },
+  {
+    "run": "interrupt_review_SAFETY_STOP",
+    "seed": 42,
+    "mission_id": "standalone-8786f063-16ec-40bf-b509-bd50e0455c5e",
+    "trace_id": "95544fe4-2330-45bf-b910-881a7dba9ccd",
+    "coordinator": "CANCELLED",
+    "kernel": "MISSION_CANCELLED",
+    "ids_match": true,
+    "interrupt": {
+      "target": "SAFETY_STOP",
+      "status": "PASS",
+      "mission_id": "standalone-8786f063-16ec-40bf-b509-bd50e0455c5e",
+      "trigger": {
+        "state": "SAFETY_STOP",
+        "sim_time": 6.550000000000001,
+        "plan_valid": false,
+        "ages": {
+          "depth": 0.35,
+          "scan": 0.016,
+          "odom": 0.01,
+          "grid": 0.466,
+          "global": 0.014,
+          "plan": 3.066,
+          "rollout": 0.05,
+          "command": 0.018
+        }
+      },
+      "pose": {
+        "x": 1.029701571764535,
+        "y": -0.04943870151524949,
+        "linear_x": 0.21404682530132285,
+        "angular_z": -0.00629226976163174
+      },
+      "request_wall": 17073.362601838,
+      "request_sim": 6.55,
+      "zero_latency_s": 0.004932540003210306,
+      "max_displacement_m": 0.019061833065421623,
+      "final_second_speed": 0.019778125938297177,
+      "rejected": true,
+      "reset": true
+    },
+    "insert_requested": null,
+    "first_scene_confirmation": null,
+    "sensor_hits": null,
+    "first_lethal_marks": null,
+    "first_risk_action": null,
+    "guard_stop": null,
+    "first_final_zero_after_stop_action": null,
+    "physical_stop_s": null,
+    "whole_mission_interpolated_m": null,
+    "minimum_scene_interpolated_m": null,
+    "old_and_new_plans": null,
+    "route_resumptions": null,
+    "retries": null,
+    "goal_error_m": null,
+    "observed_dwb_rejections_after_request": null,
+    "static_geometry": {},
+    "first_stop_to_resume_s": null,
+    "runner_timed_out": true,
+    "waypoints_completed": 0,
+    "waypoints_total": 1,
+    "terminal_reason": "Cancelled by operator",
+    "duration_s": 115.0,
+    "idle": null,
+    "estop_smoke": null,
+    "assessment": "E-stop probe PASS"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "keyframes": 10,
+  "depth_boundaries": 7728,
+  "distance_to_nearest_rgb_edge_px": {
+    "median": 2.0,
+    "p95": 7.0,
+    "max": 8.0
+  },
+  "within_two_rgb_pixels": 0.577639751552795
+}

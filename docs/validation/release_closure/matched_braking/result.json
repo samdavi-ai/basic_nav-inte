@@ -1,0 +1,1078 @@
+{
+  "run": "patrol",
+  "scenario": {
+    "index": 0,
+    "seed": 42,
+    "kind": "patrol",
+    "box": null,
+    "goal": null,
+    "min_robot_x": 0.23494998392273192,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world",
+    "level": 1,
+    "match_braking": true,
+    "planner_cell_margin": true,
+    "approach": true,
+    "rectangular_guard": true,
+    "clearance_recovery": true,
+    "dense_truth": true,
+    "master_recovery": true,
+    "doorway_trial": true,
+    "govern_speed": true,
+    "swept_critic": true
+  },
+  "verdict": "FAIL",
+  "run_exit": null,
+  "mission_id": "standalone-a5051f74-ed55-48e4-af46-83151a18fd4e",
+  "trace_id": "475d0edb-fe32-4253-bc8e-0b7a094ee3b8",
+  "correlated": true,
+  "coordinator": {
+    "mission_id": "standalone-a5051f74-ed55-48e4-af46-83151a18fd4e",
+    "name": "Standalone apartment patrol",
+    "success": false,
+    "status": "FAILED",
+    "reason": "Retries exhausted (stopped and reassessed route)",
+    "waypoints_completed": 0,
+    "total_waypoints": 11,
+    "duration_sec": 33.3,
+    "end_pose": {
+      "x": -5.13,
+      "y": -1.26
+    },
+    "timestamp": 1795372041.8799372
+  },
+  "kernel": {
+    "state": "NAVIGATION_FAILURE",
+    "previous_state": "MISSION_EXECUTING",
+    "reason": "Mission incomplete: Retries exhausted (stopped and reassessed route)",
+    "mission_id": "standalone-a5051f74-ed55-48e4-af46-83151a18fd4e",
+    "mission_name": "Standalone apartment patrol",
+    "x": -5.116549710936356,
+    "y": -1.2023101511164518,
+    "trace_id": "475d0edb-fe32-4253-bc8e-0b7a094ee3b8"
+  },
+  "timed_out": false,
+  "swept_min_m": 0.142478,
+  "speed_bound_min_m": 0.140377,
+  "raw_min_m": 0.144587,
+  "sensor_hits": null,
+  "map_marks": null,
+  "stop": null,
+  "zero": null,
+  "rest": null,
+  "resumptions": null,
+  "retries": null,
+  "goal_error": null,
+  "planner_interval_verified": null,
+  "insert_requested": null,
+  "insert_confirmed": null,
+  "plans": [
+    {
+      "t": 3.974,
+      "points": 134,
+      "published_yaw": {
+        "sample_min_m": 0.090795,
+        "swept_lower_bound_m": 0.085819,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -5.035159,
+          -0.82289,
+          -2.034444
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.130966,
+        "swept_lower_bound_m": 0.126082,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -5.007956,
+          -0.757175,
+          -1.963264
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.11614,
+        "swept_lower_bound_m": 0.111256,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -5.022776,
+          -0.762744,
+          -1.963293
+        ]
+      }
+    },
+    {
+      "t": 5.002,
+      "points": 130,
+      "published_yaw": {
+        "sample_min_m": 0.153572,
+        "swept_lower_bound_m": 0.148584,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.975751,
+          -0.702537,
+          -2.034444
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.192858,
+        "swept_lower_bound_m": 0.187953,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.960469,
+          -0.665592,
+          -1.896298
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.183813,
+        "swept_lower_bound_m": 0.178908,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.98197,
+          -0.636966,
+          -1.8457
+        ]
+      }
+    },
+    {
+      "t": 14.808,
+      "points": 118,
+      "published_yaw": {
+        "sample_min_m": 0.147627,
+        "swept_lower_bound_m": 0.142702,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          -0.341229,
+          -0.292044,
+          -2.752878
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.13737,
+        "swept_lower_bound_m": 0.132398,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          -0.709235,
+          -0.297706,
+          -3.553865
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.139817,
+        "swept_lower_bound_m": 0.134845,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          -0.741267,
+          -0.299901,
+          -3.530073
+        ]
+      }
+    },
+    {
+      "t": 29.754,
+      "points": 24,
+      "published_yaw": {
+        "sample_min_m": 0.168333,
+        "swept_lower_bound_m": 0.163357,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.978249,
+          -0.680438,
+          -1.926522
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.177835,
+        "swept_lower_bound_m": 0.172837,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.973143,
+          -0.666692,
+          -1.907377
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.192277,
+        "swept_lower_bound_m": 0.187279,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.970642,
+          -0.63902,
+          -1.858074
+        ]
+      }
+    },
+    {
+      "t": 33.752,
+      "points": 20,
+      "published_yaw": {
+        "sample_min_m": 0.188028,
+        "swept_lower_bound_m": 0.183179,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.94182,
+          -0.696459,
+          -2.034444
+        ]
+      },
+      "tangent": {
+        "sample_min_m": 0.188028,
+        "swept_lower_bound_m": 0.183179,
+        "obstacle": "hall_south_west",
+        "pose": [
+          -4.94182,
+          -0.696459,
+          -2.034444
+        ]
+      },
+      "tangent_in_odom": {
+        "sample_min_m": 0.182874,
+        "swept_lower_bound_m": 0.178025,
+        "obstacle": "hall_south_middle",
+        "pose": [
+          -4.921363,
+          -0.648364,
+          -1.618964
+        ]
+      }
+    }
+  ],
+  "worst_local_m": {
+    "sample_min_m": 0.103811,
+    "swept_lower_bound_m": 0.099099,
+    "obstacle": "hall_south_west",
+    "pose": [
+      -5.128174,
+      -1.446594,
+      -1.519074
+    ]
+  },
+  "dwb_evaluations": 180,
+  "dwb_rejected": 50022,
+  "transitions": [
+    {
+      "t": 4.054,
+      "kind": "guard",
+      "state": "NAVIGATING",
+      "sim_time": 4.05,
+      "reason": null,
+      "generation": {
+        "grid": 6,
+        "global": 1
+      },
+      "hold_since": null,
+      "global_plan_stamp": 3.97,
+      "local_rollout_stamp": null,
+      "ages": {
+        "scan": 0.02400000000000002,
+        "depth": 0.04999999999999982,
+        "odom": 0.009999999999999787,
+        "grid": 0.08799999999999963,
+        "global": 0.8619999999999997,
+        "plan": 0.07999999999999963,
+        "command": 0.0
+      }
+    },
+    {
+      "t": 11.2,
+      "kind": "guard",
+      "state": "OBSTACLE_DETECTED",
+      "sim_time": 11.200000000000001,
+      "reason": "invalid_rollout",
+      "generation": {
+        "grid": 18,
+        "global": 5
+      },
+      "hold_since": 11.200000000000001,
+      "global_plan_stamp": 5.0,
+      "local_rollout_stamp": null,
+      "ages": {
+        "scan": 0.04600000000000115,
+        "depth": 0.20000000000000107,
+        "odom": 0.02000000000000135,
+        "grid": 0.04400000000000048,
+        "global": 0.02200000000000024,
+        "plan": 6.200000000000001,
+        "command": 0.05600000000000094
+      }
+    },
+    {
+      "t": 11.25,
+      "kind": "guard",
+      "state": "SAFETY_STOP",
+      "sim_time": 11.25,
+      "reason": null,
+      "generation": {
+        "grid": 18,
+        "global": 5
+      },
+      "hold_since": 11.200000000000001,
+      "global_plan_stamp": 5.0,
+      "local_rollout_stamp": null,
+      "ages": {
+        "scan": 0.02999999999999936,
+        "depth": 0.25,
+        "odom": 0.009999999999999787,
+        "grid": 0.09399999999999942,
+        "global": 0.07199999999999918,
+        "plan": 6.25,
+        "command": 0.005999999999998451
+      }
+    },
+    {
+      "t": 11.45,
+      "kind": "guard",
+      "state": "COSTMAP_UPDATE",
+      "sim_time": 11.450000000000001,
+      "reason": null,
+      "generation": {
+        "grid": 18,
+        "global": 5
+      },
+      "hold_since": 11.200000000000001,
+      "global_plan_stamp": 5.0,
+      "local_rollout_stamp": null,
+      "ages": {
+        "scan": 0.032000000000001805,
+        "depth": 0.05000000000000071,
+        "odom": 0.010000000000001563,
+        "grid": 0.2940000000000005,
+        "global": 0.27200000000000024,
+        "plan": 6.450000000000001,
+        "command": 0.006000000000000227
+      }
+    },
+    {
+      "t": 13.2,
+      "kind": "guard",
+      "state": "ROUTE_REASSESSMENT",
+      "sim_time": 13.200000000000001,
+      "reason": null,
+      "generation": {
+        "grid": 21,
+        "global": 6
+      },
+      "hold_since": 11.200000000000001,
+      "global_plan_stamp": 5.0,
+      "local_rollout_stamp": null,
+      "ages": {
+        "scan": 0.06600000000000072,
+        "depth": 0.20000000000000107,
+        "odom": 0.02000000000000135,
+        "grid": 0.25400000000000134,
+        "global": 0.036000000000001364,
+        "plan": 8.200000000000001,
+        "command": 0.019999999999999574
+      }
+    },
+    {
+      "t": 13.252,
+      "kind": "guard",
+      "state": "REPLANNING",
+      "sim_time": 13.25,
+      "reason": null,
+      "generation": {
+        "grid": 21,
+        "global": 6
+      },
+      "hold_since": 11.200000000000001,
+      "global_plan_stamp": 5.0,
+      "local_rollout_stamp": null,
+      "ages": {
+        "scan": 0.05000000000000071,
+        "depth": 0.05000000000000071,
+        "odom": 0.009999999999999787,
+        "grid": 0.30400000000000027,
+        "global": 0.0860000000000003,
+        "plan": 8.25,
+        "command": 0.027999999999998693
+      }
+    },
+    {
+      "t": 14.85,
+      "kind": "guard",
+      "state": "PATH_VALIDATION",
+      "sim_time": 14.850000000000001,
+      "reason": null,
+      "generation": {
+        "grid": 24,
+        "global": 6
+      },
+      "hold_since": 11.200000000000001,
+      "global_plan_stamp": 14.806000000000001,
+      "local_rollout_stamp": null,
+      "ages": {
+        "scan": 0.06400000000000183,
+        "depth": 0.05000000000000071,
+        "odom": 0.010000000000001563,
+        "grid": 0.10600000000000165,
+        "global": 1.6860000000000017,
+        "plan": 0.04400000000000048,
+        "command": 0.004000000000001336
+      }
+    },
+    {
+      "t": 17.72,
+      "kind": "guard",
+      "state": "RESUMING",
+      "sim_time": 17.75,
+      "reason": null,
+      "generation": {
+        "grid": 29,
+        "global": 8
+      },
+      "hold_since": null,
+      "global_plan_stamp": 14.806000000000001,
+      "local_rollout_stamp": 17.72,
+      "ages": {
+        "scan": 0.05999999999999872,
+        "depth": 0.3500000000000014,
+        "odom": 0.010000000000001563,
+        "grid": 0.006000000000000227,
+        "global": 0.5859999999999985,
+        "plan": 2.943999999999999,
+        "command": 0.003999999999997783,
+        "rollout": 0.030000000000001137
+      }
+    },
+    {
+      "t": 17.888,
+      "kind": "guard",
+      "state": "NAVIGATING",
+      "sim_time": 17.8,
+      "reason": null,
+      "generation": {
+        "grid": 29,
+        "global": 8
+      },
+      "hold_since": null,
+      "global_plan_stamp": 14.806000000000001,
+      "local_rollout_stamp": 17.76,
+      "ages": {
+        "scan": 0.045999999999999375,
+        "depth": 0.40000000000000213,
+        "odom": 0.019999999999999574,
+        "grid": 0.05600000000000094,
+        "global": 0.6359999999999992,
+        "plan": 2.9939999999999998,
+        "command": 0.007999999999999119,
+        "rollout": 0.03999999999999915
+      }
+    },
+    {
+      "t": 27.28,
+      "kind": "guard",
+      "state": "OBSTACLE_DETECTED",
+      "sim_time": 27.25,
+      "reason": "braking",
+      "generation": {
+        "grid": 44,
+        "global": 13
+      },
+      "hold_since": 27.25,
+      "global_plan_stamp": 14.806000000000001,
+      "local_rollout_stamp": 27.16,
+      "ages": {
+        "scan": 0.05600000000000094,
+        "depth": 0.25,
+        "odom": 0.010000000000001563,
+        "grid": 0.4980000000000011,
+        "global": 1.0940000000000012,
+        "plan": 12.443999999999999,
+        "command": 0.011999999999996902,
+        "rollout": 0.08999999999999986
+      }
+    },
+    {
+      "t": 27.358,
+      "kind": "guard",
+      "state": "SAFETY_STOP",
+      "sim_time": 27.3,
+      "reason": null,
+      "generation": {
+        "grid": 44,
+        "global": 13
+      },
+      "hold_since": 27.25,
+      "global_plan_stamp": 14.806000000000001,
+      "local_rollout_stamp": 27.16,
+      "ages": {
+        "scan": 0.04200000000000159,
+        "depth": 0.3000000000000007,
+        "odom": 0.019999999999999574,
+        "grid": 0.5480000000000018,
+        "global": 1.144000000000002,
+        "plan": 12.494,
+        "command": 0.06199999999999761,
+        "rollout": 0.14000000000000057
+      }
+    },
+    {
+      "t": 27.66,
+      "kind": "guard",
+      "state": "COSTMAP_UPDATE",
+      "sim_time": 27.650000000000002,
+      "reason": null,
+      "generation": {
+        "grid": 45,
+        "global": 13
+      },
+      "hold_since": 27.25,
+      "global_plan_stamp": 14.806000000000001,
+      "local_rollout_stamp": 27.54,
+      "ages": {
+        "scan": 0.060000000000002274,
+        "depth": 0.25000000000000355,
+        "odom": 0.010000000000001563,
+        "grid": 0.2700000000000031,
+        "global": 1.4940000000000033,
+        "plan": 12.844000000000001,
+        "command": 0.022000000000002018,
+        "rollout": 0.11000000000000298
+      }
+    },
+    {
+      "t": 28.224,
+      "kind": "guard",
+      "state": "ROUTE_REASSESSMENT",
+      "sim_time": 28.200000000000003,
+      "reason": null,
+      "generation": {
+        "grid": 46,
+        "global": 14
+      },
+      "hold_since": 27.25,
+      "global_plan_stamp": 14.806000000000001,
+      "local_rollout_stamp": 28.04,
+      "ages": {
+        "scan": 0.01600000000000179,
+        "depth": 0.20000000000000284,
+        "odom": 0.020000000000003126,
+        "grid": 0.23400000000000176,
+        "global": 0.04800000000000182,
+        "plan": 13.394000000000002,
+        "command": 0.060000000000002274,
+        "rollout": 0.1600000000000037
+      }
+    },
+    {
+      "t": 28.328,
+      "kind": "guard",
+      "state": "REPLANNING",
+      "sim_time": 28.25,
+      "reason": null,
+      "generation": {
+        "grid": 46,
+        "global": 14
+      },
+      "hold_since": 27.25,
+      "global_plan_stamp": 14.806000000000001,
+      "local_rollout_stamp": 28.12,
+      "ages": {
+        "scan": 0.06599999999999895,
+        "depth": 0.25,
+        "odom": 0.010000000000001563,
+        "grid": 0.2839999999999989,
+        "global": 0.09799999999999898,
+        "plan": 13.443999999999999,
+        "command": 0.027999999999998693,
+        "rollout": 0.129999999999999
+      }
+    },
+    {
+      "t": 29.8,
+      "kind": "guard",
+      "state": "PATH_VALIDATION",
+      "sim_time": 29.8,
+      "reason": null,
+      "generation": {
+        "grid": 49,
+        "global": 14
+      },
+      "hold_since": 27.25,
+      "global_plan_stamp": 29.754,
+      "local_rollout_stamp": 28.22,
+      "ages": {
+        "scan": 0.03200000000000003,
+        "depth": 0.40000000000000213,
+        "odom": 0.019999999999999574,
+        "grid": 0.06800000000000139,
+        "global": 1.6479999999999997,
+        "plan": 0.045999999999999375,
+        "command": 0.015999999999998238,
+        "rollout": 1.5800000000000018
+      }
+    },
+    {
+      "t": 30.936,
+      "kind": "guard",
+      "state": "RESUMING",
+      "sim_time": 30.950000000000003,
+      "reason": null,
+      "generation": {
+        "grid": 50,
+        "global": 15
+      },
+      "hold_since": null,
+      "global_plan_stamp": 29.754,
+      "local_rollout_stamp": 30.82,
+      "ages": {
+        "scan": 0.060000000000002274,
+        "depth": 0.15000000000000213,
+        "odom": 0.010000000000001563,
+        "grid": 0.6060000000000016,
+        "global": 0.7980000000000018,
+        "plan": 1.1960000000000015,
+        "command": 0.02400000000000091,
+        "rollout": 0.13000000000000256
+      }
+    },
+    {
+      "t": 31.132,
+      "kind": "guard",
+      "state": "NAVIGATING",
+      "sim_time": 31.05,
+      "reason": null,
+      "generation": {
+        "grid": 51,
+        "global": 15
+      },
+      "hold_since": null,
+      "global_plan_stamp": 29.754,
+      "local_rollout_stamp": 30.92,
+      "ages": {
+        "scan": 0.030000000000001137,
+        "depth": 0.05000000000000071,
+        "odom": 0.010000000000001563,
+        "grid": 0.04400000000000048,
+        "global": 0.8979999999999997,
+        "plan": 1.2959999999999994,
+        "command": 0.04199999999999804,
+        "rollout": 0.129999999999999
+      }
+    },
+    {
+      "t": 31.582,
+      "kind": "guard",
+      "state": "OBSTACLE_DETECTED",
+      "sim_time": 31.55,
+      "reason": "braking",
+      "generation": {
+        "grid": 51,
+        "global": 15
+      },
+      "hold_since": 31.55,
+      "global_plan_stamp": 29.754,
+      "local_rollout_stamp": 31.4,
+      "ages": {
+        "scan": 0.06599999999999895,
+        "depth": 0.15000000000000213,
+        "odom": 0.010000000000001563,
+        "grid": 0.5440000000000005,
+        "global": 1.3979999999999997,
+        "plan": 1.7959999999999994,
+        "command": 0.06599999999999895,
+        "rollout": 0.15000000000000213
+      }
+    },
+    {
+      "t": 31.662,
+      "kind": "guard",
+      "state": "SAFETY_STOP",
+      "sim_time": 31.6,
+      "reason": null,
+      "generation": {
+        "grid": 52,
+        "global": 15
+      },
+      "hold_since": 31.55,
+      "global_plan_stamp": 29.754,
+      "local_rollout_stamp": 31.48,
+      "ages": {
+        "scan": 0.0519999999999996,
+        "depth": 0.20000000000000284,
+        "odom": 0.020000000000003126,
+        "grid": 0.04600000000000293,
+        "global": 1.4480000000000004,
+        "plan": 1.846,
+        "command": 0.045999999999999375,
+        "rollout": 0.120000000000001
+      }
+    },
+    {
+      "t": 31.934,
+      "kind": "guard",
+      "state": "COSTMAP_UPDATE",
+      "sim_time": 31.900000000000002,
+      "reason": null,
+      "generation": {
+        "grid": 52,
+        "global": 15
+      },
+      "hold_since": 31.55,
+      "global_plan_stamp": 29.754,
+      "local_rollout_stamp": 31.82,
+      "ages": {
+        "scan": 0.020000000000003126,
+        "depth": 0.3000000000000007,
+        "odom": 0.020000000000003126,
+        "grid": 0.34600000000000364,
+        "global": 1.748000000000001,
+        "plan": 2.146000000000001,
+        "command": 0.01600000000000179,
+        "rollout": 0.08000000000000185
+      }
+    },
+    {
+      "t": 32.21,
+      "kind": "guard",
+      "state": "ROUTE_REASSESSMENT",
+      "sim_time": 32.2,
+      "reason": null,
+      "generation": {
+        "grid": 53,
+        "global": 16
+      },
+      "hold_since": 31.55,
+      "global_plan_stamp": 29.754,
+      "local_rollout_stamp": 32.12,
+      "ages": {
+        "scan": 0.05799999999999983,
+        "depth": 0.20000000000000284,
+        "odom": 0.020000000000003126,
+        "grid": 0.010000000000005116,
+        "global": 0.04800000000000182,
+        "plan": 2.4460000000000015,
+        "command": 0.00999999999999801,
+        "rollout": 0.0800000000000054
+      }
+    },
+    {
+      "t": 32.308,
+      "kind": "guard",
+      "state": "REPLANNING",
+      "sim_time": 32.25,
+      "reason": null,
+      "generation": {
+        "grid": 53,
+        "global": 16
+      },
+      "hold_since": 31.55,
+      "global_plan_stamp": 29.754,
+      "local_rollout_stamp": 32.12,
+      "ages": {
+        "scan": 0.04200000000000159,
+        "depth": 0.25,
+        "odom": 0.00999999999999801,
+        "grid": 0.060000000000002274,
+        "global": 0.09799999999999898,
+        "plan": 2.4959999999999987,
+        "command": 0.05999999999999517,
+        "rollout": 0.13000000000000256
+      }
+    },
+    {
+      "t": 33.8,
+      "kind": "guard",
+      "state": "PATH_VALIDATION",
+      "sim_time": 33.800000000000004,
+      "reason": null,
+      "generation": {
+        "grid": 55,
+        "global": 16
+      },
+      "hold_since": 31.55,
+      "global_plan_stamp": 33.752,
+      "local_rollout_stamp": 32.24,
+      "ages": {
+        "scan": 0.006000000000007333,
+        "depth": 0.4000000000000057,
+        "odom": 0.020000000000003126,
+        "grid": 0.4680000000000035,
+        "global": 1.6480000000000032,
+        "plan": 0.04800000000000182,
+        "command": 0.018000000000000682,
+        "rollout": 1.5600000000000023
+      }
+    },
+    {
+      "t": 34.5,
+      "kind": "guard",
+      "state": "RESUMING",
+      "sim_time": 34.5,
+      "reason": null,
+      "generation": {
+        "grid": 56,
+        "global": 17
+      },
+      "hold_since": null,
+      "global_plan_stamp": 33.752,
+      "local_rollout_stamp": 34.42,
+      "ages": {
+        "scan": 0.04800000000000182,
+        "depth": 0.10000000000000142,
+        "odom": 0.020000000000003126,
+        "grid": 0.5579999999999998,
+        "global": 0.347999999999999,
+        "plan": 0.7479999999999976,
+        "command": 0.117999999999995,
+        "rollout": 0.0799999999999983
+      }
+    },
+    {
+      "t": 34.684,
+      "kind": "guard",
+      "state": "NAVIGATING",
+      "sim_time": 34.550000000000004,
+      "reason": null,
+      "generation": {
+        "grid": 56,
+        "global": 17
+      },
+      "hold_since": null,
+      "global_plan_stamp": 33.752,
+      "local_rollout_stamp": 34.42,
+      "ages": {
+        "scan": 0.03200000000000358,
+        "depth": 0.15000000000000568,
+        "odom": 0.010000000000005116,
+        "grid": 0.6080000000000041,
+        "global": 0.39800000000000324,
+        "plan": 0.7980000000000018,
+        "command": 0.044000000000004036,
+        "rollout": 0.13000000000000256
+      }
+    },
+    {
+      "t": 36.794,
+      "kind": "guard",
+      "state": "OBSTACLE_DETECTED",
+      "sim_time": 36.75,
+      "reason": "braking",
+      "generation": {
+        "grid": 60,
+        "global": 18
+      },
+      "hold_since": 36.75,
+      "global_plan_stamp": 33.752,
+      "local_rollout_stamp": 36.64,
+      "ages": {
+        "scan": 0.0519999999999996,
+        "depth": 0.3500000000000014,
+        "odom": 0.00999999999999801,
+        "grid": 0.40400000000000347,
+        "global": 1.5959999999999965,
+        "plan": 2.9979999999999976,
+        "command": 0.045999999999999375,
+        "rollout": 0.10999999999999943
+      }
+    },
+    {
+      "t": 36.9,
+      "kind": "guard",
+      "state": "SAFETY_STOP",
+      "sim_time": 36.800000000000004,
+      "reason": null,
+      "generation": {
+        "grid": 60,
+        "global": 18
+      },
+      "hold_since": 36.75,
+      "global_plan_stamp": 33.752,
+      "local_rollout_stamp": 36.7,
+      "ages": {
+        "scan": 0.03800000000000381,
+        "depth": 0.4000000000000057,
+        "odom": 0.020000000000003126,
+        "grid": 0.45400000000000773,
+        "global": 1.6460000000000008,
+        "plan": 3.048000000000002,
+        "command": 0.045999999999999375,
+        "rollout": 0.10000000000000142
+      }
+    },
+    {
+      "t": 37.008,
+      "kind": "guard",
+      "state": "COSTMAP_UPDATE",
+      "sim_time": 36.95,
+      "reason": null,
+      "generation": {
+        "grid": 60,
+        "global": 18
+      },
+      "hold_since": 36.75,
+      "global_plan_stamp": 33.752,
+      "local_rollout_stamp": 36.84,
+      "ages": {
+        "scan": 0.054000000000002046,
+        "depth": 0.15000000000000568,
+        "odom": 0.010000000000005116,
+        "grid": 0.6040000000000063,
+        "global": 1.7959999999999994,
+        "plan": 3.1980000000000004,
+        "command": 0.03800000000000381,
+        "rollout": 0.10999999999999943
+      }
+    },
+    {
+      "t": 37.252,
+      "kind": "guard",
+      "state": "ROUTE_REASSESSMENT",
+      "sim_time": 37.2,
+      "reason": null,
+      "generation": {
+        "grid": 61,
+        "global": 19
+      },
+      "hold_since": 36.75,
+      "global_plan_stamp": 33.752,
+      "local_rollout_stamp": 37.1,
+      "ages": {
+        "scan": 0.04200000000000159,
+        "depth": 0.4000000000000057,
+        "odom": 0.020000000000003126,
+        "grid": 0.23799999999999955,
+        "global": 0.05000000000000426,
+        "plan": 3.4480000000000004,
+        "command": 0.030000000000001137,
+        "rollout": 0.10000000000000142
+      }
+    },
+    {
+      "t": 37.352,
+      "kind": "guard",
+      "state": "REPLANNING",
+      "sim_time": 37.25,
+      "reason": null,
+      "generation": {
+        "grid": 61,
+        "global": 19
+      },
+      "hold_since": 36.75,
+      "global_plan_stamp": 33.752,
+      "local_rollout_stamp": 37.16,
+      "ages": {
+        "scan": 0.026000000000003354,
+        "depth": 0.04999999999999716,
+        "odom": 0.00999999999999801,
+        "grid": 0.2879999999999967,
+        "global": 0.10000000000000142,
+        "plan": 3.4979999999999976,
+        "command": 0.027999999999998693,
+        "rollout": 0.09000000000000341
+      }
+    }
+  ],
+  "interrupt": null,
+  "idle": {
+    "command_graph": {
+      "cmd_vel_nav": {
+        "publishers": [
+          "controller_server",
+          "behavior_server",
+          "behavior_server",
+          "behavior_server"
+        ],
+        "subscribers": [
+          "dynamic_braking_guard"
+        ]
+      },
+      "cmd_vel_guarded_nav": {
+        "publishers": [
+          "dynamic_braking_guard"
+        ],
+        "subscribers": [
+          "cmd_vel_mux"
+        ]
+      },
+      "cmd_vel_mux": {
+        "publishers": [
+          "cmd_vel_mux"
+        ],
+        "subscribers": [
+          "idle_zero_observer",
+          "velocity_smoother"
+        ]
+      },
+      "cmd_vel_smoothed": {
+        "publishers": [
+          "velocity_smoother"
+        ],
+        "subscribers": [
+          "idle_zero_observer",
+          "collision_monitor"
+        ]
+      },
+      "cmd_vel_safe": {
+        "publishers": [
+          "collision_monitor"
+        ],
+        "subscribers": [
+          "gracemo_terrain_monitor"
+        ]
+      },
+      "cmd_vel": {
+        "publishers": [
+          "gracemo_terrain_monitor"
+        ],
+        "subscribers": [
+          "idle_zero_observer",
+          "gracemo_sensor_bridge"
+        ]
+      }
+    },
+    "passed": true,
+    "discovery_complete": true,
+    "duration_s": 3,
+    "samples": {
+      "cmd_vel": 59,
+      "cmd_vel_mux": 59,
+      "cmd_vel_smoothed": 60
+    },
+    "peak": {
+      "cmd_vel": 0.0,
+      "cmd_vel_mux": 0.0,
+      "cmd_vel_smoothed": 0.0
+    },
+    "mux_state": {
+      "active_source": "NONE",
+      "teleop_active": false,
+      "rl_active": false,
+      "nav_active": false,
+      "teleop_age_sec": null,
+      "rl_age_sec": null,
+      "nav_age_sec": 7.55,
+      "zero_command_held": true,
+      "current_linear_x": 0.0,
+      "current_angular_z": 0.0
+    },
+    "odom_displacement_m": 0.008165770579319307
+  },
+  "estop": {
+    "result": "FAIL",
+    "scope": "Gazebo only",
+    "goal": {
+      "x": 4.5,
+      "y": 3.0
+    },
+    "checks": {},
+    "state": "NAVIGATION_FAILURE",
+    "error": "Gazebo sensors, Nav2, terrain monitor, or coordinator were not ready",
+    "estop_active": null,
+    "state_history": []
+  },
+  "latch_idle": null,
+  "shutdown": null,
+  "after_coordinator_restart": null,
+  "after_nav_restart": null,
+  "fixture_actor_aborted": false,
+  "gazebo_shutdown_escalated": true
+}

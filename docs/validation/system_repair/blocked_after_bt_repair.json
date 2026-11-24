@@ -1,0 +1,58 @@
+{
+  "box": [
+    2.0,
+    0.0,
+    0.35,
+    1.65
+  ],
+  "map_truth_error_m": 0.06631416742832597,
+  "plan_stream": "plan",
+  "footprint_edges_m": [
+    0.72,
+    0.7,
+    0.72,
+    0.7
+  ],
+  "executed": {
+    "sample_min_m": 0.369069,
+    "swept_lower_bound_m": 0.36778,
+    "obstacle": "hall_south_middle",
+    "pose": [
+      -0.10937,
+      -0.06946,
+      -0.394451
+    ],
+    "speed_bound_min_m": 0.279018
+  },
+  "truth_final": [
+    -0.10936992977873562,
+    -0.06945976454721786,
+    -0.39445101881264016
+  ],
+  "truth_goal_error_m": 4.60989,
+  "max_truth_sample_gap_s": 0.34199999999999964,
+  "global_paths": 0,
+  "first_path": null,
+  "worst_tangent_path": null,
+  "worst_tangent_in_odom": null,
+  "plans": [],
+  "lethal_cells_near_box": {
+    "global": {
+      "snapshots": 22,
+      "first": 43,
+      "max": 49,
+      "median": 44.0
+    },
+    "local": {
+      "snapshots": 70,
+      "first": 43,
+      "max": 48,
+      "median": 45.0
+    }
+  },
+  "local_plans": 0,
+  "worst_local_plan": null,
+  "max_dwb_forward_mps": 0,
+  "dwb_all_rejected_cycles": 0,
+  "critic_reasons": {}
+}

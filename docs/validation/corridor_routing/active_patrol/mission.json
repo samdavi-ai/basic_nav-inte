@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "mission_id": "standalone-05c43830-5453-4a53-abb2-1c7445940844",
+  "trace_id": "eb8970c2-2a89-4c89-b264-07fd0957df9d",
+  "rooms": [
+    "Kitchen & Dining",
+    "Master Bedroom",
+    "Home Study",
+    "Living Room",
+    "Central Hallway"
+  ],
+  "coordinator_result": {
+    "mission_id": "standalone-05c43830-5453-4a53-abb2-1c7445940844",
+    "name": "Standalone apartment patrol",
+    "success": true,
+    "status": "COMPLETED",
+    "reason": "",
+    "waypoints_completed": 11,
+    "total_waypoints": 11,
+    "duration_sec": 184.7,
+    "end_pose": {
+      "x": -0.14,
+      "y": 0.13
+    },
+    "timestamp": 1795260723.879282
+  },
+  "kernel_result": {
+    "state": "MISSION_COMPLETED",
+    "previous_state": "DESTINATION_REACHED",
+    "reason": "All 11 destinations reached",
+    "mission_id": "standalone-05c43830-5453-4a53-abb2-1c7445940844",
+    "mission_name": "Standalone apartment patrol",
+    "x": -0.10517667248969136,
+    "y": 0.15383783555890934
+  },
+  "timestamp": 1795260724.3364522
+}

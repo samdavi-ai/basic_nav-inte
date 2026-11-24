@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/stop_SAFETY_STOP",
+    "--master-recovery",
+    "--interrupt-at",
+    "SAFETY_STOP"
+  ],
+  "exit": 0,
+  "wall_s": 21.732163578002655
+}

@@ -53,7 +53,7 @@ class WorldObject:
 
     def is_visible_at(self, current_time: float, timeout_sec: float = VISIBILITY_TIMEOUT_SEC) -> bool:
         """Evaluates visibility lifecycle against an arbitrary reference timestamp."""
-        return (current_time - self.last_seen) <= timeout_sec
+        return 0 <= current_time - self.last_seen <= timeout_sec
 
     def update(
         self,

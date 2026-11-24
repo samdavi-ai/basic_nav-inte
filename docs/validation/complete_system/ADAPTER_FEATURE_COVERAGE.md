@@ -1,0 +1,5 @@
+# Adapter and reasoning coverage
+
+AdapterClient supports kernel event and context operations. GeminiRoboticsClient, MNSEContextProvider, ToolRegistry and GeminiRoboticsOrchestrator implement provider calls, context grounding and tool dispatch. In this run the actual context provider retrieved the fixture from a running kernel. Mock-provider tests covered reasoning, multimodal inputs, navigation correlation and the turn limit. [Contract and fixture tests](offline.xml)
+
+Speak, Stop, NavigateToRoom and NavigateTo have tested canonical tool requests. LookAt and Express exist in the action enum. The registry also exposes scene inspection, object search, grasp, placement, scan and exploration. Completion evidence here covers navigation only. The requested universal adapter registration, readiness, disconnect and reconnect protocol has no identified public management route. Live Gemini inference, credential failure, provider switching and cancellation during inference remain unverified. Move is a legacy command and was not exercised.

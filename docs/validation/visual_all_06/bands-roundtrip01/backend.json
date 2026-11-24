@@ -1,0 +1,20 @@
+{
+  "integrity": "ok",
+  "database_version": "0.23.14",
+  "missing_dictionary_words": 5858,
+  "optimized_node_count": 77,
+  "missing_optimized_dictionary_words": 0,
+  "mapper_finished_cleanly": true,
+  "sha256": "0f2317ff75e9c79bb9af938bfc3eabdaed4b54de1c6d7245cf051e4d63e4edaa",
+  "keyframes": 132,
+  "nonzero_truth_blobs": 0,
+  "directed_links_by_type": {
+    "0": 152,
+    "1": 43,
+    "2": 4
+  },
+  "odometry_updates": 1368,
+  "positive_quality": 1367,
+  "zero_quality": 1,
+  "visual_goal": false
+}

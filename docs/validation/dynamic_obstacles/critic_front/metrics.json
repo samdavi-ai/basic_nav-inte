@@ -1,0 +1,168 @@
+{
+  "case": {
+    "index": 0,
+    "seed": 42,
+    "kind": "front",
+    "box": [
+      2.0,
+      -0.4,
+      0.322,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      0.0
+    ],
+    "min_robot_x": 0.23494998392273192,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world",
+    "level": 1,
+    "swept_critic": true
+  },
+  "mission_id": "standalone-97cfe378-97c0-4053-b85f-d92dd7d88a6e",
+  "trace_id": "b07c767b-9f8d-4b54-b596-069d75984f3d",
+  "matched_terminal": true,
+  "route_resumptions": [
+    {
+      "t": 7.508,
+      "global_clearance_m": 0.13414,
+      "local_clearance_m": 0.132547,
+      "local_stamp": 7.44
+    },
+    {
+      "t": 9.458,
+      "global_clearance_m": 0.107795,
+      "local_clearance_m": 0.138158,
+      "local_stamp": 9.42
+    },
+    {
+      "t": 11.256,
+      "global_clearance_m": 0.10354,
+      "local_clearance_m": 0.17371528631533037,
+      "local_stamp": 11.22
+    }
+  ],
+  "runner_timed_out": false,
+  "goal_within_035m": false,
+  "final_zero_command_window_s": 0.942,
+  "planner_actions": [
+    {
+      "t": 3.664,
+      "kind": "planning_result",
+      "uuid": "e82664832e5bfd9b7d0766e4a16469ee",
+      "accepted": 3.66,
+      "path_stamp": 3.66,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 7.04,
+      "kind": "planning_result",
+      "uuid": "901cc073d7ac707cedbb04641ed6472e",
+      "accepted": 7.036,
+      "path_stamp": 7.038,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 9.312,
+      "kind": "planning_result",
+      "uuid": "04af812ce92d26e54c668ea075cf6c4f",
+      "accepted": 9.308,
+      "path_stamp": 9.308,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 11.158,
+      "kind": "planning_result",
+      "uuid": "90e4236edd42c305b8e2155f4b4a670b",
+      "accepted": 11.156,
+      "path_stamp": 11.156,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    }
+  ],
+  "insertion_within_proven_planner_interval": false,
+  "state": "FAILED",
+  "kernel_terminal": "NAVIGATION_FAILURE",
+  "retries": 3,
+  "insert_requested": 4.5,
+  "first_scene_confirmation": 4.868,
+  "last_scene_confirmation": [
+    4.868,
+    2.0,
+    -0.4
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": 5.78,
+  "risk_to_zero_s": 0.226,
+  "risk_to_chassis_stop_s": 0.28,
+  "selected_rollouts_after_insertion": 41,
+  "worst_frozen_rollout_fixture_m": -0.05098,
+  "minimum_scene_interpolated_m": 0.362626,
+  "minimum_fixture_interpolated_m": 0.362626,
+  "sensor_transform_drops": 0,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "depth": 4.8,
+    "scan": 9.834
+  },
+  "first_lethal_marks": {
+    "local_costmap": 4.922,
+    "global_costmap": 6.734
+  },
+  "preexisting_matches": {},
+  "first_monitor_action": null,
+  "first_risk_action": 5.5,
+  "monitor_stop": null,
+  "guard_stop": 5.5,
+  "first_final_zero_after_stop_action": 5.726,
+  "sensor_to_local_mark_s": 0.122,
+  "local_mark_to_stop_s": 0.804,
+  "sensor_to_stop_s": 0.926,
+  "peak_linear_speed_until_stop_mps": 0.8963603730010994,
+  "max_displacement_until_stop_m": 0.38324081423985185,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": 0.36754,
+  "goal_error_m": 3.46279,
+  "old_and_new_plans": [
+    {
+      "t": 3.66,
+      "points": 178,
+      "frozen_fixture_clearance_m": -0.13199,
+      "frozen_scene_clearance_m": -0.13199
+    },
+    {
+      "t": 7.038,
+      "points": 49,
+      "frozen_fixture_clearance_m": 0.13414,
+      "frozen_scene_clearance_m": 0.13414
+    },
+    {
+      "t": 9.308,
+      "points": 49,
+      "frozen_fixture_clearance_m": 0.1858,
+      "frozen_scene_clearance_m": 0.107795
+    },
+    {
+      "t": 11.156,
+      "points": 49,
+      "frozen_fixture_clearance_m": 0.10354,
+      "frozen_scene_clearance_m": 0.10354
+    }
+  ],
+  "after_insertion_plan_count": 3,
+  "confirmed_motion_m": 0.0
+}

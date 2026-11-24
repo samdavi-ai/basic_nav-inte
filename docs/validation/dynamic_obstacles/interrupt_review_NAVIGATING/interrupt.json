@@ -1,0 +1,33 @@
+{
+  "target": "NAVIGATING",
+  "status": "PASS",
+  "mission_id": "standalone-20478c72-e6da-420f-8080-08b5430e4d55",
+  "trigger": {
+    "state": "NAVIGATING",
+    "sim_time": 7.800000000000001,
+    "plan_valid": true,
+    "ages": {
+      "depth": 0.2,
+      "scan": 0.078,
+      "odom": 0.02,
+      "grid": 0.54,
+      "global": 0.218,
+      "plan": 0.556,
+      "rollout": 0.04,
+      "command": 0.012
+    }
+  },
+  "pose": {
+    "x": 0.7299936362183487,
+    "y": -0.06103905646265308,
+    "linear_x": -0.005788726059404452,
+    "angular_z": 0.222423263244336
+  },
+  "request_wall": 16738.451709162,
+  "request_sim": 7.8,
+  "zero_latency_s": 0.0021992010006215423,
+  "max_displacement_m": 0.01223611325538119,
+  "final_second_speed": 0.019030216017324315,
+  "rejected": true,
+  "reset": true
+}

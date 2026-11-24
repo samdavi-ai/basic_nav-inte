@@ -1,0 +1,10 @@
+baseline 320 accepted
+baseline 640 rejected
+resolution2x 320 rejected
+resolution2x 640 accepted
+texture-revisit01 320 accepted
+texture-revisit01 640 rejected
+rejected invalid calibration at byte 44
+rejected invalid calibration at byte 116
+rejected invalid calibration at byte 156
+rejected invalid calibration at byte 228

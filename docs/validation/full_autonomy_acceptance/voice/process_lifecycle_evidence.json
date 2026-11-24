@@ -1,0 +1,23 @@
+[
+  {
+    "launch": 1,
+    "launcher_pid": 55954,
+    "started": 1795423555.6365042,
+    "kernel_pid": 55993,
+    "mission_id": "standalone-670c4679-4b3c-46f9-98bd-8268a3a72a2e",
+    "trace_id": "5cb46396-3279-4f0d-9392-98f5401ea247",
+    "shutdown_state": "EMERGENCY_STOP",
+    "ended": 1795423635.678924,
+    "exit_code": 143,
+    "kernel_exited": true
+  },
+  {
+    "launch": 2,
+    "launcher_pid": 59863,
+    "started": 1795423635.6809518,
+    "kernel_pid": 59890,
+    "ended": 1795423676.5986855,
+    "exit_code": 143,
+    "kernel_exited": true
+  }
+]

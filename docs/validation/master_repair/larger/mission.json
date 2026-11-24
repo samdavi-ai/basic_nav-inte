@@ -1,0 +1,35 @@
+{
+  "success": false,
+  "timed_out": false,
+  "mission_id": "standalone-5906f651-d047-4c72-a79e-970611133a73",
+  "trace_id": "f3245268-e71a-4564-adb1-798f7e7ab6b7",
+  "rooms": [
+    "Simulation destination"
+  ],
+  "coordinator_result": {
+    "mission_id": "standalone-5906f651-d047-4c72-a79e-970611133a73",
+    "name": "Standalone apartment patrol",
+    "success": false,
+    "status": "FAILED",
+    "reason": "Recovery deadline expired without a validated route",
+    "waypoints_completed": 0,
+    "total_waypoints": 1,
+    "duration_sec": 12.1,
+    "end_pose": {
+      "x": -0.02,
+      "y": -0.03
+    },
+    "timestamp": 1795278238.4939048
+  },
+  "kernel_result": {
+    "state": "NAVIGATION_FAILURE",
+    "previous_state": "MISSION_EXECUTING",
+    "reason": "Mission incomplete: Recovery deadline expired without a validated route",
+    "mission_id": "standalone-5906f651-d047-4c72-a79e-970611133a73",
+    "mission_name": "Standalone apartment patrol",
+    "x": -0.010247109662755436,
+    "y": -0.03294095347354949,
+    "trace_id": "f3245268-e71a-4564-adb1-798f7e7ab6b7"
+  },
+  "timestamp": 1795278238.548432
+}

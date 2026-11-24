@@ -55,6 +55,25 @@ DEFAULT_CLASSES_OF_INTEREST: Set[str] = {
 }
 
 
+def preprocess(image_bgr, input_size):
+    h, w = image_bgr.shape[:2]
+    scale = min(input_size / h, input_size / w)
+    nw, nh = int(round(w * scale)), int(round(h * scale))
+    resized = cv2.resize(image_bgr, (nw, nh), interpolation=cv2.INTER_LINEAR)
+
+    canvas = np.full((input_size, input_size, 3), 114, dtype=np.uint8)
+    pad_x = (input_size - nw) // 2
+    pad_y = (input_size - nh) // 2
+    canvas[pad_y:pad_y + nh, pad_x:pad_x + nw] = resized
+
+    rgb = cv2.cvtColor(canvas, cv2.COLOR_BGR2RGB)
+    blob = rgb.astype(np.float32) / 255.0
+    blob = np.transpose(blob, (2, 0, 1))
+    blob = np.expand_dims(blob, axis=0)
+
+    return blob, scale, pad_x, pad_y
+
+
 class ObjectDetector:
     """
     Object detector using pretrained YOLO11n.
@@ -87,6 +106,9 @@ class ObjectDetector:
             repo_root / "models" / "yolo11n.onnx",
         ]
 
+        configured = os.getenv("VIRA_DETECTOR_ONNX")
+        if configured:
+            onnx_candidates = [Path(configured)]
         for onnx_path in onnx_candidates:
             if onnx_path.exists():
                 try:
@@ -94,11 +116,34 @@ class ObjectDetector:
                     logger.info(f"Loading YOLO11 ONNX model from '{onnx_path}' with ONNX Runtime...")
                     opts = ort.SessionOptions()
                     opts.intra_op_num_threads = 2
-                    self.ort_session = ort.InferenceSession(str(onnx_path), opts, providers=["CPUExecutionProvider"])
+                    available = ort.get_available_providers()
+                    requested = os.getenv("VIRA_ORT_PROVIDER", "CPUExecutionProvider")
+                    providers = [requested] if requested in available else []
+                    if requested == "TensorrtExecutionProvider" and requested in available:
+                        import hashlib
+                        precision = os.getenv("VIRA_TRT_PRECISION", "fp32")
+                        if precision not in {"fp32", "fp16"}:
+                            raise ValueError("Supported TensorRT profiles are fp32 and fp16")
+                        cache = os.getenv("VIRA_TRT_CACHE")
+                        options = {"trt_fp16_enable": precision == "fp16"}
+                        if cache:
+                            with onnx_path.open("rb") as model_file:
+                                digest = hashlib.file_digest(model_file, "sha256").hexdigest()
+                            location = Path(cache) / ort.__version__ / digest / precision
+                            location.mkdir(mode=0o700, parents=True, exist_ok=True)
+                            options.update(trt_engine_cache_enable=True, trt_engine_cache_path=str(location))
+                        providers = [(requested, options)]
+                    if "CPUExecutionProvider" not in providers:
+                        providers.append("CPUExecutionProvider")
+                    self.ort_session = ort.InferenceSession(str(onnx_path), opts, providers=providers)
                     logger.info("✓ YOLO11 ONNX model loaded successfully.")
                     return
                 except Exception as e:
                     logger.warning(f"Failed to load ONNX session: {e}")
+
+        if configured or not Path(self.model_name).is_file():
+            logger.warning("Missing compatible local detector model")
+            return
 
         # 2. Try Ultralytics YOLO
         try:
@@ -130,20 +175,12 @@ class ObjectDetector:
         """Executes YOLO11 inference using ONNX Runtime."""
         h, w = image_bgr.shape[:2]
         # Preprocess: Letterbox to 640x640, BGR -> RGB, / 255.0, NCHW
-        input_size = 640
-        scale = min(input_size / h, input_size / w)
-        nw, nh = int(round(w * scale)), int(round(h * scale))
-        resized = cv2.resize(image_bgr, (nw, nh), interpolation=cv2.INTER_LINEAR)
-
-        canvas = np.full((input_size, input_size, 3), 114, dtype=np.uint8)
-        pad_x = (input_size - nw) // 2
-        pad_y = (input_size - nh) // 2
-        canvas[pad_y:pad_y + nh, pad_x:pad_x + nw] = resized
-
-        rgb = cv2.cvtColor(canvas, cv2.COLOR_BGR2RGB)
-        blob = rgb.astype(np.float32) / 255.0
-        blob = np.transpose(blob, (2, 0, 1))
-        blob = np.expand_dims(blob, axis=0)
+        shape = self.ort_session.get_inputs()[0].shape
+        input_size = int(os.getenv("VIRA_DETECTOR_SIZE", "640"))
+        if not 160 <= input_size <= 1280 or input_size % 32 or any(
+                isinstance(dim, int) and dim != input_size for dim in shape[2:]):
+            raise ValueError("Detector size must match the provisioned square ONNX input")
+        blob, scale, pad_x, pad_y = preprocess(image_bgr,input_size)
 
         # Run ONNX inference
         outputs = self.ort_session.run(None, {self.ort_session.get_inputs()[0].name: blob})
@@ -156,10 +193,13 @@ class ObjectDetector:
         confidences = []
         class_ids = []
 
-        for pred in predictions:
-            class_scores = pred[4:]
-            cls_id = int(np.argmax(class_scores))
-            conf = float(class_scores[cls_id])
+        scores = predictions[:, 4:]
+        classes = np.argmax(scores, axis=1)
+        confid = scores[np.arange(len(scores)), classes]
+        for index in np.flatnonzero(confid >= self.confidence_threshold):
+            pred = predictions[index]
+            cls_id = int(classes[index])
+            conf = float(confid[index])
 
             if conf >= self.confidence_threshold:
                 # Bounding box in canvas coordinates: cx, cy, bw, bh

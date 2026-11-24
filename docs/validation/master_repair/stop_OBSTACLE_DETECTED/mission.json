@@ -1,0 +1,35 @@
+{
+  "success": false,
+  "timed_out": false,
+  "mission_id": "standalone-27bca95d-fade-4c38-9839-034ec514c3c0",
+  "trace_id": "700787a0-2045-4c99-ba60-351cc2eca00d",
+  "rooms": [
+    "Simulation destination"
+  ],
+  "coordinator_result": {
+    "mission_id": "standalone-27bca95d-fade-4c38-9839-034ec514c3c0",
+    "name": "Standalone apartment patrol",
+    "success": false,
+    "status": "CANCELLED",
+    "reason": "Operator emergency stop",
+    "waypoints_completed": 0,
+    "total_waypoints": 1,
+    "duration_sec": 1.4,
+    "end_pose": {
+      "x": 0.48,
+      "y": -0.03
+    },
+    "timestamp": 1795278489.2841957
+  },
+  "kernel_result": {
+    "state": "MISSION_CANCELLED",
+    "previous_state": "EMERGENCY_STOP",
+    "reason": "Operator emergency stop",
+    "mission_id": "standalone-27bca95d-fade-4c38-9839-034ec514c3c0",
+    "mission_name": "Standalone apartment patrol",
+    "x": null,
+    "y": null,
+    "trace_id": "700787a0-2045-4c99-ba60-351cc2eca00d"
+  },
+  "timestamp": 1795278489.3325598
+}

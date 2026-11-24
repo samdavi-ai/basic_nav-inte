@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/cross",
+    "--master-recovery",
+    "--index",
+    "2"
+  ],
+  "exit": 0,
+  "wall_s": 33.51506163600061,
+  "analysis_exit": 0
+}

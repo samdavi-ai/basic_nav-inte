@@ -1,6 +1,6 @@
 <!--
   GRaCEmo ViRa Optimized Indoor Navigation Behavior Tree
-  Replans only if path becomes invalid; recovery clears costmaps and backs up without dangerous 90-degree spins in doorways.
+  Retain valid paths in transit and replan near the waypoint.
 -->
 <root BTCPP_format="4" main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
@@ -10,25 +10,37 @@
         <PlannerSelector selected_planner="{selected_planner}" default_planner="GridBased" topic_name="planner_selector"/>
         <RateController hz="1.0" name="RateControllerComputePathToPose">
           <RecoveryNode number_of_retries="1" name="RecoveryComputePathToPose">
-            <ComputePathToPose goal="{goal}" path="{path}" planner_id="{selected_planner}" error_code_id="{compute_path_error_code}"/>
-            <ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>
+            <Fallback name="FallbackComputePathToPose">
+              <ReactiveSequence name="CheckIfNewPathNeeded">
+                <Inverter>
+                  <GlobalUpdatedGoal/>
+                </Inverter>
+                <!-- Refresh from the current pose within one full DWB rollout of the waypoint. -->
+                <GetCurrentPose current_pose="{routing_pose}" robot_base_frame="base_footprint" global_frame="map"/>
+                <Inverter>
+                  <ArePosesNear ref_pose="{routing_pose}" target_pose="{goal}" tolerance="1.1"/>
+                </Inverter>
+                <IsPathValid path="{path}"/>
+              </ReactiveSequence>
+              <ComputePathToPose goal="{goal}" path="{path}" planner_id="{selected_planner}" error_code_id="{compute_path_error_code}"/>
+            </Fallback>
+            <!-- Preserve live obstacle observations: clearing here can erase the
+                 obstacle that triggered this replan before its replacement path
+                 is checked against the padded footprint. -->
+            <Wait name="WaitForFreshGlobalObservation" wait_duration="0.25"/>
           </RecoveryNode>
         </RateController>
-        <RecoveryNode number_of_retries="1" name="RecoveryFollowPath">
+        <RecoveryNode number_of_retries="0" name="RecoveryFollowPath">
           <FollowPath path="{path}" controller_id="{selected_controller}" goal_checker_id="general_goal_checker" progress_checker_id="progress_checker" error_code_id="{follow_path_error_code}"/>
-          <ClearEntireCostmap name="ClearLocalCostmap-Context" service_name="local_costmap/clear_entirely_local_costmap"/>
+          <Wait name="WaitForFreshLocalObservation" wait_duration="0.25"/>
         </RecoveryNode>
       </PipelineSequence>
       <ReactiveFallback name="FallbackRecoveries">
         <GoalUpdated/>
-        <RoundRobin name="RecoveryActions">
-          <Sequence name="ClearingActions">
-            <ClearEntireCostmap name="ClearLocalCostmap-Subtree" service_name="local_costmap/clear_entirely_local_costmap"/>
-            <ClearEntireCostmap name="ClearGlobalCostmap-Subtree" service_name="global_costmap/clear_entirely_global_costmap"/>
-          </Sequence>
-          <Wait name="WaitRecovery" wait_duration="3.0"/>
-          <BackUp name="BackUpRecovery" backup_dist="0.25" backup_speed="0.10"/>
-        </RoundRobin>
+        <!-- A bounded pause retains sensor marks and avoids an unvalidated
+             reverse maneuver.  The coordinator owns retry limits and reports
+             NAVIGATION_FAILURE when no safe replacement route exists. -->
+        <Wait name="WaitForObstacleObservation" wait_duration="1.0"/>
       </ReactiveFallback>
     </RecoveryNode>
   </BehaviorTree>

@@ -1,0 +1,23 @@
+{
+  "samples": 26,
+  "max_tree_pss_bytes": 2346218496,
+  "max_perception_rss_bytes": 377794560,
+  "detector_ms": {
+    "p50": 58.138775000315945,
+    "p95": 66.20213425003385
+  },
+  "tracking_ms": {
+    "p50": 0.017632500203035306,
+    "p95": 0.035836000279232394
+  },
+  "pair_wall_hz": 3.7104893739467046,
+  "processed_wall_hz": 3.690432674628074,
+  "sampled_localized_classes": {
+    "monitor": 4,
+    "sofa": 1,
+    "chair": 1
+  },
+  "max_sync_skew_ms": 0.0,
+  "k_http_ms": null,
+  "active_trace_samples": 0
+}

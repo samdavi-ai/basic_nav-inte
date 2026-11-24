@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validation/dynamic_cases.py",
+    "docs/validation/master_repair/rect_patrol",
+    "--rectangular-guard",
+    "--regression",
+    "patrol",
+    "--mission-timeout",
+    "300"
+  ],
+  "exit": 0
+}

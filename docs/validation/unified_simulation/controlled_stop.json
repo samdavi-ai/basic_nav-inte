@@ -1,0 +1,128 @@
+[
+  {
+    "voice": "en-us",
+    "phrase": "stop",
+    "expected": true,
+    "normal": true,
+    "private_grammar": true
+  },
+  {
+    "voice": "en-us",
+    "phrase": "please stop",
+    "expected": true,
+    "normal": true,
+    "private_grammar": true
+  },
+  {
+    "voice": "en-us",
+    "phrase": "emergency stop",
+    "expected": true,
+    "normal": true,
+    "private_grammar": true
+  },
+  {
+    "voice": "en-us",
+    "phrase": "stop now",
+    "expected": true,
+    "normal": true,
+    "private_grammar": true
+  },
+  {
+    "voice": "en-us",
+    "phrase": "don't stop",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  },
+  {
+    "voice": "en-us",
+    "phrase": "do not stop",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  },
+  {
+    "voice": "en-us",
+    "phrase": "where is the stop sign",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  },
+  {
+    "voice": "en-us",
+    "phrase": "go to the kitchen",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  },
+  {
+    "voice": "en-us",
+    "phrase": "the laptop",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  },
+  {
+    "voice": "en-gb",
+    "phrase": "stop",
+    "expected": true,
+    "normal": true,
+    "private_grammar": true
+  },
+  {
+    "voice": "en-gb",
+    "phrase": "please stop",
+    "expected": true,
+    "normal": true,
+    "private_grammar": true
+  },
+  {
+    "voice": "en-gb",
+    "phrase": "emergency stop",
+    "expected": true,
+    "normal": false,
+    "private_grammar": true
+  },
+  {
+    "voice": "en-gb",
+    "phrase": "stop now",
+    "expected": true,
+    "normal": true,
+    "private_grammar": true
+  },
+  {
+    "voice": "en-gb",
+    "phrase": "don't stop",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  },
+  {
+    "voice": "en-gb",
+    "phrase": "do not stop",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  },
+  {
+    "voice": "en-gb",
+    "phrase": "where is the stop sign",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  },
+  {
+    "voice": "en-gb",
+    "phrase": "go to the kitchen",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  },
+  {
+    "voice": "en-gb",
+    "phrase": "the laptop",
+    "expected": false,
+    "normal": false,
+    "private_grammar": false
+  }
+]

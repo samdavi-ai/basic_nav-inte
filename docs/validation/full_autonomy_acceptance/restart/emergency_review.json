@@ -1,0 +1,9 @@
+{
+  "restored": {
+    "event_id": "c092e6eb-5f4b-48d5-b98c-78051e5f8e51",
+    "latched": true
+  },
+  "after_abandon": 423,
+  "runner_release": 403,
+  "explicit_reviewer_release": 204
+}

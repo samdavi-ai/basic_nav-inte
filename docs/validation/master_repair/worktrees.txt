@@ -1,0 +1,2 @@
+/home/sabarishchandrasekaran/projects/VIRA-agent-bridge-migration  a7945a8d [main]
+/home/sabarishchandrasekaran/projects/vira-worktree-baseline       ee60cb80 (detached HEAD)

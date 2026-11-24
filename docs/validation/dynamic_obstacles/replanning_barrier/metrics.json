@@ -1,0 +1,1244 @@
+{
+  "case": {
+    "index": 4,
+    "seed": 42,
+    "kind": "replan",
+    "box": [
+      4.37,
+      -0.4,
+      0.336,
+      0.35
+    ],
+    "goal": [
+      4.5,
+      0.0
+    ],
+    "min_robot_x": 0.1912112669270855,
+    "min_plan_count": 1,
+    "crossing_speed": 0.0,
+    "initial_pose": [
+      0,
+      0,
+      0
+    ],
+    "world": "apartment_floor.world",
+    "level": 1,
+    "synchronize_replan": true
+  },
+  "mission_id": "standalone-54e58569-d051-47ce-aafa-7a3490f7a8e6",
+  "trace_id": "2bafeacb-6bb9-4625-b33b-81873981b8f1",
+  "matched_terminal": true,
+  "runner_timed_out": false,
+  "goal_within_035m": false,
+  "final_zero_command_window_s": 0.538,
+  "planner_actions": [
+    {
+      "t": 3.58,
+      "kind": "planning_result",
+      "uuid": "20a136528a025903bce8fe26fb42cd5d",
+      "accepted": 3.5780000000000003,
+      "path_stamp": 3.5780000000000003,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 11.328,
+      "kind": "planning_result",
+      "uuid": "02820a9d2c2c508b1acf723129a7cf07",
+      "accepted": 10.996,
+      "path_stamp": 11.326,
+      "duration": 0.33,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 12.318,
+      "kind": "planning_result",
+      "uuid": "236d6f0c5e11822b462412ceccc637c5",
+      "accepted": 12.308,
+      "path_stamp": 12.308,
+      "duration": 0.006,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 13.29,
+      "kind": "planning_result",
+      "uuid": "cd5b410bc395e6633c47bf29e0f254d9",
+      "accepted": 13.286,
+      "path_stamp": 13.286,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 14.274000000000001,
+      "kind": "planning_result",
+      "uuid": "1d463eb83c69eae2f85fbb8edee2802c",
+      "accepted": 14.27,
+      "path_stamp": 14.27,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 15.282,
+      "kind": "planning_result",
+      "uuid": "fe921b9cc862ebc38297c28bea1aee5e",
+      "accepted": 15.276,
+      "path_stamp": 15.276,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 16.254,
+      "kind": "planning_result",
+      "uuid": "d7eeb00990adbc91775412ba48329f82",
+      "accepted": 16.25,
+      "path_stamp": 16.25,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 17.234,
+      "kind": "planning_result",
+      "uuid": "33cd232f402a2be994af6782284a1612",
+      "accepted": 17.228,
+      "path_stamp": 17.228,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 18.222,
+      "kind": "planning_result",
+      "uuid": "65825058bc25d3c750f4b6f608a914fc",
+      "accepted": 18.216,
+      "path_stamp": 18.216,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 19.224,
+      "kind": "planning_result",
+      "uuid": "418c43ee81581ba27099d2cc0e47b4ff",
+      "accepted": 19.218,
+      "path_stamp": 19.218,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 20.214,
+      "kind": "planning_result",
+      "uuid": "d59eb9ed697586eb0a7f515ed2f14a1c",
+      "accepted": 20.21,
+      "path_stamp": 20.21,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 21.216,
+      "kind": "planning_result",
+      "uuid": "e3d28e7b193730628473a35cbebbfa1a",
+      "accepted": 21.21,
+      "path_stamp": 21.21,
+      "duration": 0.006,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 22.212,
+      "kind": "planning_result",
+      "uuid": "1e70e12c051dea4c943e550a248c5efa",
+      "accepted": 22.206,
+      "path_stamp": 22.206,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 23.194,
+      "kind": "planning_result",
+      "uuid": "dd6062aad9447545757d78b2dd4e0758",
+      "accepted": 23.19,
+      "path_stamp": 23.19,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 24.202,
+      "kind": "planning_result",
+      "uuid": "b35d9203a9fdb6802940b194f26881b6",
+      "accepted": 24.196,
+      "path_stamp": 24.196,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 26.512,
+      "kind": "planning_result",
+      "uuid": "4c97364a8b2c6caaec4806b1f0cdad27",
+      "accepted": 26.504,
+      "path_stamp": 26.504,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 27.496,
+      "kind": "planning_result",
+      "uuid": "fa67b908e5dc95a0dcf47efab5212755",
+      "accepted": 27.492,
+      "path_stamp": 27.492,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 28.49,
+      "kind": "planning_result",
+      "uuid": "638c990bdbe2a99a22ce3d9fb7116c64",
+      "accepted": 28.486,
+      "path_stamp": 28.486,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 29.49,
+      "kind": "planning_result",
+      "uuid": "7affecedb5d852998f8a4ebbfa0cfdcd",
+      "accepted": 29.484,
+      "path_stamp": 29.484,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 30.492,
+      "kind": "planning_result",
+      "uuid": "786d2bb1039f30a8e7fe3bd5800b026b",
+      "accepted": 30.484,
+      "path_stamp": 30.484,
+      "duration": 0.006,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 31.5,
+      "kind": "planning_result",
+      "uuid": "dac80ad9251c259080b7d2c4107a86f2",
+      "accepted": 31.49,
+      "path_stamp": 31.49,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 32.46,
+      "kind": "planning_result",
+      "uuid": "aac71d8894b5ae1dca6ca6b928efa925",
+      "accepted": 32.454,
+      "path_stamp": 32.454,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 33.44,
+      "kind": "planning_result",
+      "uuid": "1655ae38964c8f68bc2e7a125266b8d3",
+      "accepted": 33.434,
+      "path_stamp": 33.434,
+      "duration": 0.006,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 34.394,
+      "kind": "planning_result",
+      "uuid": "600aab0b297e4e2c13d1b8cff59af96e",
+      "accepted": 34.388,
+      "path_stamp": 34.388,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 35.396,
+      "kind": "planning_result",
+      "uuid": "2c435da819ed421194c87d6044002637",
+      "accepted": 35.388,
+      "path_stamp": 35.388,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 36.354,
+      "kind": "planning_result",
+      "uuid": "795dbdc8d0c232b9071f1945c6de2acd",
+      "accepted": 36.35,
+      "path_stamp": 36.35,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 37.35,
+      "kind": "planning_result",
+      "uuid": "e0a900bf206d20b7e8d87d38a506e5d8",
+      "accepted": 37.344,
+      "path_stamp": 37.344,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 38.35,
+      "kind": "planning_result",
+      "uuid": "5a6179ca28314df792c2ad426ac9b112",
+      "accepted": 38.34,
+      "path_stamp": 38.34,
+      "duration": 0.006,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 40.512,
+      "kind": "planning_result",
+      "uuid": "b4621a90843739d6778c8c1f4464cd1b",
+      "accepted": 40.506,
+      "path_stamp": 40.506,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 41.422,
+      "kind": "planning_result",
+      "uuid": "e289aeccc04b25db39f9cbfc397f58a1",
+      "accepted": 41.42,
+      "path_stamp": 41.42,
+      "duration": 0.006,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 42.426,
+      "kind": "planning_result",
+      "uuid": "019bef490dd035296b255b3d19ba2a6d",
+      "accepted": 42.42,
+      "path_stamp": 42.42,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 43.426,
+      "kind": "planning_result",
+      "uuid": "762c3fb661cb5eb272be35d3edb496bc",
+      "accepted": 43.422,
+      "path_stamp": 43.422,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 44.412,
+      "kind": "planning_result",
+      "uuid": "a7d1fe3d66b985718b12bb0e93340a8b",
+      "accepted": 44.404,
+      "path_stamp": 44.404,
+      "duration": 0.006,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 45.402,
+      "kind": "planning_result",
+      "uuid": "dffbafb87f1b607d273dbe3ede3eae50",
+      "accepted": 45.398,
+      "path_stamp": 45.398,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 46.388,
+      "kind": "planning_result",
+      "uuid": "2d69424aed438f936419224948cffaa2",
+      "accepted": 46.382,
+      "path_stamp": 46.384,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 47.376,
+      "kind": "planning_result",
+      "uuid": "030fd6aae28b6ee497b40d816e1bf450",
+      "accepted": 47.372,
+      "path_stamp": 47.372,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 48.376,
+      "kind": "planning_result",
+      "uuid": "956b97b32f2fde61281faea47f340b55",
+      "accepted": 48.372,
+      "path_stamp": 48.372,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 49.356,
+      "kind": "planning_result",
+      "uuid": "5d18d1c798f4657cb5c4e0bc90493c1e",
+      "accepted": 49.35,
+      "path_stamp": 49.35,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 50.356,
+      "kind": "planning_result",
+      "uuid": "e829a07b3a3215ff8f39ab9bed53b0e6",
+      "accepted": 50.35,
+      "path_stamp": 50.35,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 51.348,
+      "kind": "planning_result",
+      "uuid": "135a279d57f6798c40a45ebf89745d30",
+      "accepted": 51.344,
+      "path_stamp": 51.344,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 52.334,
+      "kind": "planning_result",
+      "uuid": "04452027644c88b180e3c13d4fed2270",
+      "accepted": 52.328,
+      "path_stamp": 52.328,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 54.508,
+      "kind": "planning_result",
+      "uuid": "f4210ce219af7120950debc64495a77d",
+      "accepted": 54.504,
+      "path_stamp": 54.504,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 55.478,
+      "kind": "planning_result",
+      "uuid": "f0c3853cf6d16f68c71eea7b1874a250",
+      "accepted": 55.472,
+      "path_stamp": 55.472,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 56.472,
+      "kind": "planning_result",
+      "uuid": "d3223471148c5d2f0d07cce0227bf456",
+      "accepted": 56.464,
+      "path_stamp": 56.464,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 57.456,
+      "kind": "planning_result",
+      "uuid": "c0907c1f05181ff9e1091962ab220820",
+      "accepted": 57.452,
+      "path_stamp": 57.452,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 58.446,
+      "kind": "planning_result",
+      "uuid": "aa0a281dc627de5ba5130e729f900940",
+      "accepted": 58.44,
+      "path_stamp": 58.44,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 59.4,
+      "kind": "planning_result",
+      "uuid": "4b1c2dc87ded975b427366f57d9d74e9",
+      "accepted": 59.39,
+      "path_stamp": 59.39,
+      "duration": 0.008,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 60.382,
+      "kind": "planning_result",
+      "uuid": "3f00c15f5d75bf665573554276ff559b",
+      "accepted": 60.376,
+      "path_stamp": 60.376,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 61.378,
+      "kind": "planning_result",
+      "uuid": "7f8458229adddea8d5d9d1e2f80283a9",
+      "accepted": 61.376,
+      "path_stamp": 61.376,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 62.364,
+      "kind": "planning_result",
+      "uuid": "c93695cc4c7af7791906bfdd289a6bcb",
+      "accepted": 62.36,
+      "path_stamp": 62.36,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 63.37,
+      "kind": "planning_result",
+      "uuid": "2d47cea8f0bc42f0b735830118ab0d26",
+      "accepted": 63.366,
+      "path_stamp": 63.366,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 64.354,
+      "kind": "planning_result",
+      "uuid": "4488b2d34c9233b586a51493155d8b5a",
+      "accepted": 64.35,
+      "path_stamp": 64.35,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 65.348,
+      "kind": "planning_result",
+      "uuid": "2e32d035afbb7218da5d898c5c30c6c3",
+      "accepted": 65.342,
+      "path_stamp": 65.344,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 66.338,
+      "kind": "planning_result",
+      "uuid": "1b6e335c60490dfcd8655fffb401440b",
+      "accepted": 66.33,
+      "path_stamp": 66.33,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 67.322,
+      "kind": "planning_result",
+      "uuid": "af3473108ad5813362b4db9ec60d5db8",
+      "accepted": 67.314,
+      "path_stamp": 67.316,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 68.288,
+      "kind": "planning_result",
+      "uuid": "44dd739035b65593e47705281cd1803b",
+      "accepted": 68.282,
+      "path_stamp": 68.284,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 69.248,
+      "kind": "planning_result",
+      "uuid": "b88b5f81b6725ea5531cbd46edb748d9",
+      "accepted": 69.24,
+      "path_stamp": 69.24,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 70.188,
+      "kind": "planning_result",
+      "uuid": "113bcb093e07b97fb8c133f2ecf5f53e",
+      "accepted": 70.182,
+      "path_stamp": 70.182,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 71.194,
+      "kind": "planning_result",
+      "uuid": "08e6814c508095afc447af51c9e5d3c8",
+      "accepted": 71.188,
+      "path_stamp": 71.188,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 72.15,
+      "kind": "planning_result",
+      "uuid": "30548308837055b1d775d12119299817",
+      "accepted": 72.144,
+      "path_stamp": 72.144,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 73.124,
+      "kind": "planning_result",
+      "uuid": "b98e6320d4a662b282323a26b9f3d66e",
+      "accepted": 73.116,
+      "path_stamp": 73.116,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 74.096,
+      "kind": "planning_result",
+      "uuid": "832be17a685c68a811e1d2e52fb7ec03",
+      "accepted": 74.088,
+      "path_stamp": 74.088,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 75.088,
+      "kind": "planning_result",
+      "uuid": "cf3f16178254d8e2f2f424219d571ddf",
+      "accepted": 75.084,
+      "path_stamp": 75.084,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 76.072,
+      "kind": "planning_result",
+      "uuid": "603e4b9a5faa58d0dce668c29cbd6c2c",
+      "accepted": 76.07,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 76.146,
+      "kind": "planning_result",
+      "uuid": "322eeb99cc1489f1eb0cd2a9574df746",
+      "accepted": 76.096,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 77.06,
+      "kind": "planning_result",
+      "uuid": "4702cf32580dc146478d193d8a3c3d3b",
+      "accepted": 76.174,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 78.028,
+      "kind": "planning_result",
+      "uuid": "b60e36e90402fca072cb9cfef3eb93e0",
+      "accepted": 77.068,
+      "path_stamp": 78.024,
+      "duration": 0.9560000000000001,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 79.022,
+      "kind": "planning_result",
+      "uuid": "b827cdd842a78fd132ef225bbf8e6f77",
+      "accepted": 79.02,
+      "path_stamp": 79.02,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 80.012,
+      "kind": "planning_result",
+      "uuid": "4e2e0e098c94024fd2a76266bbb29c9c",
+      "accepted": 80.006,
+      "path_stamp": 80.006,
+      "duration": 0.004,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 81.016,
+      "kind": "planning_result",
+      "uuid": "b52156db0d75f3eabd7338fff7783bdb",
+      "accepted": 81.014,
+      "path_stamp": 81.014,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 82.012,
+      "kind": "planning_result",
+      "uuid": "cfcf27d3c5a5c2425ba950decec657fe",
+      "accepted": 82.008,
+      "path_stamp": 82.008,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 82.986,
+      "kind": "planning_result",
+      "uuid": "30f7c9e7fa8bbcf05c736192697201b2",
+      "accepted": 82.982,
+      "path_stamp": 82.982,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 83.948,
+      "kind": "planning_result",
+      "uuid": "1c8294f3cb3400ce737331180a5fb480",
+      "accepted": 83.944,
+      "path_stamp": 83.944,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 84.896,
+      "kind": "planning_result",
+      "uuid": "1146b28648c1d3ae1f5adb4637fc3fe1",
+      "accepted": 84.892,
+      "path_stamp": 84.892,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 85.77,
+      "kind": "planning_result",
+      "uuid": "0444d380c8e550f11726c42b15eca134",
+      "accepted": 85.766,
+      "path_stamp": 85.766,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 86.612,
+      "kind": "planning_result",
+      "uuid": "0f6eb1791b7d8009f468474aa69f4db5",
+      "accepted": 86.608,
+      "path_stamp": 86.608,
+      "duration": 0.0,
+      "status": 4,
+      "error_code": 0
+    },
+    {
+      "t": 87.554,
+      "kind": "planning_result",
+      "uuid": "fc3e83882f95f33c9e74c122d2564f8c",
+      "accepted": 87.552,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 88.33,
+      "kind": "planning_result",
+      "uuid": "abfcad9b185206cc184928511f6e1d88",
+      "accepted": 87.572,
+      "path_stamp": 0.0,
+      "duration": 0.0,
+      "status": 6,
+      "error_code": 208
+    },
+    {
+      "t": 91.456,
+      "kind": "planning_result",
+      "uuid": "796e3f8c443c70bc9a30adaac5b6eaf3",
+      "accepted": 91.45,
+      "path_stamp": 91.45,
+      "duration": 0.002,
+      "status": 4,
+      "error_code": 0
+    }
+  ],
+  "insertion_within_proven_planner_interval": true,
+  "state": "FAILED",
+  "kernel_terminal": "NAVIGATION_FAILURE",
+  "retries": 3,
+  "insert_requested": 10.998,
+  "first_scene_confirmation": 11.32,
+  "last_scene_confirmation": [
+    11.32,
+    4.37,
+    -0.4
+  ],
+  "fixture_z_range_m": null,
+  "confirmed_fixture_trajectory": true,
+  "physical_stop_s": 12.64,
+  "risk_to_zero_s": 1.156,
+  "risk_to_chassis_stop_s": 1.23,
+  "selected_rollouts_after_insertion": 1492,
+  "worst_frozen_rollout_fixture_m": -0.1637,
+  "minimum_scene_interpolated_m": -0.027821,
+  "minimum_fixture_interpolated_m": -0.027821,
+  "sensor_transform_drops": 1,
+  "costmap_time_source": "header or metadata when set, otherwise recorder receipt",
+  "sensor_hits": {
+    "scan": 11.288,
+    "depth": 11.4
+  },
+  "first_lethal_marks": {
+    "local_costmap": 11.708,
+    "global_costmap": 11.748
+  },
+  "preexisting_matches": {},
+  "first_monitor_action": 11.41,
+  "first_risk_action": 11.41,
+  "monitor_stop": 12.566,
+  "guard_stop": null,
+  "first_final_zero_after_stop_action": 12.566,
+  "sensor_to_local_mark_s": 0.42,
+  "local_mark_to_stop_s": 0.858,
+  "sensor_to_stop_s": 1.278,
+  "peak_linear_speed_until_stop_mps": 0.6938866562925625,
+  "max_displacement_until_stop_m": 0.13389788634886912,
+  "frame_time_basis": "Gazebo seconds; monitor/command receipt times",
+  "sampled_fixture_clearance_m": -0.02305,
+  "goal_error_m": 0.8381,
+  "old_and_new_plans": [
+    {
+      "t": 3.5780000000000003,
+      "points": 178,
+      "frozen_fixture_clearance_m": -0.13204
+    },
+    {
+      "t": 11.326,
+      "points": 37,
+      "frozen_fixture_clearance_m": -0.28987
+    },
+    {
+      "t": 12.308,
+      "points": 45,
+      "frozen_fixture_clearance_m": -0.0918
+    },
+    {
+      "t": 13.286,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.14124
+    },
+    {
+      "t": 14.27,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.14124
+    },
+    {
+      "t": 15.276,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.14079
+    },
+    {
+      "t": 16.25,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.14353
+    },
+    {
+      "t": 17.228,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.14311
+    },
+    {
+      "t": 18.216,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.14592
+    },
+    {
+      "t": 19.218,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.14817
+    },
+    {
+      "t": 20.21,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.1505
+    },
+    {
+      "t": 21.21,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.15505
+    },
+    {
+      "t": 22.206,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.15909
+    },
+    {
+      "t": 23.19,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.16553
+    },
+    {
+      "t": 24.196,
+      "points": 47,
+      "frozen_fixture_clearance_m": -0.17177
+    },
+    {
+      "t": 26.504,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.1453
+    },
+    {
+      "t": 27.492,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.1453
+    },
+    {
+      "t": 28.486,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.1453
+    },
+    {
+      "t": 29.484,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.14261
+    },
+    {
+      "t": 30.484,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.14102
+    },
+    {
+      "t": 31.49,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.13154
+    },
+    {
+      "t": 32.454,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.12834
+    },
+    {
+      "t": 33.434,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.15232
+    },
+    {
+      "t": 34.388,
+      "points": 52,
+      "frozen_fixture_clearance_m": -0.14612
+    },
+    {
+      "t": 35.388,
+      "points": 50,
+      "frozen_fixture_clearance_m": -0.14757
+    },
+    {
+      "t": 36.35,
+      "points": 50,
+      "frozen_fixture_clearance_m": -0.14467
+    },
+    {
+      "t": 37.344,
+      "points": 50,
+      "frozen_fixture_clearance_m": -0.14277
+    },
+    {
+      "t": 38.34,
+      "points": 50,
+      "frozen_fixture_clearance_m": -0.1403
+    },
+    {
+      "t": 40.506,
+      "points": 50,
+      "frozen_fixture_clearance_m": -0.14091
+    },
+    {
+      "t": 41.42,
+      "points": 50,
+      "frozen_fixture_clearance_m": -0.14091
+    },
+    {
+      "t": 42.42,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.14091
+    },
+    {
+      "t": 43.422,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.1359
+    },
+    {
+      "t": 44.404,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.12572
+    },
+    {
+      "t": 45.398,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.12188
+    },
+    {
+      "t": 46.384,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.12471
+    },
+    {
+      "t": 47.372,
+      "points": 53,
+      "frozen_fixture_clearance_m": -0.12669
+    },
+    {
+      "t": 48.372,
+      "points": 53,
+      "frozen_fixture_clearance_m": -0.13532
+    },
+    {
+      "t": 49.35,
+      "points": 53,
+      "frozen_fixture_clearance_m": -0.13913
+    },
+    {
+      "t": 50.35,
+      "points": 53,
+      "frozen_fixture_clearance_m": -0.13714
+    },
+    {
+      "t": 51.344,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.14335
+    },
+    {
+      "t": 52.328,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.14634
+    },
+    {
+      "t": 54.504,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.14526
+    },
+    {
+      "t": 55.472,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.14526
+    },
+    {
+      "t": 56.464,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.14526
+    },
+    {
+      "t": 57.452,
+      "points": 60,
+      "frozen_fixture_clearance_m": -0.1505
+    },
+    {
+      "t": 58.44,
+      "points": 60,
+      "frozen_fixture_clearance_m": -0.13062
+    },
+    {
+      "t": 59.39,
+      "points": 60,
+      "frozen_fixture_clearance_m": -0.10769
+    },
+    {
+      "t": 60.376,
+      "points": 60,
+      "frozen_fixture_clearance_m": -0.10477
+    },
+    {
+      "t": 61.376,
+      "points": 54,
+      "frozen_fixture_clearance_m": -0.15475
+    },
+    {
+      "t": 62.36,
+      "points": 63,
+      "frozen_fixture_clearance_m": -0.15477
+    },
+    {
+      "t": 63.366,
+      "points": 59,
+      "frozen_fixture_clearance_m": -0.15477
+    },
+    {
+      "t": 64.35,
+      "points": 144,
+      "frozen_fixture_clearance_m": -0.1673
+    },
+    {
+      "t": 65.344,
+      "points": 144,
+      "frozen_fixture_clearance_m": -0.16685
+    },
+    {
+      "t": 66.33,
+      "points": 65,
+      "frozen_fixture_clearance_m": -0.11152
+    },
+    {
+      "t": 67.316,
+      "points": 61,
+      "frozen_fixture_clearance_m": -0.11221
+    },
+    {
+      "t": 68.284,
+      "points": 61,
+      "frozen_fixture_clearance_m": -0.12028
+    },
+    {
+      "t": 69.24,
+      "points": 65,
+      "frozen_fixture_clearance_m": -0.11297
+    },
+    {
+      "t": 70.182,
+      "points": 65,
+      "frozen_fixture_clearance_m": -0.11297
+    },
+    {
+      "t": 71.188,
+      "points": 63,
+      "frozen_fixture_clearance_m": -0.11298
+    },
+    {
+      "t": 72.144,
+      "points": 63,
+      "frozen_fixture_clearance_m": -0.11298
+    },
+    {
+      "t": 73.116,
+      "points": 65,
+      "frozen_fixture_clearance_m": -0.1055
+    },
+    {
+      "t": 74.088,
+      "points": 65,
+      "frozen_fixture_clearance_m": -0.1015
+    },
+    {
+      "t": 75.084,
+      "points": 59,
+      "frozen_fixture_clearance_m": -0.10344
+    },
+    {
+      "t": 78.024,
+      "points": 61,
+      "frozen_fixture_clearance_m": -0.15327
+    },
+    {
+      "t": 79.02,
+      "points": 62,
+      "frozen_fixture_clearance_m": -0.15457
+    },
+    {
+      "t": 80.006,
+      "points": 67,
+      "frozen_fixture_clearance_m": -0.10458
+    },
+    {
+      "t": 81.014,
+      "points": 62,
+      "frozen_fixture_clearance_m": -0.15457
+    },
+    {
+      "t": 82.008,
+      "points": 62,
+      "frozen_fixture_clearance_m": -0.15457
+    },
+    {
+      "t": 82.982,
+      "points": 62,
+      "frozen_fixture_clearance_m": -0.14003
+    },
+    {
+      "t": 83.944,
+      "points": 62,
+      "frozen_fixture_clearance_m": -0.14341
+    },
+    {
+      "t": 84.892,
+      "points": 62,
+      "frozen_fixture_clearance_m": -0.1456
+    },
+    {
+      "t": 85.766,
+      "points": 62,
+      "frozen_fixture_clearance_m": -0.15119
+    },
+    {
+      "t": 86.608,
+      "points": 62,
+      "frozen_fixture_clearance_m": -0.15611
+    },
+    {
+      "t": 91.45,
+      "points": 67,
+      "frozen_fixture_clearance_m": -0.12342
+    }
+  ],
+  "after_insertion_plan_count": 73,
+  "confirmed_motion_m": 0.0
+}
