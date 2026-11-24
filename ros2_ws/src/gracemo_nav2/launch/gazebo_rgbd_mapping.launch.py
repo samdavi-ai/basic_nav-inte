@@ -86,7 +86,7 @@ def mapping_nodes(context):
                 original.backup(trial)
                 trial.execute("UPDATE Admin SET opt_last_localization=NULL")
         parameters = {'Mem/IncrementalMemory':'false','Mem/InitWMWithAllNodes':'true',
-                      'RGBD/StartAtOrigin':'true'}
+                      'RGBD/StartAtOrigin':'false' if LaunchConfiguration('blind_localization').perform(context)=='true' else 'true'}
     if visual and LaunchConfiguration('benchmark_camera_rate').perform(context) == 'true':
         # Evaluate every synchronized RGB-D pair. The visual odometry frame
         # intentionally has no navigation TF; its stamped message is available.
@@ -138,6 +138,7 @@ def generate_launch_description():
                               DeclareLaunchArgument('optical_flow', default_value='false', choices=['true','false']),
                               DeclareLaunchArgument('planar_registration', default_value='false', choices=['true','false']),
                               DeclareLaunchArgument('source_map', default_value=''),
+                              DeclareLaunchArgument('blind_localization', default_value='false', choices=['true','false']),
                               DeclareLaunchArgument('distributed_features', default_value='false', choices=['true','false']),
                               DeclareLaunchArgument('depth_divisor', default_value='2', choices=['1','2']),
                               DeclareLaunchArgument('metric_rgbd', default_value='false', choices=['true','false']),
