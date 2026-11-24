@@ -1,0 +1,689 @@
+[
+  {
+    "view": "bedroom_0",
+    "orb": 120,
+    "spatial_bins": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        15,
+        43,
+        14
+      ],
+      [
+        0,
+        24,
+        0,
+        24
+      ]
+    ],
+    "occupied_bins": 5,
+    "points_with_valid_depth": 120,
+    "brightness": 126.0076171875,
+    "laplacian_variance": 239.74676513671875,
+    "objects": [
+      {
+        "label": "bed",
+        "confidence": 0.7941312789916992,
+        "box_fraction": 0.292578125,
+        "depth_m": 1.4894049167633057,
+        "optical_xyz": [
+          0.4836712841063884,
+          0.5999384197088856,
+          1.4894049167633057
+        ]
+      }
+    ]
+  },
+  {
+    "view": "bedroom_1",
+    "orb": 110,
+    "spatial_bins": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        18,
+        49,
+        10
+      ],
+      [
+        0,
+        22,
+        0,
+        11
+      ]
+    ],
+    "occupied_bins": 5,
+    "points_with_valid_depth": 110,
+    "brightness": 127.6496484375,
+    "laplacian_variance": 234.83926391601562,
+    "objects": [
+      {
+        "label": "bed",
+        "confidence": 0.7731696963310242,
+        "box_fraction": 0.2830078125,
+        "depth_m": 1.4972326755523682,
+        "optical_xyz": [
+          0.5189391745361277,
+          0.5937412177125064,
+          1.4972326755523682
+        ]
+      }
+    ]
+  },
+  {
+    "view": "bedroom_2",
+    "orb": 152,
+    "spatial_bins": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        20,
+        37,
+        27
+      ],
+      [
+        0,
+        24,
+        0,
+        44
+      ]
+    ],
+    "occupied_bins": 5,
+    "points_with_valid_depth": 152,
+    "brightness": 126.84891927083333,
+    "laplacian_variance": 303.8973388671875,
+    "objects": [
+      {
+        "label": "bed",
+        "confidence": 0.6861741542816162,
+        "box_fraction": 0.30625,
+        "depth_m": 1.5303034782409668,
+        "optical_xyz": [
+          0.4109416855361874,
+          0.6068557449197186,
+          1.5303034782409668
+        ]
+      }
+    ]
+  },
+  {
+    "view": "hallway_0",
+    "orb": 64,
+    "spatial_bins": [
+      [
+        0,
+        6,
+        11,
+        0
+      ],
+      [
+        0,
+        19,
+        28,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "occupied_bins": 4,
+    "points_with_valid_depth": 59,
+    "brightness": 134.50279947916667,
+    "laplacian_variance": 62.195919036865234,
+    "objects": []
+  },
+  {
+    "view": "hallway_1",
+    "orb": 57,
+    "spatial_bins": [
+      [
+        0,
+        5,
+        9,
+        0
+      ],
+      [
+        0,
+        16,
+        27,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "occupied_bins": 4,
+    "points_with_valid_depth": 51,
+    "brightness": 135.38266927083333,
+    "laplacian_variance": 58.34138488769531,
+    "objects": []
+  },
+  {
+    "view": "hallway_2",
+    "orb": 60,
+    "spatial_bins": [
+      [
+        0,
+        5,
+        10,
+        0
+      ],
+      [
+        0,
+        16,
+        29,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "occupied_bins": 4,
+    "points_with_valid_depth": 53,
+    "brightness": 133.70001302083332,
+    "laplacian_variance": 58.2397575378418,
+    "objects": []
+  },
+  {
+    "view": "kitchen_0",
+    "orb": 221,
+    "spatial_bins": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        11,
+        39,
+        74,
+        13
+      ],
+      [
+        9,
+        0,
+        70,
+        5
+      ]
+    ],
+    "occupied_bins": 7,
+    "points_with_valid_depth": 221,
+    "brightness": 132.1765234375,
+    "laplacian_variance": 346.7095642089844,
+    "objects": [
+      {
+        "label": "chair",
+        "confidence": 0.877293586730957,
+        "box_fraction": 0.030182291666666666,
+        "depth_m": 2.2970454692840576,
+        "optical_xyz": [
+          0.5164238246313018,
+          0.638357227669248,
+          2.2970454692840576
+        ]
+      },
+      {
+        "label": "chair",
+        "confidence": 0.6134267449378967,
+        "box_fraction": 0.06872395833333333,
+        "depth_m": 0.44087085127830505,
+        "optical_xyz": [
+          0.2519223256576467,
+          0.24503920200579843,
+          0.44087085127830505
+        ]
+      }
+    ]
+  },
+  {
+    "view": "kitchen_1",
+    "orb": 218,
+    "spatial_bins": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        41,
+        83,
+        6
+      ],
+      [
+        10,
+        4,
+        60,
+        12
+      ]
+    ],
+    "occupied_bins": 8,
+    "points_with_valid_depth": 218,
+    "brightness": 132.46130208333332,
+    "laplacian_variance": 324.1514587402344,
+    "objects": [
+      {
+        "label": "chair",
+        "confidence": 0.9194846153259277,
+        "box_fraction": 0.03229166666666667,
+        "depth_m": 2.245790719985962,
+        "optical_xyz": [
+          0.673200914505255,
+          0.6451508764008694,
+          2.245790719985962
+        ]
+      },
+      {
+        "label": "chair",
+        "confidence": 0.47105976939201355,
+        "box_fraction": 0.06635416666666667,
+        "depth_m": 0.4449400007724762,
+        "optical_xyz": [
+          0.31537806899165055,
+          0.24730086467186696,
+          0.4449400007724762
+        ]
+      }
+    ]
+  },
+  {
+    "view": "kitchen_2",
+    "orb": 205,
+    "spatial_bins": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        9,
+        30,
+        73,
+        13
+      ],
+      [
+        9,
+        0,
+        54,
+        17
+      ]
+    ],
+    "occupied_bins": 7,
+    "points_with_valid_depth": 205,
+    "brightness": 131.86041666666668,
+    "laplacian_variance": 299.02777099609375,
+    "objects": [
+      {
+        "label": "chair",
+        "confidence": 0.9131495356559753,
+        "box_fraction": 0.0309765625,
+        "depth_m": 2.3147597312927246,
+        "optical_xyz": [
+          0.5276342270433694,
+          0.6432800850254777,
+          2.3147597312927246
+        ]
+      },
+      {
+        "label": "bed",
+        "confidence": 0.5830591320991516,
+        "box_fraction": 0.07375,
+        "depth_m": 0.456479549407959,
+        "optical_xyz": [
+          0.3164306048490381,
+          0.25228926602828716,
+          0.456479549407959
+        ]
+      }
+    ]
+  },
+  {
+    "view": "living_0",
+    "orb": 76,
+    "spatial_bins": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        33,
+        33,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        2
+      ]
+    ],
+    "occupied_bins": 6,
+    "points_with_valid_depth": 76,
+    "brightness": 141.537734375,
+    "laplacian_variance": 143.467529296875,
+    "objects": [
+      {
+        "label": "monitor",
+        "confidence": 0.614890456199646,
+        "box_fraction": 0.0158203125,
+        "depth_m": 4.80446195602417,
+        "optical_xyz": [
+          -0.07500996182448796,
+          0.07500996182448796,
+          4.80446195602417
+        ]
+      }
+    ]
+  },
+  {
+    "view": "living_1",
+    "orb": 79,
+    "spatial_bins": [
+      [
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        34,
+        35,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        2
+      ]
+    ],
+    "occupied_bins": 6,
+    "points_with_valid_depth": 79,
+    "brightness": 142.7182421875,
+    "laplacian_variance": 107.85893249511719,
+    "objects": [
+      {
+        "label": "monitor",
+        "confidence": 0.47798317670822144,
+        "box_fraction": 0.016770833333333332,
+        "depth_m": 4.744609355926514,
+        "optical_xyz": [
+          0.17778122249743086,
+          0.08889061124871543,
+          4.744609355926514
+        ]
+      }
+    ]
+  },
+  {
+    "view": "living_2",
+    "orb": 71,
+    "spatial_bins": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        32,
+        34,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        3
+      ]
+    ],
+    "occupied_bins": 5,
+    "points_with_valid_depth": 71,
+    "brightness": 141.1425390625,
+    "laplacian_variance": 135.62451171875,
+    "objects": [
+      {
+        "label": "monitor",
+        "confidence": 0.44776684045791626,
+        "box_fraction": 0.016770833333333332,
+        "depth_m": 4.685577869415283,
+        "optical_xyz": [
+          -0.26335395579755455,
+          0.08778465193251818,
+          4.685577869415283
+        ]
+      }
+    ]
+  },
+  {
+    "view": "monitor_near_0",
+    "orb": 25,
+    "spatial_bins": [
+      [
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        6,
+        0
+      ],
+      [
+        3,
+        0,
+        5,
+        7
+      ]
+    ],
+    "occupied_bins": 6,
+    "points_with_valid_depth": 25,
+    "brightness": 86.954765625,
+    "laplacian_variance": 126.50395965576172,
+    "objects": [
+      {
+        "label": "monitor",
+        "confidence": 0.49304935336112976,
+        "box_fraction": 0.21341145833333333,
+        "depth_m": 1.3855619430541992,
+        "optical_xyz": [
+          -0.11681372998441002,
+          0.12114016442827705,
+          1.3855619430541992
+        ]
+      }
+    ]
+  },
+  {
+    "view": "monitor_near_1",
+    "orb": 22,
+    "spatial_bins": [
+      [
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        6,
+        0
+      ],
+      [
+        0,
+        2,
+        5,
+        5
+      ]
+    ],
+    "occupied_bins": 6,
+    "points_with_valid_depth": 22,
+    "brightness": 83.7359765625,
+    "laplacian_variance": 123.01506805419922,
+    "objects": [
+      {
+        "label": "monitor",
+        "confidence": 0.5574601888656616,
+        "box_fraction": 0.22658854166666667,
+        "depth_m": 1.334524393081665,
+        "optical_xyz": [
+          -0.025002414346119568,
+          0.12084500267291125,
+          1.334524393081665
+        ]
+      }
+    ]
+  },
+  {
+    "view": "monitor_near_2",
+    "orb": 22,
+    "spatial_bins": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        7,
+        0
+      ],
+      [
+        1,
+        0,
+        5,
+        5
+      ]
+    ],
+    "occupied_bins": 5,
+    "points_with_valid_depth": 22,
+    "brightness": 84.96352864583334,
+    "laplacian_variance": 129.08065795898438,
+    "objects": []
+  },
+  {
+    "view": "study_0",
+    "orb": 149,
+    "spatial_bins": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        69,
+        45,
+        0
+      ],
+      [
+        0,
+        18,
+        17,
+        0
+      ]
+    ],
+    "occupied_bins": 4,
+    "points_with_valid_depth": 149,
+    "brightness": 157.62670572916667,
+    "laplacian_variance": 211.99752807617188,
+    "objects": []
+  },
+  {
+    "view": "study_1",
+    "orb": 154,
+    "spatial_bins": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        77,
+        40,
+        0
+      ],
+      [
+        4,
+        12,
+        21,
+        0
+      ]
+    ],
+    "occupied_bins": 5,
+    "points_with_valid_depth": 154,
+    "brightness": 157.66018229166667,
+    "laplacian_variance": 223.42239379882812,
+    "objects": []
+  },
+  {
+    "view": "study_2",
+    "orb": 144,
+    "spatial_bins": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        74,
+        31,
+        0
+      ],
+      [
+        0,
+        20,
+        19,
+        0
+      ]
+    ],
+    "occupied_bins": 4,
+    "points_with_valid_depth": 144,
+    "brightness": 157.49036458333333,
+    "laplacian_variance": 210.07260131835938,
+    "objects": []
+  }
+]

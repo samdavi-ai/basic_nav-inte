@@ -286,6 +286,7 @@ def create_ros_perception_node(node_name: str = "gracemo_perception_node"):
             self.pending = None
             self.pairs = self.dropped = self.rejected = 0
             self.sync_skew_ms = None
+            self.input_rejections = {}
             self.worker = ThreadPoolExecutor(max_workers=1)
             self.status_worker = ThreadPoolExecutor(max_workers=1)
             self.job = self.status_job = None
@@ -358,7 +359,7 @@ def create_ros_perception_node(node_name: str = "gracemo_perception_node"):
             status.update(self.stats, rgb_sync_occupancy=sync_occupancy[0], depth_sync_occupancy=sync_occupancy[1],
                           pending_pair_occupancy=int(self.pending is not None),
                           synchronized_pairs=self.pairs,dropped_pending=self.dropped,
-                          rejected_inputs=self.rejected,process_rss_bytes=self.process.memory_info().rss,
+                          rejected_inputs=self.rejected,input_rejections=self.input_rejections,process_rss_bytes=self.process.memory_info().rss,
                           cpu_percent=self.process.cpu_percent(),
                           available_ram_bytes=ram.available,degraded=self.service.degraded,
                           acquired_pair_hz=self.pairs/elapsed,processed_hz=self.frames/elapsed,
@@ -381,10 +382,11 @@ def create_ros_perception_node(node_name: str = "gracemo_perception_node"):
                     outcome = self.job.result()
                 except Exception as error:
                     self.get_logger().error(f"Perception worker failed: {type(error).__name__}")
-                    outcome = None
+                    outcome = "worker_exception"
                 self.job = None
-                if outcome is None:
+                if isinstance(outcome, str):
                     self.rejected += 1
+                    self.input_rejections[outcome] = self.input_rejections.get(outcome, 0) + 1
                 else:
                     self.frames += 1
                     self.observations,self.captured_at,self.image_stamp_ns,self.stats = outcome
@@ -400,17 +402,22 @@ def create_ros_perception_node(node_name: str = "gracemo_perception_node"):
             if (calibration is None or calibration.header.frame_id != rgb.header.frame_id
                     or (calibration.width, calibration.height) != (rgb.width,rgb.height)
                     or not all(np.isfinite(k) and k>0 for k in (calibration.k[0],calibration.k[4]))):
-                return
+                return "calibration"
             self.service.mission = mission
             self.service.set_camera_info(calibration)
             if self.service.detector.ort_session is None and self.service.detector.yolo_model is None:
-                return
+                return "detector_unavailable"
             if rgb.encoding not in ("rgb8","bgr8") or depth.encoding!="32FC1" or rgb.header.frame_id!=depth.header.frame_id:
-                return
+                return "encoding_or_frame"
             stamp=Time.from_msg(rgb.header.stamp)
             now = self.get_clock().now()
-            if not all(0 <= (now - t).nanoseconds <= 1000000000 for t in (stamp, Time.from_msg(depth.header.stamp))):
-                return
+            ages = [(now - t).nanoseconds for t in (stamp, Time.from_msg(depth.header.stamp))]
+            if min(ages) < 0:
+                return "ahead_of_clock"
+            if max(ages) > 1_000_000_000:
+                return "stale"
+            if self.image_stamp_ns is not None and stamp.nanoseconds <= self.image_stamp_ns:
+                return "duplicate_or_out_of_order"
             image=np.ndarray((rgb.height,rgb.width,3),np.uint8,buffer=rgb.data,strides=(rgb.step,3,1))
             if rgb.encoding=="rgb8":
                 image=cv2.cvtColor(image,cv2.COLOR_RGB2BGR)

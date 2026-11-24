@@ -1,0 +1,335 @@
+[
+  {
+    "room": "hallway",
+    "profile": "baseline",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 2,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      9.20535241015249e-08,
+      6.442231037267067e-07
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "hallway",
+    "profile": "distributed",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.05089597822366801,
+      0.2717088416113139
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "hallway",
+    "profile": "metric",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.046366279438108,
+      0.09812234629153156
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "hallway",
+    "profile": "patch",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 0,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": null,
+    "rmse_m_deg": [
+      0.04870277893356599,
+      0.562020832827295
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "kitchen",
+    "profile": "baseline",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.029429135923439546,
+      0.46393777444329687
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "kitchen",
+    "profile": "distributed",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.024575068457211698,
+      0.39489374481432016
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "kitchen",
+    "profile": "metric",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.009525126296293726,
+      0.27680064743676774
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "kitchen",
+    "profile": "patch",
+    "valid_pre_fault": 4,
+    "valid_post_fault": 0,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": null,
+    "rmse_m_deg": [
+      0.003410620996710128,
+      0.11264172850028141
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "bedroom",
+    "profile": "baseline",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.052506007105785055,
+      1.0206058792228123
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "bedroom",
+    "profile": "distributed",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.02660200755785359,
+      0.5253802123702824
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "bedroom",
+    "profile": "metric",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.04792361554262496,
+      0.9316988510814361
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "bedroom",
+    "profile": "patch",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.31886552531035195,
+      15.137590623842373
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "study",
+    "profile": "baseline",
+    "valid_pre_fault": 1,
+    "valid_post_fault": 0,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": null,
+    "rmse_m_deg": null,
+    "initialized_at_first_view": false
+  },
+  {
+    "room": "study",
+    "profile": "distributed",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 4,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.012556849240024355,
+      0.2344794296913455
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "study",
+    "profile": "metric",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 3,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.014943130692281613,
+      0.18864067052175174
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "study",
+    "profile": "patch",
+    "valid_pre_fault": 4,
+    "valid_post_fault": 0,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": null,
+    "rmse_m_deg": [
+      0.016424257795105104,
+      0.3110585313736677
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "living",
+    "profile": "baseline",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 2,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      1.1000403364847582e-07,
+      5.239988472926743e-07
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "living",
+    "profile": "distributed",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.04736666423121538,
+      0.5080229339827175
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "living",
+    "profile": "metric",
+    "valid_pre_fault": 4,
+    "valid_post_fault": 4,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.014633162576353772,
+      0.12186420134914974
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "living",
+    "profile": "patch",
+    "valid_pre_fault": 4,
+    "valid_post_fault": 3,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.08155948654125243,
+      1.9983528288673589
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "monitor_near",
+    "profile": "baseline",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 2,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      8.72609298633972e-08,
+      2.3124746495095773e-06
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "monitor_near",
+    "profile": "distributed",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 2,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      2.635615678215726e-07,
+      7.724847968650801e-06
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "monitor_near",
+    "profile": "metric",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 4,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.1852582419620456,
+      4.852583331551373
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "monitor_near",
+    "profile": "patch",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.9673145671524588,
+      14.83975711146775
+    ],
+    "initialized_at_first_view": true
+  }
+]

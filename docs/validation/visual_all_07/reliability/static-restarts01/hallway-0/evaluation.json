@@ -1,0 +1,27 @@
+{
+  "graph_messages": 161,
+  "pose_messages": 162,
+  "first_truth_xyz": [
+    0.0,
+    0.0,
+    0.025
+  ],
+  "all_matches_within_target": false,
+  "measured_matches": [],
+  "translation_m": null,
+  "rotation_deg": null,
+  "trial": "hallway-0",
+  "domain": 163,
+  "partition": "vira-restart-static-ad078f3c63a74c29b2b098135b5b5dd1",
+  "optimized_source_ids": [
+    1,
+    7
+  ],
+  "source_sha256": "008d198126d60732230909af197fe5e18c5a80b7d2efcd8e8aa4bb03a6f6f282",
+  "sqlite_integrity": "ok",
+  "rejected_or_conflicting": 1,
+  "all_graph_messages": 162,
+  "odom_nonlost": 162,
+  "odom_updates": 162,
+  "accepted": false
+}
