@@ -27,7 +27,7 @@ VIEWS = {
 }
 
 
-def capture(out, lighting, occlusion):
+def capture(out, lighting, occlusion, surface=None, desktop=False, stereo=False):
     out.mkdir(parents=True, exist_ok=False)
     os.environ.update(GZ_PARTITION="vira-static-views-"+uuid.uuid4().hex, GZ_IP="127.0.0.1")
     tree = ET.parse(ROOT/"ros2_ws/src/gracemo_gazebo/worlds/apartment_floor.world")
@@ -44,13 +44,18 @@ def capture(out, lighting, occlusion):
     if occlusion:
         panel = ET.fromstring("""<model name="screen_occluder"><static>true</static><pose>8.2 -4.40 1 0 0 0</pose><link name="panel"><visual name="slat"><geometry><box><size>.04 .30 .9</size></box></geometry><material><diffuse>.5 .5 .5 1</diffuse></material></visual></link></model>""")
         world.append(panel)
+    from launcher_recovery import apply_monitor_display, apply_surface_textures
+    if surface:
+        apply_surface_textures(tree, out.resolve(), surface)
+    if desktop:
+        apply_monitor_display(tree, out.resolve(), "desktop")
     topics = {}
     for room, (x,y,yaw) in VIEWS.items():
-        for index, offset in enumerate((0, .7, 2.6)):
+        for index, offset in enumerate((0, .045, -.045) if stereo else (0, .7, 2.6)):
             view = f"{room}_{index}"
             model = ET.SubElement(world,"model",name=view)
             ET.SubElement(model,"static").text="true"
-            ET.SubElement(model,"pose").text=f"{x} {y} 1.05 0 0 {yaw+offset}"
+            ET.SubElement(model,"pose").text=f"{x + (.06 * index if stereo else 0)} {y} 1.05 0 0 {yaw+offset}"
             link=ET.SubElement(model,"link",name="mount")
             for name, template in zip(("rgb","depth"),sensors):
                 sensor = copy.deepcopy(template)
@@ -97,7 +102,7 @@ def capture(out, lighting, occlusion):
                 try:proc.wait(timeout=8)
                 except subprocess.TimeoutExpired:
                     os.killpg(proc.pid,signal.SIGTERM);proc.wait(timeout=8)
-    (out/"capture.json").write_text(json.dumps(dict(lighting=lighting,partial_occlusion=occlusion,views=VIEWS,
+    (out/"capture.json").write_text(json.dumps(dict(lighting=lighting,partial_occlusion=occlusion,surface=surface,desktop=desktop,stereo=stereo,views=VIEWS,
                                                    captured=manifest,missing=sorted(pending)),indent=2))
     if pending:raise RuntimeError(f"{len(pending)} camera topics missing")
 
@@ -107,5 +112,8 @@ if __name__=="__main__":
     parser.add_argument("out",type=Path)
     parser.add_argument("--lighting",choices=("original","dim"),default="original")
     parser.add_argument("--partial-occlusion",action="store_true")
+    parser.add_argument("--surface",choices=("subtle","wall_bands"))
+    parser.add_argument("--desktop",action="store_true")
+    parser.add_argument("--stereo",action="store_true",help="Three nearby stationary views for correspondence diagnostics")
     args=parser.parse_args()
-    capture(args.out,args.lighting,args.partial_occlusion)
+    capture(args.out,args.lighting,args.partial_occlusion,args.surface,args.desktop,args.stereo)

@@ -64,6 +64,8 @@ def describe(folder):
         raise RuntimeError("Semantic model did not load")
     desc=[];orb=cv2.ORB_create()
     for p in sorted(folder.glob("*.png")):
+        if not p.with_suffix(".npy").exists():
+            continue
         color=cv2.imread(str(p));gray=cv2.cvtColor(color,cv2.COLOR_BGR2GRAY)
         h,w=gray.shape;f=w/(2*np.tan(1.15/2))
         z=np.load(p.with_suffix(".npy"));dh,dw=z.shape

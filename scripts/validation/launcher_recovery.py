@@ -39,6 +39,46 @@ def validation_pythonpath(repo, inherited=None):
     return os.pathsep.join(str(path) for path in paths)
 
 
+def apply_monitor_display(tree, state, display):
+    """Apply the powered-display diagnostic appearance to a private world."""
+    import xml.etree.ElementTree as ET
+    if display in ("1", "desktop"):
+        # Render a powered display inside the existing black bezel. Keep the
+        # TV model, collision shape and semantic detector unchanged.
+        screen, = tree.findall(".//model[@name='tv_unit']/link[@name='screen']")
+        screen.append(ET.fromstring("""
+            <visual name="powered_display">
+              <pose>-0.031 0 0 0 0 0</pose>
+              <geometry><box><size>0.001 1.33 0.73</size></box></geometry>
+              <material><ambient>0.12 0.33 0.56 1</ambient>
+                <diffuse>0.16 0.41 0.72 1</diffuse>
+                <emissive>0.07 0.14 0.22 1</emissive></material>
+            </visual>"""))
+        if display == "desktop":
+            # Window borders, text and chart traces give the active screen
+            # realistic detail when the camera approaches for inspection.
+            from PIL import Image, ImageDraw
+            image = Image.new("RGB", (640, 360), "#368ac1")
+            canvas = ImageDraw.Draw(image)
+            for x, y, w, h, title in ((20, 18, 380, 240, "System status"),
+                                      (280, 150, 330, 180, "Sensor history")):
+                canvas.rectangle((x, y, x+w, y+h), fill="#ecf3f7", outline="#124663", width=3)
+                canvas.rectangle((x, y, x+w, y+26), fill="#244864")
+                canvas.text((x+12, y+6), title, fill="white")
+                for j in range(4):
+                    line = [(x+12+i*(w-24)/12, y+45+j*26+((i*i+7*j*i)%19))
+                            for i in range(13)]
+                    canvas.line(line, fill=("#107d80", "#cf7119", "#336bb6", "#59516a")[j], width=3)
+            texture = state/"monitor_desktop.png"
+            image.save(texture)
+            material = screen.find("visual[@name='powered_display']/material")
+            material.find("diffuse").text = "1 1 1 1"
+            metal = ET.SubElement(ET.SubElement(material, "pbr"), "metal")
+            ET.SubElement(metal, "metalness").text = "0"
+            ET.SubElement(metal, "roughness").text = "1"
+            ET.SubElement(metal, "albedo_map").text = str(texture)
+
+
 def apply_surface_textures(tree, state, surface_texture):
     """Decorate only the private world used for RGB-D registration experiments."""
     # Add surface detail only in this private diagnostic world.
@@ -139,41 +179,7 @@ def run(out, spoken=False, inspection=False, latched=False, vision=False, visual
             if surface_texture:
                 apply_surface_textures(tree, state, surface_texture)
             display = env.get("VIRA_TEST_MONITOR_SCREEN")
-            if display in ("1", "desktop"):
-                # Render a powered display inside the existing black bezel. Keep the
-                # TV model, collision shape and semantic detector unchanged.
-                screen, = tree.findall(".//model[@name='tv_unit']/link[@name='screen']")
-                screen.append(ET.fromstring("""
-                    <visual name="powered_display">
-                      <pose>-0.031 0 0 0 0 0</pose>
-                      <geometry><box><size>0.001 1.33 0.73</size></box></geometry>
-                      <material><ambient>0.12 0.33 0.56 1</ambient>
-                        <diffuse>0.16 0.41 0.72 1</diffuse>
-                        <emissive>0.07 0.14 0.22 1</emissive></material>
-                    </visual>"""))
-                if display == "desktop":
-                    # Window borders, text and chart traces give the active screen
-                    # realistic detail when the camera approaches for inspection.
-                    from PIL import Image, ImageDraw
-                    image = Image.new("RGB", (640, 360), "#368ac1")
-                    canvas = ImageDraw.Draw(image)
-                    for x, y, w, h, title in ((20, 18, 380, 240, "System status"),
-                                              (280, 150, 330, 180, "Sensor history")):
-                        canvas.rectangle((x, y, x+w, y+h), fill="#ecf3f7", outline="#124663", width=3)
-                        canvas.rectangle((x, y, x+w, y+26), fill="#244864")
-                        canvas.text((x+12, y+6), title, fill="white")
-                        for j in range(4):
-                            line = [(x+12+i*(w-24)/12, y+45+j*26+((i*i+7*j*i)%19))
-                                    for i in range(13)]
-                            canvas.line(line, fill=("#107d80", "#cf7119", "#336bb6", "#59516a")[j], width=3)
-                    texture = state/"monitor_desktop.png"
-                    image.save(texture)
-                    material = screen.find("visual[@name='powered_display']/material")
-                    material.find("diffuse").text = "1 1 1 1"
-                    metal = ET.SubElement(ET.SubElement(material, "pbr"), "metal")
-                    ET.SubElement(metal, "metalness").text = "0"
-                    ET.SubElement(metal, "roughness").text = "1"
-                    ET.SubElement(metal, "albedo_map").text = str(texture)
+            apply_monitor_display(tree, state, display)
             tree.write(state/"camera_rate.world", encoding="utf-8", xml_declaration=True)
         if vision and env.get("VIRA_VISUAL_ODOMETRY") == "1":
             env["VIRA_VISUAL_MAP"] = str((out/"visual_map.npz").resolve())

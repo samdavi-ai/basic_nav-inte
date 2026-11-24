@@ -33,7 +33,7 @@ def run(args):
     world.remove(robot)
     for parent in world.iter():
         for child in list(parent):
-            if child.tag in ("gui","sensor","state") or (child.tag=="plugin" and "Sensors" not in child.get("name","")):
+            if child.tag in ("gui","sensor","state") or (child.tag=="plugin" and child.get("name","").split("::")[-1] not in ("Sensors","SceneBroadcaster")):
                 parent.remove(child)
     x,y,yaw=VIEWS[args.room]; x+=args.offset;yaw+=args.heading
     model=ET.SubElement(world,"model",name="stationary_rig")
@@ -79,6 +79,13 @@ def run(args):
                 if trace.exists() and '"kind": "info"' in trace.read_text(): break
                 time.sleep(.5)
             else:raise RuntimeError("No live camera odometry before startup deadline")
+            if args.source:
+                # Read the actual, immutable rig pose from Gazebo in the private partition.
+                # This subprocess has no ROS interface and cannot supply the estimator.
+                result=subprocess.run([sys.executable, __file__, "--read-scene-pose"],
+                                      env=env, capture_output=True, text=True, check=True, timeout=12)
+                status["gazebo_pose"]=json.loads(result.stdout)
+                status["source_sha256"]=sha
             start_time=time.monotonic();status["start_monotonic"]=start_time
             while time.monotonic()-start_time<args.seconds:
                 for name,c in children.items():
@@ -99,6 +106,19 @@ def run(args):
 
 
 if __name__=="__main__":
+    if sys.argv[1:] == ["--read-scene-pose"]:
+        from gz.transport13 import Node
+        from gz.msgs10.empty_pb2 import Empty
+        from gz.msgs10.scene_pb2 import Scene
+        node=Node()
+        for attempt in range(4):
+            ok,scene=node.request("/world/gracemo_home/scene/info",Empty(),Empty,Scene,2000)
+            rig=next((m for m in scene.model if m.name=="stationary_rig"),None) if ok else None
+            if rig is not None:
+                p,q=rig.pose.position,rig.pose.orientation
+                print(json.dumps(dict(xyz=[p.x,p.y,p.z],q=[q.x,q.y,q.z,q.w])))
+                sys.exit(0)
+        sys.exit("Fixed sensor model absent from live Gazebo scene")
     ap=argparse.ArgumentParser();ap.add_argument("out",type=Path)
     ap.add_argument("--seconds",type=int,required=True);ap.add_argument("--room",choices=VIEWS,default="study")
     ap.add_argument("--offset",type=float,default=0);ap.add_argument("--heading",type=float,default=0)
