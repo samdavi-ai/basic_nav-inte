@@ -27,7 +27,7 @@ VIEWS = {
 }
 
 
-def capture(out, lighting, occlusion, surface=None, desktop=False, stereo=False):
+def capture(out, lighting, occlusion, surface=None, desktop=False, stereo=False, fov=1.15):
     out.mkdir(parents=True, exist_ok=False)
     os.environ.update(GZ_PARTITION="vira-static-views-"+uuid.uuid4().hex, GZ_IP="127.0.0.1")
     tree = ET.parse(ROOT/"ros2_ws/src/gracemo_gazebo/worlds/apartment_floor.world")
@@ -59,6 +59,7 @@ def capture(out, lighting, occlusion, surface=None, desktop=False, stereo=False)
             link=ET.SubElement(model,"link",name="mount")
             for name, template in zip(("rgb","depth"),sensors):
                 sensor = copy.deepcopy(template)
+                sensor.find("camera/horizontal_fov").text=str(fov)
                 sensor.find("pose").text="0 0 0 0 0 0"
                 topic=f"/vira_static/{view}/{name}"
                 sensor.find("topic").text=topic
@@ -102,7 +103,7 @@ def capture(out, lighting, occlusion, surface=None, desktop=False, stereo=False)
                 try:proc.wait(timeout=8)
                 except subprocess.TimeoutExpired:
                     os.killpg(proc.pid,signal.SIGTERM);proc.wait(timeout=8)
-    (out/"capture.json").write_text(json.dumps(dict(lighting=lighting,partial_occlusion=occlusion,surface=surface,desktop=desktop,stereo=stereo,views=VIEWS,
+    (out/"capture.json").write_text(json.dumps(dict(fov=fov,lighting=lighting,partial_occlusion=occlusion,surface=surface,desktop=desktop,stereo=stereo,views=VIEWS,
                                                    captured=manifest,missing=sorted(pending)),indent=2))
     if pending:raise RuntimeError(f"{len(pending)} camera topics missing")
 
@@ -115,5 +116,6 @@ if __name__=="__main__":
     parser.add_argument("--surface",choices=("subtle","wall_bands"))
     parser.add_argument("--desktop",action="store_true")
     parser.add_argument("--stereo",action="store_true",help="Three nearby stationary views for correspondence diagnostics")
+    parser.add_argument("--fov", type=float, choices=(1.15,1.57), default=1.15)
     args=parser.parse_args()
-    capture(args.out,args.lighting,args.partial_occlusion,args.surface,args.desktop,args.stereo)
+    capture(args.out,args.lighting,args.partial_occlusion,args.surface,args.desktop,args.stereo,args.fov)

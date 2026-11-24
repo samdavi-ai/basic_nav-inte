@@ -1,0 +1,37 @@
+{
+  "room": "study",
+  "fixture_xyz": [
+    4.5,
+    2.8,
+    0.025
+  ],
+  "yaw": 1.57,
+  "domain": 115,
+  "partition": "vira-restart-static-036cd119f5f646f1af458b128daa9ee6",
+  "duration_requested": 15,
+  "gazebo_pose": {
+    "xyz": [
+      4.5,
+      2.8,
+      0.025
+    ],
+    "q": [
+      0.0,
+      0.0,
+      0.706825181105366,
+      0.7073882691671998
+    ]
+  },
+  "source_sha256": "008d198126d60732230909af197fe5e18c5a80b7d2efcd8e8aa4bb03a6f6f282",
+  "start_monotonic": 29873.883407378,
+  "wall_seconds": 15.003189040999132,
+  "exit_codes": {
+    "renderer": 0,
+    "bridge": 0,
+    "mount": 0,
+    "1_gracemo_rgbd_slam": 0,
+    "recorder": 0,
+    "status_recorder": 0,
+    "perception": 0
+  }
+}

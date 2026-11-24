@@ -1,0 +1,37 @@
+{
+  "room": "living",
+  "fixture_xyz": [
+    4.25,
+    -2.5,
+    0.025
+  ],
+  "yaw": 0.02999999999999997,
+  "domain": 126,
+  "partition": "vira-restart-static-ee0246ad38f242f6945d22f3522a4919",
+  "duration_requested": 15,
+  "gazebo_pose": {
+    "xyz": [
+      4.25,
+      -2.5,
+      0.025
+    ],
+    "q": [
+      0.0,
+      0.0,
+      0.014999437506328076,
+      0.9998875021093592
+    ]
+  },
+  "source_sha256": "008d198126d60732230909af197fe5e18c5a80b7d2efcd8e8aa4bb03a6f6f282",
+  "start_monotonic": 29939.742072674,
+  "wall_seconds": 15.003133100002742,
+  "exit_codes": {
+    "renderer": 0,
+    "bridge": 0,
+    "mount": 0,
+    "1_gracemo_rgbd_slam": 0,
+    "recorder": 0,
+    "status_recorder": 0,
+    "perception": 0
+  }
+}

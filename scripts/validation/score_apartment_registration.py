@@ -62,12 +62,13 @@ def describe(folder):
     detector=ObjectDetector(confidence_threshold=.35)
     if detector.ort_session is None and detector.yolo_model is None:
         raise RuntimeError("Semantic model did not load")
+    fov=json.loads((folder/"capture.json").read_text()).get("fov",1.15)
     desc=[];orb=cv2.ORB_create()
     for p in sorted(folder.glob("*.png")):
         if not p.with_suffix(".npy").exists():
             continue
         color=cv2.imread(str(p));gray=cv2.cvtColor(color,cv2.COLOR_BGR2GRAY)
-        h,w=gray.shape;f=w/(2*np.tan(1.15/2))
+        h,w=gray.shape;f=w/(2*np.tan(fov/2))
         z=np.load(p.with_suffix(".npy"));dh,dw=z.shape
         depth=DepthEstimator();depth.update_camera_info(SimpleNamespace(k=[f,0,w/2,0,f,h/2,0,0,1],width=w,height=h))
         pts=orb.detect(gray);grid=np.zeros((3,4),int);valid_geometry=0

@@ -1,0 +1,37 @@
+{
+  "room": "kitchen",
+  "fixture_xyz": [
+    -3.75,
+    -2.5,
+    0.025
+  ],
+  "yaw": -1.2200000000000002,
+  "domain": 131,
+  "partition": "vira-restart-static-97c8d4f63ab14ad8b31296a12bc9aef9",
+  "duration_requested": 15,
+  "gazebo_pose": {
+    "xyz": [
+      -3.75,
+      -2.5,
+      0.025
+    ],
+    "q": [
+      0.0,
+      0.0,
+      -0.5728674601004814,
+      0.8196480178454795
+    ]
+  },
+  "source_sha256": "008d198126d60732230909af197fe5e18c5a80b7d2efcd8e8aa4bb03a6f6f282",
+  "start_monotonic": 29807.982523617,
+  "wall_seconds": 15.00308985599986,
+  "exit_codes": {
+    "renderer": 0,
+    "bridge": 0,
+    "mount": 0,
+    "1_gracemo_rgbd_slam": 0,
+    "recorder": 0,
+    "status_recorder": 0,
+    "perception": 0
+  }
+}

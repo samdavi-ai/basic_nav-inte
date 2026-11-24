@@ -1,0 +1,200 @@
+[
+  {
+    "room": "hallway",
+    "profile": "baseline",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.035428373681418254,
+      0.13421370886693598
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "hallway",
+    "profile": "distributed",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.05065901080496592,
+      0.23630162665405313
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "hallway",
+    "profile": "octree",
+    "backend_exit": -6
+  },
+  {
+    "room": "kitchen",
+    "profile": "baseline",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.013058791784359996,
+      0.2597658637792199
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "kitchen",
+    "profile": "distributed",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.02320874934863501,
+      0.5654734756367366
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "kitchen",
+    "profile": "octree",
+    "backend_exit": -6
+  },
+  {
+    "room": "bedroom",
+    "profile": "baseline",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.05463563946647446,
+      0.5811970198478826
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "bedroom",
+    "profile": "distributed",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.09707035944694067,
+      1.6347883843968667
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "bedroom",
+    "profile": "octree",
+    "backend_exit": -6
+  },
+  {
+    "room": "study",
+    "profile": "baseline",
+    "valid_pre_fault": 1,
+    "valid_post_fault": 0,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": null,
+    "rmse_m_deg": [
+      0.0,
+      0.0
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "study",
+    "profile": "distributed",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.05251791178181444,
+      1.0303963585556706
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "study",
+    "profile": "octree",
+    "backend_exit": -6
+  },
+  {
+    "room": "living",
+    "profile": "baseline",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 2,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      5.093248739839436e-07,
+      5.506538253263535e-06
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "living",
+    "profile": "distributed",
+    "valid_pre_fault": 5,
+    "valid_post_fault": 5,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      0.2060300371825755,
+      2.067176690471109
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "living",
+    "profile": "octree",
+    "backend_exit": -6
+  },
+  {
+    "room": "monitor_near",
+    "profile": "baseline",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 2,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      6.671456243337807e-08,
+      1.0501834158118163e-06
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "monitor_near",
+    "profile": "distributed",
+    "valid_pre_fault": 2,
+    "valid_post_fault": 2,
+    "clean_frames": 10,
+    "false_valid_during_fault": 0,
+    "first_valid_post_fault": 0,
+    "rmse_m_deg": [
+      3.124308398129977e-07,
+      1.0307894534282339e-05
+    ],
+    "initialized_at_first_view": true
+  },
+  {
+    "room": "monitor_near",
+    "profile": "octree",
+    "backend_exit": -6
+  }
+]

@@ -1,0 +1,223 @@
+{
+  "fov": 1.57,
+  "lighting": "original",
+  "partial_occlusion": false,
+  "surface": null,
+  "desktop": false,
+  "stereo": true,
+  "views": {
+    "hallway": [
+      0,
+      0,
+      0
+    ],
+    "kitchen": [
+      -4,
+      -2.5,
+      -1.57
+    ],
+    "bedroom": [
+      -4.8,
+      2.8,
+      2.4
+    ],
+    "study": [
+      4.5,
+      2.8,
+      1.57
+    ],
+    "living": [
+      4,
+      -2.5,
+      -0.32
+    ],
+    "monitor_near": [
+      7.25,
+      -3.43,
+      -0.4
+    ]
+  },
+  "captured": {
+    "/vira_static/hallway_0/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/hallway_1/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/hallway_2/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/kitchen_0/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/kitchen_1/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/kitchen_2/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/bedroom_0/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/bedroom_1/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/bedroom_2/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/study_0/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/study_1/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/study_2/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/living_0/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/living_1/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/living_2/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/monitor_near_0/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/monitor_near_1/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/monitor_near_2/rgb": {
+      "stamp": 0.004,
+      "width": 320,
+      "height": 240
+    },
+    "/vira_static/hallway_0/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/hallway_1/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/hallway_2/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/kitchen_0/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/kitchen_1/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/kitchen_2/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/bedroom_0/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/bedroom_1/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/bedroom_2/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/study_0/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/study_1/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/study_2/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/living_0/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/living_1/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/living_2/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/monitor_near_0/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/monitor_near_1/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    },
+    "/vira_static/monitor_near_2/depth": {
+      "stamp": 0.004,
+      "width": 160,
+      "height": 120
+    }
+  },
+  "missing": []
+}
