@@ -45,6 +45,10 @@ def run(args):
         sensor.find("update_rate").text="10"
         ET.SubElement(sensor,"gz_frame_id").text="camera_optical_link"
         ET.SubElement(sensor.find("camera"),"camera_info_topic").text=info
+        if sensor.get("type")=="depth_camera":
+            # Harmonic derives its depth calibration topic from the parent
+            # namespace of the depth image, even with camera_info_topic set.
+            sensor.find("topic").text="/camera/depth/image"
         link.append(sensor)
     commands={};children={};files=[]
     def start(name,argv):
@@ -60,9 +64,10 @@ def run(args):
             start("bridge",["ros2","run","ros_gz_bridge","parameter_bridge",
                 "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
                 "/camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image",
-                "/camera/depth_image@sensor_msgs/msg/Image[gz.msgs.Image",
+                "/camera/depth/image@sensor_msgs/msg/Image[gz.msgs.Image",
                 "/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
-                "/camera/depth/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo"])
+                "/camera/depth/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
+                "--ros-args","-r","/camera/depth/image:=/camera/depth_image"])
             start("mount",["ros2","run","tf2_ros","static_transform_publisher","--x",".112","--z","1.02",
                       "--roll","-1.5707963268","--yaw","-1.5707963268","--frame-id","base_footprint","--child-frame-id","camera_optical_link"])
             launch=["ros2","launch",str(ROOT/"ros2_ws/src/gracemo_nav2/launch/gazebo_rgbd_mapping.launch.py"),
@@ -76,7 +81,14 @@ def run(args):
             start("perception",[sys.executable,"-m","adapters.perception.perception_service","--ros-args","-p","use_sim_time:=true"])
             deadline=time.monotonic()+45;trace=out/"registration.jsonl"
             while time.monotonic()<deadline and all(c.poll() is None for c in children.values()):
-                if trace.exists() and '"kind": "info"' in trace.read_text(): break
+                if trace.exists():
+                    # A partially written last line is possible with a live recorder.
+                    lines=trace.read_bytes().split(b"\n")[:-1]
+                    rows=[json.loads(line) for line in lines]
+                    rgb={(r["width"],r["height"]) for r in rows if r["kind"]=="/camera/camera_info"}
+                    depth={(r["width"],r["height"]) for r in rows if r["kind"]=="/camera/depth/camera_info"}
+                    if rgb=={(320,240)} and depth=={(160,120)} and any(r["kind"]=="info" for r in rows):
+                        break
                 time.sleep(.5)
             else:raise RuntimeError("No live camera odometry before startup deadline")
             if args.source:

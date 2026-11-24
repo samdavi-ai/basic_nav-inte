@@ -1,0 +1,23 @@
+{
+  "room": "study",
+  "fixture_xyz": [
+    4.5,
+    2.8,
+    0.025
+  ],
+  "yaw": 1.57,
+  "domain": 150,
+  "partition": "vira-restart-static-37d1e12a92e440a483aa534246719e20",
+  "duration_requested": 45,
+  "start_monotonic": 30117.926283958,
+  "wall_seconds": 45.011116533998575,
+  "exit_codes": {
+    "renderer": 0,
+    "bridge": 0,
+    "mount": 0,
+    "1_gracemo_rgbd_slam": 0,
+    "recorder": 0,
+    "status_recorder": 0,
+    "perception": 0
+  }
+}
